@@ -10,9 +10,9 @@ class Appointment(models.Model):
     #dentist = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True, null=True)
     dentist = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True, null=True, related_name='appointments_as_dentist')  # Add related_name for dentist
 
-    date = models.DateField()
-    time = models.TimeField()
-    service = models.ForeignKey('Service', on_delete=models.CASCADE)
+    #date = models.DateField()
+    #time = models.TimeField()
+    #service = models.ForeignKey('Service', on_delete=models.CASCADE)
     STATUS_CHOICES = (
         ('Scheduled', 'Scheduled'),
         ('Completed', 'Completed'),
