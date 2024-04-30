@@ -7,9 +7,12 @@ class Service(models.Model):
 
 class Appointment(models.Model):
     patient = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    #dentist = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True, null=True)
     dentist = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True, null=True, related_name='appointments_as_dentist')  # Add related_name for dentist
-    # ... other fields
 
+    date = models.DateField()
+    time = models.TimeField()
+    service = models.ForeignKey('Service', on_delete=models.CASCADE)
     STATUS_CHOICES = (
         ('Scheduled', 'Scheduled'),
         ('Completed', 'Completed'),
@@ -17,3 +20,4 @@ class Appointment(models.Model):
     )
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Scheduled')
     notes = models.TextField(blank=True)
+
