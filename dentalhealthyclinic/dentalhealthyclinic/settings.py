@@ -44,6 +44,10 @@ INSTALLED_APPS = [
 
     # Optional -- requires install using `django-allauth[socialacocunt]`.
     'allauth.socialaccount',
+    ##custome apps 
+    'core',
+    'appointments',
+
 ]
 
 SITE_ID = 1

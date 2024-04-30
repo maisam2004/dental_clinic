@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block cortitle  %}
+    Book Appointment
+    {% endblock %}
+{% block content %}
+<h1>Welcome to Your Dental Practice</h1>
+
+<main class="container">
+    <p>Your dental practice description and information goes here.</p>
+    <a href="{% url 'book_appointment' %}" class="btn btn-primary">Book Appointment</a>
+</main>
+
+{% endblock %}
