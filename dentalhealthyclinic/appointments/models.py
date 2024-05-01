@@ -8,13 +8,13 @@ class Service(models.Model):
         return f'{self.name}'
 
 class Appointment(models.Model):
-    full_name = models.CharField(max_length=100)
-    email = models.EmailField()
-    phone_number = models.CharField(max_length=20) 
+    full_name = models.CharField(max_length=100,null=True)
+    email = models.EmailField(null=True)
+    phone_number = models.CharField(max_length=20,null=True) 
     dentist = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True, null=True, related_name='appointments_as_dentist')  
-    date = models.DateField()
-    time = models.TimeField()
-    service = models.ForeignKey('Service', on_delete=models.CASCADE)
+    date = models.DateField(null=True)
+    time = models.TimeField(null=True)
+    service = models.ForeignKey('Service', on_delete=models.CASCADE,null=True)
     STATUS_CHOICES = (
         ('Scheduled', 'Scheduled'),
         ('Completed', 'Completed'),

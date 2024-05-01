@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # Optional -- requires install using `django-allauth[socialacocunt]`.
     'allauth.socialaccount',
+    'bootstrap_datepicker_plus',
     ##custome apps 
     'core',
     'appointments',
