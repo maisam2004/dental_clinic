@@ -4,7 +4,8 @@ from .models import Service,Appointment
 class AppointmentForm(forms.ModelForm):
     class Meta:
         model = Appointment
-        fields = '__all__'  # Include all fields from the Appointment model
+        fields = ['full_name', 'phone_number', 'email',  'dentist', 'date', 'time', 'service', 'notes']  # Adjust fields as needed
+
 
     # You can also define custom fields or widgets here for specific fields
     # Example:
