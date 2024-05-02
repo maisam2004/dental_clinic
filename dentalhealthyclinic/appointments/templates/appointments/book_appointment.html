@@ -2,12 +2,14 @@
 {% block cortitle  %}Book appointment{% endblock %}
 {% block content %}
 
-<h1>Book an Appointment</h1>
 
+<h1>Book an Appointment</h1>
+    {{ form.media }}
     <form method="POST">
         {% csrf_token %}
+        
         {{ form.as_p }}
-        {{ form.media }}
+        
         
         <button type="submit" class="btn btn-primary">Book Appointment</button>
     </form>
