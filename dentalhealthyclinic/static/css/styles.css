@@ -1,0 +1,84 @@
+
+.navbar-nav .nav-link {
+    line-height: 140px; /* Match the line-height with the navbar height */
+    margin-left: 1.3em;
+    /* margin-right: 1.3em; */
+    
+}
+.desktop_logo{
+    width: 16.5em;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.z-3 span{
+    background-color: blue;
+    color:white;
+    padding: .5rem;
+    text-decoration-line: none;
+    
+}
+.z-3 span a{ 
+    text-decoration-line: none;
+    
+    
+}
+/* end nav style */
+@media screen and (max-width: 650px) {
+
+    .desktop_logo{
+        width: 12em;
+        
+}
+  
+    /* Add your mobile-specific styles here */
+    .navbar-nav .nav-link {
+        line-height: 22px; /* Match the line-height with the navbar height */
+        
+    }
+    .z-3 span{
+        position: relative !important;
+        background-color: blue;
+        color:white;
+        padding: .5rem;
+        text-decoration: none;
+        text-decoration-line: none;
+        font-size: smaller;
+       
+    }
+
+    /* end nav style */
+
+
+    .container{
+        flex-direction: column;
+    }
+    
+}
+
+@media screen and (min-width: 760px) and (max-width: 1000px){
+
+    .desktop_logo{
+        width: 11em;
+        padding-bottom: 1rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    }
+    /* Add your mobile-specific styles here */
+    .navbar-nav .nav-link {
+        /* line-height: 22px; Match the line-height with the navbar height */
+        
+    }
+    .z-3 span{
+        position: relative !important;
+        background-color: blue;
+        color:white;
+        padding: .5rem;
+        text-decoration: none;
+        text-decoration-line: none;
+       
+    }
+    /* end nav style */
+    
+    
+}

@@ -1,13 +1,21 @@
 {% extends "base.html" %}
+{% load static %}
 {% block cortitle  %}
-    Book Appointment
+    homepage
     {% endblock %}
 {% block content %}
-<h1>Welcome to Your Dental Practice</h1>
 
-<main class="container">
-    <p>Your dental practice description and information goes here.</p>
-    <a href="{% url 'book_appointment' %}" class="btn btn-primary">Book Appointment</a>
+
+<main class="container d-flex">
+    <div class="container-sm p-5 align-bottom text-center">
+        <h1 >Welcome to Your Dental Practice</h1>
+        <h4 class="text-center">Your healthy smile starts here.</h4>
+        <a href="{% url 'book_appointment' %}" class="btn btn-primary text-center">Book Appointment</a>
+    </div>
+    <div class="container-sm "><img class="hero_image rounded-4 w-100" src="{% static 'main_hero.jpg' %}" alt="patient_image"></div>
+
+
+    
 </main>
 
 {% endblock %}
