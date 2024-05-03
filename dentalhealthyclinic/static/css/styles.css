@@ -7,6 +7,7 @@
 body{
     border: 1px solid red;
     background-color: rgba(229, 240, 242, 1);
+    font-family: "Manrope", sans-serif;
 }
 section h1{
     color:rgba(0, 109, 159, 1);
@@ -119,18 +120,73 @@ border-radius:3em !important;
 /* Contact Info call us:020365558489 email:info@hdc.co.uk address:96 Robert St, London NW1 3QP */
 
 .footer{
-    background-image: url('footer_bg_image.png')
+/*     background-image: url('../footer_bg_image.png');
+ */    
+
+   
+    background-color: rgba(201, 239, 242, 0.05);
+    max-width: 100%;
+    height: 40em;
+    overflow: hidden;
+
+}
+.footer_logo{
+    position: absolute;
+    left:35%;
+    top:10%;
 }
 .footer .container-md{
-    gap:18em;
+    gap:36em;
 }
 .footer .card{
+    font-weight: 600;
+
     
-background-color: blue;
+background-color: rgba(0, 0, 255, 0);
+--bs-card-border-width: 0 !important;
 
-
+background-color:rgba(94, 94, 166, 0) !important;
+border:0 !important;
+}
+.footer .list-group-item {
+    background-color: rgba(0,0,0,0) !important;
 }
 
+
+.footer .card-header{
+    font-weight: 800;
+    font-size: larger;
+    
+}
+
+.footer .position-absolute{
+    z-index: -1;
+    top:-10em;
+    left:0;
+    right:0;
+    bottom:0;
+    width: 80%;
+    height: 5em;
+    border-top: 36em solid transparent;
+    border-right: 70em solid rgba(201, 239, 242, 1);
+    border-bottom: 50em solid rgba(201, 239, 242, 1);
+    border-left: 40em solid rgba(201, 239, 242, 1);
+ 
+}
+
+
+footer{
+    background-color: rgb(30 88 100);
+    width: 100%;
+    justify-content: space-evenly;
+    gap:1em;
+
+}
+footer img{
+    aspect-ratio: 1/3;
+    width: 14em;
+    height: 7em;
+}
 
 
 
@@ -161,7 +217,9 @@ background-color: blue;
     }
 
     /* end nav style */
-
+    main{
+        flex-direction: column;
+    }
 
     .container{
         flex-direction: column;
@@ -183,6 +241,23 @@ background-color: blue;
             
         }
 
+
+
+/* why part---------- */
+.why_choose_us{
+    padding: 0em !important;
+    line-height: ;
+}
+
+
+
+.list_why{
+    line-height: 2.4em;
+    padding-left: 0em;
+    font-weight: 700;
+    font-size: large;
+}
+
 .why_image{
     width: 286px;
 }
@@ -191,7 +266,11 @@ background-color: blue;
         .position-absolute{
             position: relative !important;
         }
+/* fmaily images */
+.family_images .d-flex{
+    gap:1em;
 
+}
 
         .kid_img,.family_img{
             border-radius: 3em;
@@ -202,6 +281,32 @@ background-color: blue;
         .reviews{
             flex-direction: column;
         }
+
+
+/* footer----------------------------------------- */
+.footer{
+    height: auto;
+    background-color: aliceblue;
+}
+
+.footer_logo{
+    align-self: center;
+    position: relative;
+    left:auto;
+    top:auto;
+}
+
+
+.footer .container-md{
+    gap:1em;
+}
+
+
+footer img{
+    aspect-ratio: 1/1;
+    width: 3.4em;
+    height: 2.2em;
+}
     
 }
 
@@ -229,5 +334,16 @@ background-color: blue;
     }
     /* end nav style */
     
+    
+}
+
+@media screen and (min-width: 1000px) {
+    .why_choose_us .row{
+       background-color: rgba(150, 154, 154, 0.679);
+    }
+    .why_choose_us .col-md-6{
+        width: 50%;
+        margin: 0 auto;
+    }
     
 }

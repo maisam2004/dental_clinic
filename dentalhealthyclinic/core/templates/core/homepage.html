@@ -7,12 +7,12 @@
 
 
 <main class="container-fluid p-4 d-flex ">
-    <div class="container-sm p-5 align-bottom text-center">
+    <div class="container-sm p-5 align-bottom text-center order-2">
         <h1 >Welcome to Your Dental Practice</h1>
         <h4 class="text-center">Your healthy smile starts here.</h4>
         <a href="{% url 'book_appointment' %}" class="btn btn-primary text-center">Book Appointment</a>
     </div>
-    <div class="container-sm "><img class="hero_image rounded-4 w-100" src="{% static 'main_hero.jpg' %}" alt="patient_image"></div>
+    <div class="container-sm order-md-2 "><img class="hero_image rounded-4 w-100" src="{% static 'main_hero.jpg' %}" alt="patient_image"></div>
 
 
     
@@ -94,11 +94,11 @@
 
 </section>
 
-<section class="container-fluid p-5 mt-3 why_choose_us">
-    <h1>Why Choose Us</h1>
-    <div class="row d-flex">
-        <div class="col-md-6 order-1">
-            <div class="container  list_why pt-5">
+<section class="container-fluid p-5 mt-3 why_choose_us ">
+    <h1 class="text-center">Why Choose Us</h1>
+    <div class="row d-flex p-5 mx-auto w-100">
+        <div class="col-md-6 order-1 ">
+            <div class="container  list_why pt-5 ">
                 <h3>At Healthy Dental Clinic, we offer </h3>
                 <ul>
                 
@@ -118,7 +118,7 @@
                 <p>Let us help you transform your smile!</p>
             </div>
         </div>
-        <div class="col-md-6 order-1">
+        <div class="col-md-6 order-sm-1 order-md-2">
             <div class="container d-flex justify-content-center ">
                 
                 <img src="{% static 'why_choose_us.png' %}"  class="why_image" alt="image of smiling lady">
@@ -126,11 +126,11 @@
         </div>
     </div>
 </section>
-<div class="container-fluid p-5 mt-1 family_images position-relative">
+<div class="container-fluid p-5 mt-1 family_images position-relative text-center">
     <div class="row d-flex">
         <div class="col-md-6 order-1">
-            <div class="container ">
-                <img src="{% static 'family_dentist.jpeg' %}"  class="family_img" alt="family with dentist">
+            <div class="container">
+                <img src="{% static 'family_dentist.jpeg' %}"  class="family_img " alt="family with dentist">
             </div>
         </div>
         <div class="col-md-6 order-2   position-absolute top-0 end-0">
@@ -141,7 +141,7 @@
         </div>
     </div>
 </div>
-<section class="reviews container-fluid pb-4 pt-5 mt-3 mb-3 border ">
+<section class="reviews container-fluid pb-4 pt-5 mt-3 mb-3 border d-flex flex-wrap ">
     <h1>What our patient say </h1>
     <div class="container-md p5 mt-3 d-flex flex-wrap gap-5 justify-content-center border ">
         <div class="card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
@@ -165,7 +165,7 @@
               
             </div>
         </div>
-        <div class="card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
+        <div class="card text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
             
             <div class="card-body m-3">
               <h5 class="card-title ">Toomie Lee</h5>
@@ -180,36 +180,56 @@
     </div>
 
 </section>
-<div class="footer container-fluid pb-4 pt-5 mt-3 mb-3 border ">
+<div class="footer container-fluid pb-4 pt-5 mt-3  position-relative d-md-flex align-items-end">
     
-    <div class="container-md p5 mt-3 d-flex flex-wrap  justify-content-center border ">
+    <img src="{% static 'logo1.png' %}"  class="footer_logo " alt="company logo">
+    <div class="container-md p5 mt-3 d-flex flex-wrap  justify-content-center   ">
        
 
-        <div class="card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
+        <div class="card    position-relative rounded-4 d-inline-block" style="width:18rem;">
             
-            <div class="card-body m-3">
-              <h5 class="card-title ">Toomie Lee</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h6>
-              <p class="card-text ">Your smile is the first impression that others have of you, making sense that you would want it bright and healthy.</p>
-              
-              
-            </div>
+            <div class="card-header">
+                Contact Info 
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">call us:020365558489</li>
+                <li class="list-group-item">email:info@hdc.co.uk</li>
+                <li class="list-group-item">address:96 Robert St, London NW1 3QP
+                </li>
+              </ul>
         </div>
-        <div class="card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
+        <div class="card   position-relative rounded-4 d-inline-block" style="width:18rem;">
             
-            <div class="card-body m-3">
-              <h5 class="card-title ">Toomie Lee</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h6>
-              <p class="card-text ">We offer fillings, crowns, bridges and implants as common restorative options to bring back your smile.</p>
-              
-              
-            </div>
+            <div class="card-header">
+                Contact Info 
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Monday: 8:00am - 4:00pm</li>
+                <li class="list-group-item">Tuesday: 8:00am - 4:00pm</li>
+                <li class="list-group-item">Wednesday: 8:00am - 4:00pm</li>
+                <li class="list-group-item">Thursday: 8:00am - 4:00pm</li>
+                <li class="list-group-item">Friday:  8:00am - 4:00pm</li>
+                <li class="list-group-item">Saturday: 9:30am - 3:00pm</li>
+                <li class="list-group-item">Sunday: Closed</li>
+              </ul>
         </div>
+        <div class="d-none d-md-block position-absolute" style="width: 100%;">
+            <div class="card-body">
+            </div>
+          </div>
 
 
     </div>
 
-</section>
+</div>
+<footer class="main_footer d-flex p-3">
+
+<img src="{% static 'quality.png' %}"  class="companies" alt="company quality">
+<img src="{% static 'bos.svg' %}"  class="companies" alt="company bos">
+<img src="{% static 'invisalign-logo-png.png' %}"  class="companies " alt="company invisilign">
+<img src="{% static 'gdc-logo-white.png' %}"  class="companies" alt="company dental council">
+
+</footer>
 
 
 
