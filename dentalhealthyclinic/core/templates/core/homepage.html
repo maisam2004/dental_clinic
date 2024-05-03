@@ -6,7 +6,7 @@
 {% block content %}
 
 
-<main class="container d-flex">
+<main class="container-fluid p-4 d-flex ">
     <div class="container-sm p-5 align-bottom text-center">
         <h1 >Welcome to Your Dental Practice</h1>
         <h4 class="text-center">Your healthy smile starts here.</h4>
@@ -17,5 +17,200 @@
 
     
 </main>
+<section class="current_offers container-fluid pb-4 pt-5 mt-3 mb-3">
+    <h1>Current offers</h1>
+    <div class="container-md p5 mt-3 d-flex flex-wrap gap-4 justify-content-center">
+        <div class="card text-center position-relative rounded-4 d-inline-block" style="width: 24rem;">
+            <div class="card-body m-3">
+              <h5 class="card-title border rounded p-3 text-center rounded-pill ">New patient offer</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Private patient</h6>
+              <p class="card-text ">Exam<br>
+                X-RAYS<br>
+                Gum Assessment<br>
+                & CLEANING<br>
+                
+                <span>ONLY FOR  £69</span></p>
+              <a href="#" class="join_now border rounded p-2 px-3 text-center rounded-pill">Join Now</a>
+              
+            </div>
+          </div>
+
+          <div class="card text-center position-relative rounded-4" style="width: 24rem;">
+            <div class="card-body m-3">
+              <h5 class="card-title border rounded p-3 text-center rounded-pill ">New patient offer</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Private patient</h6>
+              <p class="card-text ">Exam<br>
+                X-RAYS<br>
+                Gum Assessment<br>
+                & CLEANING<br>
+                
+                <span>ONLY FOR  £69</span></p>
+              <a href="#" class="join_now">Join Now</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+
+
+    </div>
+
+</section>
+<section class="denteistry_services container-fluid pb-4 pt-5 mt-3 mb-3">
+    <h1>Dentistry Services</h1>
+    <div class="container-md p5 mt-3 d-flex flex-wrap gap-5 justify-content-center">
+        <div class="card text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
+            <img src="{% static 'general_den.webp' %}" class="card-img-top " alt="general checkup">
+            <div class="card-body m-3">
+              <h5 class="card-title ">General Dentistry</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Private patient</h6>
+              <p class="card-text ">incorporates a broad range of diseases and disorders of the oral and maxillofacial region.</p>
+              <a href="#" class="find_out border rounded p-2 px-3 text-center rounded-pill">Find out more</a>
+              
+            </div>
+        </div>
+
+        <div class="card text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
+            <img src="{% static 'cosmetic_den.png' %}" class="card-img-top rounded-circle" alt="cosmetic image">
+            <div class="card-body m-3">
+              <h5 class="card-title ">Cosmetic Dentistry</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Private patient</h6>
+              <p class="card-text ">Your smile is the first impression that others have of you, making sense that you would want it bright and healthy.</p>
+              <a href="#" class="find_out border rounded p-2 px-3 text-center rounded-pill">Find out more</a>
+              
+            </div>
+        </div>
+        <div class="card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
+            <img src="{% static 'restorative_den.png' %}" class="card-img-top rounded-circle" alt="restorative dental">
+            <div class="card-body m-3">
+              <h5 class="card-title ">Restorative Dentistry</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Private patient</h6>
+              <p class="card-text ">We offer fillings, crowns, bridges and implants as common restorative options to bring back your smile.</p>
+              <a href="#" class="find_out border rounded p-2 px-3 text-center rounded-pill">Find out more</a>
+              
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+<section class="container-fluid p-5 mt-3 why_choose_us">
+    <h1>Why Choose Us</h1>
+    <div class="row d-flex">
+        <div class="col-md-6 order-1">
+            <div class="container  list_why pt-5">
+                <h3>At Healthy Dental Clinic, we offer </h3>
+                <ul>
+                
+                
+                    <li>"Quality Family, Cosmetic & More Dentistry"</li>
+                
+                    <li>"Relaxed Atmosphere & Patient-Centered Care"</li>
+                
+                    <li>"Advanced Technology & Emergency Services"</li>
+                
+                    <li>"Flexible Payment Options & Transparent Pricing"</li>
+                
+                    
+                
+                
+                </ul>
+                <p>Let us help you transform your smile!</p>
+            </div>
+        </div>
+        <div class="col-md-6 order-1">
+            <div class="container d-flex justify-content-center ">
+                
+                <img src="{% static 'why_choose_us.png' %}"  class="why_image" alt="image of smiling lady">
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container-fluid p-5 mt-1 family_images position-relative">
+    <div class="row d-flex">
+        <div class="col-md-6 order-1">
+            <div class="container ">
+                <img src="{% static 'family_dentist.jpeg' %}"  class="family_img" alt="family with dentist">
+            </div>
+        </div>
+        <div class="col-md-6 order-2   position-absolute top-0 end-0">
+            <div class="container d-flex justify-content-center ">
+                
+                <img src="{% static 'kids_brush.jpg' %}"  class="kid_img" alt="kid brushing">
+            </div>
+        </div>
+    </div>
+</div>
+<section class="reviews container-fluid pb-4 pt-5 mt-3 mb-3 border ">
+    <h1>What our patient say </h1>
+    <div class="container-md p5 mt-3 d-flex flex-wrap gap-5 justify-content-center border ">
+        <div class="card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
+            
+            <div class="card-body m-3">
+              <h5 class="card-title ">Toomie Lee</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h6>
+              <p class="card-text ">incorporates a broad range of diseases and disorders of the oral and maxillofacial region.</p>
+              
+              
+            </div>
+        </div>
+
+        <div class="card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
+            
+            <div class="card-body m-3">
+              <h5 class="card-title ">Toomie Lee</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h6>
+              <p class="card-text ">Your smile is the first impression that others have of you, making sense that you would want it bright and healthy.</p>
+              
+              
+            </div>
+        </div>
+        <div class="card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
+            
+            <div class="card-body m-3">
+              <h5 class="card-title ">Toomie Lee</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h6>
+              <p class="card-text ">We offer fillings, crowns, bridges and implants as common restorative options to bring back your smile.</p>
+              
+              
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+<div class="footer container-fluid pb-4 pt-5 mt-3 mb-3 border ">
+    
+    <div class="container-md p5 mt-3 d-flex flex-wrap  justify-content-center border ">
+       
+
+        <div class="card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
+            
+            <div class="card-body m-3">
+              <h5 class="card-title ">Toomie Lee</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h6>
+              <p class="card-text ">Your smile is the first impression that others have of you, making sense that you would want it bright and healthy.</p>
+              
+              
+            </div>
+        </div>
+        <div class="card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
+            
+            <div class="card-body m-3">
+              <h5 class="card-title ">Toomie Lee</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h6>
+              <p class="card-text ">We offer fillings, crowns, bridges and implants as common restorative options to bring back your smile.</p>
+              
+              
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+
 
 {% endblock %}

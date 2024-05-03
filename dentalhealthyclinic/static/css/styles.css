@@ -1,3 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    border: 1px solid red;
+    background-color: rgba(229, 240, 242, 1);
+}
+section h1{
+    color:rgba(0, 109, 159, 1);
+}
 
 .navbar-nav .nav-link {
     line-height: 140px; /* Match the line-height with the navbar height */
@@ -23,7 +36,107 @@
     
     
 }
-/* end nav style */
+
+
+
+/* end nav style ------------------ */
+.current_offers{
+    background-color: rgba(229, 240, 242, 1);
+}
+
+.card .card-title{
+    font-size: 2em;
+}
+.current_offers .card .card-text{
+    font-weight: bold;
+}
+.card .join_now{
+    font-weight: 700;
+    background-color: rgb(38, 94, 115);
+    text-decoration: none;
+    color:white;
+}
+
+/* services ..............*/
+.card-img-top{
+    width: 118px;
+    height: 120px;
+
+}
+
+.denteistry_services .card{
+padding: 0.2em;
+border-radius:3em !important;
+ background-color: rgb(30, 88, 100);
+ color: azure;
+ padding-left: 0.1em !important;
+ padding-right: 0.1em !important;
+ line-height: 1.8em;
+}
+
+.denteistry_services .card-title{
+    font-size: 1.4em;
+    
+}
+.denteistry_services .find_out{
+    background-color: aliceblue;
+    color:rgb(21, 70, 80);
+    text-decoration: none;
+    font-weight: 700;
+
+}
+
+/* why choose us */
+.list_why{
+    line-height: 3.8em;
+    padding-left: 2em;
+    font-weight: 600;
+    font-size: large;
+}
+.why_image{
+    width: 386px;
+}
+
+.kid_img,.family_img{
+    border-radius: 3em;
+    width: 470px;
+    height: 260px;
+}
+
+
+/* reviews -------- */
+.reviews{
+    display: flex;
+}
+
+.card-subtitle i{
+    color:rgb(236, 236, 12);
+    background-color: rgb(15, 184, 58);
+    padding: 0.4em;
+
+}
+
+/* Contact Info call us:020365558489 email:info@hdc.co.uk address:96 Robert St, London NW1 3QP */
+
+.footer{
+    background-image: url('footer_bg_image.png')
+}
+.footer .container-md{
+    gap:18em;
+}
+.footer .card{
+    
+background-color: blue;
+
+
+}
+
+
+
+
+
+
+
 @media screen and (max-width: 650px) {
 
     .desktop_logo{
@@ -53,6 +166,42 @@
     .container{
         flex-direction: column;
     }
+/* dentistry services -------------------------- */
+    .denteistry_services .card{
+        width: 22rem !important;
+        padding: 0.2em;
+        border-radius:3em !important;
+         background-color: rgb(30, 88, 100);
+         color: azure;
+         padding-top: 0.6em;
+         padding-bottom: 0.6em;
+         line-height: 1.8em;
+        }
+    
+        .denteistry_services .card-title{
+            font-size: 1.6em;
+            
+        }
+
+.why_image{
+    width: 286px;
+}
+
+
+        .position-absolute{
+            position: relative !important;
+        }
+
+
+        .kid_img,.family_img{
+            border-radius: 3em;
+            width: 300px;
+            height: 190px;
+        }
+/* reviews ---------------- */
+        .reviews{
+            flex-direction: column;
+        }
     
 }
 
