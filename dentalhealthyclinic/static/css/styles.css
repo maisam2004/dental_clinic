@@ -13,10 +13,13 @@ body{
 section h1{
     color:rgba(0, 109, 159, 1);
 }
+section h2:not(:first-of-type) {
+    color:rgba(0, 109, 159, 1);
+}
 
 span a{
     text-decoration: none;
-    
+
 }
 
 .navbar-nav .nav-link {
@@ -27,7 +30,7 @@ span a{
 }
 .desktop_logo{
     width: 16.5em;
-    padding-bottom: 2rem;
+    /* padding-bottom: 2rem; */
     padding-left: 2rem;
     padding-right: 2rem;
 }
@@ -443,5 +446,13 @@ footer img{
         left: 0;
         margin-top: -5em;
     }
+
+   
     
+}
+@media screen and (min-width: 1000px) and (max-width: 1400px){
+    .footer .container-md {
+        gap: 7em;
+    }
+
 }
