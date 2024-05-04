@@ -106,6 +106,59 @@
     {% block content%}
 
     {% endblock %}
+    {% block footer%}
+    <div class="footer container-fluid pb-4 pt-5 mt-3  position-relative d-md-flex align-items-end">
+    
+        <img src="{% static 'logo1.png' %}"  class="footer_logo " alt="company logo">
+        <div class="container-md p5 mt-3 d-flex flex-wrap  justify-content-center   ">
+           
+    
+            <div class="card    position-relative rounded-4 d-inline-block" style="width:18rem;">
+                
+                <div class="card-header">
+                    Contact Info 
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">call us:020365558489</li>
+                    <li class="list-group-item">email:info@hdc.co.uk</li>
+                    <li class="list-group-item">address:96 Robert St, London NW1 3QP
+                    </li>
+                  </ul>
+            </div>
+            <div class="card   position-relative rounded-4 d-inline-block" style="width:18rem;">
+                
+                <div class="card-header">
+                    Contact Info 
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Monday: 8:00am - 4:00pm</li>
+                    <li class="list-group-item">Tuesday: 8:00am - 4:00pm</li>
+                    <li class="list-group-item">Wednesday: 8:00am - 4:00pm</li>
+                    <li class="list-group-item">Thursday: 8:00am - 4:00pm</li>
+                    <li class="list-group-item">Friday:  8:00am - 4:00pm</li>
+                    <li class="list-group-item">Saturday: 9:30am - 3:00pm</li>
+                    <li class="list-group-item">Sunday: Closed</li>
+                  </ul>
+            </div>
+            <div class="d-none d-md-block position-absolute" style="width: 100%;">
+                <div class="card-body">
+                </div>
+              </div>
+    
+    
+        </div>
+    
+    </div>
+    <footer class="main_footer d-flex p-3">
+    
+    <img src="{% static 'quality.png' %}"  class="companies" alt="company quality">
+    <img src="{% static 'bos.svg' %}"  class="companies" alt="company bos">
+    <img src="{% static 'invisalign-logo-png.png' %}"  class="companies " alt="company invisilign">
+    <img src="{% static 'gdc-logo-white.png' %}"  class="companies" alt="company dental council">
+    
+    </footer>
+    
+    {% endblock %}
 
     {% block 'extrajs' %}
     {% endblock %}
