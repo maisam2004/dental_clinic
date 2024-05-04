@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     ##custome apps 
     'core',
     'appointments',
+    'contact'
 
 ]
 

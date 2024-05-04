@@ -219,6 +219,23 @@ footer img{
 }
 
 
+/* contact page  ============*/
+.contact h1{
+    color: #706d6a;
+}
+    
+.contact p{
+    color: #443c3c;
+}
+
+form{
+    padding: 2em;
+    border:1px solid grey;
+}
+.form-group label{
+    padding: 0.4em;
+
+}
 
 
 
