@@ -152,7 +152,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']#http://yourdomain.com/static/css/styles.css
 
 MEDIA_URL = '/media/'
-MEDIAFILES_ROOT = [BASE_DIR/'media'] #http://yourdomain.com/media/profile_pic.jpg
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #MEDIAFILES_ROOT = os.path.join(BASE_DIR,'media')
 

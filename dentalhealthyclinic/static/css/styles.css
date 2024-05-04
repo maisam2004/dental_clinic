@@ -236,8 +236,17 @@ form{
     padding: 0.4em;
 
 }
-
-
+/* products page ---------- */
+.products .overlay{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+}
 
 
 @media screen and (max-width: 650px) {
