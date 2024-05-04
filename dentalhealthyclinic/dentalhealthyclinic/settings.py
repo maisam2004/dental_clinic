@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     ##custome apps 
     'core',
     'appointments',
-    'contact'
+    'contact',
+    'products',
 
 ]
 
@@ -148,7 +149,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [BASE_DIR / 'static']#http://yourdomain.com/static/css/styles.css
+
+MEDIA_URL = '/media/'
+MEDIAFILES_ROOT = [BASE_DIR/'media'] #http://yourdomain.com/media/profile_pic.jpg
+
+#MEDIAFILES_ROOT = os.path.join(BASE_DIR,'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
