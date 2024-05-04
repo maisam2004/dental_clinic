@@ -14,6 +14,11 @@ section h1{
     color:rgba(0, 109, 159, 1);
 }
 
+span a{
+    text-decoration: none;
+    
+}
+
 .navbar-nav .nav-link {
     line-height: 140px; /* Match the line-height with the navbar height */
     margin-left: 1.3em;
@@ -42,6 +47,27 @@ section h1{
 
 
 /* end nav style ------------------ */
+main h1{
+    color: #153e49;
+}
+main h4{
+    color: rgba(71, 7, 250, 1);
+}
+
+
+a.btn{
+    background-color: rgb(18, 88, 113);
+    color: white;
+    padding: 10px 20px;
+    
+
+}
+a.btn:hover {
+    background-color: #c8ccd0; /* Example color - adjust as needed */
+    color:rgb(18, 88, 113);
+    font-weight: 600;
+}
+
 .current_offers{
     background-color: rgba(229, 240, 242, 1);
 }
@@ -350,6 +376,8 @@ footer img{
     }
     /* end nav style */
 
+    
+
     .family_images .position-absolute {
         top:0;
         right:2em;
@@ -387,6 +415,10 @@ footer img{
 }
 
 @media screen and (min-width: 1000px) {
+    main .container-sm:first-child {
+        padding: 5rem !important;
+    }
+
     .why_choose_us .row{
        background-color: #9ccfcfad
     }
