@@ -59,8 +59,9 @@
                             Dentistry Services
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Service 1</a></li>
-                            <li><a class="dropdown-item" href="#">Service 2</a></li>
+                            <li><a class="dropdown-item" href="{% url 'products'%}?category=activewear,essencial">Activewear and Essencial</a></li>
+                            <li><a class="dropdown-item" href="{% url 'products'%}?category=jeans">Jeans</a></li>
+                            <li><a class="dropdown-item" href="{% url 'products'%}?category=shirts">Shirs</a></li>
                             <li><a class="dropdown-item" href="#">Service 3</a></li>
                         </ul>
                     </li>
