@@ -247,6 +247,11 @@ form{
     background-color: #ffffff;
     z-index: -1;
 }
+.products .dropdown-item.active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #0d6efd;
+  }
 
 
 @media screen and (max-width: 650px) {

@@ -106,13 +106,50 @@
                     
                 <!-- Search bar HTML -->
                 <lable for='searchbar'> 
-                    <input type="text" name="searchbar" class="w-75 rounded-pill" id="searchbar">
+                    <input type="text" name="searchbar" class="w-50 rounded-pill" id="searchbar">
                     <input type="submit" class=" rounded-pill p-2" value="search">
                 </lable>
                 </form>
                 
             </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <h4>Sort By:</h4>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            {% if sort_by == 'default' %}
+                                Popularity
+                            {% elif sort_by == 'name_asc' %}
+                                Name (A-Z)
+                            {% elif sort_by == 'name_desc' %}
+                                Name (Z-A)
+                            {% elif sort_by == 'price_asc' %}
+                                Price (Low to High)
+                            {% elif sort_by == 'price_desc' %}
+                                Price (High to Low)
+                            {% else %}
+                                Sort By
+                            {% endif %}
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item {% if sort_by == 'default' %}active{% endif %}" href="?sort_by=default">Default</a></li>
+                            <li><a class="dropdown-item {% if sort_by == 'name_asc' %}active{% endif %}" href="?sort_by=name_asc">Name (A-Z)</a></li>
+                            <li><a class="dropdown-item {% if sort_by == 'name_desc' %}active{% endif %}" href="?sort_by=name_desc">Name (Z-A)</a></li>
+                            <li><a class="dropdown-item {% if sort_by == 'price_asc' %}active{% endif %}" href="?sort_by=price_asc">Price (Low to High)</a></li>
+                            <li><a class="dropdown-item {% if sort_by == 'price_desc' %}active{% endif %}" href="?sort_by=price_desc">Price (High to Low)</a></li>
+                            <li><a class="dropdown-item {% if sort_by == 'rating' %}active{% endif %}" href="?sort_by=rating">Rating (High to Low rate)</a></li>
+                            <li><a class="dropdown-item {% if sort_by == 'category' %}active{% endif %}" href="?sort_by=category">Category </a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
             
+            <!-- Your existing product listing code -->
+            
+            <!-- Your existing product listing code -->
         </div>
         {% endif %}
     
@@ -125,6 +162,11 @@
     {% block content%}
 
     {% endblock %}
+    <button type="button" class="btn btn-outline-info ">
+        <a class="btt-link">
+        <i class="fa-solid fa-arrow-up"></i>
+        </a>
+    </button>
     {% block footer%}
     <div class="footer container-fluid pb-4 pt-5 mt-3  position-relative d-md-flex align-items-end">
     
@@ -178,8 +220,9 @@
     </footer>
     
     {% endblock %}
-
+    
     {% block 'extrajs' %}
     {% endblock %}
+
 </body>
 </html>
