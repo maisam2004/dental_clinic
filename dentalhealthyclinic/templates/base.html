@@ -94,8 +94,26 @@
                 </ul>
                 
             </div>
-        </div>
+        </div>  
+        
     </nav>
+    {% if request.resolver_match.url_name == 'products' %}
+        <div class="container w-50 offset-4">
+            <div class="row">
+               
+                <form class="form-inline" method="GET" action="{% url 'products' %}">
+                    
+                <!-- Search bar HTML -->
+                <lable for='searchbar'> 
+                    <input type="text" name="searchbar" class="w-75 rounded-pill" id="searchbar">
+                    <input type="submit" class=" rounded-pill p-2" value="search">
+                </lable>
+                </form>
+                
+            </div>
+            
+        </div>
+        {% endif %}
     
     {% endblock %}
 
