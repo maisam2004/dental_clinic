@@ -16,15 +16,26 @@
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="card h-100 border-0">
-                        <img src="{{ product.image.url }}" class="card-img-top" alt="...">
+                        {% if product.image %}
+                        <a href="">
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{product.name}}.">
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{product.name}}">
+                            </a>
+                            {% endif %}  
                         <div class="card-body">
-                            <h5 class="card-title">{{product.name}}</h5>
-                            <p class="card-text">{{product.desctiption}}</p>
+                            <h6 class="card-title">{{product.name}}</h6>
+                            
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
+                            <li class="list-group-item">{{product.price}}</li>
+                            {% if product.rating %}
+                            <li class="list-group-item">{{ product.rating }}</li>
+                            {% else %}
+                            <li class="list-group-item">NO Rating </li>
+                            {% endif %}
                         </ul>
                         <div class="card-body">
                             <a href="#" class="card-link">Card link</a>
@@ -35,6 +46,24 @@
                     </div>
                     
                 </div>
+                <div class="col-12 d-sm-none">
+                    <hr>
+                </div>
+                {% if forloop.counter|divisibleby:2 %}
+                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-4">
+                        <hr>
+                    </div>
+                    {% endif %}
+                {% if forloop.counter|divisibleby:3 %}
+                    <div class="col-12 d-none  d-lg-block d-xl-none mb-4">
+                        <hr>
+                    </div>
+                    {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
+                    <div class="col-12 d-none d-xl-block mb-4">
+                        <hr>
+                    </div>
+                {% endif %}
 
                 {% endfor %}
 
@@ -44,10 +73,7 @@
     </div>
 
 </div>
-{% for product in products %}
-<li>{{product.category}}<li>
 
-{% endfor %}
 
 
 {% endblock %}
