@@ -69,7 +69,7 @@
                         <a class="nav-link" href="#">Fees</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'products' %}">Shop</a>
+                        <a class="nav-link" href="{% url 'products' %}">Dental Store</a>
                     </li>
                     <li class="nav-item d-none d-md-block">
                         <a class="navbar-brand mx-auto" href="#">
@@ -80,10 +80,13 @@
                         <a class="nav-link" href="#">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link d-sm-block d-md-none d-lg-block" href="#">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Basket</a>
                     </li>
                     <li class="nav-item d-block d-sm-none">
                         <div class="z-3 position-relative p-1 rounded-3"><span><a class="text-white " href="tel:020365558489"><i class="fa-solid fa-square-phone"></i>020365558489</a></span></div>
@@ -99,57 +102,33 @@
         
     </nav>
     {% if request.resolver_match.url_name == 'products' %}
-        <div class="container w-50 offset-4">
-            <div class="row">
+        <div class="container-fluid">
+            <div class="row ">
                
-                <form class="form-inline" method="GET" action="{% url 'products' %}">
+                <form class="form-inline d-flex justify-content-center position-relative" method="GET" action="{% url 'products' %}">
                     
                 <!-- Search bar HTML -->
-                <lable for='searchbar'> 
-                    <input type="text" name="searchbar" class="w-50 rounded-pill" id="searchbar">
-                    <input type="submit" class=" rounded-pill p-2" value="search">
-                </lable>
+                <lable for='searchbar'> </lable>
+                    <input type="text" name="searchbar" class=" p-1 w-50 rounded-pill" id="searchbar">
+                    <!-- <input type="submit" class=" rounded-pill p-1" value="&#xf014"> -->
+                    <button type="submit" class="btn search_icon position-absolute  ">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
                 </form>
                 
             </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <h4>Sort By:</h4>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            {% if sort_by == 'default' %}
-                                Popularity
-                            {% elif sort_by == 'name_asc' %}
-                                Name (A-Z)
-                            {% elif sort_by == 'name_desc' %}
-                                Name (Z-A)
-                            {% elif sort_by == 'price_asc' %}
-                                Price (Low to High)
-                            {% elif sort_by == 'price_desc' %}
-                                Price (High to Low)
-                            {% else %}
-                                Sort By
-                            {% endif %}
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {% if sort_by == 'default' %}active{% endif %}" href="?sort_by=default">Default</a></li>
-                            <li><a class="dropdown-item {% if sort_by == 'name_asc' %}active{% endif %}" href="?sort_by=name_asc">Name (A-Z)</a></li>
-                            <li><a class="dropdown-item {% if sort_by == 'name_desc' %}active{% endif %}" href="?sort_by=name_desc">Name (Z-A)</a></li>
-                            <li><a class="dropdown-item {% if sort_by == 'price_asc' %}active{% endif %}" href="?sort_by=price_asc">Price (Low to High)</a></li>
-                            <li><a class="dropdown-item {% if sort_by == 'price_desc' %}active{% endif %}" href="?sort_by=price_desc">Price (High to Low)</a></li>
-                            <li><a class="dropdown-item {% if sort_by == 'rating' %}active{% endif %}" href="?sort_by=rating">Rating (High to Low rate)</a></li>
-                            <li><a class="dropdown-item {% if sort_by == 'category' %}active{% endif %}" href="?sort_by=category">Category </a></li>
-
-
+            <div class="row category-row d-none d-md-block">
+                <div class="container  ">
+                    <ul class="category-list d-flex justify-content-center ">
+                        <li><a class="category-link px-3 " >Categories : </a></li>
+                        <li><a class="category-link px-5 " href="{% url 'products'%}?category=activewear,essencial">Activewear and Essencial</a></li>
+                        <li><a class="category-link px-5" href="{% url 'products'%}?category=jeans">Jeans</a></li>
+                        <li><a class="category-link px-5" href="{% url 'products'%}?category=shirts">Shirts</a></li>
                         </ul>
-                    </div>
                 </div>
             </div>
-            
-            <!-- Your existing product listing code -->
-            
-            <!-- Your existing product listing code -->
+
         </div>
         {% endif %}
     

@@ -10,7 +10,7 @@ def all_products(request):
     query=None
     category = None
     categories=None
-    #sort_by = request.GET.get('sort_by', 'default')
+    sort_by = request.GET.get('sort_by', 'default')
     if request.GET:
         if 'category' in request.GET: #check if there are category word in request
             rcategories = request.GET['category'].split(',')
@@ -26,21 +26,6 @@ def all_products(request):
                 queries = Q(name__icontains=query) | Q(description__icontains=query)
                 products=products.filter(queries)
 
-        """
-        if sort_by == 'name_asc':
-            products = products.order_by(Lower('name'))
-        elif sort_by == 'name_desc':
-            products = products.order_by(Lower('name').desc())
-        elif sort_by == 'price_asc':
-            products = products.order_by('price')
-        elif sort_by == 'price_desc':
-            products = products.order_by('-price')
-        elif sort_by =='rating':
-            products = products.order_by('-rating')
-        elif sort_by =='category':
-            products = products.order_by('category') 
-        
-        """ 
         sort_mapping = {
                 'default': 'pk',  # Default could be by primary key or any other field
                 'name_asc': Lower('name'),
@@ -51,7 +36,7 @@ def all_products(request):
                 'category': 'category',
             }
         
-        sort_by = request.GET.get('sort_by', 'default')
+        
         products = products.order_by(sort_mapping.get(sort_by))  
     context = {
         'products':products,'search_term':query,'currnet_category':categories,'sort_by': sort_by

@@ -23,13 +23,16 @@ span a{
 }
 
 .navbar-nav .nav-link {
-    line-height: 140px; /* Match the line-height with the navbar height */
-    margin-left: 1.3em;
+    line-height: 80px; /* Match the line-height with the navbar height */
+    margin-left: 0.3em;
     /* margin-right: 1.3em; */
+
+    font-weight: 800;
+    font-size: smaller;
     
 }
 .desktop_logo{
-    width: 16.5em;
+    width: 12.5em;
     /* padding-bottom: 2rem; */
     padding-left: 2rem;
     padding-right: 2rem;
@@ -237,6 +240,9 @@ form{
 
 }
 /* products page ---------- */
+.products form{
+    padding:1em;
+}
 .products .overlay{
     position: fixed;
     top:0;
@@ -247,12 +253,40 @@ form{
     background-color: #ffffff;
     z-index: -1;
 }
-.products .dropdown-item.active {
+.products .dropdown-item.active { /* sor by */
     color: #fff;
     text-decoration: none;
     background-color: #0d6efd;
   }
 
+
+  .products .category-row {
+    background-color: #154778;
+}
+.products .category-list li{
+    list-style-type: none;
+    text-decoration: none;
+    
+    border-right: 2px solid wheat; 
+    
+}
+.products .category-list li a{
+    
+    text-decoration: none;
+    color: #fafafa;
+}
+
+.products .search_icon{
+    right:27%;
+    bottom: 20%;
+    font-size: larger;
+}
+.products .search_icon:hover{
+    color:rgb(40, 39, 39);
+    background-color: rgba(125, 125, 132, 0.479);
+    border-radius: 50%;
+    
+}
 
 @media screen and (max-width: 650px) {
 
@@ -375,13 +409,33 @@ footer img{
     /* width: 3.4em; */
     height: 2.2em;
 }
+
+.products form  {
+    padding:1em;
     
+}
+
+.products #searchbar{
+    width: 80% !important;
+}
+    
+.products .search_icon{
+    right:18%;
+    bottom: 1%;
+    font-size: larger;
+}
+
+
+
+
 }
 
 @media screen and (min-width: 760px) and (max-width: 1000px){
 
+
+
     .desktop_logo{
-        width: 11em;
+        width: 10em;
         padding-bottom: 1rem;
     padding-left: 0rem;
     padding-right: 0rem;
@@ -389,8 +443,8 @@ footer img{
     /* Add your mobile-specific styles here */
     
     .navbar-nav .nav-link {
-        line-height: 140px;
-        margin-left: 0.4em;
+        line-height: 80px;
+        margin-left: 0em;
         /* margin-right: 1.3em; */
     }
     .dropdown-menu[data-bs-popper] {
@@ -478,6 +532,8 @@ footer img{
         margin-top: -5em;
     }
 
+
+   
    
     
 }

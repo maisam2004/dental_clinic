@@ -4,6 +4,45 @@
 <div class="overlay "></div>
 <div class="container-fluid">
     <div class="row">
+        <div class="col-12">
+            <h4>Sort By:</h4>
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    {% if sort_by == 'default' %}
+                        Default
+                    {% elif sort_by == 'name_asc' %}
+                        Name (A-Z)
+                    {% elif sort_by == 'name_desc' %}
+                        Name (Z-A)
+                    {% elif sort_by == 'price_asc' %}
+                        Price (Low to High)
+                    {% elif sort_by == 'price_desc' %}
+                        Price (High to Low)
+                    {% elif sort_by == 'category' %}
+                        Rating (High to Low)
+                    {% elif sort_by == 'category' %}
+                        Category(High to Low)
+                    {% else %}
+                        Sort By
+                    {% endif %}
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item {% if sort_by == 'default' %}active{% endif %}" href="?sort_by=default">Default</a></li>
+                    <li><a class="dropdown-item {% if sort_by == 'name_asc' %}active{% endif %}" href="?sort_by=name_asc">Name (A-Z)</a></li>
+                    <li><a class="dropdown-item {% if sort_by == 'name_desc' %}active{% endif %}" href="?sort_by=name_desc">Name (Z-A)</a></li>
+                    <li><a class="dropdown-item {% if sort_by == 'price_asc' %}active{% endif %}" href="?sort_by=price_asc">Price (Low to High)</a></li>
+                    <li><a class="dropdown-item {% if sort_by == 'price_desc' %}active{% endif %}" href="?sort_by=price_desc">Price (High to Low)</a></li>
+                    <li><a class="dropdown-item {% if sort_by == 'rating' %}active{% endif %}" href="?sort_by=rating">Rating (High to Low rate)</a></li>
+                    <li><a class="dropdown-item {% if sort_by == 'category' %}active{% endif %}" href="?sort_by=category">Category </a></li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
         
     </div>
     <div class="row">
