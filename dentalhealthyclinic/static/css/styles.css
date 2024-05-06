@@ -269,7 +269,7 @@ form{
     list-style-type: none;
     text-decoration: none;
     
-    border-right: 2px solid wheat; 
+    border-right: 2px solid rgb(255, 255, 255); 
     
 }
 .products .category-list li a{
