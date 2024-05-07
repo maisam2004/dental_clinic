@@ -20,3 +20,22 @@ def add_to_basket(request, item_id):
 
     
     return redirect(redirect_url)
+
+
+""" def update_basket(request):
+    if request.method == 'POST':
+        item_id = request.POST.get('item_id')
+        action = request.POST.get('action')
+        bag = request.session.get('bag', {})
+
+        if action == 'remove':
+            if item_id in bag:
+                del bag[item_id]
+        elif action == 'update':
+            quantity = int(request.POST.get('quantity'))
+            if item_id in bag:
+                bag[item_id] = quantity
+
+        request.session['bag'] = bag
+
+    return redirect('view_basket') """
