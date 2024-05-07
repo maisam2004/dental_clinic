@@ -87,7 +87,23 @@
                     </li>
                     <li class="nav-item d-none d-md-block">
                         <a class="nav-link " href="{% url 'view_basket' %}">Basket</a>
+                        
                     </li>
+                    <li class="list-inline-item">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        $0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    
                     <li class="nav-item d-block d-sm-none">
                         <div class="z-3 position-relative p-1 rounded-3"><span><a class="text-white " href="tel:020365558489"><i class="fa-solid fa-square-phone"></i>020365558489</a></span></div>
                     </li>
