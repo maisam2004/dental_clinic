@@ -305,6 +305,37 @@ form{
 .remove-item {
     cursor: pointer;
 }
+
+/* general page  */
+
+/* General container adjustments */
+.container {
+    width: 80%; /* Adjust container's width as needed */
+    margin: 0 auto; /* Center the carousel horizontally */
+  }
+  
+  /* Image positioning */
+  .carousel-inner .carousel-item img {
+    width: 60%;     /* Image takes 60% width */
+    float: left;    /* Push image to the left */
+    height: auto;   /* Maintain aspect ratio */
+    border-radius: 20em;
+  }
+  
+  /* Caption styling */
+  .carousel-caption {
+    /* width: 60%;
+    height: 30%;           /* Caption takes 30% width */
+   /*  right: 70%;          Place caption on the right, with 10% space from the edge */
+    bottom: 20px;         /* Adjust bottom position if needed */
+    background-color: rgba(255, 255, 255, 0.8); /* White background with opacity */
+    padding: 15px;        /* Add padding around the caption text */
+    border-radius: 5px;   /* Optional: Rounded corners */
+
+    width: 50%;
+    left: 45%;
+  }
+  
 @media screen and (max-width: 650px) {
 
     .desktop_logo{
@@ -460,6 +491,10 @@ footer img{
     color:black !important;
     text-decoration: none;
     width: 10%;
+}
+
+.general .carousel-item{
+    left:10%;
 }
 
 
