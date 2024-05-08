@@ -319,7 +319,7 @@ form{
     width: 60%;     /* Image takes 60% width */
     float: left;    /* Push image to the left */
     height: auto;   /* Maintain aspect ratio */
-    border-radius: 20em;
+    /* border-radius: 20em; */
   }
   
   /* Caption styling */
@@ -334,6 +334,56 @@ form{
 
     width: 50%;
     left: 45%;
+  }
+
+  .general{background-color: var(--bs-primary-bg-subtle) !important;}
+  /* .general
+
+  .general .section {
+    padding: 50px 0;
+  }
+  .image-text-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .image-text-block img {
+    width: 45%;
+    border-radius: 10px;
+  }
+  .image-text-block .content {
+    width: 50%;
+  }
+  @media (max-width: 768px) {
+    .image-text-block {
+      flex-direction: column;
+    }
+    .image-text-block img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .image-text-block .content {
+      width: 100%;
+    }
+  } */
+
+  .general .fee-table {
+    width: 50%;   /* Adjust table width as needed */
+    margin: 20px auto; /* Center the table */
+    border-collapse: collapse; 
+    background-color: #92d7cd;
+  }
+  
+  .general .fee-table th, .fee-table td {
+    border: 2px solid #e7e7e7;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .general .discount-note {
+    text-align: center;
+    font-weight: 700;
   }
   
 @media screen and (max-width: 650px) {
@@ -497,6 +547,24 @@ footer img{
     left:10%;
 }
 
+
+
+.general .fee-table {
+    width: 100%;   /* Adjust table width as needed */
+    margin: 10px auto; /* Center the table */
+    border-collapse: collapse; 
+  }
+  
+  .general .fee-table th, .fee-table td {
+    border: 2px solid #d6d6d6;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .general .discount-note {
+    text-align: center;
+    font-weight: 600;
+  }
 
 
 }
