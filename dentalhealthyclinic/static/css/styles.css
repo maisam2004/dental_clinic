@@ -336,52 +336,49 @@ form{
     left: 45%;
   }
 
-  .general{background-color: var(--bs-primary-bg-subtle) !important;}
-  /* .general
-
-  .general .section {
-    padding: 50px 0;
-  }
-  .image-text-block {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .image-text-block img {
-    width: 45%;
-    border-radius: 10px;
-  }
-  .image-text-block .content {
-    width: 50%;
-  }
-  @media (max-width: 768px) {
-    .image-text-block {
-      flex-direction: column;
-    }
-    .image-text-block img {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-    .image-text-block .content {
-      width: 100%;
-    }
-  } */
+  .general,.cosmetic {background-color: var(--bs-primary-bg-subtle) !important;}
+  
 
   .general .fee-table {
     width: 50%;   /* Adjust table width as needed */
     margin: 20px auto; /* Center the table */
     border-collapse: collapse; 
-    background-color: #92d7cd;
+    
+    
   }
+
   
   .general .fee-table th, .fee-table td {
-    border: 2px solid #e7e7e7;
+    /* border: 1px solid #373b41; */
     padding: 8px;
     text-align: left;
+    
   }
   
   .general .discount-note {
+    text-align: center;
+    font-weight: 700;
+  }
+  .cosmetic,.restoractive .carousel-item img{ /* image in crousel  */
+    aspect-ratio: 2/2;
+  }
+  .reason_cosmetic{
+    list-style-type:none ;
+  }
+   .fee-table {
+    width: 50%;   /* Adjust table width as needed */
+    margin: 20px auto; /* Center the table */
+    border-collapse: collapse; 
+ 
+  }
+  .fee-table th, .fee-table td {
+    /* border: 1px solid #373b41; */
+    padding: 8px;
+    text-align: left;
+    
+  }
+  
+   .discount-note {
     text-align: center;
     font-weight: 700;
   }
@@ -515,9 +512,6 @@ footer img{
     width: 100%;
     
 }
-.products form .form-inline{
-    
-}
 
 .products #searchbar{
     width: 80% !important;
@@ -543,27 +537,33 @@ footer img{
     width: 10%;
 }
 
-.general .carousel-item{
+.general2 .carousel-item{
     left:10%;
 }
-
-
-
 .general .fee-table {
+    width: 100%; }
+
+
+ .fee-table {
     width: 100%;   /* Adjust table width as needed */
     margin: 10px auto; /* Center the table */
     border-collapse: collapse; 
   }
   
-  .general .fee-table th, .fee-table td {
+  .fee-table th, .fee-table td {
     border: 2px solid #d6d6d6;
     padding: 8px;
     text-align: left;
   }
   
-  .general .discount-note {
+  .discount-note {
     text-align: center;
     font-weight: 600;
+  }
+ 
+
+  .cosmetic .carousel-item img{ /* image in crousel  */
+    aspect-ratio: 2/2;
   }
 
 
@@ -647,6 +647,15 @@ footer img{
     .products form .form-inline{
         width: 60% !important;
     }
+
+    .general .fee-table {
+        width: 70%;
+    }
+
+    .reasons{
+        width: 60%;
+    margin: auto;
+      }
     
     
 }
@@ -682,7 +691,10 @@ footer img{
     }
 
 
-   
+    .cosmetic .reasons{
+        width: 60%;
+    margin: auto;
+      }
    
     
 }

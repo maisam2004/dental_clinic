@@ -9,8 +9,8 @@ class GeneralView(TemplateView):
 
 
 class CosmeticView(TemplateView):
-    template_name = 'dservices/general.html'
+    template_name = 'dservices/cosmetic.html'
 
 
 class RestoractiveView(TemplateView):
-    template_name = 'dservices/general.html'
+    template_name = 'dservices/restoractive.html'
