@@ -1,4 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect,reverse
+from django.conf import settings
 from django.contrib import messages
 from .models import Product,Category
 from django.db.models import Q
@@ -39,7 +40,8 @@ def all_products(request):
         
         products = products.order_by(sort_mapping.get(sort_by))  
     context = {
-        'products':products,'search_term':query,'currnet_category':categories,'sort_by': sort_by
+        'products':products,'search_term':query,'currnet_category':categories,'sort_by': sort_by,'MEDIA_URL': settings.MEDIA_URL   
+
     }
     return render(request,'products/products.html',context)
 
@@ -48,7 +50,7 @@ def product_detail(request,product_id):
     product = get_object_or_404(Product,pk=product_id)
     context = {
         'product':product,
-        
+        'MEDIA_URL': settings.MEDIA_URL   
 
     }
     return render(request,'products/product_detail.html',context)
