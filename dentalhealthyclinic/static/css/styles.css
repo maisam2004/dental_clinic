@@ -382,6 +382,22 @@ form{
     text-align: center;
     font-weight: 700;
   }
+
+  /* toast ----- */
+
+  .message_container {
+    position: fixed;
+    top:10em;
+    right: 10em;
+    z-index: 100000;
+  }
+  .custom_toast{
+    overflow: visible;
+
+  }
+  .toast_capper{
+    height: 2px;
+  }
   
 @media screen and (max-width: 650px) {
 

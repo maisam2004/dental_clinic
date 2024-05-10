@@ -156,7 +156,18 @@
     
     {% endblock %}
 
+    {% if messages %}
+    <div class="message_container ">
+        {{messages}}
+
+        {% for message in messages %}
+        {% include 'includes/toast/toast_success.html' %}
+
+        {%  endfor %}
+    </div>
     
+    
+    {% endif %}
     
     <h6>base.html</h6>
     
@@ -227,7 +238,11 @@
         $('.btt-link').click(function(e){
             window.scrollTo(0,0)
         });
-    </script>
+    
+    $(document).ready(function() {
+        $('.toast').toast('show');
+    });
+</script>
     {% endblock %}
 
 </body>
