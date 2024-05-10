@@ -34,3 +34,16 @@ Gift Sets:
 
 Curated oral care sets (themed around whitening, travel, kids, etc.)
 Gift baskets combining oral hygiene products with healthy snacks or aromatherapy items.
+
+
+..............delivery left calculate
+
+{% if free_delivery_delta > 0 %} 
+    <p class="mb-1 text-danger">
+        You could get free delivery by spending just <strong>${{ free_delivery_delta|floatformat:2 }}</strong> more!
+    </p>
+{% else %}  
+    <p class="mb-1 text-success">
+        You qualify for free delivery!
+    </p>
+{% endif %} 
