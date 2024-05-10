@@ -62,7 +62,9 @@
                             <li><a class="dropdown-item" href="{% url 'products'%}?category=activewear,essencial">Activewear and Essencial</a></li>
                             <li><a class="dropdown-item" href="{% url 'products'%}?category=jeans">Jeans</a></li>
                             <li><a class="dropdown-item" href="{% url 'products'%}?category=shirts">Shirs</a></li>
-                            <li><a class="dropdown-item" href="{% url 'general'%}">Service 3</a></li>
+                            <li><a class="dropdown-item" href="{% url 'general'%}">General</a></li>
+                            <li><a class="dropdown-item" href="{% url 'cosmetic'%}">Cosmetic</a></li>
+                            <li><a class="dropdown-item" href="{% url 'restorative'%}">Restorative</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -136,12 +138,15 @@
         
             <div class="row category-row d-none d-md-block">
                 <div class="container  ">
-                    <ul class="category-list d-flex justify-content-center ">
-                        <li><a class="category-link px-3 " >Categories : </a></li>
-                        <li><a class="category-link px-5 " href="{% url 'products'%}?category=activewear,essencial">Activewear and Essencial</a></li>
-                        <li><a class="category-link px-5" href="{% url 'products'%}?category=jeans">Jeans</a></li>
-                        <li><a class="category-link px-5" href="{% url 'products'%}?category=shirts">Shirts</a></li>
-                        </ul>
+                    <ul class="category-list d-flex justify-content-center text-center">
+                        <li><a class="category-link px-2 bg-danger " >Categories : </a></li>
+                        <li><a class="category-link px-2  " href="{% url 'products'%}?category=dental_care">Dental Care</a></li>
+                        <li><a class="category-link px-2" href="{% url 'products'%}?category=oral_hygiene">Oral Hygiene</a></li>
+                        <li><a class="category-link px-2" href="{% url 'products'%}?category=health">Health</a></li>
+                        <li><a class="category-link px-2" href="{% url 'products'%}?category=dental_accessories">Dental Accessories</a></li>
+                        <li><a class="category-link px-2" href="{% url 'products'%}?category=professional_tools">Professional Tools</a></li>
+                        <li><a class="category-link px-2" href="{% url 'products'%}?category=gift_sets">Gift Sets</a></li>
+                    </ul>
                 </div>
             </div>
 
