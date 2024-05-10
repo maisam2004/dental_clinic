@@ -24,6 +24,7 @@ def view_basket(request):
         # ... other variables for your template (total, delivery, etc.)
     }
     print(bag_items)
+    print(request.session['bag'])
     return render(request, 'basket/basket.html', context) 
 
 
