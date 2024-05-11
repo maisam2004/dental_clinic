@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Order Confirmation</h2>
+
+  {% if order.payment_status == 'Paid' %}
+    <p>Thank you for your order! Your order number is {{ order.order_number }}.</p>
+    <p>A confirmation email has been sent to {{ order.email }}.</p>
+  {% else %}
+    <p>There was an issue processing your payment. Please try again.</p>
+  {% endif %}
+
+  <div>
+    <h3>Order Details</h3>
+    <p>Order Number: {{ order.order_number }}</p>
+    <p>Order Date: {{ order.created_at }}</p>
+    <p>Order Status: {{ order.status }}</p>
+    <p>Payment Status: {{ order.payment_status }}</p>
+    <p>Total Amount: ${{ order.grand_total }}</p>
+  </div>
+
+  <div>
+    <h3>Shipping Address</h3>
+    <p>{{ order.shipping_address.address }}</p>
+    <p>{{ order.shipping_address.address2 }}</p>
+    <p>{{ order.shipping_address.town_or_city }}, {{ order.shipping_address.county }}</p>
+    <p>{{ order.shipping_address.postcode }}</p>
+    <p>{{ order.shipping_address.country }}</p>
+    <p>Phone: {{ order.shipping_address.phone_number }}</p>
+  </div>
+
+  <div>
+    <h3>Order Items</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in order.lineitems.all %}
+          <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ item.price }}</td>
+            <td>${{ item.lineitem_total }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Order Total:</td>
+          <td>${{ order.grand_total }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+{% endblock %}

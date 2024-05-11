@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'products',
     'basket',
     'dservices',
+    'checkout',
 
 ]
 
@@ -80,8 +81,10 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'allauth.account.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'dentalhealthyclinic.urls'
