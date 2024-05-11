@@ -158,12 +158,20 @@
 
     {% if messages %}
     <div class="message_container ">
-        {{messages}}
-
         {% for message in messages %}
-        {% include 'includes/toast/toast_success.html' %}
+        {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toast/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toast/toast_warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toast/toast_success.html' %}
+                    {% else %}
+                        {% include 'includes/toast/toast_info.html' %}
+                    {% endif %}
+         {% endwith %}
 
-        {%  endfor %}
+        {% endfor %}
     </div>
     
     
@@ -239,9 +247,11 @@
             window.scrollTo(0,0)
         });
     
-    $(document).ready(function() {
-        $('.toast').toast('show');
-    });
+        $(document).ready(function() {
+            {% if messages %}
+                $('.toast').toast('show');
+            {% endif %}
+        });
 </script>
     {% endblock %}
 

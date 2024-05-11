@@ -37,6 +37,7 @@ def add_to_basket(request, item_id):
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
+        messages.success(request,f'Update quantity of  {product.name} in you basket')
     else:
         bag[item_id] = quantity
         messages.success(request,f'Added {product.name} to you bag')
