@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.views.generic import TemplateView,CreateView,FormView
 from django.shortcuts import redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from allauth.account.mixins import LoginRequiredMixin as AllAuthLoginRequiredMixin
+#from allauth.account.mixins import LoginRequiredMixin as AllAuthLoginRequiredMixin
+#from allauth.account.views import LoginRequiredMixin as AllAuthLoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import ShippingAddress, Order
 from .forms import ShippingAddressForm,PaymentMethodForm
@@ -15,7 +17,7 @@ class Checkout(TemplateView):
 
 
 
-class ShippingAddressView(AllAuthLoginRequiredMixin, CreateView):
+class ShippingAddressView(LoginRequiredMixin, CreateView):
     model = ShippingAddress
     form_class = ShippingAddressForm
     template_name = 'checkout/shipping_address.html'

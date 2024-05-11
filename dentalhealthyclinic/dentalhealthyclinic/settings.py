@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     # Optional -- requires install using `django-allauth[socialacocunt]`.
     'allauth.socialaccount',
     'bootstrap_datepicker_plus',
+
+    'django.contrib.humanize',
+    'allauth.usersessions',
     ##custome apps 
     'core',
     'appointments',
@@ -58,7 +61,7 @@ INSTALLED_APPS = [
     'products',
     'basket',
     'dservices',
-    'checkout',
+    
 
 ]
 
@@ -75,15 +78,29 @@ LOGIN_URL = '/accounts/login/'
 #LOGIN_REDIRECT_URL = '/'# after login redirect to homepage
 LOGIN_REDIRECT_URL = '/'
 
+AUTHENTICATION_BACKENDS = [
+    
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+    
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'allauth.account.middleware.AuthenticationMiddleware',
+    #'allauth.account.middleware.AuthenticationMiddleware',
+    'allauth.usersessions.middleware.UserSessionsMiddleware',
+
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
+
     
 ]
 
