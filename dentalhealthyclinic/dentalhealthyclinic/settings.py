@@ -14,6 +14,7 @@ from pathlib import Path
 from decouple import config
 
 SECRET_KEY = config("SECRET_KEY")
+PUBLISHER_KEY = config('PUBLISHER_KEY')
 
 
 
