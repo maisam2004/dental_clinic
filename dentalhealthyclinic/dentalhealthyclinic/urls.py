@@ -27,7 +27,7 @@ urlpatterns = [
     path('products/', include('products.urls')),
     path('basket/', include('basket.urls')),
     path('dservices/', include('dservices.urls')),
-    #path('checkout/', include('checkout.urls')),
+    path('pay/', include('pay.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
