@@ -61,8 +61,7 @@ INSTALLED_APPS = [
     'products',
     'basket',
     'dservices',
-    
-
+    'checkout',
 ]
 
 SITE_ID = 1
