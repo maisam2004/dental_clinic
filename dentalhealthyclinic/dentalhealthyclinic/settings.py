@@ -10,13 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+from decimal import Decimal
 from pathlib import Path
 from decouple import config
 
 
 
-SECRET_KEY = config("SECRET_KEY")
-PUBLISHER_KEY = config('PUBLISHER_KEY')
+
 
 
 
@@ -213,4 +213,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 FREE_DELIVERY_THRESHOLD = 50
+FREE_DELIVERY_THRESHOLD = Decimal('50.00')
 STANDARD_DELIVERY_PERCENTAGE = 0.30
+
+#stripe
+STRIPE_SECRET_KEY = config("SECRET_KEY")
+STRIPE_PUBLISHER_KEY = config('PUBLISHER_KEY')
+STRIPE_CURRENCY = 'usd'
