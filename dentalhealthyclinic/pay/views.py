@@ -2,6 +2,10 @@ from django.shortcuts import render,redirect,reverse
 from django.contrib import messages 
 #from django.urls import reverse
 from .forms import OrderForm
+from django.conf import settings
+
+print(settings.PUBLISHER_KEY,'hhhhhhh')
+
 
 # Create your views here.
 def checkout(request):
@@ -14,6 +18,8 @@ def checkout(request):
     template = 'pay/checkout.html'
     context = {
         'order_form': order_form,
+        'stripe_public_key': settings.PUBLISHER_KEY,
+        'client_secret':'your secret key',
     }
 
     return render(request,template,context)

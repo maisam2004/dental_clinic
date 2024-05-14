@@ -23,7 +23,7 @@ span a{
 }
 
 .navbar-nav .nav-link {
-    line-height: 80px; /* Match the line-height with the navbar height */
+    line-height: 40px; /* Match the line-height with the navbar height */
     margin-left: 0.3em;
     /* margin-right: 1.3em; */
 
