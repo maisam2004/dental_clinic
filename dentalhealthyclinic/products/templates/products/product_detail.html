@@ -8,23 +8,29 @@
     <div class="row">
         <div class="col12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
-                {% if product.image %}
+                {% comment %}{% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
-                   {% comment %}    <img src="{{ product.image.url }}" class="card-img-top ms-5" alt="{{product.name}}.">{% endcomment %} 
+                       <img src="{{ product.image.url }}" class="card-img-top ms-5" alt="{{product.name}}."> 
                     <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top ms-5" alt="{{ product.name }}">
                 </a>
                 {% else %}
                 <a href="{{ product.image.url }}" target="_blank">
                     <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{product.name}}">
                 </a>
-                {% endif %}
+                {% endif %}{% endcomment %}
+
+                {% if product.image %}
+                            <img class="card-img-top ms-5" src="{{ product.image.url }}" alt="{{ item.product.name }}">
+                {% else %}
+                            <img class="card-img-top " src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+              {% endif %}
 
 
             </div>
         </div>
         <div class="col12 col-md-6 col-lg-4 ">
             
-                <p class="card-title">{{product.name}} </p>
+                <p class="card-title mt-5">{{product.name}} </p>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">{{product.price}}</li>
                 {% if product.rating %}
