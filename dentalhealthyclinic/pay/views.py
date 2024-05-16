@@ -11,6 +11,7 @@ from .models import OrderLineItem
 from products.models import Product
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
+from .webhook_handler import StripeWH_Handler
 
 from basket.context import bag_contents
 
@@ -181,6 +182,8 @@ def checkout_success(request, order_number):
 
     if 'bag' in request.session:
         del request.session['bag']
+    wh_handler = StripeWH_Handler(request)
+    wh_handler.send_confirmation_email(order)  
 
     template = 'pay/checkout_success.html'
     context = {
