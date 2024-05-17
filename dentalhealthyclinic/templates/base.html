@@ -40,10 +40,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom" >
         <div class="container-fluid ">
-            <a class="navbar-brand mx-auto d-md-none" href="#">
+            <a class="navbar-brand mx-auto d-md-none"  href="{% url 'home' %}">
                 <img class='mobile_logo' src="{% static 'logo1.png' %}" alt="Logo" >
-
-
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -76,7 +74,7 @@
                         <a class="nav-link" href="{% url 'products' %}">Dental Store</a>
                     </li>
                     <li class="nav-item d-none d-md-block">
-                        <a class="navbar-brand mx-auto" href="#">
+                        <a class="navbar-brand mx-auto"  href="{% url 'home' %}">
                             <img class='desktop_logo' src="{% static 'logo1.png' %}" alt="Logo" >
                         </a>
                     </li>

@@ -8,8 +8,13 @@
     <form method="POST">
         {% csrf_token %}
         
-        {{ form.as_p }}
-        
+        {{ form|crispy}}
+        {% if not user.is_authenticated %}
+            {{ form.email }} 
+        {% else %}
+            <input type="email" name="email" id="id_email" value="{{ user.email }}" hidden>
+
+        {% endif %}
         
         <button type="submit" class="btn btn-primary">Book Appointment</button>
     </form>

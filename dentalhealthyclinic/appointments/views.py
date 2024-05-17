@@ -14,7 +14,11 @@ def book_appointment(request):
             return redirect('appointments:success') 
     else:
         services = Service.objects.all() 
-        form = AppointmentForm()
+        initial_data = {}
+        if request.user.is_authenticated:
+
+            initial_data['email'] = request.user.email
+        form = AppointmentForm(initial=initial_data)
 
     context = {'services': services, 'form': form}
     return render(request, 'appointments/book_appointment.html', context)
