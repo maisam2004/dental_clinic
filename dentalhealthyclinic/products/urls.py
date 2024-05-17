@@ -1,6 +1,7 @@
 
 from django.urls import path
 from . import views
+from .views import ProductDeleteView
 
 urlpatterns = [
     path('',views.all_products ,name='products'),
@@ -8,5 +9,5 @@ urlpatterns = [
     path('<int:product_id>/', views.product_detail, name='product_detail'),
     path('add/', views.add_product, name='add_product'),
     path('edit/<int:product_id>/', views.edit_product, name='edit_product'),
-    path('delete/<int:pk>/', views.ProductDeleteView.as_view(), name='delete_product'),
+    path('delete/<int:pk>/',ProductDeleteView.as_view(), name='delete_product'),
 ]

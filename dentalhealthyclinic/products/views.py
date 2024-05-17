@@ -7,6 +7,9 @@ from django.db.models.functions import Lower
 from .forms import ProductForm
 from django.urls import reverse_lazy
 from django.views.generic import DeleteView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 # Create your views here.
 def all_products(request):
@@ -58,8 +61,16 @@ def product_detail(request,product_id):
 
     }
     return render(request,'products/product_detail.html',context)
+
+@login_required
 def add_product(request):
     """ Add a product to the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -86,8 +97,17 @@ def add_product(request):
 
     return render(request, template, context)
 
+
+
+@login_required
 def edit_product(request, product_id):
     """ Edit a product in the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -113,7 +133,8 @@ def edit_product(request, product_id):
 
     return render(request, template, context)
 
-class ProductDeleteView(DeleteView):
+#@login_required
+class ProductDeleteView(LoginRequiredMixin,DeleteView):
     model = Product
     template_name = 'products/product_confirm_delete.html'
     success_url = reverse_lazy('products')
@@ -125,3 +146,13 @@ class ProductDeleteView(DeleteView):
         response = super().delete(request, *args, **kwargs)
         messages.success(request, 'Product deleted successfully!')
         return response
+    
+    def get(self, request, *args, **kwargs):
+        
+        """ Overridden to check if the user is a superuser.
+        If not, redirect to home with an error message.
+         """
+        if not request.user.is_superuser:
+            messages.error(request, 'Sorry, only store owners can do that.')
+            return redirect(reverse_lazy('products'))  
+        return super().get(request, *args, **kwargs)
