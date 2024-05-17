@@ -5,6 +5,8 @@ from .models import Product,Category
 from django.db.models import Q
 from django.db.models.functions import Lower 
 from .forms import ProductForm
+from django.urls import reverse_lazy
+from django.views.generic import DeleteView
 
 # Create your views here.
 def all_products(request):
@@ -61,9 +63,10 @@ def add_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            product = form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('add_product'))
+            
+            return redirect(reverse('product_detail', args=[product.id]))
         else:
             #messages.error(request, 'Failed to add product. Please ensure the form is valid.')
             for field, errors in form.errors.items():
@@ -110,3 +113,15 @@ def edit_product(request, product_id):
 
     return render(request, template, context)
 
+class ProductDeleteView(DeleteView):
+    model = Product
+    template_name = 'products/product_confirm_delete.html'
+    success_url = reverse_lazy('products')
+    def delete(self, request, *args, **kwargs):
+        """
+        Call the delete() method on the fetched object and then redirect to the
+        success URL.
+        """
+        response = super().delete(request, *args, **kwargs)
+        messages.success(request, 'Product deleted successfully!')
+        return response

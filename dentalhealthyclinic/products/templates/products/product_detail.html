@@ -38,6 +38,12 @@
                 {% else %}
                 <li class="list-group-item">NO Rating </li>
                 {% endif %}
+                {% if request.user.is_superuser %}
+                              <li  class="list-group-item">  <small class="ml-3">
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                </small> </li>
+                {% endif %}
             </ul>
             <p class="mt-3">{{ product.description }}</p>
             <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
@@ -93,6 +99,7 @@
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
+                        
                         <input type="submit" class="btn btn-dark rounded-0 text-uppercase mt-5" value="Add to Bag">
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">{# Finally, there's a hidden input field here which uses the request.path attribute #}
