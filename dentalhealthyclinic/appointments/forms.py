@@ -5,35 +5,24 @@ from datetime import date,datetime
 from datetime import date, timedelta  
 import re
 
-def is_valid_phone_number(phone_number):
-    # regular expression pattern for phone numbers
-    pattern = r'^\+?1?\d{9,15}$'
-    return bool(re.match(pattern, phone_number))
+import phonenumbers
+from phonenumbers import PhoneNumberFormat, PhoneNumberType
+from phonenumbers import COUNTRY_CODE_TO_REGION_CODE
+
 
 def is_valid_full_name(full_name):
-    # pattern for full names
-    pattern = r'^[a-zA-Z]+(([\'\,\.\-][a-zA-Z])?[a-zA-Z]*)*$'
+    # Pattern for full names
+    # Allows letters (including accents and diacritical marks), spaces, hyphens, and apostrophes
+    pattern = r'^[\w\s\-\']+$'
     return bool(re.match(pattern, full_name))
+
 
 class AppointmentForm(forms.ModelForm):
     class Meta:
         model = Appointment
-        fields = ['full_name', 'phone_number', 'email',  'dentist', 'date', 'time', 'service', 'notes']  # Adjust fields as needed
-        
-        def clean_full_name(self):
-            full_name = self.cleaned_data['full_name']
-            if not is_valid_full_name(full_name):
-                raise forms.ValidationError('Please enter a valid full name')
-            return full_name
+        fields = ['full_name', 'phone_number', 'email',  'dentist', 'date', 'time', 'service', 'notes']
 
-        def clean_phone_number(self):
-            phone_number = self.cleaned_data['phone_number']
-            if not is_valid_phone_number(phone_number):
-                raise forms.ValidationError('Please enter a valid phone number')
-            return phone_number
-        
-        
-
+    
         
         widgets = {
             
@@ -48,8 +37,29 @@ class AppointmentForm(forms.ModelForm):
                     "stepping": 15,
                     "enabledHours": [ 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
                     
-                }),
-        }
+                }),}
+
+    def clean_full_name(self):
+        full_name = self.cleaned_data['full_name']
+        if not is_valid_full_name(full_name):
+            raise forms.ValidationError('Please enter a valid full name. Allowed characters are letters, spaces, hyphens, and apostrophes.')
+        return full_name
+
+    def clean_phone_number(self):
+        print("Clean phone number method called")
+        phone_number = self.cleaned_data['phone_number']
+        
+        try:
+            parsed_number = phonenumbers.parse(phone_number, "GB")  # "GB" is the country code for the UK
+            if not phonenumbers.is_valid_number(parsed_number):
+                raise forms.ValidationError('Please enter a valid UK phone number')
+            
+            # Optionally, you can format the phone number for consistency
+            formatted_number = phonenumbers.format_number(parsed_number, PhoneNumberFormat.E164)
+            return formatted_number
+        except phonenumbers.phonenumberutil.NumberParseException:
+            raise forms.ValidationError('Please enter a valid UK phone number')
+        
 
     # You can also define custom fields or widgets here for specific fields
     # Example:
