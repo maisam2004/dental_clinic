@@ -1,4 +1,6 @@
 from django.db import models
+import uuid
+
 
 class Service(models.Model):
     name = models.CharField(max_length=100)
@@ -22,3 +24,5 @@ class Appointment(models.Model):
     )
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Scheduled')
     notes = models.TextField(blank=True)
+    reference_number = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+

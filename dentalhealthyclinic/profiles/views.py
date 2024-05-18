@@ -1,5 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from .models import User,UserProfile
+from appointments.models import Appointment
 from .forms import UserProfileForm
 from django.contrib import messages 
 from pay.models import Order
@@ -21,11 +22,21 @@ def profile(request):
 
         form = UserProfileForm(instance = profile)
     orders = profile.orders.all()
+    appointments = Appointment.objects.filter(email=request.user.email)  # Assuming the Appointment model has an 'email' field
+ 
+
+
+
+
+
     template = 'profiles/profile.html'
     context = {
         'on_profile_page':profile,
         'form':form,
         'orders':orders,
+        'user': request.user,  # user object in the context
+        'appointments': appointments, 
+
         }
     
     return render(request, template, context)
