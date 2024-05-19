@@ -33,3 +33,12 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     #Existing users: #just save the profile
     instance.userprofile.save()
+
+
+
+class ProfilePicture(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile_picture')
+    image = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
+
+    def __str__(self):
+        return f"Profile Picture for {self.user.username}"  

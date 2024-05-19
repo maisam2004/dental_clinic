@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile
+from .models import UserProfile,ProfilePicture
 
 
 class UserProfileForm(forms.ModelForm):
@@ -32,3 +32,10 @@ class UserProfileForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
             self.fields[field].label = False
+
+
+
+class ProfilePictureForm(forms.ModelForm):
+    class Meta:
+        model = ProfilePicture
+        fields = ['image']
