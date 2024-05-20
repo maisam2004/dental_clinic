@@ -6,10 +6,37 @@
 
 body{
     border: 1px solid red;
-    background-color: rgba(229, 240, 242, 1);
-    font-family: "Manrope", sans-serif;
+/*     background-color: rgba(229, 240, 242, 1);
+ */  
+    background-color:#cfe2ff;
+   font-family: "Manrope", sans-serif;
     overflow-x: hidden;
 }
+
+/* 
+
+
+position: absolute;
+width: 550px;
+height: 144.01px;
+left: 44px;
+top: 389px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 800;
+font-size: 58px;
+line-height: 79px;
+text-align: center;
+
+color: #FFFFFF;
+
+border: 1px solid #2A4A58;
+
+
+
+*/
+
 section h1{
     color:rgba(0, 109, 159, 1);
 }
@@ -55,9 +82,19 @@ span a{
 /* end nav style ------------------ */
 main h1{
     color: #153e49;
+    font-size: 1.1em;
+    font-weight: 900;
+    
+
 }
 main h4{
-    color: rgba(71, 7, 250, 1);
+    
+    font-size: 2.3em;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-shadow: 3px 2px 3px rgba(53, 43, 11, 0.504);
+    
+    
 }
 
 
