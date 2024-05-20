@@ -1,5 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 import uuid
+
+
+
 
 
 class Service(models.Model):
@@ -9,11 +13,25 @@ class Service(models.Model):
     def __str__(self):
         return f'{self.name}'
 
+
+
+class Dentist(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='dentist')
+    services = models.ManyToManyField('Service', related_name='dentists', blank=True)
+
+    def __str__(self):
+        return self.user.get_full_name()
+
+
+
+
+
 class Appointment(models.Model):
     full_name = models.CharField(max_length=100,null=True)
     email = models.EmailField(null=True)
     phone_number = models.CharField(max_length=20,null=True) 
-    dentist = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True, null=True, related_name='appointments_as_dentist')  
+    #dentist = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True, null=True, related_name='appointments_as_dentist')  
+    dentist = models.ForeignKey(Dentist, on_delete=models.CASCADE, blank=True, null=True, related_name='appointments')
     date = models.DateField(null=True)
     time = models.TimeField(null=True)
     service = models.ForeignKey('Service', on_delete=models.CASCADE,null=True)

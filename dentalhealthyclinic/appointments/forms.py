@@ -1,5 +1,5 @@
 from django import forms
-from .models import Service,Appointment
+from .models import Service,Appointment,Dentist
 from bootstrap_datepicker_plus.widgets import DateTimePickerInput,DatePickerInput,TimePickerInput
 from datetime import date,datetime
 from datetime import date, timedelta  
@@ -20,7 +20,7 @@ def is_valid_full_name(full_name):
 class AppointmentForm(forms.ModelForm):
     class Meta:
         model = Appointment
-        fields = ['full_name', 'phone_number', 'email',  'dentist', 'date', 'time', 'service', 'notes']
+        fields = ['full_name', 'phone_number', 'email', 'date', 'time', 'service', 'notes']
 
     
         
@@ -38,6 +38,8 @@ class AppointmentForm(forms.ModelForm):
                     "enabledHours": [ 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
                     
                 }),}
+    
+   
 
     def clean_full_name(self):
         full_name = self.cleaned_data['full_name']
