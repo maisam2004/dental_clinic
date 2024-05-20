@@ -30,7 +30,6 @@ class Appointment(models.Model):
     full_name = models.CharField(max_length=100,null=True)
     email = models.EmailField(null=True)
     phone_number = models.CharField(max_length=20,null=True) 
-    #dentist = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True, null=True, related_name='appointments_as_dentist')  
     dentist = models.ForeignKey(Dentist, on_delete=models.CASCADE, blank=True, null=True, related_name='appointments')
     date = models.DateField(null=True)
     time = models.TimeField(null=True)
@@ -44,3 +43,5 @@ class Appointment(models.Model):
     notes = models.TextField(blank=True)
     reference_number = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 
+    def __str__(self):
+        return f"Appointment - {self.reference_number}"

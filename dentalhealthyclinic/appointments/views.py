@@ -3,8 +3,18 @@ from .models import Service,Appointment,Dentist
 from .forms import AppointmentForm
 import random
 from django.contrib import messages 
+from django.db import transaction  
 
 from django.contrib.auth.decorators import login_required
+
+
+
+
+@login_required(login_url='/accounts/login/')
+def success(request, appointment_id):
+    appointment = Appointment.objects.get(id=appointment_id)
+    return render(request, 'appointments/success.html', {'appointment': appointment})
+
 
 
 @login_required(login_url='/accounts/login/') 
@@ -13,6 +23,7 @@ def book_appointment(request):
     if request.method == 'POST':
         form = AppointmentForm(request.POST) 
         if form.is_valid():
+            
             appointment = form.save(commit=False)
             appointment.user = request.user
 
@@ -53,12 +64,4 @@ def book_appointment(request):
 
     context = {'services': services, 'form': form}
     return render(request, 'appointments/book_appointment.html', context)
-
-
-@login_required(login_url='/accounts/login/')
-def success(request, appointment_id):
-    appointment = Appointment.objects.get(id=appointment_id)
-    return render(request, 'appointments/success.html', {'appointment': appointment})
-
-
 
