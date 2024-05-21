@@ -13,29 +13,7 @@ body{
     overflow-x: hidden;
 }
 
-/* 
 
-
-position: absolute;
-width: 550px;
-height: 144.01px;
-left: 44px;
-top: 389px;
-
-font-family: 'Manrope';
-font-style: normal;
-font-weight: 800;
-font-size: 58px;
-line-height: 79px;
-text-align: center;
-
-color: #FFFFFF;
-
-border: 1px solid #2A4A58;
-
-
-
-*/
 
 section h1{
     color:rgba(0, 109, 159, 1);
@@ -50,7 +28,7 @@ span a{
 }
 
 .navbar-nav .nav-link {
-    line-height: 40px; /* Match the line-height with the navbar height */
+    line-height: 1.3em; /* Match the line-height with the navbar height */
     margin-left: 0.3em;
     /* margin-right: 1.3em; */
 
@@ -80,20 +58,19 @@ span a{
 
 
 /* end nav style ------------------ */
+.text_hero{
+    line-height: 7em !important;
+}
 main h1{
     color: #153e49;
-    font-size: 1.1em;
     font-weight: 900;
-    
-
 }
 main h4{
-    
     font-size: 2.3em;
     color: #FFFFFF;
     font-weight: bold;
     text-shadow: 3px 2px 3px rgba(53, 43, 11, 0.504);
-    
+    text-shadow: 3px 2px 3px rgb(53 70 64 / 89%);
     
 }
 
@@ -102,6 +79,7 @@ a.btn{
     background-color: rgb(18, 88, 113);
     color: white;
     padding: 10px 20px;
+    font-weight: 700;
     
 
 }
@@ -112,7 +90,7 @@ a.btn:hover {
 }
 
 .current_offers{
-    background-color: rgba(229, 240, 242, 1);
+    background-color: rgb(96, 137, 144);
 }
 
 .homepage .card .card-title{
@@ -129,6 +107,11 @@ a.btn:hover {
 }
 
 /* services ..............*/
+
+.services{
+    width: 30%;
+}
+
 .card-img-top{
     width: 118px;
     height: 120px;
@@ -609,6 +592,9 @@ form{
     main{
         flex-direction: column;
     }
+    main .p4{
+        padding: 0.5 !important;
+    }
 
     .container{
         flex-direction: column;
@@ -625,9 +611,8 @@ form{
          line-height: 1.8em;
         }
     
-        .denteistry_services .card-title{
+        .homepage .card .card-title {
             font-size: 1.6em;
-            
         }
 
 
@@ -764,8 +749,12 @@ footer img{
 }
 
 @media screen and (min-width: 760px) and (max-width: 1000px){
-
-
+    
+    .why_image {
+        width: 286px;
+    max-height: 340px;
+}
+    
 
     .desktop_logo{
         width: 10em;
@@ -797,6 +786,10 @@ footer img{
     }
     /* end nav style */
 
+    .services {
+        width: 46%;
+    }
+
     
 
     .family_images .position-absolute {
@@ -804,7 +797,7 @@ footer img{
         right:2em;
     }
 
-
+   
 
 
 
@@ -855,15 +848,29 @@ footer img{
 }
 
 @media screen and (min-width: 1000px) {
+
+    .navbar-expand-md .navbar-nav {
+        flex-direction: row;
+        align-items: center;
+    }
+
+
     main .container-sm:first-child {
         padding: 5rem !important;
     }
 
-    .why_choose_us .row{
-       background-color: #9ccfcfad
-    }
+    .why_image {
+        width: 286px;
+    max-height: 340px;
+}
+
+.list_why {
+    line-height: 2.8em;
+    padding-left: 0.5em;
+}
+    
     .why_choose_us .col-md-6{
-        width: 50%;
+       /*  width: 50%; */
         margin: 0 auto;
     }
 
@@ -893,15 +900,31 @@ footer img{
     
 }
 @media screen and (min-width: 1000px) and (max-width: 1400px){
+
+    .services {
+        width: 42%;
+    }
+
     .footer .container-md {
         gap: 7em;
     }
+    
 
 }
 
 @media screen and (min-width: 1400px) {
     .products #searchbar{
         width: 50% !important;
+    }
+
+    /* book appointment */
+    a.btn{
+        background-color: rgb(18, 88, 113);
+        color: white;
+        padding: 10px 20px;
+        font-size: x-large;
+        
+    
     }
 
 }
