@@ -55,7 +55,11 @@ span a{
     
 }
 
+.dropdown-item:hover{
+    background-color: #007bff;
+    color:white;
 
+}
 
 /* end nav style ------------------ */
 .text_hero{
@@ -330,7 +334,7 @@ form{
 
 /* General container adjustments */
 .container {
-    width: 80%; /* Adjust container's width as needed */
+    width: 80%; /* Adjust container*/
     margin: 0 auto; /* Center the carousel horizontally */
   }
   
@@ -588,6 +592,11 @@ form{
        
     }
 
+    .basket_icon_price{
+        width: 10%;
+    }
+
+
     /* end nav style */
     main{
         flex-direction: column;
@@ -598,6 +607,23 @@ form{
 
     .container{
         flex-direction: column;
+    }
+
+    .cosmetic .container,.general .container,.restoractive .container{
+        width: 90%;
+    }
+
+
+    .cosmetic .accordion-button, 
+    .general .accordion-button, 
+    .restoractive .accordion-button {
+        color: rgb(13, 102, 157) !important;
+        font-weight: 900;
+        font-size:large;
+    }
+    .accordion-flush>.accordion-item {
+        border-top: 0;
+        background-color: #f8f9fa;
     }
 /* dentistry services -------------------------- */
     .denteistry_services .card{
@@ -749,6 +775,11 @@ footer img{
 }
 
 @media screen and (min-width: 760px) and (max-width: 1000px){
+
+    .navbar-expand-md .navbar-nav {
+        flex-direction: row;
+        align-items: center;
+    }
     
     .why_image {
         width: 286px;
@@ -765,14 +796,15 @@ footer img{
     /* Add your mobile-specific styles here */
     
     .navbar-nav .nav-link {
-        line-height: 80px;
+        line-height: 20px;
         margin-left: 0em;
         /* margin-right: 1.3em; */
     }
     .dropdown-menu[data-bs-popper] {
         top: 100%;
         left: 0;
-        margin-top: -3em;}
+        /* margin-top: -3em; */
+    }
 
 
     .z-3 span{
@@ -888,7 +920,7 @@ footer img{
     .dropdown-menu[data-bs-popper] {
         /* top: 100%; */
         left: 0;
-        margin-top: -5em;
+        /* margin-top: -5em; */
     }
 
 

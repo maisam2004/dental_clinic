@@ -25,7 +25,7 @@
         <div class="col-md-6"> 
           <img src="{% static 'dental_cleaning.jpg' %}" alt="Dental Cleaning" class="img-fluid rounded">
         </div>
-        <div class="col-md-6"> 
+        <div class="col-md-6 d-none d-md-block"> 
           <h2 style="color:rgba(0, 109, 159, 1);">Preventive Care:</h2>
           <ul>
             <li>Regular dental exams and professional teeth cleanings.</li>
@@ -41,6 +41,38 @@
               <li>Sealants to protect teeth.</li>
               </ul>
 
+        </div>
+        <div class="accordion accordion-flush col-md-6 d-md-none my-4" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+              Preventive Care:
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample" style="">
+              <div class="accordion-body"><ul>
+              <li>Regular dental exams and professional teeth cleanings.</li>
+              <li>X-rays to detect hidden issues.</li>
+              <li>Education on proper oral hygiene practices</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Basic Dental Services:
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="">
+              <div class="accordion-body"><ul>
+              <li>Addressing gum disease (gingivitis).</li>
+              <li>Oral cancer screenings..</li>
+              <li>Fluoride treatments.</li>
+              <li>Sealants to protect teeth.</li>
+              </ul></div>
+            </div>
+          </div>
+    
         </div>
       </div>
 
