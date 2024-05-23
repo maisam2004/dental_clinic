@@ -32,8 +32,8 @@
     {% block nav%} 
     <div  class="container-fluid">
         <div class="row bg-success text-center d-flex ">
-            <div class=" p-1 w-50 "><span><a class="text-white fw-bolder " href="tel:020365558489"><i class="fa-solid fa-phone"></i>020365558489</a></span></div>
-            <div class=" p-1 w-50 "><span><a class="text-white fw-bolder" href="tel:020365558489"><i class="fa-solid fa-location-dot"></i>find us here</a></span></div>
+            <div class=" p-1 w-50 "><span><a class="text-white fw-bolder " href="tel:020365558489"><i class="fa-solid fa-phone px-1"></i>020365558489</a></span></div>
+            <div class=" p-1 w-50 "><span><a class="text-white fw-bolder" href="tel:020365558489"><i class="fa-solid fa-location-dot px-1"></i>find us here</a></span></div>
         </div>
     </div>
 
@@ -114,7 +114,7 @@
                                 <p class="my-0">
                                     {% if grand_total %}
 
-                                    <div><i class="fas fa-shopping-bag fa-lg"></i><span class="badge fw-bold text-danger rounded-pill product_count">{{product_count}}</span></div>
+                                    <div><i class="fas fa-shopping-bag fa-lg "></i><span class="badge d-md-inline position-sm-relative fw-bold  text-danger rounded-pill ">{{product_count}}</span></div>
                                         ${{ grand_total|floatformat:2 }}
                                     {% else %}
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
@@ -134,8 +134,8 @@
     </nav>
     
     {% comment %} {% if request.resolver_match.url_name == 'products' %} {% endcomment %}
-    {% if request.resolver_match.url_name == 'products' %}
-        <div class="container-fluid py-3">
+    {% if request.resolver_match.url_name == 'products'  %}
+        <div class="container-fluid py-2" style="background-color: #f8f9fa;">
             <div class="d-flex justify-content-between justify-content-md-center"> 
                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
                     <div class="text-center basket_icon_price">
@@ -156,7 +156,7 @@
                                 
                             <!-- Search bar HTML -->
                             <lable for="searchbar"> </lable>
-                                <input type="text" name="searchbar" class="p-1 w-100  rounded-pill" id="searchbar">
+                                <input type="text" name="searchbar" class="p-2 w-100  rounded-pill" id="searchbar">
                                 <!-- <input type="submit" class=" rounded-pill p-1" value="&#xf014"> -->
                                 <button type="submit" class="btn bg-success search_icon  ">
                                     <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
@@ -183,7 +183,31 @@
             </div>
 
         </div>
-        
+        {% elif  request.resolver_match.url_name == 'product_detail'   %}
+
+        <div class="container-fluid py-2 border-bottom" style="background-color: #f8f9fa;">
+            <div class="d-flex justify-content-end ms-3"> 
+                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
+                    <div class="text-center basket_icon_price">
+                        {% comment %} <div><i class="fas fa-shopping-bag fa-lg"></i></div> {% endcomment %}
+                        <p class="my-0 position-relative rounded-circle btn border-info d-md-none">
+                            {% if grand_total %}
+                                {% comment %} ${{ grand_total|floatformat:2 }} {% endcomment %}
+                                
+                                <span class="text-danger fw-bold product_count ">{{product_count}}</span><i class="fas fa-shopping-bag fa-lg text-info position-relative"></i>
+                                
+                            {% else %}
+                            <i class="fas fa-shopping-bag fa-lg text-info position-relative"></i>
+                            {% endif %}
+                        </p>
+                    </div>
+                </a>
+                
+                
+                    
+                
+            </div>
+        </div>
         {% endif %}
     
     {% endblock %}

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% block page%}basket{% endblock %}
 {% block content %}
     <div class="overlay"></div>
     <div class="container mb-2">
@@ -29,12 +29,12 @@
                                 <tr>
                                     <td class="p-3 w-25">
                                         <img class="img-fluid rounded" src="{{ item.product.image.url }}">
-                                    </td>
-                                    <td class="py-3">
+                                   
                                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                         <p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                     </td>
+                                    <td></td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price }}</p>
                                     </td>
@@ -54,7 +54,7 @@
                                                             </span>
                                                         </button>
                                                     </div>
-                                                    <label for="id_qty_{{ item.item_id }}">Q:</label>  
+                                                    <label for="id_qty_{{ item.item_id }}"></label>  
                                                     <input class="form-control form-control-sm qty_input" type="number"
                                                         name="quantity" value="{{item.quantity}}" min="1" max="99"
                                                         data-item_id="{{ item.item_id  }}"

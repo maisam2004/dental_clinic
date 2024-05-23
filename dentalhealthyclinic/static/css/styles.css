@@ -277,8 +277,18 @@ footer img{
 }
 
 form{
-    padding: 2em;
-    border:1px solid grey;
+    display: flex;
+    justify-content: space-evenly;
+    
+    
+    
+}
+.pay form{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    
+    
 }
 .form-group label{
     padding: 0.4em;
@@ -346,6 +356,7 @@ form{
     
 }
 .products #searchbar{
+    background-color: #f8f9fa;
     border: 2px solid rgba(6, 70, 85, 0.546);
     box-shadow: 0px 3px 13px 5px rgba(202, 205, 206, 0.584) inset;
 }
@@ -873,6 +884,11 @@ footer img{
   }
 
  
+
+  /* basket ...... */
+  .basket .container{
+    width: 100%;
+  }
 
 
 }
