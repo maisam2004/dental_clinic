@@ -643,7 +643,9 @@ form{
 
 
 
-
+.basket label[class*="id_qty_"] {
+    display: none;
+  }
 
 
   
