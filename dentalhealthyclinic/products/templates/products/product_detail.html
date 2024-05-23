@@ -20,7 +20,7 @@
                 {% endif %}{% endcomment %}
 
                 {% if product.image %}
-                            <img class="card-img-top ms-5" src="{{ product.image.url }}" alt="{{ item.product.name }}">
+                            <img class="card-img-top " src="{{ product.image.url }}" alt="{{ item.product.name }}">
                 {% else %}
                             <img class="card-img-top " src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
               {% endif %}
@@ -28,7 +28,7 @@
 
             </div>
         </div>
-        <div class="col12 col-md-6 col-lg-4 ">
+        <div class="col12 col-md-6 col-lg-4 details_container ">
             
                 <p class="card-title mt-5">{{product.name}} </p>
             <ul class="list-group list-group-flush">
