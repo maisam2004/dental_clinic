@@ -61,6 +61,11 @@ span a{
 
 }
 
+.badge{
+    --bs-badge-font-weight: 900;
+
+}
+
 /* end nav style ------------------ */
 .text_hero{
     line-height: 7em !important;
@@ -79,7 +84,7 @@ main h4{
 }
 
 
-a.btn{
+.homepage a.btn{
     background-color: rgb(18, 88, 113);
     color: white;
     padding: 10px 20px;
@@ -87,7 +92,7 @@ a.btn{
     
 
 }
-a.btn:hover {
+.homepage a.btn:hover {
     background-color: #c8ccd0; /* Example color - adjust as needed */
     color:rgb(18, 88, 113);
     font-weight: 600;
@@ -122,7 +127,7 @@ a.btn:hover {
     
 
 }
-.products .image-container{
+/* .products .image-container{
     display: flex;
     justify-content: center;
     background-color: #9da0a0b0;
@@ -135,7 +140,8 @@ a.btn:hover {
     width: 80%;
     margin: 0 auto;
 
-}
+} */
+
 
 .denteistry_services .card{
 padding: 0.2em;
@@ -294,6 +300,16 @@ form{
     background-color: #ffffff;
     z-index: -1;
 }
+.products_details .overlay{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+}
 .products .dropdown-item.active { /* sor by */
     color: #fff;
     text-decoration: none;
@@ -345,7 +361,52 @@ form{
     cursor: pointer;
 }
 
-/* general page  */
+/* product details */
+
+.products_details .card-title{
+    font-weight: bold;
+    font-size: x-large;
+
+}
+
+.products_details .list-group li:nth-child(2){
+    font-weight: bold;
+    font-size: large;
+
+}
+
+
+.products_details .stars-outer {
+    position: relative;
+    display: inline-block;
+    font-size: 0;
+}
+
+.products_details .stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+
+.products_details .stars-inner::before {
+    content: "\2605\2605\2605\2605\2605"; /* Five empty stars */
+    color: #ddd;
+}
+
+.products_details .stars-inner::after {
+    content: "\2605\2605\2605\2605\2605"; /* Five filled stars */
+    color: #f8ce0b; /* Color of filled stars */
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+
 
 /* General container adjustments */
 .container {
@@ -424,9 +485,7 @@ form{
 
   /* toast ----- =================*/
 
-  .message_container {
-    
-  }
+ 
   .custom_toast{
     overflow: visible;
 
@@ -584,7 +643,7 @@ form{
         
 }
 .mobile_logo{
-    width: 68%;
+    width: 58%;
     margin-left: 24%;
 }
 .navbar-toggler {
@@ -610,15 +669,38 @@ form{
     .basket_icon_price{
         width: 10%;
     }
-
-
-    .product_count{
-        position: absolute;
-        z-index: 100;
-        top:-5px;
-        right: 5px;
-    }
+    
     /* end nav style */
+    
+
+
+    .products .product_count,.products_details .product_count  {
+        position: absolute !important; 
+        z-index: 100;
+        top:-10px;
+        right: 3px;
+        background-color: rgba(219, 215, 215, 0.913);
+        border-radius: 50%;
+        width: 0.95em;
+        color:red !important;
+    }
+
+
+    .products_details .image-container {
+        width:100%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        background-color: #b1b1b17b;
+        display: flex;
+        justify-content: center;
+
+        margin-top: -1em !important;
+        margin-bottom: -1em !important;
+    }
+
+
+    
+    
     main{
         flex-direction: column;
     }
@@ -901,6 +983,11 @@ footer img{
 }
 
 @media screen and (min-width: 1000px) {
+    
+    .products_details .image-container:hover{
+        transform: scale(1.2);
+        
+    }
 
     .navbar-expand-md .navbar-nav {
         flex-direction: row;

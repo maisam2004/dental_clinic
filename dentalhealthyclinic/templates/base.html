@@ -110,11 +110,14 @@
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
                             <div class="text-center basket_icon_price">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                               {% comment %}  <div><i class="fas fa-shopping-bag fa-lg"></i></div> {% endcomment %}
                                 <p class="my-0">
                                     {% if grand_total %}
+
+                                    <div><i class="fas fa-shopping-bag fa-lg"></i><span class="badge fw-bold text-danger rounded-pill product_count">{{product_count}}</span></div>
                                         ${{ grand_total|floatformat:2 }}
                                     {% else %}
+                                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                         $0.00
                                     {% endif %}
                                 </p>
@@ -132,12 +135,12 @@
     
     {% comment %} {% if request.resolver_match.url_name == 'products' %} {% endcomment %}
     {% if request.resolver_match.url_name == 'products' %}
-        <div class="container-fluid">
+        <div class="container-fluid py-3">
             <div class="d-flex justify-content-between justify-content-md-center"> 
                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
                     <div class="text-center basket_icon_price">
                         {% comment %} <div><i class="fas fa-shopping-bag fa-lg"></i></div> {% endcomment %}
-                        <p class="my-0 position-relative rounded-circle btn border-info ">
+                        <p class="my-0 position-relative rounded-circle btn border-info d-md-none">
                             {% if grand_total %}
                                 {% comment %} ${{ grand_total|floatformat:2 }} {% endcomment %}
                                 
