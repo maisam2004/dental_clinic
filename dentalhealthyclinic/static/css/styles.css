@@ -444,6 +444,16 @@ width: 96%;
     width: 100%;
 }
 
+.products_details .input-group .btn {
+    position: unset;
+    z-index: 0;
+}
+
+.products_details .input-group>.form-control, .input-group>.form-floating, .input-group>.form-select {
+    position: unset;
+}
+.products_details .list-group-item {
+    position: unset;}
 
 /* General container adjustments */
 .container {
