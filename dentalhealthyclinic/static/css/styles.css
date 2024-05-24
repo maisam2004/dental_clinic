@@ -238,7 +238,7 @@ border:0 !important;
 }
 
 .footer .position-absolute{
-    z-index: -1;
+    /* z-index: -1; */
     top:-10em;
     left:0;
     right:0;
@@ -524,11 +524,15 @@ width: 96%;
 
  
   .custom_toast{
-    overflow: visible;
+    overflow:scroll;
+    z-index: 289;
 
   }
   .toast_capper{
     height: 2px;
+  }
+  .toast-body{
+    z-index: 289;
   }
 
   .arrow-up {
@@ -715,7 +719,7 @@ width: 96%;
 
     .products .product_count,.products_details .product_count  {
         position: absolute !important; 
-        z-index: 100;
+        /* z-index: 100; */
         top:-10px;
         right: 3px;
         background-color: rgba(219, 215, 215, 0.913);

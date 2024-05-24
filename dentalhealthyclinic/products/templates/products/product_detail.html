@@ -31,14 +31,14 @@
         <div class="col12 col-md-6 col-lg-4 details_container ">
             
                 <p class="card-title mt-5">{{product.name}} </p>
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush " >
                 {% if product.rating %}
-                <li class="list-group-item d-flex justify-content-between"><div>Rating </div><div class="border border-2 bg-primary text-light rounded-3 px-2">{{ product.rating }}<i class="fa-solid fa-star text-warning"></i></div>
+                <li class="list-group-item d-flex justify-content-between" ><div>Rating </div><div class="border border-2 bg-primary text-light rounded-3 px-2">{{ product.rating }}<i class="fa-solid fa-star text-warning"></i></div>
                 </li>
                 {% else %}
                 <li class="list-group-item">NO Rating </li>
                 {% endif %}
-                <li class="list-group-item d-flex justify-content-between "><div>Price</div><div> ${{product.price}}</div></li>
+                <li class="list-group-item d-flex justify-content-between " ><div>Price</div><div> ${{product.price}}</div></li>
                 
                 {% if request.user.is_superuser %}
                               <li  class="list-group-item">  <small class="ml-3">
