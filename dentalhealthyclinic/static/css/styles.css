@@ -383,7 +383,8 @@ width: 96%;
     background-color: #f6f7f7;
 }
 .products .products_cards:hover{
-    scale:1.1;
+    scale:1.03;
+    
 }
 
 .btn-outline-black{
@@ -751,7 +752,7 @@ width: 96%;
     }
 
     .cosmetic .container,.general .container,.restoractive .container{
-        width: 90%;
+        width: 96%;
     }
 
 
@@ -1107,7 +1108,7 @@ footer img{
     }
 
     /* book appointment */
-    a.btn{
+    .check a.btn{
         background-color: rgb(18, 88, 113);
         color: white;
         padding: 10px 20px;
@@ -1115,5 +1116,20 @@ footer img{
         
     
     }
+    .check a.btn{
+        background-color: rgb(18, 88, 113);
+        color: white;
+        padding: 10px 20px;
+        font-size: x-large;
+
+    }
+ /*    .products_details a.btn , .basket a.btn {
+        background-color:black;
+        color: white;
+        padding: 0.4em;
+        font-size: unset;
+
+    } */
+
 
 }

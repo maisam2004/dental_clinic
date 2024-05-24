@@ -78,3 +78,5 @@ select:invalid,select option[value=""] {
   padding: 0.6em;
   width:100%;
 }
+
+.pay .order-lg-last{}

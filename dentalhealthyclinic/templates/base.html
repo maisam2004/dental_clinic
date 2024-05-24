@@ -59,9 +59,7 @@
                             Dentistry Services
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'products'%}?category=activewear,essencial">Activewear and Essencial</a></li>
-                            <li><a class="dropdown-item" href="{% url 'products'%}?category=jeans">Jeans</a></li>
-                            <li><a class="dropdown-item" href="{% url 'products'%}?category=shirts">Shirs</a></li>
+                           
                             <li><a class="dropdown-item" href="{% url 'general'%}">General</a></li>
                             <li><a class="dropdown-item" href="{% url 'cosmetic'%}">Cosmetic</a></li>
                             <li><a class="dropdown-item" href="{% url 'restorative'%}">Restorative</a></li>
@@ -85,8 +83,8 @@
                         <a class="nav-link d-sm-block d-md-none d-lg-block" href="#">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Account
+                        <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user fs-6 border p-2 rounded-circle"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             
@@ -96,10 +94,10 @@
                                    <li> <a href="{% url 'admin:index' %}" target="_blank" class="dropdown-item">Admin</a></li>
                                 {% endif %}
                                 <li> <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
-                                <li> <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                                <li> <a href="{% url 'account_logout' %}" class="dropdown-item">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
                             {% else %}
                             <li> <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                            <li>  <a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+                            <li>  <a href="{% url 'account_login' %}" class="dropdown-item" title='login'><span class="d-none " >Login</span> <i class="fa-solid fa-right-to-bracket"></i></a></li>
                             {% endif %}
                         </ul>
                     </li>
@@ -186,7 +184,8 @@
         {% elif  request.resolver_match.url_name == 'product_detail'   %}
 
         <div class="container-fluid py-2 border-bottom d-md-none" style="background-color: #f8f9fa;">
-            <div class="d-flex justify-content-end ms-3"> 
+            <div class="d-flex justify-content-between  ">
+                <div class="delivery_fast align-self-center fw-semibold">Fast delivery <img src="{% static 'fast_del.png'%}"></div> 
                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
                     
                         {% comment %} <div><i class="fas fa-shopping-bag fa-lg"></i></div> {% endcomment %}
