@@ -39,8 +39,8 @@
                                         <p class="my-0 text-center"></p>
                                     </td>
                                     
-                                    <td class="py-3 text-center pt-5">
-                                        <form class="form update-form" action="{% url 'update_basket' %}" method="POST">
+                                    <td class=" text-center pt-5">
+                                        <form class="form update-form py-3" action="{% url 'update_basket' %}" method="POST">
                                             {% csrf_token %}
                                             <input type="hidden" name="item_id" value="{{ item.item_id }}">
                                             <input type="hidden" name="action" value="update"> <!-- or value="remove" for remove action -->
@@ -72,8 +72,8 @@
                                             
 
                                         </form>
-                                        <a href="{% url 'update_basket' %}?item_id={{ item.item_id }}&action=update" class="update-link text-info">Update</a>
-                                        <a href="{% url 'update_basket' %}?item_id={{ item.item_id }}&action=remove" class="remove-item text-danger float-right" id="remove_{{ item.item_id }}">Remove Item</a>
+                                        <a href="{% url 'update_basket' %}?item_id={{ item.item_id }}&action=update" class="update-link  me-4  btn btn-outline-info " title="update"><span class="d-none d-md-inline-block">Update</span><i class="fa-solid fa-arrows-rotate"></i></a>
+                                        <a href="{% url 'update_basket' %}?item_id={{ item.item_id }}&action=remove" class="remove-item  float-right  btn btn-outline-danger " id="remove_{{ item.item_id }}"  title="remove item"><span class="d-none d-md-inline-block">Remove </span><i class="fa-solid fa-trash-can"></i></a>
 
                                     </td>
                                     <td class="py-3">
@@ -82,26 +82,26 @@
                                 </tr>
                             {% endfor %}
                             <tr>
-                                <td colspan="5" class="pt-5 text-right">
+                                <td colspan="5" class="pt-5 text-end pe-3">
                                     <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Delivery <i class="fa-solid fa-truck "></i>: ${{ delivery|floatformat:2 }}</h6>
-                                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                    <h6 class="text-primary">Delivery <i class="fa-solid fa-truck "></i>: ${{ delivery|floatformat:2 }}</h6>
+                                    <h4 class="mt-4"><strong>Subtotal: ${{ grand_total|floatformat:2 }}</strong></h4>
                                     {% if free_delivery_delta > 0 %}
-                                        <p class="mb-1 text-danger">
+                                        <p class="mb-3 text-primary">
                                             You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
                                         </p>
                                     {% endif %}
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="5" class="text-right">
-                                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                <td colspan="5" class="text-end  ">
+                                    <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-pill btn-lg">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                                    <a href="{% url 'checkout' %}" class="btn btn-success rounded-pill btn-lg secure_checkout">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
