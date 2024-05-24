@@ -283,6 +283,21 @@ form{
     
     
 }
+.profile form{
+    flex-direction: column;
+}
+
+.login form{
+    flex-direction: column;
+}
+.login .allauth-form-inner-content{
+    background-color: white;
+    padding:0.5em;
+    border-radius:1em;
+}
+.login .container{
+width: 96%;
+}
 .pay form{
     display: flex;
     justify-content: space-evenly;
@@ -359,6 +374,16 @@ form{
     background-color: #f8f9fa;
     border: 2px solid rgba(6, 70, 85, 0.546);
     box-shadow: 0px 3px 13px 5px rgba(202, 205, 206, 0.584) inset;
+}
+
+.products .products_cards{
+    background-color: #f6f7f7;
+}
+.products .products_cards li{
+    background-color: #f6f7f7;
+}
+.products .products_cards:hover{
+    scale:1.1;
 }
 
 .btn-outline-black{
@@ -566,7 +591,7 @@ form{
 
 .allauth-form-inner-content input {
     border-color: #000;
-    border-radius: 0;
+    border-radius: 1em;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -589,7 +614,7 @@ form{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #000;
+    background-color: #1d1c6e;
     border: 1px solid #000;
     padding: .375rem .75rem;
     font-size: 1rem;

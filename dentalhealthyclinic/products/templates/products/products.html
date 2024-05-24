@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load custom_filters %} 
 {% block page%}products{% endblock %}
 {% block content %}
 <div class="overlay "></div>
@@ -71,9 +72,9 @@
                 <h4>{% if search_term %}search term: {{search_term}}{% endif %}</h4>
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card h-100 border-0">
+                    <div class="card h-100 border-0 products_cards">
                         {% if product.image %}
-                        <a href="{% url 'product_detail' product.id %}">
+                        <a href="{% url 'product_detail' product.id %}" class="d-flex justify-content-center">
                         <img src="{{ product.image.url }}" class="card-img-top" alt="{{product.name}}.">
                         {% comment %} <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top ms-5" alt="{{ product.name }}"> {% endcomment %}
 
@@ -84,13 +85,17 @@
                             </a>
                             {% endif %}  
                         <div class="card-body">
-                            <h6 class="card-title">{{product.name}} </h6>
+                            <h6 class="card-title fw-bold">{{product.name}} </h6>
                             
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">{{product.price}}</li>
+                            <li class="list-group-item fw-bold">${{product.price}}</li>
                             {% if product.rating %}
-                            <li class="list-group-item">{{ product.rating }}</li>
+                            <li class="list-group-item   ">
+                                {% comment %} {{ product.rating }}  {% endcomment %}
+                            
+                                rating:<span class="stars text-warning ">{{ product.rating|stars|safe }}</span>
+                            </li>
                             {% else %}
                             <li class="list-group-item">NO Rating </li>
                             {% endif %}
@@ -102,8 +107,8 @@
                             {% endif %}
                         </ul>
                         <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
+                            <a href="{% url 'product_detail' product.id %}" class="card-link btn btn-outline-success rounded-pill">Find out more</a>
+                            
                         </div>
 
 

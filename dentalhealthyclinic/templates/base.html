@@ -185,22 +185,28 @@
         </div>
         {% elif  request.resolver_match.url_name == 'product_detail'   %}
 
-        <div class="container-fluid py-2 border-bottom" style="background-color: #f8f9fa;">
+        <div class="container-fluid py-2 border-bottom d-md-none" style="background-color: #f8f9fa;">
             <div class="d-flex justify-content-end ms-3"> 
                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
-                    <div class="text-center basket_icon_price">
+                    
                         {% comment %} <div><i class="fas fa-shopping-bag fa-lg"></i></div> {% endcomment %}
-                        <p class="my-0 position-relative rounded-circle btn border-info d-md-none">
+                        
                             {% if grand_total %}
-                                {% comment %} ${{ grand_total|floatformat:2 }} {% endcomment %}
                                 
-                                <span class="text-danger fw-bold product_count ">{{product_count}}</span><i class="fas fa-shopping-bag fa-lg text-info position-relative"></i>
+                                <div class=" basket_icon_price">
+                                    {% comment %}  <div><i class="fas fa-shopping-bag fa-lg"></i></div> {% endcomment %}
+                                    <p>
+                                         <div><i class="fas fa-shopping-bag fa-lg d-inline"></i><span class="badge d-inline position-sm-relative fw-bold  text-danger rounded-pill ">{{product_count}}</span></div>
+                                             ${{ grand_total|floatformat:2 }}
+                                     </p>
+                                 </div>
                                 
                             {% else %}
                             <i class="fas fa-shopping-bag fa-lg text-info position-relative"></i>
+                            $0.00
                             {% endif %}
                         </p>
-                    </div>
+                    
                 </a>
                 
                 
