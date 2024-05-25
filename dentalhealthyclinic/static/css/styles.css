@@ -475,14 +475,19 @@ width: 96%;
 
 .products_details .input-group .btn {
     position: unset;
-    z-index: 0;
+    
 }
 
 .products_details .input-group>.form-control, .input-group>.form-floating, .input-group>.form-select {
     position: unset;
 }
 .products_details .list-group-item {
-    position: unset;}
+    position: unset;
+    
+}
+.products_details .footer .card {
+    position: unset;
+}
 
 /* General container adjustments */
 .container {
@@ -563,16 +568,19 @@ width: 96%;
 
  
   .custom_toast{
+    
     overflow: visible;
-    z-index: 289;
+    z-index: 9999;
 
   }
   .toast_capper{
+   
     height: 2px;
-    z-index: 289;
+    z-index: 9999;
   }
   .toast-body{
-    z-index: 289;
+    
+    z-index: 9999;
   }
 
   .arrow-up {
@@ -958,6 +966,13 @@ footer img{
     text-decoration: none;
     width: 10%;
 }
+.products_details .input-group ,.products_details .input-group-prepend .btn{
+    position: unset !important;}
+.products_details .form-group .input-group .input-group-prepend .icon {
+    position: unset;
+}
+
+
 
 .general2 .carousel-item{
     left:10%;
