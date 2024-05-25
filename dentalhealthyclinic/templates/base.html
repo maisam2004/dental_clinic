@@ -249,37 +249,48 @@
         </a>
     </button>
     {% block footer%}
-    <div class="footer container-fluid pb-4 pt-5 mt-3  position-relative d-md-flex align-items-end">
+    <div class="footer container-fluid     ">
     
-        <img src="{% static 'logo1.png' %}"  class="footer_logo " alt="company logo">
-        <div class="container-md p5 mt-3 d-flex flex-wrap  justify-content-center   ">
+        
+        <div class="container-md  mt-3 d-flex g-5  pb-4  ">
            
     
             <div class="card    position-relative rounded-4 d-inline-block" style="width:18rem;">
+                <img src="{% static 'logo12.png' %}" class="card-img-top" alt="company logo">
                 
-                <div class="card-header">
-                    Contact Info 
-                  </div>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">call us:020365558489</li>
-                    <li class="list-group-item">email:info@hdc.co.uk</li>
-                    <li class="list-group-item">address:96 Robert St, London NW1 3QP
+                    <li class="list-group-item"><i class="fa-solid fa-square-phone"></i>:020365558489</li>
+                    <li class="list-group-item"><i class="fa-regular fa-envelope"></i>:info@hdc.co.uk</li>
+                    <li class="list-group-item address"><i class="fa-solid fa-location-dot" style="color: #fafafa;"></i>:96 Robert St, London NW1 3QP
                     </li>
+                    <li class="list-group-item social"><i class="fa-brands fa-facebook"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram" ></i></li>
                   </ul>
             </div>
-            <div class="card   position-relative rounded-4 d-inline-block" style="width:18rem;">
+            <div class="card   position-relative rounded-4 d-inline-block links" style="width:18rem;">
                 
-                <div class="card-header">
-                    Contact Info 
+                <div class="card-header mt-5 ">
+                    Links
                   </div>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Monday: 8:00am - 4:00pm</li>
-                    <li class="list-group-item">Tuesday: 8:00am - 4:00pm</li>
-                    <li class="list-group-item">Wednesday: 8:00am - 4:00pm</li>
-                    <li class="list-group-item">Thursday: 8:00am - 4:00pm</li>
-                    <li class="list-group-item">Friday:  8:00am - 4:00pm</li>
-                    <li class="list-group-item">Saturday: 9:30am - 3:00pm</li>
-                    <li class="list-group-item">Sunday: Closed</li>
+                    <li class="list-group-item">Book appointment</li>
+                    <li class="list-group-item">Shop </li>
+                    <li class="list-group-item">Contact Us</li>
+                    <li class="list-group-item">About</li>
+                  </ul>
+            </div>
+            <div class="card   position-relative rounded-4 d-inline-block mt-5 hours" style="width:18rem;">
+                
+                <div class="card-header">
+                    Oppening hours
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Mon: 8:00am - 4:00pm</li>
+                    <li class="list-group-item">Tue: 8:00am - 4:00pm</li>
+                    <li class="list-group-item">wed: 8:00am - 4:00pm</li>
+                    <li class="list-group-item">Thur: 8:00am - 4:00pm</li>
+                    <li class="list-group-item">Fri:  8:00am - 4:00pm</li>
+                    <li class="list-group-item">Sat: 9:30am - 3:00pm</li>
+                    <li class="list-group-item">Sun: Closed</li>
                   </ul>
             </div>
             <div class="d-none d-md-block position-absolute" style="width: 100%;">
@@ -292,7 +303,7 @@
     
     </div>
     <footer class="main_footer d-flex p-3">
-        <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4> 
+        
     <img src="{% static 'quality.png' %}"  class="companies" alt="company quality">
     <img src="{% static 'bos.svg' %}"  class="companies" alt="company bos">
     <img src="{% static 'invisalign-logo-png.png' %}"  class="companies " alt="company invisilign">
