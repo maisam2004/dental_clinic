@@ -252,7 +252,7 @@
     <div class="footer container-fluid     ">
     
         
-        <div class="container-md  mt-3 d-flex g-5  pb-4  ">
+        <div class="container-md  mt-2 d-flex g-2  pb-4  ">
            
     
             <div class="card    position-relative rounded-4 d-inline-block" style="width:18rem;">
@@ -324,8 +324,33 @@
                 $('.toast').toast('show');
             {% endif %}
         });
+
+
+        window.addEventListener('load', function() {
+            const fadeInImages = document.querySelectorAll('.fade-in-image');
+          
+            function checkImageVisibility() {
+              fadeInImages.forEach((image) => {
+                const imagePosition = image.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+          
+                // Check if the image is within the viewport
+                if (imagePosition < windowHeight * 0.8 && imagePosition > -windowHeight * 0.2) {
+                  image.classList.add('in-view');
+                } else {
+                  image.classList.remove('in-view');
+                }
+              });
+            }
+          
+            window.addEventListener('scroll', checkImageVisibility);
+            checkImageVisibility(); // Check initially when the page loads
+          });
+    
+
+            
 </script>
-    {% endblock %}
+{% endblock %}
    
 
 </body>

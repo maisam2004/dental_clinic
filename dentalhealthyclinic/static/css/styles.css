@@ -212,6 +212,7 @@ border-radius:3em !important;
 .footer .card-img-top{
     width: 188px;
     height: 140px;
+    border-bottom: 1px solid white;
     
     
 }
@@ -245,8 +246,11 @@ border:0 !important;
     padding: 0.2em;
 }
 .footer ul{
-    border-top: 1px solid white !important;
+   /*  border-top: 1px solid white !important; */
     
+}
+.footer .card-header{
+    border-bottom: 1px solid white !important;
 }
 .footer .address{
     border-bottom: 1px solid white !important;
@@ -282,8 +286,8 @@ footer{
 }
 footer img{
     aspect-ratio: 1/3;
-    width: 14em;
-    height: 7em;
+    width: 12em;
+    height: 4.6em;
 }
 
 
@@ -711,6 +715,31 @@ width: 96%;
 
 .basket label[class*="id_qty_"] {
     display: none;
+  }
+
+
+.show {
+    opacity: 1;
+}
+@keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(22px); /* Optional: vertical translation */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in-image {
+    opacity: 0;
+    animation: fadeInLeft 0.3s ease-in-out; /* Adjust duration and timing function as needed */
+  }
+  
+  .fade-in-image.in-view {
+    opacity: 1;
+    animation: fade-in 0.3s ease-in-out; /* Same animation as before */
   }
 
 
