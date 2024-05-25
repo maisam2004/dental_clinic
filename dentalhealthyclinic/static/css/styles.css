@@ -487,6 +487,9 @@ width: 96%;
 }
 .products_details .footer .card {
     position: unset;
+}card-img-top
+.products_details .footer .card .card-img-top {
+    position: unset;
 }
 
 /* General container adjustments */
