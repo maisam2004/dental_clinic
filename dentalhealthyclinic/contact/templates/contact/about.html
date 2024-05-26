@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page %} about {% endblock %}
+{% block content %}
+
+<div class="about-background-image "></div>
+
+<div class="content-container">
+    
+    <div class="container text-center ">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text_about">
+                <h2 >Let's make you smile</h2>
+                <div class="background_text_imp">
+
+                <p>Everything we do here at Healthy Dental Clinic is to make you smile. From our local dental practices and staff actively being a part of your community, to raising money for charity or taking part in challenge events locally.</p>
+                <p>From booking your appointment, right through to the end of your treatment, we’re with you every step of the way to make sure you get the best treatment possible. We are a small private dental practice in the heart of the City priding ourselves on the quality of care we provide our patients.</p>
+                <p>We offer our patients all routine family dental care as well as specialist treatment on referral from your own dentist. Additionally, we have an online dental item shop where you can find a range of dental care products to maintain your oral health.</p>
+                <p>The practice was opened in the 1960s and has been owned by the principal dentist, Gaynor, since 1983. Visit our shop for top-quality dental products and take advantage of our special offers.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Quality Dental Care</li>
+                    <li><i class="fas fa-check-circle"></i> Dedicated Dental Professionals</li>
+                    <li><i class="fas fa-check-circle"></i> Flexible Appointment Times</li>
+                    <li><i class="fas fa-check-circle"></i> Affordable Prices</li>
+                    <li><i class="fas fa-check-circle"></i> Hygienist</li>
+                    <li><i class="fas fa-check-circle"></i> Specialist Dental Care</li>
+                    <li><i class="fas fa-check-circle"></i> Online Dental Item Shop</li>
+                    <li><i class="fas fa-check-circle"></i> Special Offers and Discounts</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="container our_team bg-light">
+        <p class="h2 text-center my-4 pt-4">OUR TEAM</p>
+        <p class="text-center mb-4 fw-semibold px-3">
+            Meet our dedicated team of dental professionals who are committed to providing exceptional care to our patients. Our team combines expertise and compassion to ensure you receive the best dental treatment available.
+        </p>
+    
+        <div class="row mb-4">
+            <div class="col-md-6 order-md-2">
+                <img src="{% static 'j_doe.jpg' %}" class="img-fluid" alt="Dr. John Doe">
+            </div>
+            <div class="col-md-6 order-md-1 my-auto ">
+                <h3>Dr. John Doe</h3>
+                <p>Dr. John Doe has over 20 years of experience in general dentistry and is known for his gentle approach and expert knowledge.</p>
+            </div>
+        </div>
+    
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <img src="{% static 'jane.jpg' %}" class="img-fluid" alt="Dr. Jane Smith">
+            </div>
+            <div class="col-md-6 my-auto">
+                <h3>Dr. Jane Smith</h3>
+                <p>Dr. Jane Smith is a specialist in cosmetic dentistry with a passion for creating beautiful, natural-looking smiles.</p>
+            </div>
+        </div>
+    
+        <div class="row mb-4 ">
+            <div class="col-md-6 order-md-2">
+                <img src="{% static 'emily.jpg' %}" class="img-fluid" alt="Dr. Emily Johnson">
+            </div>
+            <div class="col-md-6 order-md-1 my-auto">
+                <h3>Dr. Emily Johnson</h3>
+                <p>Dr. Emily Johnson has a wealth of experience in pediatric dentistry and is great at making young patients feel comfortable.</p>
+            </div>
+        </div>
+    
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <img src="{% static 'brown.jpg' %}" class="img-fluid" alt="Dr. Michael Brown">
+            </div>
+            <div class="col-md-6 my-auto">
+                <h3>Dr. Michael Brown</h3>
+                <p>Dr. Michael Brown is a leading expert in orthodontics, helping patients achieve perfectly aligned teeth and beautiful smiles.</p>
+            </div>
+        </div>
+    
+        <div class="row mb-4">
+            <div class="col-md-6 order-md-2">
+                <img src="{% static 'davis.jpeg' %}" class="img-fluid" alt="Dr. Sarah Davis">
+            </div>
+            <div class="col-md-6 order-md-1 my-auto">
+                <h3>Dr. Sarah Davis</h3>
+                <p>Dr. Sarah Davis specializes in oral surgery and is dedicated to providing the highest standard of care to her patients.</p>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+</div>
+
+{% endblock%}
+{% block 'extrajs' %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'pay/js/stripe_elements.js' %}"></script>
+{% endblock %}

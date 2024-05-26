@@ -803,10 +803,119 @@ width: 96%;
 .singup .container{
     width: 98% !important;
 }
-  
-@media screen and (max-width: 650px) {
+
+
+/* About page ___ ____ ____ _____ ____ ___ ____ */
+/* static/css/styles.css */
+
+
+.about-background-image {
+    position: relative;
+    width: 70%;
+    height: 20em;
+    place-content: center;
+    background: url("/static/About_top_image.jpg") no-repeat center center;
+    background-size: contain; /* Adjust to cover instead of contain */
+    border-radius: 40px; /* Adjust radius as needed */
+    overflow: hidden; /* Ensure the image respects the border-radius */
+    margin: auto; /* Center the element horizontally */
+}
+
+/* Optional: Add a box shadow for a better effect */
+.about-background-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.about h2 {
+    position: absolute;
+    top:16em;
+    font-weight: bold;
+    color: #f1f1f2;
+    text-shadow: 1px 1px 1px gray;
+    
+}
+.about .container{
+    text-align: left !important;
+}
+.about ul li{
+    list-style-type: none;
+
+}
+.about .container ul li i{
+    color:#28a745;
+}
+.about .our_team {
+   padding-top: 1em;
+   border-radius: 1em;
+}
+
+.about .our_team h3 {
+    margin-top: 1rem;
+}
+
+.about .our_team p {
+    margin-top: 0.5rem;
+}
+.about .our_team .img-fluid{
+    border-radius:1em;
+    aspect-ratio: 2/2;
+    width:80%;
+}
+
+.about .our_team .h2{
+    text-decoration: underline;
+
+}
 
   
+@media screen and (max-width: 650px) {
+    .about .container{
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        width: 99%;
+        text-align: justify !important;
+    }
+    .about .text_about> h2{
+        position: absolute;
+        top:22em;
+    }
+    .about nav{
+        
+        
+        width: 100%;
+    }
+    .about-background-image {
+        position: relative;
+        width: 100%;
+        height: 29em;
+        margin: 0 auto;
+       
+        background: url("/static/About_top_image.jpg") no-repeat center center;
+        background-size: cover;
+        
+    }
+  
+.about h2 {
+    font-weight: bold;
+    height: 0%;
+    color: #f1f1f2;
+    place-content: center;
+}
+
+.background_text_imp{
+    
+    background-color: #cfe2ff;
+    padding-top: 1em;
+}
+
 
 
 
@@ -1077,6 +1186,30 @@ footer img{
 }
 
 @media screen and (min-width: 760px) and (max-width: 1000px){
+    
+    .about-background-image {
+        position: relative;
+        width:70%;
+        height:20em;
+        margin:0 auto;
+        place-content: center;
+        background: url("/static/About_top_image.jpg") no-repeat  center center;
+        background-size: contain;
+    
+    
+    }
+    
+    .about h2 {
+        position: absolute;
+        top:16em;
+        left:30%;
+        font-weight: bold;
+        
+        color: #f1f1f2;
+        
+    }
+
+
 
     .navbar-expand-md .navbar-nav {
         flex-direction: row;
@@ -1171,6 +1304,28 @@ footer img{
 
 @media screen and (min-width: 1000px) {
     
+    .about-background-image {
+        position: relative;
+        width:80%;
+        height:20em;
+        margin:0 auto;
+        place-content: center;
+        background: url("/static/About_top_image.jpg") no-repeat  center center;
+        background-size: contain;
+    
+    
+    }
+
+    .about h2 {
+        position: absolute;
+        top:58%;
+        left:40%;
+        font-weight: bold;
+        
+        
+        color: #f1f1f2;
+        
+    }
     .products_details .image-container:hover{
         transform: scale(1.2);
         

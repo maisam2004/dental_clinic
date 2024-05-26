@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.messages import get_messages
+from django.views.generic import TemplateView
 
 # Create your views here.
 from django.shortcuts import render, redirect
@@ -25,3 +26,10 @@ def contact(request):
         'messages': get_messages(request),  # Add this line
     }
     return render(request, 'contact/contact.html', context)
+
+
+class AboutTemplateView(TemplateView):
+    template_name = "contact/about.html"
+
+
+    
