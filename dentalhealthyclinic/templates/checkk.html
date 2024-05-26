@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+        <a class="navbar-brand mx-auto d-md-none" href="{% url 'home' %}">
+            <img class='mobile_logo' src="{% static 'logo1.png' %}" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle {% if request.resolver_match.url_name in ['general', 'cosmetic', 'restorative'] %}active{% endif %}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dentistry Services
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item {% if request.resolver_match.url_name == 'general' %}active{% endif %}" href="{% url 'general' %}">General</a></li>
+                        <li><a class="dropdown-item {% if request.resolver_match.url_name == 'cosmetic' %}active{% endif %}" href="{% url 'cosmetic' %}">Cosmetic</a></li>
+                        <li><a class="dropdown-item {% if request.resolver_match.url_name == 'restorative' %}active{% endif %}" href="{% url 'restorative' %}">Restorative</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'fees' %}active{% endif %}" href="#">Fees</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %}" href="{% url 'products' %}">Dental Store</a>
+                </li>
+                <li class="nav-item d-none d-md-block">
+                    <a class="navbar-brand mx-auto" href="{% url 'home' %}">
+                        <img class='desktop_logo' src="{% static 'logo1.png' %}" alt="Logo">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="#">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle {% if request.resolver_match.url_name in ['profile', 'account_logout', 'account_signup', 'account_login'] %}active{% endif %}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-user fs-6 border p-2 rounded-circle"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                                <li><a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
+                                <li><a href="{% url 'admin:index' %}" target="_blank" class="dropdown-item">Admin</a></li>
+                            {% endif %}
+                            
+                            
+                            <li><a class="nav-link {% if request.resolver_match.url_name == 'profile' %}active{% endif %}" href="{% url 'profile' %}">My Profile</a></li>
+                            <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                        {% else %}
+                            <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+                            <li><a href="{% url 'account_login' %}" class="dropdown-item" title='login'><span class="d-none">Login</span> <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

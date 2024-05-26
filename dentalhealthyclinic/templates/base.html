@@ -60,27 +60,27 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                            
-                            <li><a class="dropdown-item" href="{% url 'general'%}">General</a></li>
-                            <li><a class="dropdown-item" href="{% url 'cosmetic'%}">Cosmetic</a></li>
-                            <li><a class="dropdown-item" href="{% url 'restorative'%}">Restorative</a></li>
+                            <li><a class="dropdown-item {% if request.resolver_match.url_name == 'general' %}active{% endif %}" href="{% url 'general' %}" target="_blank">General</a></li>
+                            <li><a class="dropdown-item {% if request.resolver_match.url_name == 'cosmetic' %}active{% endif %}" href="{% url 'cosmetic' %}" target="_blank">Cosmetic</a></li>
+                            <li><a class="dropdown-item {% if request.resolver_match.url_name == 'restorative' %}active{% endif %}" href="{% url 'restorative' %}" target="_blank">Restorative</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Fees</a>
+                        <a class="nav-link {% if request.resolver_match.url_name == 'fees' %}active{% endif %}" href="#" target="_blank">Fees</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'products' %}">Dental Store</a>
+                        <a class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %}" href="{% url 'products' %}" target="_blank">Dental Store</a>
                     </li>
                     <li class="nav-item d-none d-md-block">
-                        <a class="navbar-brand mx-auto"  href="{% url 'home' %}">
+                        <a class="navbar-brand mx-auto"  href="{% url 'home' %}" target="_blank">
                             <img class='desktop_logo' src="{% static 'logo1.png' %}" alt="Logo" >
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="#" target="_blank">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link d-sm-block d-md-none d-lg-block" href="#">About</a>
+                        <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="#" target="_blank">About</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -91,22 +91,24 @@
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                    <li> <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
+                                   <li><a class="dropdown-item {% if request.resolver_match.url_name == 'add_product' %}active{% endif %}" href="{% url 'add_product' %}" target="_blank">Product Management</a></li>
+
                                    <li> <a href="{% url 'admin:index' %}" target="_blank" class="dropdown-item">Admin</a></li>
+                                   <li><a class="dropdown-item {% if request.resolver_match.url_name == 'admin:index' %}active{% endif %}" href="{% url 'admin:index' %}" target="_blank">Admin</a></li>
+
                                 {% endif %}
-                                <li> <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
-                                <li> <a href="{% url 'account_logout' %}" class="dropdown-item">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                                <li><a class="nav-link {% if request.resolver_match.url_name == 'profile' %}active{% endif %}" href="{% url 'profile' %}" target="_blank">My Profile</a></li>
+                                <li> <a href="{% url 'account_logout' %}" class="dropdown-item" target="_blank">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
                             {% else %}
-                            <li> <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                            <li>  <a href="{% url 'account_login' %}" class="dropdown-item" title='login'><span class="d-none " >Login</span> <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                            <li><a class="dropdown-item {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}" target="_blank">Register</a></li>
+                            <li>  <a href="{% url 'account_login' %}" class="dropdown-item" title='login'><span class="d-none " target="_blank" >Login</span> <i class="fa-solid fa-right-to-bracket"></i></a></li>
                             {% endif %}
                         </ul>
                     </li>
-                    <li class="nav-item d-none">
-                        <a class="nav-link " href="{% url 'view_basket' %}">Basket</a>
-                        
-                    </li>
+                    
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
+                        
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link {% if request.resolver_match.url_name == 'view_basket' %}active{% endif %}" href="{% url 'view_basket' %}">
                             <div class="text-center basket_icon_price">
                                {% comment %}  <div><i class="fas fa-shopping-bag fa-lg"></i></div> {% endcomment %}
                                 <p class="my-0">
@@ -348,6 +350,13 @@
           });
     
 
+          //for show active dropdown link 
+       {% comment %}    $(document).ready(function() {
+            // Check if any dropdown items have the active class on page load
+            if ($('.dropdown-menu .dropdown-item.active').length > 0) {
+              $('.nav-link.dropdown-toggle').addClass('active');
+            }
+          }); {% endcomment %}
 
 
 
