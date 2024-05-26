@@ -71,8 +71,12 @@ span a{
     border-bottom: 2px dotted blue; /* Or your desired style */
 }
 
-.nav-item:has(> .nav-link.active)  {
+.nav-item:has(> .nav-link.active),.list-group-item:has(> .list-group-item.active )  {
     border-bottom: 2px dotted rgb(0, 115, 255); /* Or list that has active link border style */
+}
+.footer .list-group-item:has(> .list-group-item.active ){
+    background-color: #17a2b8 !important;
+    width: 50%;
 }
 .list-inline-item:has(> .nav-link.active) {
     border-bottom: 2px dotted rgb(255, 136, 0); /* Or list that has active link border style */
@@ -337,6 +341,18 @@ form{
 .login .container{
 width: 96%;
 }
+
+.login .row{
+    justify-content: center;
+}
+
+.signup .container {
+    width: 96%;
+}
+
+.signup .row{
+    justify-content: center;
+}
 .pay form{
     display: flex;
     justify-content: space-evenly;
@@ -544,7 +560,7 @@ width: 96%;
     left: 45%;
   }
 
-  .general,.cosmetic {background-color: var(--bs-primary-bg-subtle) !important;}
+  .general,.cosmetic,.contact {background-color: var(--bs-primary-bg-subtle) !important;}
   
 
   .general .fee-table {
@@ -778,9 +794,23 @@ width: 96%;
   }
 
 
+/* sinup page allauth */
+.signup .allauth-form-inner-content{
+    background-color: white;
+    padding: 0.6em;
+    border-radius: 1em;
+}
+.singup .container{
+    width: 98% !important;
+}
   
 @media screen and (max-width: 650px) {
 
+  
+
+
+
+  
     .desktop_logo{
         width: 12em;
         
