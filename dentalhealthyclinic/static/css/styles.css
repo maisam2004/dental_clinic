@@ -937,8 +937,24 @@ width: 96%;
 
 
 /* fee page */
-.table-secondary {
-    border-radius: 12em !important;
+
+
+/* book appointemtn */
+
+.book_appointment form input,.book_appointment form select {
+    border-radius: 1em;
+    border:1px solid rgba(0, 0, 0, 0.34);
+    background-color: #dde4eb9b;
+}
+.book_appointment form textarea{
+    border-radius: 1em;
+    border:1px solid rgba(0, 0, 0, 0.34);
+    background-color: #dde4ebbd;
+}
+.book_appointment form button{
+    border-radius: 1em;
+    width:60%;
+    margin: 0 auto;
 }
   
 @media screen and (max-width: 650px) {

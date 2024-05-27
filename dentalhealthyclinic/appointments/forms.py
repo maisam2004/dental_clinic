@@ -1,5 +1,6 @@
 from django import forms
-from .models import Service,Appointment,Dentist
+from .models import Appointment,Dentist
+from fee.models import Fee
 from bootstrap_datepicker_plus.widgets import DateTimePickerInput,DatePickerInput,TimePickerInput
 from datetime import date,datetime
 from datetime import date, timedelta  
@@ -18,6 +19,7 @@ def is_valid_full_name(full_name):
 
 
 class AppointmentForm(forms.ModelForm):
+    service = forms.ModelChoiceField(queryset=Fee.objects.all())
     
 
     class Meta:
@@ -36,7 +38,7 @@ class AppointmentForm(forms.ModelForm):
 
             'time': TimePickerInput(options={
                     "format": "HH:mm",  # Format for day, month, and year
-                    "stepping": 15,
+                    "stepping": 30,
                     "enabledHours": [ 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
                     
                 }),}

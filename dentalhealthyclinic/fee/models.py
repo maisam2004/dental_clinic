@@ -3,7 +3,6 @@ from django.db import models
 # Create your models here.
 # fees/models.py
 from django.db import models
-from appointments.models import Service
 
 class Category(models.Model):
     name = models.CharField(max_length=100)

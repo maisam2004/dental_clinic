@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import Service,Appointment,Dentist
+
 from .forms import AppointmentForm
+from fee.models import Fee  
 import random
+
 from django.contrib import messages 
 from django.db import transaction  
 
@@ -19,7 +22,7 @@ def success(request, appointment_id):
 
 @login_required(login_url='/accounts/login/') 
 def book_appointment(request):
-    services = Service.objects.all() 
+    fees = Fee.objects.all()
     if request.method == 'POST':
         form = AppointmentForm(request.POST) 
         if form.is_valid():
@@ -28,17 +31,19 @@ def book_appointment(request):
             appointment.user = request.user
 
             # Get selected service
-            selected_service = form.cleaned_data['service']
+            selected_fee = form.cleaned_data['service']
 
             # Get all dentists who offer the selected service
-            available_dentists = Dentist.objects.filter(services=selected_service)
+            #available_dentists = Dentist.objects.filter(services__service=selected_fee.service)
+            available_dentists = Dentist.objects.filter(services=selected_fee)
+
 
             # If there are available dentists, randomly choose one
             if available_dentists.exists():
                 appointment.dentist = random.choice(available_dentists)
             else:
                 messages.error(request, "No dentists are available for this service at the moment.")
-                return render(request, 'appointments/book_appointment.html', {'form': form, 'services': Service.objects.all()})
+                return render(request, 'appointments/book_appointment.html', {'form': form, 'fees': fees})
 
             # Check for existing appointment at the same time and dentist
             try:
@@ -48,7 +53,7 @@ def book_appointment(request):
                     time=form.cleaned_data['time']
                 )
                 messages.error(request, "This time slot is already booked. Please choose another time.")
-                return render(request, 'appointments/book_appointment.html', {'form': form, 'services': Service.objects.all()})
+                return render(request, 'appointments/book_appointment.html', {'form': form, 'fees': fees})
             except Appointment.DoesNotExist:
                 pass  # No conflict, proceed with booking
 
@@ -62,6 +67,6 @@ def book_appointment(request):
             initial_data['email'] = request.user.email
         form = AppointmentForm(initial=initial_data)
 
-    context = {'services': services, 'form': form}
+    context = {'fees': fees, 'form': form}
     return render(request, 'appointments/book_appointment.html', context)
 

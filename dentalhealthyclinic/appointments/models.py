@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 import uuid
-
+from fee.models import Fee
 
 
 
@@ -17,7 +17,7 @@ class Service(models.Model):
 
 class Dentist(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='dentist')
-    services = models.ManyToManyField('Service', related_name='dentists', blank=True)
+    services = models.ManyToManyField(Fee, related_name='dentists', blank=True) 
 
     def __str__(self):
         return self.user.get_full_name()
@@ -33,7 +33,8 @@ class Appointment(models.Model):
     dentist = models.ForeignKey(Dentist, on_delete=models.CASCADE, blank=True, null=True, related_name='appointments')
     date = models.DateField(null=True)
     time = models.TimeField(null=True)
-    service = models.ForeignKey('Service', on_delete=models.CASCADE,null=True)
+    
+    service = models.ForeignKey(Fee, on_delete=models.CASCADE, null=True)
     STATUS_CHOICES = (
         ('Scheduled', 'Scheduled'),
         ('Completed', 'Completed'),

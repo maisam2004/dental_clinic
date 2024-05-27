@@ -60,3 +60,75 @@
     </div>
 </nav>
 <li><a class="dropdown-item {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}">General</a></li>
+
+
+class Appointment(models.Model):
+    full_name = models.CharField(max_length=100,null=True)
+    email = models.EmailField(null=True)
+    phone_number = models.CharField(max_length=20,null=True) 
+    dentist = models.ForeignKey(Dentist, on_delete=models.CASCADE, blank=True, null=True, related_name='appointments')
+    date = models.DateField(null=True)
+    time = models.TimeField(null=True)
+    service = models.ForeignKey('Service', on_delete=models.CASCADE,null=True)
+    STATUS_CHOICES = (
+        ('Scheduled', 'Scheduled'),
+        ('Completed', 'Completed'),
+        ('Cancelled', 'Cancelled'),
+    )
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Scheduled')
+    notes = models.TextField(blank=True)
+    reference_number = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+
+    def __str__(self):
+        return f"Appointment - {self.reference_number}"
+
+
+        -------
+        @login_required(login_url='/accounts/login/') 
+        def book_appointment(request):
+            services = Service.objects.all() 
+            if request.method == 'POST':
+                form = AppointmentForm(request.POST) 
+                if form.is_valid():
+                    
+                    appointment = form.save(commit=False)
+                    appointment.user = request.user
+        
+                    # Get selected service
+                    selected_service = form.cleaned_data['service']
+        
+                    # Get all dentists who offer the selected service
+                    available_dentists = Dentist.objects.filter(services=selected_service)
+        
+                    # If there are available dentists, randomly choose one
+                    if available_dentists.exists():
+                        appointment.dentist = random.choice(available_dentists)
+                    else:
+                        messages.error(request, "No dentists are available for this service at the moment.")
+                        return render(request, 'appointments/book_appointment.html', {'form': form, 'services': Service.objects.all()})
+        
+                    # Check for existing appointment at the same time and dentist
+                    try:
+                        existing_appointment = Appointment.objects.get(
+                            dentist=appointment.dentist,
+                            date=form.cleaned_data['date'],
+                            time=form.cleaned_data['time']
+                        )
+                        messages.error(request, "This time slot is already booked. Please choose another time.")
+                        return render(request, 'appointments/book_appointment.html', {'form': form, 'services': Service.objects.all()})
+                    except Appointment.DoesNotExist:
+                        pass  # No conflict, proceed with booking
+        
+                    appointment.save()  
+                    return redirect('success', appointment_id=appointment.id)
+            else:
+                
+                initial_data = {}
+                if request.user.is_authenticated:
+        
+                    initial_data['email'] = request.user.email
+                form = AppointmentForm(initial=initial_data)
+        
+            context = {'services': services, 'form': form}
+            return render(request, 'appointments/book_appointment.html', context)
+        

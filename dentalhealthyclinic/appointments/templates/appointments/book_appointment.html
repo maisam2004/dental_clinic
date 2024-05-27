@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 {% block cortitle  %}Book appointment{% endblock %}
+{% block page%}book_appointment{% endblock %}
 {% block content %}
 
+<div class="container align-items-center  p-2  bg-light rounded-4">
 
-<h1>Book an Appointment</h1>
+    <hr>
+    <p class="h2 logo-font mb-4">Book an Appointment</p>
+    <hr>
+
+
     {{ form.media }}
-    <form method="POST">
+    <form method="POST" class="flex-column">
         {% csrf_token %}
         
         {{ form|crispy}}
@@ -18,5 +24,5 @@
         
         <button type="submit" class="btn btn-primary">Book Appointment</button>
     </form>
-
+</div>
 {% endblock %}
