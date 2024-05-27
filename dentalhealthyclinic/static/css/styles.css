@@ -935,6 +935,11 @@ width: 96%;
 
 }
 
+
+/* fee page */
+.table-secondary {
+    border-radius: 12em !important;
+}
   
 @media screen and (max-width: 650px) {
     .about .container{

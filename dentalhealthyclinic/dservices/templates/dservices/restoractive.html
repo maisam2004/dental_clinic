@@ -127,33 +127,24 @@
 
       <div class="container-fluid align-items-center  p-2  rounded-4">
         <h2>Our Fees</h2>
-        <table class="fee-table table table-striped border  rounded ">
-          <thead >
-            <tr >
-              <th scope="col">Service</th>
-              <th scope="col">Price</th>
-            </tr>
+        <table class="fee-table table table-striped table-secondary-subtle">
+          <thead>
+              <tr>
+                  <th scope="col">Service</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Price</th>
+              </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Filling</td>
-              <td>from £145</td>
-            </tr>
-            <tr>
-              <td>Crowns</td>
-              <td>from £360</td>
-            </tr>
-            <tr>
-              <td>Implant</td>
-              <td>from £320</td>
-            </tr>
-            <tr>
-              <td>Bridges</td>
-              <td>£800</td>
-            </tr>
-            
+              {% for fee in restorative_fees %}
+              <tr>
+                  <td>{{ fee.service }}</td>
+                  <td>{{ fee.description }}</td>
+                  <td>${{ fee.amount }}</td>
+              </tr>
+              {% endfor %}
           </tbody>
-        </table>
+      </table>
         <p class="discount-note text-danger">
           Join us and enjoy a 20% discount on fees!<br>
           <span class="text-dark ">call now : 020365558489</span>
