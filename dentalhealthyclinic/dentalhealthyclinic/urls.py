@@ -29,6 +29,7 @@ urlpatterns = [
     path('dservices/', include('dservices.urls')),
     path('pay/', include('pay.urls')),
     path('profiles/', include('profiles.urls')),
+    path('fee/', include('fee.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

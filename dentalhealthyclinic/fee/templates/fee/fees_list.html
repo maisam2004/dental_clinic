@@ -1,0 +1,43 @@
+<!-- dservices/templates/dservices/general_services.html -->
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>All Fees</h1>
+
+{% if services %}
+<h2>Services</h2>
+<ul>
+    {% for service in services %}
+    <li>{{ service.name }} - {{ service.description }} (Base Price: ${{ service.base_price }})</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No services available.</p>
+{% endif %}
+
+{% if fees %}
+<h2>Fees</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Service</th>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fee in fees %}
+        <tr>
+            <td>{{ fee.service.name }}</td>
+            <td>{{ fee.description }}</td>
+            <td>${{ fee.amount }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No fees available.</p>
+{% endif %}
+
+{% endblock %}
