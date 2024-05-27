@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+/* Rectangle 111 */
+
+
+
 
 body{
     border: 1px solid red;
@@ -104,35 +108,89 @@ main h4{
 
 
 .homepage a.btn{
-    background-color: rgb(18, 88, 113);
+     background-color: rgb(18, 88, 113); 
     color: white;
     padding: 10px 20px;
     font-weight: 700;
-    
 
 }
+.grounded-radiants {
+    position: relative;
+    border: 4px solid transparent;
+    border-radius: 16px;
+   /*  background: linear-gradient(orange, violet); */
+   background: rgb(18, 88, 113); 
+    background-clip: padding-box;
+    padding: 10px;
+    /* just to show box-shadow still works fine */
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.467); 
+}
+
+.grounded-radiants::after {
+    position: absolute;
+    top: -4px; bottom: -4px;
+    left: -4px; right: -4px;
+    background: linear-gradient(119.03deg,rgb(29, 136, 185)34.89%, rgb(187, 74, 216) 93.87%);
+    
+    content: '';
+    z-index: -1;
+    border-radius: 28px;
+}
+
+
+
+.grounded-radiants:hover{
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.467);
+}
+
 .homepage a.btn:hover {
     background-color: #c8ccd0; /* Example color - adjust as needed */
     color:rgb(18, 88, 113);
     font-weight: 600;
 }
-
-.current_offers{
-    background-color: rgb(96, 137, 144);
-}
-
 .homepage .card .card-title{
     font-size: 2em;
 }
-.current_offers .card .card-text{
-    font-weight: bold;
+
+/* current offers  */
+
+.current_offers{
+    background-color: #8da7cf;
 }
+
+
+.current_offers .card {
+    background: linear-gradient(119.03deg, #304A7F 34.89%, #731569 93.87%);
+    color:white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+.current_offers .card .text-price{
+    text-shadow: 1px 1px 3px  rgba(74, 69, 69, 0.896);
+}
+    
 .card .join_now{
     font-weight: 700;
     background-color: rgb(38, 94, 115);
     text-decoration: none;
     color:white;
 }
+
+
+/* 
+box-sizing: border-box;
+
+position: absolute;
+width: 622px;
+height: 604px;
+
+background: linear-gradient(119.03deg, #304A7F 34.89%, #731569 93.87%);
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 55px;
+
+
+*/
 
 /* services ..............*/
 
@@ -170,6 +228,7 @@ border-radius:3em !important;
  padding-left: 0.1em !important;
  padding-right: 0.1em !important;
  line-height: 1.8em;
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .denteistry_services .card-title{
@@ -211,6 +270,7 @@ border-radius:3em !important;
     color:rgb(236, 236, 12);
     background-color: rgb(15, 184, 58);
     padding: 0.4em;
+    margin-left:2px;
 
 }
 
@@ -1402,6 +1462,20 @@ footer img{
 }
 
 @media screen and (min-width: 1400px) {
+
+    .why_choose_us{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .reviews {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+    .current_offers .container-md{
+        max-width: 80%;
+        margin:0 auto;
+    }
+
     .footer .container-md {
         gap: 7em;
     }

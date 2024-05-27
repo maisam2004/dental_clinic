@@ -59,3 +59,4 @@
         </div>
     </div>
 </nav>
+<li><a class="dropdown-item {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}">General</a></li>
