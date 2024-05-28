@@ -20,8 +20,8 @@
 </main>
 <section class="current_offers  inner-shadow container-fluid pb-4 pt-5 mt-3 mb-3">
     <h2 class="text-light fw-semibold">Current offers</h2>
-    <div class="container-md p5 mt-3 d-flex flex-wrap gap-4 justify-content-center">
-        <div class="card text-center position-relative rounded-4 d-inline-block" style="width: 24rem;">
+    <div class="container-md card-container p5 mt-3 d-flex flex-wrap gap-4 justify-content-center">
+        <div class="card left-card text-center position-relative rounded-4 d-inline-block" style="width: 24rem;">
             <div class="card-body m-3">
               <h5 class="card-title border rounded p-3 text-center rounded-pill ">New patient offer</h5>
               <h6 class="card-subtitle mb-2 fw-bold">Private patient</h6>
@@ -31,12 +31,12 @@
                 & CLEANING<br>
                 <span class="text-danger fw-bold fs-5 text-price">ONLY FOR  $69</span>
                 </p>
-              <a href="#" class="join_now border rounded p-2 px-3 text-center rounded-pill">Join Now</a>
+              <a href="{% url 'book_appointment' %}" class="join_now border rounded p-2 px-3 text-center rounded-pill btn">Join Now</a>
               
             </div>
           </div>
 
-          <div class="card text-center position-relative rounded-4" style="width: 24rem;">
+          <div class="card right-card text-center position-relative rounded-4" style="width: 24rem;">
             
             <div class="card-body m-3">
                 <h5 class="card-title border rounded p-3 text-center rounded-pill">Special Offer</h5>
@@ -45,10 +45,10 @@
                   Professional Teeth Whitening Treatment<br>
                   Includes consultation and take-home kit<br>
                   <span class="text-decoration-line-through text-secondary ">Was $500</span><br>  
-                  <span class="text-danger fw-bold fs-5 text-price" >Now only $199</span>
+                  <span class="text-danger fw-bold fs-5 text-price " >Now only $199</span>
               </p>
               
-                <a href="#" class="join_now border rounded p-2 px-3 text-center rounded-pill">Book Now</a>
+                <a href="{% url 'book_appointment' %}" class="join_now border rounded p-2 px-3 text-center rounded-pill btn">Book Now</a>
             </div>
         </div>
 

@@ -98,7 +98,7 @@
                         <a class="nav-link {% if request.resolver_match.url_name == 'fees' %}active{% endif %}" href="{% url 'fees' %}" target="_blank">Fees</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %}" href="{% url 'products' %}" target="_blank">Dental Store</a>
+                        <a class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %} text-info" href="{% url 'products' %}" target="_blank">Dental Store</a>
                     </li>
                     <li class="nav-item d-none d-md-block">
                         <a class="navbar-brand mx-auto"  href="{% url 'home' %}" target="_blank">

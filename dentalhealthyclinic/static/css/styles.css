@@ -40,6 +40,11 @@ span a{
     font-size: smaller;
     
 }
+.navbar-nav .nav-link:hover{
+    font-size: large !important;
+    font-weight: bold;
+    color:red !important;
+}
 .desktop_logo{
     width: 12.5em;
     /* padding-bottom: 2rem; */
@@ -72,11 +77,11 @@ span a{
 
 
 .nav-link.dropdown-toggle.show-active {
-    border-bottom: 2px dotted blue; /* Or your desired style */
+    border-bottom: 2px dotted rgb(222, 103, 6); /* Or your desired style */
 }
 
 .nav-item:has(> .nav-link.active),.list-group-item:has(> .list-group-item.active )  {
-    border-bottom: 2px dotted rgb(0, 115, 255); /* Or list that has active link border style */
+    border-bottom: 2px dotted rgb(240, 114, 11); /* Or list that has active link border style */
 }
 .footer .list-group-item:has(> .list-group-item.active ){
     background-color: #17a2b8 !important;
@@ -166,6 +171,54 @@ main h4{
   .current_offers h2{
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.576);
   }
+
+  /* styles.css */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container .card {
+    /* animation: slideIn 1s ease-in-out; */
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.left-card {
+    animation: slideFromLeft 1s ease-in-out;
+}
+.left-card:hover,.right-card:hover{
+    scale: 1.02;
+
+}
+
+.left-card button:hover,.right-card button:hover{
+    color:red;
+    background-color: #c4d7dab7;
+
+}
+.right-card {
+    animation: slideFromRight 1s ease-in-out;
+}
+
+
+
   
   /* Drop shadow combined with a inset inner shadow, P.S. this can be used to make beautiful 3D buttons */
   /* .inner-shadow {
@@ -490,6 +543,7 @@ width: 96%;
 }
 /* products page ---------- */
 .products form{
+    flex-direction: row;
     padding: 0.6em;
     width: 60%;
     border: none;
