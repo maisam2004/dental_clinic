@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.messages import get_messages
 from django.views.generic import TemplateView
+from appointments.models import Dentist 
 
 # Create your views here.
 from django.shortcuts import render, redirect
@@ -29,7 +30,11 @@ def contact(request):
 
 
 class AboutTemplateView(TemplateView):
+    " to show about us page and showing dentists staff "
     template_name = "contact/about.html"
-
+    def get_context_data(self, **kwargs):
+            context = super().get_context_data(**kwargs)
+            context['dentists'] = Dentist.objects.all()  # Fetch all dentists
+            return context
 
     

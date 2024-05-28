@@ -30,10 +30,38 @@
 <body class="{% block page %}{% endblock %}">
 
     {% block nav%} 
-    <div  class="container-fluid">
-        <div class="row bg-success text-center d-flex ">
-            <div class=" p-1 w-50 "><span><a class="text-white fw-bolder " href="tel:020365558489"><i class="fa-solid fa-phone px-1"></i>020365558489</a></span></div>
-            <div class=" p-1 w-50 "><span><a class="text-white fw-bolder" href="tel:020365558489"><i class="fa-solid fa-location-dot px-1"></i>find us here</a></span></div>
+    
+    <div  class="container-fluid top_nav_book" style="background-color: #428581;">
+        <div class="row   text-center d-flex flex-row py-1">
+            <div class="hstack gap-3">
+            <div class=" p-1 "><span><a class="text-light fw-bolder " href="tel:020365558489" title="tel:020365558489"><i class="fa-solid fa-phone px-1 "></i><span class="d-md-none">Call</span><span class="d-none d-md-inline-block">020365558489</span></a></span></div>
+            <div class=" p-1 "><span><a class="text-light fw-bolder" href="tel:020365558489"><i class="fa-solid fa-location-dot px-1"></i>Clinic</a></span></div>
+            <div class=" p-1 ms-md-auto "><a href="{% url 'book_appointment' %}" class="btn text-light fw-bold border " title="book appointment">Book Now</a></div>
+            
+            <div class="p1  ms-auto d-md-none ">
+                <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid text-light fa-user fs-6 border p-2 rounded-circle"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                       <li> <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
+                       <li><a class="dropdown-item {% if request.resolver_match.url_name == 'add_product' %}active{% endif %}" href="{% url 'add_product' %}" target="_blank">Product Management</a></li>
+
+                       <li> <a href="{% url 'admin:index' %}" target="_blank" class="dropdown-item">Admin</a></li>
+                       <li><a class="dropdown-item {% if request.resolver_match.url_name == 'admin:index' %}active{% endif %}" href="{% url 'admin:index' %}" target="_blank">Admin</a></li>
+
+                    {% endif %}
+                    <li><a class="nav-link {% if request.resolver_match.url_name == 'profile' %}active{% endif %}" href="{% url 'profile' %}" target="_blank">My Profile</a></li>
+                    <li> <a href="{% url 'account_logout' %}" class="dropdown-item" target="_blank">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                {% else %}
+                <li><a class="dropdown-item {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}" target="_blank">Register</a></li>
+                <li>  <a href="{% url 'account_login' %}" class="dropdown-item" title='login'><span class="d-none " target="_blank" >Login</span> <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                {% endif %}
+                </ul>
+                </div>
+            </div>
         </div>
     </div>
 
