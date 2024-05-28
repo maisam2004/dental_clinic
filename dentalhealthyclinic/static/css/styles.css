@@ -382,13 +382,44 @@ footer img{
 form{
     display: flex;
     justify-content: space-evenly;
-    
-    
-    
-}
-.profile form{
     flex-direction: column;
+    
+    
+    
 }
+
+/* profile ___________________________ */
+
+.profile form input , .profile form select{
+    border-radius: 1.5em !important;
+    border:1px solid rgba(0, 0, 0, 0.34);
+    /* background-color: #dde4eb9b; */
+}
+.profile form button{
+    background-color: #0d6efd;
+    color:white;
+    border-radius: 1.5em !important;
+    width:65%;
+    margin: 0 auto;
+}
+.profile form button:hover{
+    background-color: #ccccd4;
+    
+}
+.profile .profile_update_form .input-group{
+    display: none;
+}
+
+
+
+.profile  .image_profile_size{
+    border:2px solid#78868842;
+     width: 18%;
+     aspect-ratio: 1 / 1;
+     
+     
+ }
+
 
 .login form{
     flex-direction: column;
@@ -955,6 +986,7 @@ width: 96%;
     border-radius: 1em;
     width:60%;
     margin: 0 auto;
+    background-color: rgb(18, 88, 113) !important;
 }
   
 @media screen and (max-width: 650px) {
@@ -1270,10 +1302,52 @@ footer img{
     width:100%;
   }
 
+  /* profile */
+
+  .profile .container{
+    width:99%;
+}
+.profile form {
+    margin-bottom: 2em;
+}
+.profile form button{
+    width:90%;
+
+}
+.profile  .image_profile_size{
+   border:2px solid#78868842;
+    width: 24%;
+    aspect-ratio: 1 / 1;
+    
+    
+}
+
+
+.profile .profile_update_form input{
+    width: 28%;
+}
+.profile .profile_update_form button{
+    width: 40%;
+    margin: 0 0;
+    margin-bottom: 1em;
+}
+
+
 
 }
 
 @media screen and (min-width: 760px) and (max-width: 1000px){
+
+    .profile .profile_update_form input{
+        width: 42%;
+    }
+    .profile .profile_update_form button{
+        width: 30%;
+        margin: 0 0;
+        margin-bottom: 1em;
+    }
+    
+     
     
     .about-background-image {
         position: relative;
@@ -1391,6 +1465,15 @@ footer img{
 }
 
 @media screen and (min-width: 1000px) {
+
+    .profile .profile_update_form input{
+        width: 30%;
+    }
+    .profile .profile_update_form button{
+        width: 30%;
+        margin: 0 0em;
+    }
+
     
     .about-background-image {
         position: relative;
