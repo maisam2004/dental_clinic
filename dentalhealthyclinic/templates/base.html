@@ -248,7 +248,7 @@
     
     {% endblock %}
 
-    {% if messages %}
+    {% comment %} {% if messages %}
     <div class="message_container position-fixed top-1 end-0">
         {% for message in messages %}
         {% with message.level as level %}
@@ -267,7 +267,27 @@
     </div>
     
     
-    {% endif %}
+    {% endif %} {% endcomment %}
+    {% if messages %}
+    <div class="message_container position-fixed top-1 end-0">
+        {% for message in messages %}
+        {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toast/toast_error2.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toast/toast_warning2.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toast/toast_success2.html' %}
+                    {% else %}
+                        {% include 'includes/toast/toast_info2.html' %}
+                    {% endif %}
+         {% endwith %}
+
+        {% endfor %}
+    </div>
+
+
+{% endif %}
     
     <h6>base.html</h6>
     

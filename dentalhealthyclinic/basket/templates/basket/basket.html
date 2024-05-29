@@ -25,11 +25,13 @@
                                 </tr>
                             </thead>
 
+
                             {% for item in bag_items %}
                                 <tr>
                                     <td class="p-3 w-25">
-                                        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
-                                   
+                                       
+                                        <a href="{% url 'product_detail' item.product.id %}" class="d-flex justify-content-center"><img class="img-fluid rounded" src="{{ item.product.image.url }}"><a>
+
                                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                         <p class="my-0"><strong> </strong>{% if item.product.has_sizes %}Size:{{ item.size|upper }}{% endif %}</p>
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
@@ -40,6 +42,7 @@
                                     </td>
                                     
                                     <td class=" text-center pt-5">
+                                       
                                         <form class="form update-form py-3" action="{% url 'update_basket' %}" method="POST">
                                             {% csrf_token %}
                                             <input type="hidden" name="item_id" value="{{ item.item_id }}">
@@ -72,6 +75,7 @@
                                             
 
                                         </form>
+                                    
                                         <a href="{% url 'update_basket' %}?item_id={{ item.item_id }}&action=update" class="update-link  me-4  btn btn-outline-info " title="update"><span class="d-none d-md-inline-block">Update</span><i class="fa-solid fa-arrows-rotate"></i></a>
                                         <a href="{% url 'update_basket' %}?item_id={{ item.item_id }}&action=remove" class="remove-item  float-right  btn btn-outline-danger " id="remove_{{ item.item_id }}"  title="remove item"><span class="d-none d-md-inline-block">Remove </span><i class="fa-solid fa-trash-can"></i></a>
 

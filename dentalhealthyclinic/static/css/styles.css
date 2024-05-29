@@ -158,6 +158,12 @@ main h4{
     box-shadow: 0 0px 3px rgba(0, 0, 0, 0.467);
 }
 
+
+.grounded-radiants:hover::after {
+    
+    background: linear-gradient(119.03deg,rgb(93, 88, 97)34.89%, rgb(176, 171, 156) 93.87%);
+}
+
 .homepage a.btn:hover {
     background-color: #c8ccd0; /* Example color - adjust as needed */
     color:rgb(18, 88, 113);
@@ -378,9 +384,12 @@ border-radius:3em !important;
     font-size: 20px;
     line-height: 20px;
     list-style-type:none;
-    box-shadow:  1px 1px 5px rgb(173, 172, 172);
-    padding-bottom:0.2em ;
-    padding-top: 0.2em;
+    box-shadow:  1px 1px 3px rgb(184, 246, 103);
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    padding-bottom:0.4em ;
+    padding-top: 0.3em;
     
     
   }
@@ -682,6 +691,14 @@ width: 96%;
     border: 2px solid rgba(6, 70, 85, 0.546);
     box-shadow: 0px 3px 13px 5px rgba(202, 205, 206, 0.584) inset;
 }
+.products form button{
+    /* padding:0.5em !important ; */
+    border-radius: 50% !important;
+}
+.products form {
+    padding:0.5em !important ; 
+   
+}
 
 .products .products_cards{
     background-color: #dbe2e2af;
@@ -726,6 +743,15 @@ width: 96%;
     font-weight: bold;
     font-size: large;
 
+}
+
+.products_details .qty_input{
+    border-radius: 0.1px!important; 
+    padding: 0.1em !important;
+    position: static;
+}
+.products_details form{
+    position: static;
 }
 
 
@@ -857,12 +883,15 @@ width: 96%;
   /* toast ----- =================*/
 
  
-  .custom_toast{
-    
-    overflow: visible;
-    z-index: 9999;
 
-  }
+.custom-success-toast {
+    background: linear-gradient(to right, #9370DB, #2aa475);
+    z-index: 9999 !important;
+}
+.custom-warning-toast,.custom-info-toast {
+    background: linear-gradient(to right, #9370DB, #2aa475);
+    z-index: 9999 !important;
+}
   .toast_capper{
    
     height: 2px;
@@ -870,10 +899,10 @@ width: 96%;
   }
   .toast-body{
     
-    z-index: 9999;
+    z-index: 9999 !important;
   }
 
-  .arrow-up {
+/*   .arrow-up {
     width: 0; 
     height: 0; 
     border-left: 4px solid transparent;
@@ -883,9 +912,9 @@ width: 96%;
     top: -10px;
     right: 36px;
 }
-
+ */
 /* Convenience classes - colors copied from Bootstrap */
-.arrow-primary {
+/* .arrow-primary {
     border-bottom-color: #007bff !important;
 }
 
@@ -915,7 +944,7 @@ width: 96%;
 
 .arrow-dark {
     border-bottom-color: #343a40 !important;
-}
+} */
 
 .bag-notification-wrapper { 
     height: 100px; 
@@ -1014,6 +1043,11 @@ width: 96%;
 .basket label[class*="id_qty_"] {
     display: none;
   }
+.basket .qty_input{
+    border-radius: 0.1em !important; 
+    padding: 0.2em !important;
+}
+
 
 
 .show {
@@ -1619,6 +1653,13 @@ footer img{
         width: 60% !important;
     }
 
+    .products_details .image-left-larg{
+        display: flex;
+        background-color: rgb(227 227 227);
+        border-right: 1px solid rgb(0 0 0 / 22%);
+        justify-content: center;
+    }
+
     .general .fee-table {
         width: 70%;
     }
@@ -1628,7 +1669,13 @@ footer img{
     margin: auto;
       }
     
-    
+
+      .basket .update-form {
+        width:50% !important;
+        place-self:center !important;
+        margin: 0 auto;
+      }
+      
 }
 
 @media screen and (min-width: 1000px) {
@@ -1711,11 +1758,24 @@ footer img{
     }
 
 
+    .basket .update-form {
+        width:50% !important;
+        place-self:center !important;
+        margin: 0 auto;
+      }
+
     .cosmetic .reasons{
         width: 60%;
     margin: auto;
       }
    
+
+      .products_details .image-left-larg{
+        display: flex;
+        background-color: rgb(227 227 227);
+        border-right: 1px solid rgb(0 0 0 / 22%);
+        justify-content: center;
+    }
     
 }
 @media screen and (min-width: 1000px) and (max-width: 1400px){

@@ -6,7 +6,7 @@
 
 <div class="container-fluid" id="main-section">
     <div class="row">
-        <div class="col12 col-md-6 col-lg-4 offset-lg-2">
+        <div class="col12 col-md-6 col-lg-4 offset-lg-2 image-left-larg">
             <div class="image-container my-5 rounded-3">
                 {% comment %}{% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
@@ -95,14 +95,15 @@
                     </div>
 
                     <div class="col{% if s %}-12 mt-2{% endif %}">
-                        <a href="{% url 'products' %}" class="btn btn-dark rounded-pill mt-5">
+                        <input type="submit" class="btn btn-success rounded-pill text-uppercase mt-5 w-75" value="Add to Bag"><br>
+                        <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-pill mt-1">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
                         
-                        <input type="submit" class="btn btn-success rounded-pill text-uppercase mt-5" value="Add to Bag">
+                        <input type="submit" class="btn btn-success rounded-pill text-uppercase mt-5 d-none" value="Add to Bag">
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">{# Finally, there's a hidden input field here which uses the request.path attribute #}
                     {# To submit a field named redirect_url. Which will contain the current URL.#}

@@ -64,9 +64,11 @@ def update_basket(request):
                 messages.warning(request,f'removed {product.name} from you basket ')
         elif action == 'update':
             quantity = int(request.POST.get('quantity'))
+            
             if item_id in bag:
                 bag[item_id] = quantity
-                
+                messages.info(request, f'Quantity for {product.name} updated to {quantity}.')  # Add this line
+
                 
         request.session['bag'] = bag
 
