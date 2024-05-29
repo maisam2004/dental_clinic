@@ -3,6 +3,16 @@
     padding: 0;
 }
 
+form input{
+padding: 0.7em !important;
+border-radius: 2em !important;
+border:1px solid rgba(128, 128, 128, 0.674) !important;
+}
+form button{
+    padding: 0.6em !important;
+    border-radius: 2em !important;
+    border:1px solid rgba(128, 128, 128, 0.674) !important;
+    }
 /* Rectangle 111 */
 /* Setting up a box to add the inner shadow to */
 
@@ -88,10 +98,10 @@ span a{
     width: 50%;
 }
 .list-inline-item:has(> .nav-link.active) {
-    border-bottom: 2px dotted rgb(255, 136, 0); /* Or list that has active link border style */
+    border-bottom: 2px dotted rgb(255, 136, 0); 
 }
 .nav-item.dropdown:has(.dropdown-menu .dropdown-item.active) {
-    border-bottom: 2px dotted blue; /* Replace with your desired border style */
+    border-bottom: 2px dotted rgb(255, 85, 0); 
   }
 
 /* end nav style ------------------ */
@@ -187,6 +197,9 @@ main h4{
     0% {
         transform: translateX(-100%);
     }
+    50%{
+        transform: translateX(50%);
+    }
     100% {
         transform: translateX(0);
     }
@@ -196,12 +209,15 @@ main h4{
     0% {
         transform: translateX(100%);
     }
+    50%{
+        transform: translateX(50%);
+    }
     100% {
         transform: translateX(0);
     }
 }
 .left-card {
-    animation: slideFromLeft 1s ease-in-out;
+    animation: slideFromLeft 2s ease-in-out;
 }
 .left-card:hover,.right-card:hover{
     scale: 1.02;
@@ -214,7 +230,7 @@ main h4{
 
 }
 .right-card {
-    animation: slideFromRight 1s ease-in-out;
+    animation: slideFromRight 2s ease-in-out;
 }
 
 
@@ -340,6 +356,53 @@ border-radius:3em !important;
 }
 
 
+/* effect on list in why choose us part  */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+
+
+
+
+.why_choose_us li { 
+    color: #444444; 
+    padding-left: 16px;
+    margin-top: 24px;
+    position: relative;
+    font-size: 20px;
+    line-height: 20px;
+    list-style-type:none;
+    box-shadow:  1px 1px 5px rgb(173, 172, 172);
+    padding-bottom:0.2em ;
+    padding-top: 0.2em;
+    
+    
+  }
+  .why_choose_us li:before {
+    content: '✅';
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 1.6em;
+    display: block;
+    height: 42px;
+    width: 42px;
+    /* border-radius: 50%;
+    border: 2px solid #1ef63e; */
+    position: absolute; /* //  yeah, you have to manually position it based on the text size, line height, etc. (in the parent li style). it's not the smarest solution */
+    top: -12px;
+    left: -46px;
+  }
+  ul.alternating-colors { 
+    li:nth-child(1):before { border: #0BAD02; }
+    li:nth-child(2):before { border: #2378D5; }
+  }
+
 /* reviews -------- */
 .reviews{
     display: flex;
@@ -350,6 +413,11 @@ border-radius:3em !important;
     color:white;
     text-shadow: 1px 1px 4px black;
     padding-bottom: 1em;
+}
+
+.review-card {
+    opacity: 0.0; /* Initial low opacity */
+    transition: opacity 3s ease; /* Smooth transition */
 }
 
 .card-subtitle i{
@@ -477,9 +545,10 @@ form{
 /* profile ___________________________ */
 
 .profile form input , .profile form select{
-    border-radius: 1.5em !important;
+    border-radius: 2em !important;
     border:1px solid rgba(0, 0, 0, 0.34);
-    /* background-color: #dde4eb9b; */
+    background-color: #dde4eb9b; 
+    padding:0.7em !important;
 }
 .profile form button{
     background-color: #0d6efd;

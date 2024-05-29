@@ -111,7 +111,7 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'about' %}" target="_blank">About</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item d-none dropdown">
                         <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user fs-6 border p-2 rounded-circle"></i>
                         </a>
@@ -388,6 +388,23 @@
               $('.nav-link.dropdown-toggle').addClass('active');
             }
           }); {% endcomment %}
+
+          // Detect when the user scrolls to the reviews section
+        window.addEventListener('scroll', function() {
+            const reviewsSection = document.querySelector('.reviews');
+            const cards = reviewsSection.querySelectorAll('.review-card');
+
+            // Calculate the position of the reviews section relative to the viewport
+            const rect = reviewsSection.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+            // Update card opacity if the section is visible
+            if (isVisible) {
+                cards.forEach(card => {
+                    card.style.opacity = 1; // Set the desired opacity value
+                });
+            }
+        });
 
 
 
