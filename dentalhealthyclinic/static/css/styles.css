@@ -3,6 +3,28 @@
     padding: 0;
 }
 
+.signup,.basket {
+    /* to keep footer at bottom"; */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.signup .footer,.basket .footer {
+    margin-top: auto;
+}
+
+.top_nav_book .row .p1 span a:hover{
+    border-bottom: 1px white ;
+
+}
+.top_nav_book span .btn{
+    color:black;
+    background-color: white;
+
+
+}
+
+
 form input{
 padding: 0.7em !important;
 border-radius: 2em !important;
@@ -51,8 +73,8 @@ span a{
     
 }
 .navbar-nav .nav-link:hover{
-    font-size: large !important;
-    font-weight: bold;
+    /* font-size: large !important; */
+    font-weight: 900;
     color:red !important;
 }
 .desktop_logo{
@@ -231,7 +253,7 @@ main h4{
 }
 
 .left-card button:hover,.right-card button:hover{
-    color:red;
+    
     background-color: #c4d7dab7;
 
 }
@@ -1655,7 +1677,7 @@ footer img{
 
     .products_details .image-left-larg{
         display: flex;
-        background-color: rgb(227 227 227);
+        /* background-color: rgb(227 227 227); */
         border-right: 1px solid rgb(0 0 0 / 22%);
         justify-content: center;
     }
@@ -1772,7 +1794,7 @@ footer img{
 
       .products_details .image-left-larg{
         display: flex;
-        background-color: rgb(227 227 227);
+        /* background-color: rgb(227 227 227); */
         border-right: 1px solid rgb(0 0 0 / 22%);
         justify-content: center;
     }
@@ -1796,11 +1818,14 @@ footer img{
 @media screen and (min-width: 1400px) {
     .navbar-nav .nav-link {
 
-        font-size: large !important;
+        font-size:large !important;
     }
-    .hstack span:hover {
-        text-decoration: underline;
+    .hstack span a:hover {
+        border-bottom: 1px solid white ;
 
+    }
+    .hstack a.btn:hover{
+        background-color: rgba(255, 255, 255, 0.482);
     }
 
     .about h2 {
