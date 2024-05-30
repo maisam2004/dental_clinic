@@ -2,14 +2,15 @@ from django.shortcuts import render,redirect,reverse,get_object_or_404, HttpResp
 
 from django.views.decorators.http import require_POST
 from django.contrib import messages 
-#from django.urls import reverse
+""" from django.urls import reverse """
 from .forms import OrderForm,Order
 from django.conf import settings
 from decouple import config
-
+from appointments.models import Appointment
 from .models import OrderLineItem
 from products.models import Product
 
+from django.utils.http import urlencode
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from .webhook_handler import StripeWH_Handler
@@ -117,8 +118,10 @@ def checkout(request):
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
+                #appintmentname=Appointment.objects.get(user = request.user)
                 order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
+                    #'full_name': appintmentname.full_name,
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
                     'country': profile.default_country,
@@ -138,12 +141,18 @@ def checkout(request):
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
+        
+    next_url = reverse('checkout')  # URL of the checkout page
+    login_url = f"{reverse('account_login')}?{urlencode({'next': next_url})}"
+    register_url = f"{reverse('account_signup')}?{urlencode({'next': next_url})}"
 
     template = 'pay/checkout.html'
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
+        'login_url': login_url,
+        'register_url': register_url,
     }
 
     return render(request, template, context)
@@ -189,6 +198,8 @@ def checkout_success(request, order_number):
     template = 'pay/checkout_success.html'
     context = {
         'order': order,
+        
     }
 
     return render(request, template, context)
+

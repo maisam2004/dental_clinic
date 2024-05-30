@@ -43,6 +43,7 @@ def profile(request):
 
     orders = profile.orders.all()
     appointments = Appointment.objects.filter(email=request.user.email)
+    latest_order_with_name = Order.objects.filter(user_profile=profile, full_name__isnull=False).order_by('-date').first() 
 
     template = 'profiles/profile.html'
     context = {
@@ -52,6 +53,7 @@ def profile(request):
         'orders': orders,
         'user': request.user,
         'appointments': appointments,
+        'latest_order_with_name': latest_order_with_name
     }
     return render(request, template, context)
 

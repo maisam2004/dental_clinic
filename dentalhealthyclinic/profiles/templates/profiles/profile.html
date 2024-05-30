@@ -45,7 +45,11 @@
                         {% with first_object=appointments.first %}
                     <p class="text-muted">Full Name: {{ first_object.full_name }}</p>
                         {% endwith %} 
+                        
+                {% elif latest_order_with_name %} 
+                    <p class="text-muted">Full Name: {{ latest_order_with_name.full_name }}</p>
                 {% endif %}
+                
             </div>
         </div>
         <div class="row">
