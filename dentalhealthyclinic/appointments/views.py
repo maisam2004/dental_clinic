@@ -63,8 +63,24 @@ def book_appointment(request):
         
         initial_data = {}
         if request.user.is_authenticated:
+            
 
             initial_data['email'] = request.user.email
+            try:
+                # Get the latest appointment for the user
+                #previous_appointment = Appointment.objects.filter(email=request.user.email).order_by('-date', '-time').first()
+                #latest_appointment = Appointment.objects.filter(user=request.user).latest('date')  # Filter by user object
+                latest_appointment = Appointment.objects.filter(user=request.user).latest('date')
+                initial_data['full_name'] = latest_appointment.full_name
+
+                # If a previous appointment exists, prefill the full name field
+                
+                #initial_data['full_name'] = previous_appointment.full_name
+                
+            except Appointment.DoesNotExist:
+                initial_data['full_name'] = ""
+                
+
         form = AppointmentForm(initial=initial_data)
 
     context = {'fees': fees, 'form': form}

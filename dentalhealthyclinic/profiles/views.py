@@ -12,6 +12,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserProfileForm, ProfilePictureForm
 from .models import ProfilePicture
 
+
 @login_required
 def profile(request):
     """ Display the user's profile. """
