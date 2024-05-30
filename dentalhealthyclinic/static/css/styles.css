@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-.signup,.basket {
+.signup,.basket ,.login {
     /* to keep footer at bottom"; */
     display: flex;
     flex-direction: column;
@@ -12,9 +12,13 @@
 .signup .position-fixed{
     top:10.5em !important;
 }
-.signup .footer,.basket .footer {
+.signup .footer,.basket .footer ,.login .footer {
     margin-top: auto;
 }
+
+
+
+
 
 .top_nav_book .row .p1 span a:hover{
     border-bottom: 1px white ;
@@ -469,7 +473,7 @@ border-radius:3em !important;
  */    
 
    
-    background-color: rgba(29, 78, 82, 0.938);
+    background-color: rgb(25 80 77);
     max-width: 100%;
     /* height: 40em; */
     overflow: hidden;
@@ -479,7 +483,7 @@ border-radius:3em !important;
 .footer .card-img-top{
     width: 188px;
     height: 140px;
-    border-bottom: 1px solid white;
+   
     
     
 }
@@ -495,7 +499,7 @@ border-radius:3em !important;
 }
 .footer .card{
     font-weight: 500;
-    font-size: small;
+    
     color:white;
 
     
@@ -517,7 +521,7 @@ border:0 !important;
     
 }
 .footer .card-header{
-    border-bottom: 1px solid white !important;
+    /* border-bottom: 1px solid white !important; */
 }
 .footer .address{
     border-bottom: 1px solid white !important;
@@ -525,7 +529,7 @@ border:0 !important;
 }
 .footer .social{
     display: flex;
-    font-size: large;
+    font-size: x-large;
     color:#cecece;
     
 }
@@ -1073,8 +1077,10 @@ width: 96%;
     padding: 0.2em !important;
 }
 .basket .credit-cards .fa-brands{
-    font-size: xxx-large;
+    font-size: xx-large;
     padding: 0.1em;
+    margin-top: 0.5em;
+    margin-right: 0.2em;
 }
 
 .basket .position-fixed{
@@ -1220,8 +1226,53 @@ width: 96%;
     margin: 0 auto;
     background-color: rgb(18, 88, 113) !important;
 }
+
+.fstack {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+  }
   
 @media screen and (max-width: 650px) {
+
+    
+      
+      .fstack {
+        
+        display: flex-inline;
+
+        flex: 1 1 auto;
+        flex-wrap: wrap;
+        align-self:center;
+        justify-content: stretch;
+      }
+      .footer .card{
+        font-size: large;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-wrap: wrap;
+      }
+      .links,.hours ,.contact {
+        
+        padding-left: 1em;
+        padding-top: 0.8em;
+      }
+      .links{
+        order:3;
+      }
+      .hours{
+        order:2;
+      }
+      .contact{
+        order:4;
+        margin-left:1.3em;
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+
+      }
+
+   
     .about .container{
         padding-left: 0.5em;
         padding-right: 0.5em;
@@ -1436,8 +1487,8 @@ width: 96%;
 
 .footer .container-md{
     
-    display:inline !important;
-    padding-left: 1em;
+    /* display:inline !important; 
+    padding-left: 1em;*/
 }
 .footer .links{
     margin-left: 1.4em;
@@ -1569,6 +1620,13 @@ footer img{
 }
 
 @media screen and (min-width: 760px) and (max-width: 1000px){
+
+    .hstack{
+    
+        width: 90%;
+        margin-left:4em;
+    
+    }
 
     .profile .profile_update_form input{
         width: 42%;
@@ -1711,6 +1769,14 @@ footer img{
 }
 
 @media screen and (min-width: 1000px) {
+
+    .hstack{
+    
+        width: 90%;
+        margin-left:4em;
+        
+    
+    }
 
     .navbar-nav .nav-link {
         line-height: 1.3em;
