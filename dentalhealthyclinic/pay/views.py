@@ -9,6 +9,8 @@ from decouple import config
 from appointments.models import Appointment
 from .models import OrderLineItem
 from products.models import Product
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 from django.utils.http import urlencode
 from profiles.forms import UserProfileForm
@@ -118,9 +120,14 @@ def checkout(request):
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
-                #appintmentname=Appointment.objects.get(user = request.user)
+                latest_order_with_name = Order.objects.filter(user_profile=profile, full_name__isnull=False).order_by('-date').first()
+        
+                full_name = profile.user.get_full_name()
+                if not full_name and latest_order_with_name:
+
+                    full_name = latest_order_with_name.full_name
                 order_form = OrderForm(initial={
-                    'full_name': profile.user.get_full_name(),
+                    'full_name': full_name,
                     #'full_name': appintmentname.full_name,
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
@@ -194,6 +201,27 @@ def checkout_success(request, order_number):
         del request.session['bag']
     wh_handler = StripeWH_Handler(request)
     wh_handler.send_confirmation_email(order)  
+
+    #email
+
+     # Send Confirmation Email
+    try:
+        customer_email = order.email
+        subject = render_to_string(
+            'pay/confirmation_emails/confirmation_email_subject.txt',
+            {'order': order}
+        )
+        body = render_to_string(
+            'pay/confirmation_emails/confirmation_email_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
+        )
+
+        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [customer_email])
+
+    except Exception as e:  # Add error handling 
+        messages.error(request, f'There was an error sending the confirmation email: {e}')
+
+    #email end 
 
     template = 'pay/checkout_success.html'
     context = {
