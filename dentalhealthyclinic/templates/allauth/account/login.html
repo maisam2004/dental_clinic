@@ -7,9 +7,10 @@
 
 
 {% block inner_content %}
-                    
+<a href="{% url 'home' %}" class=" "><i class="fa-solid fa-chevron-left"></i>back</a>
+                   
 <hr>
-<h2 class='logo-font mb-4'>{% trans "Sign In" %}</h2>
+<h2 class='logo-font mb-4 text-center fw-semibold'>{% trans "Sign In" %}</h2>
 <hr>
 
 {% get_providers as socialaccount_providers %}
@@ -32,8 +33,8 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 {% include "socialaccount/snippets/login_extra.html" %}
 
 {% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+<p>{% blocktrans %}no account , please
+<a href="{{ signup_url }}">sign up</a> .{% endblocktrans %}</p>
 {% endif %}
 
 <form class="loginn" method="POST" action="{% url 'account_login' %}">
@@ -47,8 +48,8 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   <button class="primaryAction rounded-pill btn btn-primary" type="submit">{% trans "Sign In" %}</button>
   
   <p class="mt-2">
-    <a href="{% url 'home' %}" class="btn btn-outline-dark rounded-pill ">Back Home</a>
-    <a class="button secondaryAction d-none" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+{% comment %}     <a href="{% url 'home' %}" class="btn btn-outline-dark rounded-pill "><i class="fa-solid fa-chevron-left"></i></a>
+ {% endcomment %}    <a class="button secondaryAction d-none" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </p>
 </form>
 

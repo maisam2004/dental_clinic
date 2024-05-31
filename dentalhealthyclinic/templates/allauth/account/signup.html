@@ -6,10 +6,10 @@
 
 {% block inner_content %}
 <hr>
-<h2 class="logo-font mb-4">{% trans "Sign Up" %}</h2>
+<h2 class="logo-font mb-4 text-center fw-semibold">{% trans "Sign Up" %}</h2>
 <hr>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<p>{% blocktrans %}have an account? Then <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
 <form class="signu flex-column" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
@@ -21,8 +21,8 @@
   <button type="submit " class="rounded-pill btn btn-primary">{% trans "Sign Up" %}</button>
   <br>
   
-  <p class="fw-semibold">Already have an account?</p>
-  <a class="btn btn-outline-dark rounded-pill" href="{% url 'account_login' %}">Back to Login</a>
+  {% comment %} <p class="fw-semibold">Already have an account?</p>
+  <a class="btn btn-outline-dark rounded-pill" href="{% url 'account_login' %}">Back to Login</a> {% endcomment %}
 
 
 </form>

@@ -20,6 +20,8 @@
 
 
 
+
+
 .top_nav_book .row .p1 span a:hover{
     border-bottom: 1px white ;
 
@@ -621,6 +623,7 @@ form{
     background-color: white;
     padding:0.5em;
     border-radius:1em;
+    box-shadow: 1px 1px 6px rgba(53, 53, 53, 0.678);
 }
 .login .container{
 width: 96%;
@@ -1118,7 +1121,13 @@ width: 96%;
     background-color: white;
     padding: 0.6em;
     border-radius: 1em;
+    box-shadow: 1px 1px 6px rgba(53, 53, 53, 0.678);
 }
+
+    
+
+
+
 .singup .container{
     width: 98% !important;
 }
