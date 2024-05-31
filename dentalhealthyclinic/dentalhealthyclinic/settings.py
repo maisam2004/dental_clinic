@@ -75,7 +75,18 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  
+EMAIL_PORT = 587  
+EMAIL_USE_TLS = True 
+EMAIL_HOST_USER = 'maisam2004@gmail.com'  # Your Gmail address
+EMAIL_HOST_PASSWORD = 'uajc fert vysn pbvu'  # Your Gmail password (or app password)
+
+
+
+
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email' #use email or username to login 
 ACCOUNT_EMAIL_REQUIRED = True 

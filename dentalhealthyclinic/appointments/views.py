@@ -4,7 +4,9 @@ from .models import Service,Appointment,Dentist
 from .forms import AppointmentForm
 from fee.models import Fee  
 import random
-
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 from django.contrib import messages 
 from django.db import transaction  
 
@@ -15,7 +17,30 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='/accounts/login/')
 def success(request, appointment_id):
+    """
+    Handle successful appointments
+    """
     appointment = Appointment.objects.get(id=appointment_id)
+    # Send Confirmation Email
+    try:
+        customer_email = appointment.email
+        subject = render_to_string(
+            'appointments/confirmation_emails/confirmation_email_subject.txt',  # Adjust template path
+            {'appointment': appointment}
+        )
+        body = render_to_string(
+            'appointments/confirmation_emails/confirmation_email_body.txt',  # Adjust template path
+            {'appointment': appointment, 'contact_email': settings.DEFAULT_FROM_EMAIL}
+        )
+
+        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [customer_email])
+        messages.success(request, f'Appointment confirmed! A confirmation email has been sent to {appointment.email}.')
+
+    except Exception as e:  
+        messages.error(request, f'There was an error sending the confirmation email: {e}')
+
+
+
     return render(request, 'appointments/success.html', {'appointment': appointment})
 
 
@@ -30,11 +55,11 @@ def book_appointment(request):
             appointment = form.save(commit=False)
             appointment.user = request.user
 
-            # Get selected service
+                # Get selected service
             selected_fee = form.cleaned_data['service']
 
-            # Get all dentists who offer the selected service
-            #available_dentists = Dentist.objects.filter(services__service=selected_fee.service)
+                # Get all dentists who offer the selected service
+                #available_dentists = Dentist.objects.filter(services__service=selected_fee.service)
             available_dentists = Dentist.objects.filter(services=selected_fee)
 
 
