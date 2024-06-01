@@ -660,9 +660,24 @@ width: 96%;
     width: 96%;
 }
 
-.signup .row{
+.signup .row,.password_reset .row {
     justify-content: center;
 }
+
+.password_reset .allauth-form-inner-content{
+    background-color: white;
+    padding:0.5em;
+    border-radius:1em;
+    box-shadow: 1px 1px 6px rgba(53, 53, 53, 0.678);
+}
+
+
+
+
+
+
+
+
 .pay form{
     display: flex;
     justify-content: space-evenly;
@@ -1660,18 +1675,18 @@ footer img{
     margin-bottom: 1em;
 }
 
-.book_appointment .container, .order_placement .container ,.logout .container {
+.book_appointment .container, .order_placement .container ,.logout .container, .password_reset .container {
     width: 100%;
     box-shadow: none;
-    margin-top: 2em;
+    margin-top: 0.5em;
 }
 
-body.book_appointment , body.signup ,body.login , body.order_placement , body.logout {
+body.book_appointment , body.signup ,body.login , body.order_placement , body.logout,body.password_reset {
     
     background-image: linear-gradient(135deg, #f8f8f8, #f9f9f9);
 }
 
-.signup .allauth-form-inner-content,.login .allauth-form-inner-content {
+.signup .allauth-form-inner-content,.login .allauth-form-inner-content,.password_reset .allauth-form-inner-content  {
     background-color: rgba(255, 255, 255, 0.014);
     box-shadow: none;
     width: 100%;
@@ -1684,6 +1699,9 @@ body.book_appointment , body.signup ,body.login , body.order_placement , body.lo
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0) !important;
     border-radius: 0;
 }
+
+
+
 
 }
 
@@ -1832,8 +1850,13 @@ body.book_appointment , body.signup ,body.login , body.order_placement , body.lo
         width:50% !important;
         place-self:center !important;
         margin: 0 auto;
+
       }
+
       
+      .password_reset .col-md-6{
+        width:60% !important;
+      }
 }
 
 @media screen and (min-width: 1000px) {
