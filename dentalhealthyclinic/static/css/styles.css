@@ -4,15 +4,20 @@
 }
 
 .masked-image {
-    width: 46em/* Width of Image 1 */; 
-    height:38em /* Height of Image 1 */;
-    background-image: url('/static/main_hero.jpg'); /* Your background image (Image 2) */
-    background-size: cover; /* Adjust to fit the container or use contain */
-    mask-image: url('/static/landingpage_bg.png'); /* Your mask image (Image 1) */
-    mask-size: contain; /* Adjust to fit the container or use contain */
-    -webkit-mask-image: url('/static/landingpage_bg.png'); /* For older browsers */
+    width: 36em; 
+    height:31em ;
+    background-image: url('/static/main_hero.jpg'); 
+    background-size: cover; 
+    mask-image: url('/static/landingpage_bg.png'); 
+    mask-size: contain; 
+    -webkit-mask-image: url('/static/landingpage_bg.png'); 
     -webkit-mask-size: contain;
+    box-shadow: 5px 5px 6px rgb(88, 86, 86);
+    
+    
   }
+  
+
   
 
 .signup,.basket ,.login,.verification {
@@ -1363,6 +1368,21 @@ width: 96%;
 
       }
 
+
+      .masked-image { /* main image at landing */
+        width: 19em; 
+        height:15em;
+        background-image: url('/static/main_hero.jpg'); 
+        background-size: cover; 
+        mask-image: url('/static/landingpage_bg.png'); 
+        mask-size: contain; 
+        -webkit-mask-image: url('/static/landingpage_bg.png'); /* For older browsers */
+        -webkit-mask-size: contain;
+        
+
+        
+      }
+
    
     .about .container{
         padding-left: 0.5em;
@@ -1747,6 +1767,9 @@ body.book_appointment , body.signup ,body.login , body.order_placement , body.lo
 
 
 
+
+
+
 }
 
 @media screen and (min-width: 760px) and (max-width: 1000px){
@@ -1757,6 +1780,24 @@ body.book_appointment , body.signup ,body.login , body.order_placement , body.lo
         margin-left:4em;
     
     }
+
+
+    .masked-image { /* main image at landing */
+        width: 22em; 
+        height:18em;
+        background-image: url('/static/main_hero.jpg'); 
+        background-size: cover; 
+        mask-image: url('/static/landingpage_bg.png'); 
+        mask-size: contain; 
+        -webkit-mask-image: url('/static/landingpage_bg.png'); /* For older browsers */
+        -webkit-mask-size: contain;
+        
+
+        
+      }
+      .container-sm:has(.masked-image) {
+        
+      }
 
     .profile .profile_update_form input{
         width: 42%;
@@ -2094,6 +2135,21 @@ body.book_appointment , body.signup ,body.login , body.order_placement , body.lo
         padding-left: 0 !important;
     }
     
+    .masked-image {
+        width: 28em/* Width of Image 1 */; 
+        height:24em /* Height of Image 1 */;
+        background-image: url('/static/main_hero.jpg'); /* Your background image (Image 2) */
+        background-size: cover; /* Adjust to fit the container or use contain */
+        mask-image: url('/static/landingpage_bg.png'); /* Your mask image (Image 1) */
+        mask-size: contain; /* Adjust to fit the container or use contain */
+        -webkit-mask-image: url('/static/landingpage_bg.png'); /* For older browsers */
+        -webkit-mask-size: contain;
+        
+        
+      }
+
+
+
 
 }
 
