@@ -3,6 +3,18 @@
     padding: 0;
 }
 
+.masked-image {
+    width: 46em/* Width of Image 1 */; 
+    height:38em /* Height of Image 1 */;
+    background-image: url('/static/main_hero.jpg'); /* Your background image (Image 2) */
+    background-size: cover; /* Adjust to fit the container or use contain */
+    mask-image: url('/static/landingpage_bg.png'); /* Your mask image (Image 1) */
+    mask-size: contain; /* Adjust to fit the container or use contain */
+    -webkit-mask-image: url('/static/landingpage_bg.png'); /* For older browsers */
+    -webkit-mask-size: contain;
+  }
+  
+
 .signup,.basket ,.login,.verification {
     /* to keep footer at bottom"; */ 
     display: flex;
