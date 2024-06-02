@@ -4,19 +4,18 @@
 }
 
 .masked-image {
-    width: 36em; 
-    height:31em ;
-    background-image: url('/static/main_hero.jpg'); 
-    background-size: cover; 
-    mask-image: url('/static/landingpage_bg.png'); 
-    mask-size: contain; 
-    -webkit-mask-image: url('/static/landingpage_bg.png'); 
+    width: 36em;
+    height: 31em;
+    background-image: url('/static/main_hero.jpg');
+    background-size: cover;
+    mask-image: url('/static/landingpage_bg.png');
+    mask-size: contain;
+    -webkit-mask-image: url('/static/landingpage_bg.png');
     -webkit-mask-size: contain;
     box-shadow: 5px 5px 6px rgb(88, 86, 86);
-    
-    
+    border: 2px solid #000; /* Add a 2px solid black border */
   }
-  
+
 
   
 
@@ -107,13 +106,13 @@ span a{
     margin-left: 0.3em;
     /* margin-right: 1.3em; */
 
-    font-weight: 800;
+    font-weight: 600;
     font-size: smaller;
     
 }
 .navbar-nav .nav-link:hover{
     /* font-size: large !important; */
-    font-weight: 900;
+    font-weight: 600;
     color:red !important;
 }
 
@@ -223,11 +222,12 @@ main h4{
 
 .grounded-radiants:hover{
     box-shadow: 0 0px 3px rgba(0, 0, 0, 0.467);
+      
 }
 
 
 .grounded-radiants:hover::after {
-    
+    transition: all 0.5s;
     background: linear-gradient(119.03deg,rgb(93, 88, 97)34.89%, rgb(176, 171, 156) 93.87%);
 }
 
@@ -235,6 +235,7 @@ main h4{
     background-color: #c8ccd0; /* Example color - adjust as needed */
     color:rgb(18, 88, 113);
     font-weight: 600;
+     transition: all 0.5s;
 }
 .homepage .card .card-title{
     font-size: 2em;
