@@ -12,8 +12,6 @@
     mask-size: contain;
     -webkit-mask-image: url('/static/landingpage_bg.png');
     -webkit-mask-size: contain;
-    box-shadow: 5px 5px 6px rgb(88, 86, 86);
-    border: 2px solid #000; /* Add a 2px solid black border */
   }
 
 
