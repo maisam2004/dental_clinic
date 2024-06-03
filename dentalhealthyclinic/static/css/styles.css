@@ -53,10 +53,25 @@
 
  .add_review form textarea{
     border-radius: 1.5em;
+    height: 6.6em;
  }
 
 
+ .add_review form {
+    border-radius: 1.5em;
+ }
 
+
+.review_page .whole_reviews img{
+    margin: 0 auto;
+}
+
+.review_page .whole_reviews .card{
+    width: 18em;
+    height: 24em;
+    max-height: 30em;
+    
+}
 
 
 .top_nav_book .row .p1 span a:hover{
@@ -1094,7 +1109,7 @@ width: 96%;
 }
 
 .allauth-form-inner-content button,
-.allauth-form-inner-content input[type='submit'] {
+.allauth-form-inner-content input[type='submit'],.add_review button[type='submit'] {
 	/* btn */
 	display: inline-block;
     font-weight: 400;
@@ -1117,7 +1132,7 @@ width: 96%;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
+.allauth-form-inner-content input[type='submit']:hover ,.add_review button[type='submit']:hover {	
 	color: #fff;
     background-color: #222;
     border-color: #222;
@@ -1813,7 +1828,7 @@ body.book_appointment , body.signup ,body.login , body.order_placement , body.lo
 
 
     
-     .add_review .col-md-6 {
+     .add_review .col-md-6:has(.add_review_whole) {
         width:65%;
      }
 
