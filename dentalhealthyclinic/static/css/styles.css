@@ -97,6 +97,15 @@ padding: 0.7em !important;
 border-radius: 2em !important;
 border:1px solid rgba(128, 128, 128, 0.674) !important;
 }
+.review_page form input{
+    padding: 0.4em !important;
+}
+
+.center form{  /* form in delete confirm page */
+    width: 50%;
+}
+
+
 form button{
     padding: 0.6em !important;
     border-radius: 2em !important;
@@ -1364,6 +1373,10 @@ width: 96%;
   
 @media screen and (max-width: 650px) {
 
+    .center form{  /* form in delete confirm page */
+        width: 90%;
+    }
+
         .edit_review .container{
             width:100%;
         }
@@ -2078,6 +2091,8 @@ body.book_appointment , body.signup ,body.login , body.order_placement , body.lo
 }
 
 @media screen and (min-width: 1000px) {
+
+   
 
 
      /* ADD REVEIW --*/
