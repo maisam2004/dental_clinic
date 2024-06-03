@@ -12,13 +12,21 @@
             {% for review in reviews %}
                 <div class="card">
                     {% if review.image %}
-                        <img src="{{ review.image.url }}" class="card-img-top" alt="Review Image">
+                            <img src="{{ review.image.url }}" class="card-img-top" alt="Review Image">
+                        {% else %}
+                            <img src="{% static 'noimage.png' %}" class="card-img-top" alt="No Image">
                     {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">Rating: {{ review.rating }} Stars</h5>
                             <p class="card-text">{{ review.comment }}</p>
                             <p class="card-text"><small class="text-muted">Reviewed on {{ review.created_at }}</small></p>
                         </div>
+                        {% if review.user == request.user or request.user.is_staff %}
+                        <div class="card-footer">
+                            <a href="{% url 'edit_review' review.id %}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{% url 'delete_review' review.id %}" class="btn btn-danger btn-sm">Delete</a>
+                        </div>
+                         {% endif %}
                 </div>
             
         {% endfor %}

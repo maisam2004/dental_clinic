@@ -6,6 +6,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import ReviewForm
 from .models import Review
+from django.views.generic.edit import UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
+
 
 def display_reviews(request):
     reviews = Review.objects.all()
@@ -36,3 +40,29 @@ def add_review(request):
         form = ReviewForm(user=request.user)
 
     return render(request, 'reviews/add_review.html', {'form': form})
+
+
+
+
+class ReviewUpdateView(LoginRequiredMixin, UpdateView):
+    model = Review
+    form_class = ReviewForm
+    template_name = 'reviews/edit_review.html'  # Create this template
+    success_url = '/reviews/'
+    def get_form_kwargs(self):
+        """Pass the request.user to the form's constructor."""
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
+    
+    def form_valid(self, form):
+        messages.success(self.request, "The Review was Edited successfully.")
+        return super(ReviewUpdateView,self).form_valid(form)
+
+class ReviewDeleteView(LoginRequiredMixin, DeleteView):
+    model = Review
+    context_object_name = 'review'
+    success_url = '/reviews/'
+    def form_valid(self, form):
+        messages.success(self.request, "The review was deleted successfully.")
+        return super(ReviewDeleteView,self).form_valid(form)
