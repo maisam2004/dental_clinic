@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     'pay',
     'profiles',
     'fee',
+    'reviews',
 
     "crispy_forms",
     "crispy_bootstrap5",

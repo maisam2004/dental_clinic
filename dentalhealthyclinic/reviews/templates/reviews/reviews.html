@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cortitle  %}
+    reviews
+    {% endblock %}
+    {% block page %} review_page {% endblock %}
+
+    {% block content %}
+<div class="container">
+    <div class="whole_reviews d-flex">
+        
+            {% for review in reviews %}
+                <div class="card">
+                    {% if review.image %}
+                        <img src="{{ review.image.url }}" class="card-img-top" alt="Review Image">
+                    {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">Rating: {{ review.rating }} Stars</h5>
+                            <p class="card-text">{{ review.comment }}</p>
+                            <p class="card-text"><small class="text-muted">Reviewed on {{ review.created_at }}</small></p>
+                        </div>
+                </div>
+            
+        {% endfor %}
+
+        
+    </div>
+
+    
+           
+          
+          
+<hr>
+<a href="{% url 'add_review' %}" class="btn btn-primary">Add Review page</a>
+
+         
+          
+
+
+    </div>
+</div>
+
+{% endblock %}
+{% block 'extrajs' %}
+{{ block.super }}
+
+
+{% endblock %}

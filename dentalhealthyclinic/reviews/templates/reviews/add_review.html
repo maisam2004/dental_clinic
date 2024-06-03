@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cortitle  %}
+    add review
+    {% endblock %}
+   
+    {% block page %} add_review {% endblock %}
+  
+
+    {% block content %}
+
+    <div class="container mt-5 ">
+      <div class="row d-flex flex-column ">
+        <div class="col-12 col-md-6 ">
+        <div class="add_review_whole bg-light">
+      <hr>
+        <h1 class="text-center fw-semibold pb-2">Add Review</h1>
+        <hr>
+        <form method="post p-1" enctype="multipart/form-data"> 
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary">Submit Review</button>
+        </form>
+      
+      </div>
+      </div>
+    </div>
+
+    </div>
+    {% endblock %}
