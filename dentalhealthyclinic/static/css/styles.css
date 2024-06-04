@@ -1653,6 +1653,13 @@ width: 96%;
             flex-direction: column;
         }
 
+        .review_page .container{
+            width:99%;
+        }
+        .review_page .whole_reviews {
+            justify-content: center;
+        }
+
 
 /* footer----------------------------------------- */
 .footer{
