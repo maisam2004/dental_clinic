@@ -184,3 +184,15 @@ class Appointment(models.Model):
 
 </footer>
  -->
+
+ <img src="{{ review.image.url|default_if_none:'https://via.placeholder.com/200' }}" class="card-img-top" alt="Review Image">
+
+
+ <span class="fa-solid fa-star  text-warning  fs-3">&#9733;</span>
+
+ <a href="{% url 'edit_review' review.id %}" class="btn btn-outline-primary rounded-pill btn-md">
+    &#9998;
+</a>
+<a href="{% url 'delete_review' review.id %}" class="btn btn-outline-danger rounded-pill btn-md">
+    &#10060;
+</a>

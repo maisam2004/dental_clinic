@@ -18,3 +18,7 @@ def stars(rating):
         '<i class="fa-solid fa-star-half-stroke"></i>' * half_star +
         '<i class="fa fa-star-o"></i>' * (5 - full_stars - half_star)
     )
+
+@register.filter
+def range_filter(value):
+    return range(1, value+1)
