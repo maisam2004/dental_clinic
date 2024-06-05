@@ -10,7 +10,12 @@
 <main class="container-fluid d-flex  align-items-center">
     <div class="container-sm text_hero align-bottom text-center order-2">
         <h1 >Welcome to Your Dental Practice</h1>
-        <h4 class="text-center ">Your healthy smile starts here.</h4>
+        
+        <h4 class="text-center ">Your healthy smile starts here. <span class="emoji"><picture>
+            <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f601/512.webp" type="image/webp">
+            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f601/512.gif" alt="😁" width="32" height="32">
+          </picture></span></h4>
+        
         <a href="{% url 'book_appointment' %}" class="btn text-center rounded-pill grounded-radiants ">Book Appointment</a>
     </div>
     <div class="container-sm d-md-none order-md-2 position-relative  "><img class="hero_image rounded-4 w-100 p-2" src="{% static 'main_hero.jpg' %}" alt="patient_image"></div>
@@ -137,7 +142,8 @@
     </div>
 </div>
 <section class="reviews container-fluid pb-4 pt-5 mt-3 mb-3  d-flex flex-wrap ">
-    <h2>What our patient say </h2>
+    <div class="d-flex flex-column "><h2 class="text-center">What our patient say </h2>
+    <p class=" text-center"> <a href="{% url 'reviews' %}" alt="link to reviews page " class="text-center text-warning ">more reviews...</a> </p></div>
     <div class="container-md p5 mt-3 d-flex flex-wrap gap-5 justify-content-center  ">
         <div class="card review-card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
             
