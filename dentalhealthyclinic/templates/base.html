@@ -433,6 +433,26 @@
             }
         });
 
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const companyImages = document.querySelectorAll('.companies'); // Select all company logos
+        
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('slide-in'); // Add the 'slide-in' class to trigger the animation
+                        observer.unobserve(entry.target); // Stop observing after the image is visible
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.2  // Adjust threshold as needed
+            });
+        
+            companyImages.forEach(image => {
+                observer.observe(image);
+            });
+        })
         
 
             

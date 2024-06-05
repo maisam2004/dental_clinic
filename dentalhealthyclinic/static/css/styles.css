@@ -672,6 +672,7 @@ form{
 
 /* profile ___________________________ */
 
+
 .profile form input , .profile form select{
     border-radius: 2em !important;
     border:1px solid rgba(0, 0, 0, 0.34);
@@ -1386,9 +1387,23 @@ width: 96%;
 
   .partners {
     padding: 1.4em;
+    
+    background-color: rgb(255 255 255 / 40%);
+    border-radius: 2em;
+    box-shadow: -1px -1px 5px #878282;
+
   }
 
+  .companies {
+    opacity: 0;
+    transform: translateX(100%); /* Start offscreen to the right */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
+}
 
+.companies.slide-in {
+    opacity: 1;
+    transform: translateX(0); /* Slide into position */
+}
 
   
 @media screen and (max-width: 650px) {
@@ -1793,6 +1808,10 @@ footer img{
   }
 
   /* profile */
+
+  .profile {
+    background-image: linear-gradient(135deg, #b9d7d7aa, #d8c3c3a7);
+  }
 
   .profile .container{
     width:99%;
