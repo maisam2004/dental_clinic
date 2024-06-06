@@ -26,7 +26,7 @@
     </div>
 
 </main>
-<section class="current_offers  inner-shadow container-fluid pb-4 pt-5 mt-3 mb-3">
+<section class="current_offers  inner-shadow container-fluid pb-4 pt-5 mt-5 mb-3">
     <h2 class="text-light fw-semibold">Current offers</h2>
     <div class="container-md card-container p5 mt-3 d-flex flex-wrap gap-4 justify-content-center">
         <div class="card left-card text-center position-relative rounded-4 d-inline-block" style="width: 24rem;">
@@ -37,8 +37,10 @@
                 X-RAYS<br>
                 Gum Assessment<br>
                 & CLEANING<br>
+                <span class="text-decoration-line-through text-secondary ">Was $200</span><br>  
                 <span class="text-danger fw-bold fs-5 text-price">ONLY FOR  $69</span>
                 </p>
+                
               <a href="{% url 'book_appointment' %}" class="join_now border rounded p-2 px-3 text-center rounded-pill btn">Join Now</a>
               
             </div>
@@ -51,8 +53,9 @@
                 <h6 class="card-subtitle mb-2 fw-bold ">Teeth Whitening</h6>
                 <p class="card-text">
                   Professional Teeth Whitening Treatment<br>
-                  Includes consultation and take-home kit<br>
-                  <span class="text-decoration-line-through text-secondary ">Was $500</span><br>  
+                  Includes consultation<br>
+                  + take-home kit<br>
+                  <span class="text-decoration-line-through text-secondary ">Was $500</span><br>
                   <span class="text-danger fw-bold fs-5 text-price " >Now only $199</span>
               </p>
               
@@ -153,7 +156,7 @@
 </div>
 <section class="reviews container-fluid pb-4 pt-5 mt-3 mb-3  d-flex flex-wrap ">
     <div class="d-flex flex-column "><h2 class="text-center">What our patient say </h2>
-    <p class=" text-center"> <a href="{% url 'reviews' %}" alt="link to reviews page " class="text-center text-warning ">more reviews...</a> </p></div>
+    <p class=" text-center"> <a href="{% url 'reviews' %}" alt="link to reviews page " class="text-center text-warning ">more reviews <i class="fa-solid fa-arrow-right"></i></a> </p></div>
     <div class="container-md p5 mt-3 d-flex flex-wrap gap-5 justify-content-center  ">
         <div class="card review-card border border-primary text-center position-relative rounded-4 d-inline-block" style="width:18rem;">
             

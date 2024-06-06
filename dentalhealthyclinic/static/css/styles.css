@@ -232,7 +232,7 @@ main h4{
 .homepage a.btn{
      background-color: rgb(18, 88, 113); 
     color: white;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     font-weight: 700;
 
 }
@@ -283,6 +283,7 @@ main h4{
 }
 
 /* current offers  */
+
 
 .current_offers{
     /* background-color: #a4b6d0; */
@@ -531,7 +532,7 @@ border-radius:3em !important;
     li:nth-child(2):before { border: #2378D5; }
   }
 
-/* reviews -------- */
+/* reviews -----homepage--- */
 .reviews{
     display: flex;
     justify-content: center;
@@ -547,6 +548,16 @@ border-radius:3em !important;
     opacity: 0.0; /* Initial low opacity */
     transition: opacity 3s ease; /* Smooth transition */
 }
+
+.reviews .text-warning i {
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition for transform */
+}
+
+.reviews .text-warning:hover i {
+    transform: translateX(5px); /* Move the icon 5px to the right on hover */
+}
+
+
 
 .card-subtitle i{
     color:rgb(236, 236, 12);
@@ -1885,7 +1896,20 @@ body.book_appointment , body.signup ,body.login , body.order_placement , body.lo
 
 }
 
+@media screen and (min-width: 820px) and (max-width: 1200px){
+  
+}
+
 @media screen and (min-width: 760px) and (max-width: 1000px){
+
+    /* current offers  */
+.current_offers .card{
+    width: 21rem !important;
+    height: 22rem;
+}
+.homepage .card .card-title{
+   font-size:  1.6em;
+}
 
 
     /* ADD REVEIW --*/
