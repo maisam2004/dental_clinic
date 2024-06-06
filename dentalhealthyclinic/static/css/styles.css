@@ -909,6 +909,7 @@ width: 96%;
     background-color: #eeeeeeb0;
     border-top: 1px solid rgb(215, 215, 215);
     border-bottom: 1px solid rgb(230, 230, 230);
+    list-style-type: none;
 }
 
 .products .products_cards:hover{

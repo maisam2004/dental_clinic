@@ -1,5 +1,7 @@
 {% extends "base.html" %}
+
 {% load static %}
+{% block cortitle %}basket{% endblock %}
 {% block page%}basket{% endblock %}
 {% block content %}
     <div class="overlay"></div>
@@ -31,7 +33,7 @@
                                 <tr>
                                     <td class="p-3 w-25">
                                        
-                                        <a href="{% url 'product_detail' item.product.id %}" class="d-flex justify-content-center"><img class="img-fluid rounded" src="{{ item.product.image.url }}"><a>
+                                        <a href="{% url 'product_detail' item.product.id %}" class="d-flex justify-content-center"><img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}"></a>
 
                                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                         <p class="my-0"><strong> </strong>{% if item.product.has_sizes %}Size:{{ item.size|upper }}{% endif %}</p>
@@ -142,7 +144,7 @@
 {% block 'extrajs' %}
 {{ block.super }}
 {% include "products/includes/quantity_input_script.html" %}
-<script type="text/javascript">
+<script >
     // Update quantity on click
     $('.update-link').click(function(e) {
         e.preventDefault();

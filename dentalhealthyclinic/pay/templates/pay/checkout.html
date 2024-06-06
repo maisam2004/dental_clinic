@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block 'stripjs' %}
 {{ block.super }}
-    <script type="text/javascript" src="https://js.stripe.com/v3/">
+    <script  src="https://js.stripe.com/v3/">
 
     </script>
+    {% endblock %}
 {% load static %}
+{% block cortitle %}pay chekout{% endblock %}
 {% block page%}pay{% endblock %}
 {% load bag_tools %}
 {% block extracss %} 
@@ -100,19 +102,28 @@
                         {{ order_form.postcode | as_crispy_field }}
                         {{ order_form.country | as_crispy_field }}
                         <div class="form-check form-check-inline float-right mr-0">
-							{% if user.is_authenticated %}
+							{% comment %} {% if user.is_authenticated %}
 								<label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
                                 <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
 							{% else %}
                             <label class="form-check-label" for="id-save-info">
                                 {% comment %} <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
-                                <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information {% endcomment %}
+                                <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information 
                                 <a class="text-info" href="{% url 'account_signup' %}?next={{ request.path }}">Create an account</a> or 
                                 <a class="text-info" href="{% url 'account_login' %}?next={{ request.path }}">login</a> to save this information
                                 
                             
                             </label>
-							{% endif %}
+							{% endif %} {% endcomment %}
+                            {% if user.is_authenticated %}
+                        <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
+                         <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+                         {% else %}
+                             <label class="form-check-label">
+                         <a class="text-info" href="{% url 'account_signup' %}?next={{ request.path }}">Create an account</a> or 
+                         <a class="text-info" href="{% url 'account_login' %}?next={{ request.path }}">login</a> to save this information
+                            </label>
+                          {% endif %}
 						</div>
                     </fieldset>
                     <fieldset class="px-3">
