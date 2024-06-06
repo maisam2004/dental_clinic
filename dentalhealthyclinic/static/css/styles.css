@@ -697,6 +697,11 @@ form{
     
     
 }
+.contact-page .container p{ 
+     background-color: rgba(227, 233, 233, 0.3);
+     padding: 1em;
+     border-radius: 0.6em;
+    }
 
 /* profile ___________________________ */
 
@@ -1908,16 +1913,21 @@ body.book_appointment , body.signup ,body.login , body.order_placement , body.lo
 
 
 
+.contact-page .container{
+    width: 99% !important;
 
+}
 
 
 }
 
-@media screen and (min-width: 820px) and (max-width: 1200px){
-  
-}
+
 
 @media screen and (min-width: 760px) and (max-width: 1000px){
+    .contact-page .container{
+        width: 90% !important;
+
+    }
 
     /* current offers  */
 .current_offers .card{
