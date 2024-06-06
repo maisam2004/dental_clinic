@@ -23,7 +23,10 @@
     <script src="https://kit.fontawesome.com/ecedfde1ad.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
-    <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+   
+    {% endblock %}
+    {% block 'stripjs' %}
+    
     {% endblock %}
 
 
@@ -60,7 +63,7 @@
                     <li> <a href="{% url 'account_logout' %}" class="dropdown-item" target="_blank">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
                 {% else %}
                 <li><a class="dropdown-item {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}" target="_blank">Register</a></li>
-                <li>  <a href="{% url 'account_login' %}" class="dropdown-item" title='login'><span class="d-none " target="_blank" >Login</span> <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                <li>  <a href="{% url 'account_login' %}" class="dropdown-item" target="_blank" title='login'><span class="d-none "  >Login</span> <i class="fa-solid fa-right-to-bracket"></i></a></li>
                 {% endif %}
                 </ul>
                 </div>
@@ -69,28 +72,26 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom" >
-        <div class="container-fluid ">
-            <a class="navbar-brand mx-auto d-md-none"  href="{% url 'home' %}">
-                <img class='mobile_logo' src="{% static 'logo1.png' %}" alt="Logo" >
+    <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand mx-auto d-md-none" href="{% url 'home' %}">
+                <img class="mobile_logo" src="{% static 'logo1.png' %}" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item d-none ">
+                    <li class="nav-item d-none">
                         <a class="navbar-brand mx-auto" href="#">
-                            <img  src="{% static 'tooth_logo1.png' %}" alt="Logo" >
+                            <img src="{% static 'tooth_logo1.png' %}" alt="Logo">
                         </a>
                     </li>
-                    
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dentistry Services
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                           
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
                             <li><a class="dropdown-item {% if request.resolver_match.url_name == 'general' %}active{% endif %}" href="{% url 'general' %}" target="_blank">General</a></li>
                             <li><a class="dropdown-item {% if request.resolver_match.url_name == 'cosmetic' %}active{% endif %}" href="{% url 'cosmetic' %}" target="_blank">Cosmetic</a></li>
                             <li><a class="dropdown-item {% if request.resolver_match.url_name == 'restorative' %}active{% endif %}" href="{% url 'restorative' %}" target="_blank">Restorative</a></li>
@@ -103,8 +104,8 @@
                         <a class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %} text-info" href="{% url 'products' %}" target="_blank">Dental Store</a>
                     </li>
                     <li class="nav-item d-none d-md-block">
-                        <a class="navbar-brand mx-auto"  href="{% url 'home' %}" target="_blank">
-                            <img class='desktop_logo' src="{% static 'logo1.png' %}" alt="Logo" >
+                        <a class="navbar-brand mx-auto" href="{% url 'home' %}" target="_blank">
+                            <img class="desktop_logo" src="{% static 'logo1.png' %}" alt="Logo">
                         </a>
                     </li>
                     <li class="nav-item">
@@ -114,55 +115,53 @@
                         <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'about' %}" target="_blank">About</a>
                     </li>
                     <li class="nav-item d-none d-md-inline-block dropdown">
-                        <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user fs-6 border p-2 rounded-circle"></i>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                   <li> <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
-                                   <li><a class="dropdown-item {% if request.resolver_match.url_name == 'add_product' %}active{% endif %}" href="{% url 'add_product' %}" target="_blank">Product Management</a></li>
-
-                                   <li> <a href="{% url 'admin:index' %}" target="_blank" class="dropdown-item">Admin</a></li>
-                                   <li><a class="dropdown-item {% if request.resolver_match.url_name == 'admin:index' %}active{% endif %}" href="{% url 'admin:index' %}" target="_blank">Admin</a></li>
-
+                                    <li><a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
+                                    <li><a class="dropdown-item {% if request.resolver_match.url_name == 'add_product' %}active{% endif %}" href="{% url 'add_product' %}" target="_blank">Product Management</a></li>
+                                    <li><a href="{% url 'admin:index' %}" target="_blank" class="dropdown-item">Admin</a></li>
+                                    <li><a class="dropdown-item {% if request.resolver_match.url_name == 'admin:index' %}active{% endif %}" href="{% url 'admin:index' %}" target="_blank">Admin</a></li>
                                 {% endif %}
                                 <li><a class="nav-link {% if request.resolver_match.url_name == 'profile' %}active{% endif %}" href="{% url 'profile' %}" target="_blank">My Profile</a></li>
-                                <li> <a href="{% url 'account_logout' %}" class="dropdown-item" target="_blank">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                                <li><a href="{% url 'account_logout' %}" class="dropdown-item" target="_blank">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
                             {% else %}
-                            <li><a class="dropdown-item {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}" target="_blank">Register</a></li>
-                            <li>  <a href="{% url 'account_login' %}" class="dropdown-item" title='login'><span class="d-none " target="_blank" >Login</span> <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                                <li><a class="dropdown-item {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}" target="_blank">Register</a></li>
+                                <li><a href="{% url 'account_login' %}" class="dropdown-item" title="login">Login <i class="fa-solid fa-right-to-bracket"></i></a></li>
                             {% endif %}
                         </ul>
                     </li>
-                    
                     <li class="list-inline-item">
-                        
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link {% if request.resolver_match.url_name == 'view_basket' %}active{% endif %} " href="{% url 'view_basket' %}">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link {% if request.resolver_match.url_name == 'view_basket' %}active{% endif %}" href="{% url 'view_basket' %}">
                             <div class="text-center basket_icon_price">
-                               {% comment %}  <div><i class="fas fa-shopping-bag fa-lg"></i></div> {% endcomment %}
-                                <p class="my-0">
-                                    {% if grand_total %}
-
-                                    <div><i class="fas fa-shopping-bag fa-lg "></i><span class="badge d-md-inline position-sm-relative fw-bold  text-danger rounded-pill ">{{product_count}}</span></div>
+                                {% if grand_total %}
+                                    <div>
+                                        <i class="fas fa-shopping-bag fa-lg"></i>
+                                        <span class="badge d-md-inline position-sm-relative fw-bold text-danger rounded-pill">{{product_count}}</span>
+                                    </div>
+                                    <p class="my-0">
                                         ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                    </p>
+                                {% else %}
+                                    <div>
+                                        <i class="fas fa-shopping-bag fa-lg"></i>
+                                    </div>
+                                    <p class="my-0">
                                         $0.00
-                                    {% endif %}
-                                </p>
+                                    </p>
+                                {% endif %}
                             </div>
+                            
                         </a>
                     </li>
-                    
-                    
                 </ul>
-                
             </div>
-        </div>  
-        
+        </div>
     </nav>
+    
     
     {% comment %} {% if request.resolver_match.url_name == 'products' %} {% endcomment %}
     {% if request.resolver_match.url_name == 'products'  %}
@@ -294,17 +293,15 @@
 
 {% endif %}
     
-    <h6>base.html</h6>
+    <h6 id="top">base.html</h6>
     
     {% block content%}
 
     {% endblock %}
-    <button type="button" class="btn btn-outline-info " style="width:4em"
-    >
-        <a class="btt-link">
+    <a href="#top" class="btn btn-outline-info" style="width:4em">
         <i class="fa-solid fa-arrow-up"></i>
-        </a>
-    </button>
+    </a>
+    
     {% block footer%}
     <div class="footer container-fluid     ">
     
@@ -374,7 +371,7 @@
     {% endblock %}
     
     {% block 'extrajs' %}
-    <script type="text/javascript">
+    <script >
         $('.btt-link').click(function(e){
             window.scrollTo(0,0)
         });

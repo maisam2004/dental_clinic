@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% block 'stripjs' %}
+{{ block.super }}
+    <script type="text/javascript" src="https://js.stripe.com/v3/">
+
+    </script>
 {% load static %}
 {% block page%}pay{% endblock %}
 {% load bag_tools %}
