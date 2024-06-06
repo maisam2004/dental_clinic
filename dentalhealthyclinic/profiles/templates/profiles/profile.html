@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% block cortitle %}profile page{% endblock %}
 {% block page%}profile{% endblock %}
 {% load static %}
 
@@ -27,7 +28,7 @@
                     {% else %}
                             <img class="card-img-top " src="{{ MEDIA_URL }}noimage.png">
                 {% endif %}
-                <form class="mt-3 profile_update_form" action="{% url 'profile' %}"  method="POST" id="profile-update-form" enctype="multipart/form-data">
+                <form class="mt-3 profile_update_form" action="{% url 'profile' %}"  method="POST" id="profile-update-image-form" enctype="multipart/form-data">
                     {% csrf_token %}
                     
                     {{ picture_form|crispy }}

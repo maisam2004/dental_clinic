@@ -18,16 +18,19 @@ def contact(request):
             contact.save()
             print(contact)
             messages.success(request, 'Your message has been sent successfully!')
-            form = ContactForm()
+            form = ContactForm()  # Reset the form after successful submission
+        else:
+            # Log form errors
+            print(form.errors)
+            messages.error(request, 'There was an error submitting your message.')
     else:
         form = ContactForm()
 
     context = {
         'form': form,
-        'messages': get_messages(request),  # Add this line
+        'messages': messages.get_messages(request),
     }
     return render(request, 'contact/contact.html', context)
-
 
 class AboutTemplateView(TemplateView):
     " to show about us page and showing dentists staff "
