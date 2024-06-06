@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+{% block cortitle %}cosmetic{% endblock %}
 {% block page%}cosmetic{% endblock %}
 {% block content %}
 
-<section id="general-dentistry " class=" bg-primary-subtle">
+<section id="general-dentistry" class=" bg-primary-subtle">
     <div class="container pt-5">
       <div class="row bg-light mb-2 p-4 rounded-4">
       <h1>Cosmetic Dentistry: Enhancing Your Smile</h1>
@@ -114,13 +115,13 @@
 
 
           <h2 class="">When Cosmetic dentistry might be an option if you have?</h2>
-          <ul class=" reason_cosmetic fw-medium fs-5"><span class="text-info-emphasis fw-semibold">
-
-            <li>Chipped or cracked teeth.</li>
-            <li>Small gaps or spaces between your teeth.</li>
-            <li>Tooth discoloration and staining.</li>
-            <li>Misshapen teeth.</li>
-            <li>Misaligned teeth</ul>
+          <ul class="reason_cosmetic fw-medium fs-5">
+            <li><span class="text-info-emphasis fw-semibold">Chipped or cracked teeth.</span></li>
+            <li><span class="text-info-emphasis fw-semibold">Small gaps or spaces between your teeth.</span></li>
+            <li><span class="text-info-emphasis fw-semibold">Tooth discoloration and staining.</span></li>
+            <li><span class="text-info-emphasis fw-semibold">Misshapen teeth.</span></li>
+            <li><span class="text-info-emphasis fw-semibold">Misaligned teeth</span></li>
+        </ul>
             <a href="{% url 'book_appointment' %}" class="btn text-center rounded-pill ">Book Appointment</a>
             
 

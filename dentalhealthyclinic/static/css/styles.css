@@ -240,6 +240,19 @@ main h4{
     font-weight: 700;
 
 }
+.cosmetic a.btn , .general a.btn , .restoractive a.btn { /*differnet pages same button */
+    background-color: rgb(18, 88, 113); 
+   color: white;
+   padding: 10px 20px; 
+   font-weight: 700;
+
+}
+.cosmetic a.btn:hover ,.general a.btn:hover ,.restoractive a.btn:hover {
+    background-color: #c8ccd0; /* Example color - adjust as needed */
+    color:rgb(18, 88, 113);
+    font-weight: 600;
+     transition: all 0.5s;
+}
 .grounded-radiants {
     position: relative;
     border: 4px solid transparent;

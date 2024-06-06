@@ -1,8 +1,9 @@
 {% extends "base.html" %}
+{% block cortitle %}restoractive{% endblock %}
 {% block page%}restoractive{% endblock %}
 {% load static %}
 {% block content %}
-<section id="general-dentistry " class=" bg-primary-subtle">
+<section id="general-dentistry" class=" bg-primary-subtle">
     <div class="container pt-5">
       <div class="row bg-light mb-2 p-4 rounded-4">
       <h1>Restorative Dentistry: Bringing Back Your Smile</h1>
@@ -108,12 +109,12 @@
        
         <div class="col-md-12 order-md-1 text-center">
           <h2 class="">When restoractive dentistry might be an option if you have?</h2>
-          <ul class=" reason_cosmetic fw-medium fs-5"><span class="text-info-emphasis fw-semibold">
-
-            <li>Cavities /tooth decay.</li> 
-            <li>Damaged or broken teeth.</li>
-            <li> Missing teeth.</li>
-            </ul>
+          <ul class="reason_cosmetic fw-medium fs-5">
+            <li><span class="text-info-emphasis fw-semibold">Cavities / tooth decay.</span></li> 
+            <li><span class="text-info-emphasis fw-semibold">Damaged or broken teeth.</span></li>
+            <li><span class="text-info-emphasis fw-semibold">Missing teeth.</span></li>
+        </ul>
+        
             <a href="{% url 'book_appointment' %}" class="btn text-center rounded-pill ">Book Appointment</a>
             
 
