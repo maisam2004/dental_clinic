@@ -93,6 +93,10 @@
 .hstack .p-1{
     padding: 0.20rem !important;
 }
+.hstack a:hover i{
+    color:red;
+}
+
 
 
 form input{
