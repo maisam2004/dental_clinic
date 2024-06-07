@@ -1,7 +1,10 @@
 from django.shortcuts import render
 
-# Create your views here.
+
 def homepage(request):
-    context = {}  # Add any context data needed for the homepage
+    """ Renders the homepage of the website.
+
+    This view function handles the rendering of the homepage template. """
+    context = {} 
 
     return render(request, 'core/homepage.html', context)

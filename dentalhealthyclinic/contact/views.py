@@ -9,6 +9,23 @@ from .forms import ContactForm
 from .models import Contact
 
 def contact(request):
+    """
+    Handles the rendering and submission of the contact form.
+
+    This view function:
+    1. Renders the contact form template.
+    2. Processes form submission, validating data and associating it with a user (if logged in).
+    3. Saves the contact message to the database on successful validation.
+    4. Displays success or error messages to the user.
+    5. Renders the contact form again, either with a blank form or with the submitted data and error messages.
+
+    Args:
+        request: The HttpRequest object representing the current request.
+
+    Returns:
+        HttpResponse: An HTTP response containing the rendered contact form template with context data.
+    """
+
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():

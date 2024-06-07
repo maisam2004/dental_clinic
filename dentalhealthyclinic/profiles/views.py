@@ -15,7 +15,25 @@ from .models import ProfilePicture
 
 @login_required
 def profile(request):
-    """ Display the user's profile. """
+    """
+    Displays the user's profile page.
+
+    This view function:
+    1. Retrieves the user's profile and profile picture information.
+    2. Creates forms for updating the profile and profile picture.
+    3. Handles POST requests to update either the profile picture or the profile details.
+        - Validates the submitted forms.
+        - Saves changes to the database if valid.
+        - Displays appropriate success or error messages.
+    4. Retrieves the user's past orders and appointments.
+    5. Renders the profile template, passing the profile data, forms, orders, appointments, and other context.
+
+    Args:
+        request: The HttpRequest object representing the current request.
+
+    Returns:
+        HttpResponse: An HTTP response containing the rendered profile template with user-specific data.
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
     profile_picture, created = ProfilePicture.objects.get_or_create(user=request.user)
 

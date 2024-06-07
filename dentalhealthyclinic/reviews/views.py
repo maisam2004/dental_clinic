@@ -23,6 +23,32 @@ def display_reviews(request):
 
 @login_required
 def add_review(request):
+
+    """
+    Handles the creation and submission of user reviews.
+
+    This view function:
+
+    1. If the request is a POST:
+        - Initializes a ReviewForm with the user's information, data, and any uploaded files.
+        - If the form is valid:
+            - Saves the review, associating it with the logged-in user.
+            - Displays a success message.
+            - Redirects the user to the reviews list view.
+        - If the form is invalid:
+            - Adds error messages for each field with validation issues.
+    2. If the request is a GET:
+        - Initializes a blank ReviewForm for the logged-in user.
+
+    Args:
+        request: The HttpRequest object representing the current request.
+
+    Returns:
+        HttpResponse: An HTTP response containing either:
+            - The rendered add review form (on GET or invalid POST).
+            - A redirect to the reviews list view (on successful submission).
+    """
+
     if request.method == 'POST':
         form = ReviewForm(user=request.user, data=request.POST, files=request.FILES)
         if form.is_valid():
@@ -45,6 +71,24 @@ def add_review(request):
 
 
 class ReviewUpdateView(LoginRequiredMixin, UpdateView):
+
+    """
+    Handles the updating of existing reviews.
+
+    This class-based view allows logged-in users to edit their reviews. It uses a ReviewForm to 
+    present the review fields and ensures that only the review's owner can modify it.
+
+    Attributes:
+        model: The Review model that this view operates on.
+        form_class: The ReviewForm class to use for the form.
+        template_name: The name of the template to use for rendering the edit review form.
+        success_url: The URL to redirect to upon successful update.
+
+    Methods:
+        get_form_kwargs(): Passes the current user to the form constructor.
+        form_valid(form): Displays a success message and calls the parent class's form_valid method.
+    """
+
     model = Review
     form_class = ReviewForm
     template_name = 'reviews/edit_review.html'  # Create this template

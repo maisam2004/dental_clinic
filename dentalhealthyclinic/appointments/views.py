@@ -47,6 +47,27 @@ def success(request, appointment_id):
 
 @login_required(login_url='/accounts/login/') 
 def book_appointment(request):
+    """
+    Handles the booking of a new dental appointment.
+
+    This view function:
+    1. Renders the appointment booking form with available fees.
+    2. Processes the form submission, validating the data.
+    3. Assigns a random dentist who offers the selected service (if available).
+    4. Checks for conflicting appointments with the chosen dentist and time.
+    5. Saves the appointment if no conflicts are found.
+    6. Redirects to a success page or re-renders the form with errors.
+
+    If the user is authenticated, it also attempts to prefill the 'full_name' field from their last appointment.
+
+    Args:
+        request: The HttpRequest object representing the current request.
+
+    Returns:
+        HttpResponse: An HTTP response containing either:
+            - The rendered appointment booking form (on GET request or invalid POST data).
+            - A redirect to a success page (on successful appointment booking).
+    """
     fees = Fee.objects.all()
     if request.method == 'POST':
         form = AppointmentForm(request.POST) 

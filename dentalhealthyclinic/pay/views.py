@@ -25,6 +25,24 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    Caches checkout data in the Stripe PaymentIntent's metadata.
+
+    This view function is triggered after a successful checkout form submission. It stores essential order information, 
+    such as the contents of the shopping bag, user preference to save payment information, and the username (if available), 
+    in the metadata of the Stripe PaymentIntent object. This data is useful for later processing and record-keeping.
+
+    Args:
+        request: The HttpRequest object representing the current request. It expects the request to contain:
+            - 'client_secret': The client secret of the Stripe PaymentIntent.
+            - 'save_info': A boolean indicating whether the user wants to save payment information.
+
+    Returns:
+        HttpResponse: An HTTP response with status 200 on success or status 400 on failure.
+            - If successful, an empty response with status 200 is returned.
+            - If there's an exception, an HttpResponse with status 400 and the error message is returned.
+    """
+
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -45,6 +63,34 @@ def cache_checkout_data(request):
 # Create your views here.
 
 def checkout(request):
+    """
+    Handles the checkout process for user orders.
+
+    This view function:
+    1. Retrieves Stripe keys for payment processing.
+    2. Processes the order form data if submitted via POST.
+        - Validates the form.
+        - Creates a Stripe PaymentIntent.
+        - Saves the order and associated order line items.
+        - Stores order data in Stripe metadata.
+        - Redirects to a success page or displays error messages.
+    3. If not a POST request:
+        - Retrieves the user's shopping bag.
+        - Calculates the order total.
+        - Creates a Stripe PaymentIntent.
+        - Attempts to pre-fill the order form with user profile data if available.
+        - Renders the checkout template with the form, Stripe keys, and context data.
+
+    Args:
+        request: The HttpRequest object representing the current request.
+
+    Returns:
+        HttpResponse: An HTTP response containing either:
+            - The rendered checkout template (with the order form and relevant data).
+            - A redirect to the checkout success page (upon successful order placement).
+            - A redirect back to the shopping bag (if the bag is empty).
+"""
+
     
     stripe_public_key = settings.STRIPE_PUBLISHER_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -167,8 +213,26 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    
+    Handles the post-checkout success page and related actions.
+
+    This view function:
+    1. Retrieves the order details based on the `order_number`.
+    2. If the user is authenticated, it associates the order with their user profile and optionally saves their shipping information.
+    3. Sends a success message to the user.
+    4. Clears the shopping bag from the session.
+    5. Triggers a Stripe webhook handler (if applicable).
+    6. Sends a confirmation email to the customer.
+    7. Renders the checkout success template with the order details.
+
+    Args:
+        request: The HttpRequest object representing the current request.
+        order_number: The unique order number of the successful order.
+
+    Returns:
+        HttpResponse: An HTTP response containing the rendered checkout success template.
     """
+    
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 

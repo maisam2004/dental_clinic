@@ -5,7 +5,19 @@ from django.contrib import messages
 # Create your views here.
 
 def view_basket(request):
-    """ A view that renders the basket contents """
+    """
+    Renders the shopping basket contents.
+
+    This view retrieves the basket data from the session, fetches the corresponding product 
+    details, and prepares the context to be displayed in the basket template.
+
+    Args:
+        request: The HttpRequest object representing the current request.
+
+    Returns:
+        HttpResponse: An HTTP response containing the rendered basket template.
+   
+ """
     bag = request.session.get('bag', {})
 
     # ... other calculations ... (total, delivery, etc.) 
@@ -30,6 +42,17 @@ def view_basket(request):
 
 
 def add_to_basket(request, item_id):
+    
+    #Adds a product to the shopping basket or updates its quantity.
+
+    #This view handles the logic for adding products to the basket. It retrieves
+   # the product, updates the basket in the session, and adds a success message.
+
+   # Args:
+      #  request: The HttpRequest object representing the current request.
+      #  item_id: The ID of the product to add to the basket.
+
+    
     product = Product.objects.get(pk=item_id)
 
     quantity = int(request.POST.get('quantity'))
@@ -50,6 +73,19 @@ def add_to_basket(request, item_id):
 
 
 def update_basket(request):
+
+    """
+    Updates the quantity of a product in the basket or removes it.
+
+    This view handles the logic for updating the basket when a user changes the quantity
+    of a product or removes it entirely.
+
+    Args:
+        request: The HttpRequest object representing the current request.
+
+    Returns:
+        HttpResponseRedirect: Redirects the user to the basket view.
+    """
     
     if request.method == 'POST':
         item_id = request.POST.get('item_id')
