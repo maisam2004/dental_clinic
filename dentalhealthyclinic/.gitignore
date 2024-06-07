@@ -10,3 +10,5 @@ cloudinary_python.txt
 *.sqlite3
 *.pyc 
 .env
+README.md
+README2.md
