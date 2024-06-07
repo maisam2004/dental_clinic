@@ -55,17 +55,19 @@ class AppointmentForm(forms.ModelForm):
     def clean_phone_number(self):
         print("Clean phone number method called")
         phone_number = self.cleaned_data['phone_number']
-        
+
         try:
-            parsed_number = phonenumbers.parse(phone_number, "GB")  # "GB" is the country code for the UK
+            # Changing "GB" to "US" for US phone number validation
+            parsed_number = phonenumbers.parse(phone_number, "US")  
             if not phonenumbers.is_valid_number(parsed_number):
-                raise forms.ValidationError('Please enter a valid UK phone number')
-            
-            # Optionally, you can format the phone number for consistency
-            formatted_number = phonenumbers.format_number(parsed_number, PhoneNumberFormat.E164)
+                raise forms.ValidationError('Please enter a valid US phone number.')
+
+            # Format the number in E.164 format for consistency (e.g., +12125551212)
+            formatted_number = phonenumbers.format_number(parsed_number, phonenumbers.PhoneNumberFormat.E164)
             return formatted_number
         except phonenumbers.phonenumberutil.NumberParseException:
-            raise forms.ValidationError('Please enter a valid UK phone number')
+            raise forms.ValidationError('Please enter a valid US phone number.')
+
         
 
     # You can also define custom fields or widgets here for specific fields
