@@ -431,7 +431,7 @@
         });
 
 
-        document.addEventListener('DOMContentLoaded', function () {
+       {% comment %}  document.addEventListener('DOMContentLoaded', function () {
             const companyImages = document.querySelectorAll('.companies'); // Select all company logos
         
             const observer = new IntersectionObserver((entries, observer) => {
@@ -450,7 +450,7 @@
                 observer.observe(image);
             });
         })
-        
+         {% endcomment %}
 
             
 </script>
