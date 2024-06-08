@@ -1946,6 +1946,8 @@ main h1 {
 
 
 
+
+
     .contact-page .container{
         width: 90% !important;
 
@@ -2224,7 +2226,9 @@ main h1 {
     font-weight: 900;
 }
    
-
+.grounded-radiants {
+    width: 58%; /* landing page button width  */
+  }
 
      /* ADD REVEIW --*/
      .add_review .add_review_whole{
