@@ -254,7 +254,7 @@
 
     
     
-    {% endif %} {% endcomment %}
+    
     {% if messages %}
     <div class="message_container position-fixed top-1 end-0">
         {% for message in messages %}
@@ -309,7 +309,7 @@
                     <li class="list-group-item"><a class="list-group-item {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'fees' %}" target="_blank">Fees</a></li>
                     <li class="list-group-item"><a class="list-group-item {% if request.resolver_match.url_name == 'products' %}active{% endif %}" href="{% url 'products' %}" target="_blank">Our Store</a></li>
                     <li class="list-group-item"><a class="list-group-item {% if request.resolver_match.url_name == 'reviews' %}active{% endif %}" href="{% url 'reviews' %}" target="_blank">Reviews</a></li>
-
+                    <li class="list-group-item"><a class="list-group-item {% if request.resolver_match.url_name == 'privacy' %}active{% endif %}" href="{% url 'privacy' %}" target="_blank">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="card hours " style="width:18rem;">

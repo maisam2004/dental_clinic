@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import ReviewForm
 from .models import Review
-from django.views.generic.edit import UpdateView, DeleteView
+from django.views.generic import UpdateView, DeleteView,TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
@@ -110,3 +110,5 @@ class ReviewDeleteView(LoginRequiredMixin, DeleteView):
     def form_valid(self, form):
         messages.success(self.request, "The review was deleted successfully.")
         return super(ReviewDeleteView,self).form_valid(form)
+    
+
