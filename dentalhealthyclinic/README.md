@@ -551,130 +551,96 @@ Throughout developing this site, I have been using Chrome, and chrome dev tools 
 
 Chrome emulated devices, and hardware devices iphone 13 pro, pixel 7 , ipad mini and ipad air were used to test compatibility
 
-## Wave testing
 
-I also tested this site on [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) is a set of evaluation tools which helps authors to make their web content more accessible to individuals with disabilities. WAVE can identify many accessibility and Web Content Accessibility Guideline (WCAG) errors, but also facilitates human evaluation of web content as per definition on their site.
+## JavaScript Enhancements
 
-<details>
-  <summary>Home</summary>
+The following JavaScript code is used to add interactivity and visual effects to various elements of the website, primarily the homepage:
 
-  ![](static/images/WebHome.jpg)
+```javascript
+{% block 'extrajs' %}
+<script>
 
-  I went on to fix the error by adding the aria label to the seach box input
-
-</details>
-
-<details>
-<summary>Bag</summary>
-
-![Home page](static/logo12.png)
-
-</details>
-
-<details>
-<summary>About us</summary>
-
-![](static/images/webabout_us.jpg)
-
-Fixed the alerts by adding an h2 level heading to shop now button
-
-</details>
+    // Back-to-Top Button
+    $('.btt-link').click(function(e){
+        window.scrollTo(0,0);  // Smooth scroll to the top of the page
+    });
+    
+    // Toast Messages (using Bootstrap)
+    $(document).ready(function() {
+        {% if messages %}
+            $('.toast').toast('show'); // Display any Django messages as toasts
+        {% endif %}
+    });
 
 
+    // Fade-in Effect for Images
+    window.addEventListener('load', function() {
+        const fadeInImages = document.querySelectorAll('.fade-in-image'); // Select images with this class
 
-<details>
-  <summary>Contact us</summary>
+        function checkImageVisibility() {
+            fadeInImages.forEach((image) => {
+                // ... (checks if image is in viewport and adds/removes 'in-view' class accordingly) ...
+            });
+        }
 
-  ![](static/images/web_contact.jpg)
-
-  changed the level heading. Skipped the labels part as I had no intention to use labels on this page
-
-</details>
+        window.addEventListener('scroll', checkImageVisibility); 
+        checkImageVisibility(); // Trigger initially on page load
+    });
 
 
-<details>
-  <summary>Blog</summary>
+    // Show Active Dropdown Link (commented out)
+    // This code was likely intended to mark dropdown links as active based on the current page, but it's commented out.
 
-![](static/images/web_blog.jpg)
+    // Fade-in Reviews on Scroll
+    window.addEventListener('scroll', function() {
+        const reviewsSection = document.querySelector('.reviews'); // Select reviews section
+        const cards = reviewsSection.querySelectorAll('.review-card');
 
-I added the first level heading as i realized it was necessary to keep the site uniform throughout
+        // ... (calculates if reviews section is visible and adjusts opacity of review cards) ...
+    });
+    
+    // Slide-in Company Logos (commented out)
+    // This section was intended to add a slide-in animation to company logos when they become visible, but it's commented out.
+</script>
+{% endblock %}
+```
 
-</details>
+**Explanation of Key Features:**
 
-<details>
+- **Back-to-Top Button:** When the `.btt-link` element is clicked, the page smoothly scrolls to the top.
+- **Toast Messages:** Django messages (success, error, info ,warning.) are displayed as Bootstrap toasts.
 
-<summary>All specials</summary>
+![toast image](static/toasts.jpg)
 
-![](static/images/weball_specials.jpg)
 
-  I added heading to price from paragraph tag. Skipped the labels part as I had no intention to use one
+- **Image Fade-in:** Images with the `.fade-in-image` class gradually fade into view as they enter the viewport.
+- **Active Dropdown Link (Commented Out):** This code would have highlighted the currently active dropdown link in the navigation menu, but it's currently disabled.
+- **Reviews Fade-in:** Reviews within the `.reviews` section fade in as the user scrolls down to them.
+- **Slide-in Company Logos (Commented Out):** This section was intended to add a slide-in animation to company logos as they come into view, but it's currently inactive.
 
-</details>
+**Additional Notes:**
 
-<details>
+- **jQuery Dependency:** This code relies on jQuery (`$`) for DOM manipulation and event handling.
+- **Commented-Out Sections:** The two commented-out sections provide hints about additional features you might have been working on, but they are not currently implemented.
 
-<summary>Products</summary>
+Please let me know if you have any other questions. 
 
-![](static/images/weball_products.jpg)
-Fixed the alerts by adding specified headings both to newsletter and product price
-
-</details>
-
-<details>
-
-<summary>Product detail</summary>
-
-![](static/images/webproduct_detail.jpg)
-
-I only have 2 colors black and white throughout the site except the footer border that has the same color with the contrast errror so I decided to skip
-
-</details>
-
-<details>
-
-<summary>Sign in</summary>
-
-![](static/images/sign_in.jpg)
-
-</details>
-
-<details>
-  <summary>Click here for Lighthouse results</summary>
- Desktop
-
-  ![](static/images/lighthouse_desktop.jpg)
-
-Mobile
-
-  ![](static/images/lighthouse_mobile.jpg)
-
-</details>
-
-<details>
-  <summary>Click here for Markup results</summary>
-
-   ![](static/images/html_validator.jpg)
-
-</details>
-
-<details>
-  <summary>Click here for CSS results </summary>
-
-  ![](static/images/css_validator.jpg)
-
-</details>
-
+and other js has been tested and 
+I used JSlint to validate javascript found in some apps
 ### Javascript validation
 
 I used JSlint to validate javascript found in some apps
 
-* bag app - semi colon warning
-* blog app -  semi colon warnings
+* basket app - semi colon warning
 * base.html - zero warnings
-* newsletter - 8 warnings but the code is directly from mailchimp
+* pay - 8 warnings but the code is directly from mailchimp
 * checkout - semi colon warnings
 * products - semi colon warnings
 * profiles - no warnings
+* appointements - no warning
+* contact - label was wrong
+
+
 
 ### Python
 
@@ -692,25 +658,25 @@ Toasts not showing/displaying - Having all the code set up properly and checking
 
 In testing my search box and product management - error handling was not working each time I was testing the search box and product management whereby the error toast was rendering but not display , also the header would just disappear. The fix was simple though it took me hours, I searched via Code Institute slack and found out someone made my mistake as well of missing out a closing div tag in toast error.
 
-![](static/images/bug2.jpg)
 
-![](static/images/bug3.jpg)
+
+
 
 ### Bug 3
 
 I had errors in validating html and to resolve them I had to put ul tags in mobile header which led to the bug below. To fix this I added padding to icons(search, my account, bag)
 
-![](static/images/bug4.jpg)
+
 
 ### Bug 4
 
 Double orders in admin panel
 
-![](static/images/double_order.jpg)
+
 
 Solution: In checkout views.py in the checkout function, 2 following lines of code fixed it
 
-![](static/images/solution.jpg)
+
 
 ### Bug 5
 
@@ -790,15 +756,8 @@ Products description inspiration from
 * [Amazon](https://www.amazon.co.uk/)
 * [Ikea](https://www.ikea.com)
 
-#### Blog content
-
-* [Home edit](https://thehomeedit.com/)
-* [Pretty organized home](https://www.organisedprettyhome.com/organise-kids-toys)
-* [Woman&#39;s day](https://www.womansday.com/)
-* [The neat method](https://neatmethod.com/)
-
 ### Acknowledgement and support
 
-* This whole chapter took me a year and 5 months to complete instead of a year due to circumstances beyond control. Despite all this I would love to extend my gratitude to Code institute and their amazing team.  The tutor support for this project in particular, Ed, Ger you guys did a superb job.
-* My Mentor Adegbenga Adeye sharp,straight and honest feedback
-* My very own lovely husband who funded this course
+* This whole chapter took me months to complete  due to circumstances beyond control. Despite all this I would love to extend my gratitude to Code institute and their amazing team.  The tutor support for this project in particular, Ed, Ger you guys did a superb job.
+* My Mentor Jubril sharp,straight and honest feedback
+
