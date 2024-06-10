@@ -164,8 +164,15 @@ span a{
 .navbar-nav .desktop_logo:hover{
     /* font-size: large !important; */
     font-weight: 900;
-    scale: 1.1;
+    transform: scale(1.135);
 }
+
+
+
+
+
+
+
 .desktop_logo{
     width: 12.5em;
     /* padding-bottom: 2rem; */
@@ -354,7 +361,7 @@ main h4{
     animation: slideFromLeft 2s ease-in-out;
 }
 .left-card:hover,.right-card:hover{
-    scale: 1.02;
+    transform: scale(1.025);
 
 }
 
@@ -545,10 +552,15 @@ border-radius:3em !important;
     top: -12px;
     left: -46px;
   }
-  ul.alternating-colors { 
-    li:nth-child(1):before { border: #0BAD02; }
-    li:nth-child(2):before { border: #2378D5; }
-  }
+ 
+
+
+  ul.alternating-colors li:nth-child(1):before {
+    border: #0BAD02;
+}
+ul.alternating-colors li:nth-child(2):before {
+    border: #2378D5;
+}
 
 /* reviews -----homepage--- */
 .reviews{
@@ -914,7 +926,7 @@ width: 96%;
 }
 
 .products .products_cards:hover{
-    scale:1.03;
+    transform: scale(1.03);
     
 }
 
@@ -1471,7 +1483,7 @@ width: 96%;
       
       .fstack {
         
-        display: flex-inline;
+        display: inline-flex;
 
         flex: 1 1 auto;
         flex-wrap: wrap;
@@ -1642,7 +1654,7 @@ width: 96%;
         flex-direction: column;
     }
     main .p4{
-        padding: 0.5 !important;
+        padding: 0.5rem !important;
     }
 
     .container{
