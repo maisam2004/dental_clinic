@@ -640,6 +640,21 @@ I used JSlint to validate javascript found in some apps
 * appointements - no warning
 * contact - label was wrong
 
+### Html validation 
+
+I used Htmlvalidato [ html validation ](https://validator.w3.org/#validate_by_input)  to find about any wrong tags and errors
+first i had about 20 errors , so by find out about it in source code(genrated page by django)
+then i overcome those and at the end i got this for all pages
+
+![html validate](static/html_validator.jpeg)
+
+### Css validation 
+I used Css validator [ css validation ](https://jigsaw.w3.org/css-validator/#validate_by_input) site to find about any wrong tags and errors
+first i had about 5 errors , so by find out about it in source code(genrated page by django)
+then i modified errors .that is the result
+
+![css validate](static/css_validate.jpeg)
+
 
 
 ### Python
