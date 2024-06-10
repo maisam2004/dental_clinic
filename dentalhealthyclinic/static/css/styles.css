@@ -233,6 +233,7 @@ main h4{
 }
 
 
+
 .homepage a.btn{
      background-color: rgb(18, 88, 113); 
     color: white;
@@ -1952,6 +1953,13 @@ main h1 {
         width: 90% !important;
 
     }
+    main > .container-sm:first-of-type {
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+      }
+      
+    
+
 
     /* current offers  */
 .current_offers .card{
@@ -2226,6 +2234,10 @@ main h1 {
     font-weight: 900;
 }
    
+main > .container-sm:first-of-type {
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
 .grounded-radiants {
     width: 58%; /* landing page button width  */
   }
