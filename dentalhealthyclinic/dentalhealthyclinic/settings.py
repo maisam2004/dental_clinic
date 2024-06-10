@@ -28,8 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-h9fx(s3jgz)_g^)+zgy=fr0o%e*2m9*ptz10%!)+qceyjsdz&e'
-
+SECRET_KEY=config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -214,12 +213,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']#http://yourdomain.com/static/css/styles.css
+#STATICFILES_DIRS = [BASE_DIR / 'static']#http://yourdomain.com/static/css/styles.css
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #MEDIAFILES_ROOT = os.path.join(BASE_DIR,'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -231,7 +233,7 @@ FREE_DELIVERY_THRESHOLD = Decimal('50.00')
 STANDARD_DELIVERY_PERCENTAGE = 0.30
 
 #stripe
-STRIPE_SECRET_KEY = config("SECRET_KEY")
+STRIPE_SECRET_KEY = config("SECRET_STRIPE_KEY")
 STRIPE_PUBLISHER_KEY = config('PUBLISHER_KEY')
 STRIPE_CURRENCY = 'usd'
 STRIPE_WH_SECRET = config("STRIPE_WH_SECRET")
