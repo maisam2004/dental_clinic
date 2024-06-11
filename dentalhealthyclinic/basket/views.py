@@ -59,6 +59,18 @@ def add_to_basket(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
+
+     # Check if product is in stock
+    if product.stock == 0:
+        messages.error(request, "This item is currently out of stock.")
+        return redirect(redirect_url)
+
+    # Check if requested quantity exceeds available stock
+    available_quantity = product.stock - bag.get(item_id, 0)  # Remaining stock after considering existing items in bag
+    if quantity > available_quantity:
+        messages.error(request, f"You can only add up to {available_quantity} of this item to your bag.")
+        return redirect(redirect_url)
+
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
         messages.success(request,f'Update quantity of  {product.name} ,now you have  {bag[item_id]} of this item in basket',extra_tags="show_bag_contents")
@@ -100,10 +112,21 @@ def update_basket(request):
                 messages.warning(request,f'removed {product.name} from you basket ')
         elif action == 'update':
             quantity = int(request.POST.get('quantity'))
+
+
+            # Check if the new quantity is more than the available stock
+            if quantity > product.stock:
+                messages.error(request, f'Sorry, there are only {product.stock} of {product.name} in stock.')
+            else:  # Update quantity if within stock limits
+                if item_id in bag:
+                    bag[item_id] = quantity
+                    messages.info(request, f'Quantity for {product.name} updated to {quantity}.')
+                else:
+                    messages.error(request, f'{product.name} not found in your basket.')
             
-            if item_id in bag:
-                bag[item_id] = quantity
-                messages.info(request, f'Quantity for {product.name} updated to {quantity}.')  # Add this line
+            #if item_id in bag:
+                #bag[item_id] = quantity
+                #messages.info(request, f'Quantity for {product.name} updated to {quantity}.')  
 
                 
         request.session['bag'] = bag

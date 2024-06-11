@@ -6,11 +6,11 @@
 .masked-image {
     width: 36em;
     height: 31em;
-    background-image: url('/static/main_hero.jpg');
+    background-image: url('/static/main_hero.webp');
     background-size: cover;
-    mask-image: url('/static/landingpage_bg.png');
+    mask-image: url('/static/landingpage_bg.webp');
     mask-size: contain;
-    -webkit-mask-image: url('/static/landingpage_bg.png');
+    -webkit-mask-image: url('/static/landingpage_bg.webp');
     -webkit-mask-size: contain;
   }
   
@@ -535,6 +535,7 @@ border-radius:3em !important;
     border-bottom-left-radius: 0.5em;
     padding-bottom:0.4em ;
     padding-top: 0.3em;
+    background-color: #86eea3c4;
     
     
   }
@@ -1519,11 +1520,11 @@ width: 96%;
       .masked-image { /* main image at landing */
         width: 19em; 
         height:15em;
-        background-image: url('/static/main_hero.jpg'); 
+        background-image: url('/static/main_hero.webp'); 
         background-size: cover; 
-        mask-image: url('/static/landingpage_bg.png'); 
+        mask-image: url('/static/landingpage_bg.webp'); 
         mask-size: contain; 
-        -webkit-mask-image: url('/static/landingpage_bg.png'); /* For older browsers */
+        -webkit-mask-image: url('/static/landingpage_bg.webp'); /* For older browsers */
         -webkit-mask-size: contain;
         
 
@@ -1942,16 +1943,17 @@ body.book_appointment , body.signup ,body.login , body.order_placement , body.lo
 
 
 @media screen and (min-width: 760px) and (max-width: 1000px){
-
-main{
+    main{
         height: 29em;
         background-repeat: no-repeat;
-        background-image: url("/static/office_dentist.jpg");
-        width: 100%;
+        background-image: url("/static/office_dentist.webp");
+        
         background-size: cover;
         background-position: center;
     
 }
+
+
 main h1 {
     color: #62e1ff;
     font-weight: 900;
@@ -2025,11 +2027,11 @@ main h1 {
     .masked-image { /* main image at landing */
         width: 22em; 
         height:18em;
-        background-image: url('/static/main_hero.jpg'); 
+        background-image: url('/static/main_hero.webp'); 
         background-size: cover; 
-        mask-image: url('/static/landingpage_bg.png'); 
+        mask-image: url('/static/landingpage_bg.webp'); 
         mask-size: contain; 
-        -webkit-mask-image: url('/static/landingpage_bg.png'); /* For older browsers */
+        -webkit-mask-image: url('/static/landingpage_bg.webp'); /* For older browsers */
         -webkit-mask-size: contain;
         
 
@@ -2240,8 +2242,8 @@ main h1 {
     main{
         height: 38em;
         background-repeat: no-repeat;
-        background-image: url("/static/office_dentist.jpg");
-        width: 100%;
+        background-image: url("/static/office_dentist.webp");
+        
         background-size: cover;
         background-position: center;
     
@@ -2353,7 +2355,7 @@ main > .container-sm:first-of-type {
     }
 
     .why_image {
-        width: 286px;
+        width: 380;
     max-height: 340px;
 }
 
@@ -2423,11 +2425,11 @@ main > .container-sm:first-of-type {
     .masked-image {
         width: 28em/* Width of Image 1 */; 
         height:24em /* Height of Image 1 */;
-        background-image: url('/static/main_hero.jpg'); /* Your background image (Image 2) */
+        background-image: url('/static/main_hero.webp'); /*  background image (Image 2) */
         background-size: cover; /* Adjust to fit the container or use contain */
-        mask-image: url('/static/landingpage_bg.png'); /* Your mask image (Image 1) */
-        mask-size: contain; /* Adjust to fit the container or use contain */
-        -webkit-mask-image: url('/static/landingpage_bg.png'); /* For older browsers */
+        mask-image: url('/static/landingpage_bg.webp'); /*  mask image (Image 1) */
+        mask-size: contain; 
+        -webkit-mask-image: url('/static/landingpage_bg.webp'); /* For older browsers */
         -webkit-mask-size: contain;
         
         
