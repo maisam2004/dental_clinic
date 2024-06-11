@@ -28,7 +28,7 @@ def all_products(request):
         if 'searchbar' in request.GET:  #check if there are searchbar word in request
             query = request.GET['searchbar']
             if not query:
-                messages.error(request,'You did not enter valid serch')
+                messages.error(request,'You did not enter valid search')
                 return redirect(reverse('products'))
             else:
                 queries = Q(name__icontains=query) | Q(description__icontains=query)

@@ -200,17 +200,17 @@
                     
                 
             </div>
-        
+
             <div class="row category-row d-none d-md-block">
-                <div class="container  ">
+                <div class="container">
                     <ul class="category-list d-flex justify-content-center text-center">
-                        <li><a class="category-link px-2 bg-danger " >Categories : </a></li>
-                        <li><a class="category-link px-2  " href="{% url 'products'%}?category=dental_care">Dental Care</a></li>
-                        <li><a class="category-link px-2" href="{% url 'products'%}?category=oral_hygiene">Oral Hygiene</a></li>
-                        <li><a class="category-link px-2" href="{% url 'products'%}?category=health">Health</a></li>
-                        <li><a class="category-link px-2" href="{% url 'products'%}?category=dental_accessories">Dental Accessories</a></li>
-                        <li><a class="category-link px-2" href="{% url 'products'%}?category=professional_tools">Professional Tools</a></li>
-                        <li><a class="category-link px-2" href="{% url 'products'%}?category=gift_sets">Gift Sets</a></li>
+                        <li><a class="category-link px-2 bg-danger">Categories:</a></li>
+                        <li><a class="category-link px-2 {% if request.GET.category == 'dental_care' %}selected_category{% endif %}" href="{% url 'products' %}?category=dental_care">Dental Care</a></li>
+                        <li><a class="category-link px-2 {% if request.GET.category == 'oral_hygiene' %}selected_category{% endif %}" href="{% url 'products' %}?category=oral_hygiene">Oral Hygiene</a></li>
+                        <li><a class="category-link px-2 {% if request.GET.category == 'health' %}selected_category{% endif %}" href="{% url 'products' %}?category=health">Health</a></li>
+                        <li><a class="category-link px-2 {% if request.GET.category == 'dental_accessories' %}selected_category{% endif %}" href="{% url 'products' %}?category=dental_accessories">Dental Accessories</a></li>
+                        <li><a class="category-link px-2 {% if request.GET.category == 'professional_tools' %}selected_category{% endif %}" href="{% url 'products' %}?category=professional_tools">Professional Tools</a></li>
+                        <li><a class="category-link px-2 {% if request.GET.category == 'gift_sets' %}selected_category{% endif %}" href="{% url 'products' %}?category=gift_sets">Gift Sets</a></li>
                     </ul>
                 </div>
             </div>
