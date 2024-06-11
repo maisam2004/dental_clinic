@@ -30,6 +30,7 @@ def view_basket(request):
             'item_id': item_id ,
             'quantity': quantity,
             'product': product,
+            'product_quantity':product.stock
         })
 
     context = {

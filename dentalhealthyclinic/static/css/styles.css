@@ -79,7 +79,7 @@
     
 }
 
-
+/* nav parts */
 .top_nav_book .row .p1 span a:hover{
     border-bottom: 1px white ;
 
@@ -167,6 +167,10 @@ span a{
     transform: scale(1.135);
 }
 
+.dental_store_nav{
+    color:#1d1c6e;
+    text-shadow: 1px 1px 1px rgba(0, 0, 255, 0.571);
+}
 
 
 

@@ -36,7 +36,7 @@
 
     {% block nav%} 
     
-    <div  class="container-fluid top_nav_book" style="background-color: #428581;">
+    <div  class="container-fluid top_nav_book" style="background-color: #19504d;">
         <div class="row   text-center d-flex flex-row py-1">
             <div class="hstack gap-3">
             <div class=" p-1 ms-2 "><span><a class="text-light fw-bolder " href="tel:+12709960875" title="tel:+12709960875"><i class="fa-solid fa-phone px-1 "></i><span class="d-md-none">Call</span><span class="d-none d-md-inline-block">+12709960875</span></a></span></div>
@@ -101,7 +101,7 @@
                         <a class="nav-link {% if request.resolver_match.url_name == 'fees' %}active{% endif %}" href="{% url 'fees' %}" target="_blank">Fees</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %} text-info" href="{% url 'products' %}" target="_blank">Dental Store</a>
+                        <a class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %} dental_store_nav " href="{% url 'products' %}" target="_blank">Dental Store</a>
                     </li>
                     <li class="nav-item d-none d-md-block">
                         <a class="navbar-brand mx-auto" href="{% url 'home' %}" target="_blank">
