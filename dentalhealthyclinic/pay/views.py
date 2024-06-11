@@ -261,6 +261,13 @@ def checkout_success(request, order_number):
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
 
+    order_line_items = OrderLineItem.objects.filter(order=order)
+    for item in order_line_items:
+        product = item.product
+        product.stock -= item.quantity #reduce item stock quantity
+        product.save()
+
+
     if 'bag' in request.session:
         del request.session['bag']
     wh_handler = StripeWH_Handler(request)

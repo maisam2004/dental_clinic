@@ -115,15 +115,15 @@
                         <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'about' %}" target="_blank">About</a>
                     </li>
                     <li class="nav-item d-none d-md-inline-block dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="user account">
                             <i class="fa-solid fa-user fs-6 border p-2 rounded-circle"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <li><a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
+                                    
                                     <li><a class="dropdown-item {% if request.resolver_match.url_name == 'add_product' %}active{% endif %}" href="{% url 'add_product' %}" target="_blank">Product Management</a></li>
-                                    <li><a href="{% url 'admin:index' %}" target="_blank" class="dropdown-item">Admin</a></li>
+                                    
                                     <li><a class="dropdown-item {% if request.resolver_match.url_name == 'admin:index' %}active{% endif %}" href="{% url 'admin:index' %}" target="_blank">Admin</a></li>
                                 {% endif %}
                                 <li><a class="nav-link {% if request.resolver_match.url_name == 'profile' %}active{% endif %}" href="{% url 'profile' %}" target="_blank">My Profile</a></li>
@@ -281,7 +281,7 @@
     {% block content%}
 
     {% endblock %}
-    <a href="#top" class="btn btn-outline-info mt-2 mb-2" style="width:4em">
+    <a href="#top" class="btn btn-outline-info mt-2 mb-2" style="width:4em" aria-label="Back to page top">
         <i class="fa-solid fa-arrow-up"></i>
     </a>
     
