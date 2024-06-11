@@ -75,7 +75,7 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
-            messages.success(request, 'Successfully added product!')
+            messages.success(request, 'Successfully added product!',extra_tags='bag_related=False')
             
             return redirect(reverse('product_detail', args=[product.id]))
         else:
@@ -113,7 +113,7 @@ def edit_product(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated product!')
+            messages.success(request, 'Successfully updated product!',extra_tags='bag_related=False')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to update product. Please ensure the form is valid.')
@@ -144,7 +144,7 @@ class ProductDeleteView(LoginRequiredMixin,DeleteView):
         success URL.
         """
         response = super().delete(request, *args, **kwargs)
-        messages.success(request, 'Product deleted successfully!')
+        messages.success(request, 'Product deleted successfully!',extra_tags='bag_related=False')
         return response
     
     def get(self, request, *args, **kwargs):

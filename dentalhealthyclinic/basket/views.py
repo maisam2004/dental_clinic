@@ -61,10 +61,10 @@ def add_to_basket(request, item_id):
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
-        messages.success(request,f'Update quantity of  {product.name} ,now you have  {bag[item_id]} of this item in basket')
+        messages.success(request,f'Update quantity of  {product.name} ,now you have  {bag[item_id]} of this item in basket',extra_tags="show_bag_contents")
     else:
         bag[item_id] = quantity
-        messages.success(request,f'Added {product.name} to you bag')
+        messages.success(request,f'Added {product.name} to you bag',extra_tags="show_bag_contents")
 
     request.session['bag'] = bag
 

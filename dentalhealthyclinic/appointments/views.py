@@ -34,7 +34,7 @@ def success(request, appointment_id):
         )
 
         send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [customer_email])
-        messages.success(request, f'Appointment confirmed! A confirmation email has been sent to {appointment.email}.')
+        messages.success(request, f'Appointment confirmed! A confirmation email has been sent to {appointment.email}.',extra_tags='bag_related=False')
 
     except Exception as e:  
         messages.error(request, f'There was an error sending the confirmation email: {e}')

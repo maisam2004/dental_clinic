@@ -108,7 +108,7 @@ class ReviewDeleteView(LoginRequiredMixin, DeleteView):
     context_object_name = 'review'
     success_url = '/reviews/'
     def form_valid(self, form):
-        messages.success(self.request, "The review was deleted successfully.")
+        messages.success(self.request, "The review was deleted successfully.",extra_tags='bag_related=False')
         return super(ReviewDeleteView,self).form_valid(form)
     
 

@@ -2338,6 +2338,10 @@ main > .container-sm:first-of-type {
         
     }
 
+    .review_page .review-intro .lead{
+        padding:2em;
+     }
+
     .navbar-expand-md .navbar-nav {
         flex-direction: row;
         align-items: center;
