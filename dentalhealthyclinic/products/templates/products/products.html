@@ -73,9 +73,9 @@
                 {% if search_term %}<h4>search term: {{search_term}}</h4>{% endif %}
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card h-100 border-0 products_cards">
+                    <div class="card h-100 border products_cards">
                         {% if product.image %}
-                        <a href="{% url 'product_detail' product.id %}" class="d-flex justify-content-center">
+                        <a href="{% url 'product_detail' product.id %}" class="d-flex justify-content-center bg-light">
                         <img src="{{ product.image.url }}" class="card-img-top" alt="{{product.name}}.">
                         {% comment %} <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top ms-5" alt="{{ product.name }}"> {% endcomment %}
 
