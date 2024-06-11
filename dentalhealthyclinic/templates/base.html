@@ -397,21 +397,26 @@
           }); {% endcomment %}
 
           // Detect when the user scrolls to the reviews section
-        window.addEventListener('scroll', function() {
+          window.addEventListener('scroll', function() {
             const reviewsSection = document.querySelector('.reviews');
-            const cards = reviewsSection.querySelectorAll('.review-card');
-
-            // Calculate the position of the reviews section relative to the viewport
-            const rect = reviewsSection.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-
-            // Update card opacity if the section is visible
-            if (isVisible) {
-                cards.forEach(card => {
-                    card.style.opacity = 1; // Set the desired opacity value
-                });
+            
+            // Check if the reviewsSection exists
+            if (reviewsSection) {
+                const cards = reviewsSection.querySelectorAll('.review-card');
+                
+                // Calculate the position of the reviews section relative to the viewport
+                const rect = reviewsSection.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+                
+                // Update card opacity if the section is visible
+                if (isVisible) {
+                    cards.forEach(card => {
+                        card.style.opacity = 1; // Set the desired opacity value
+                    });
+                }
             }
         });
+        
 
 
        {% comment %}  document.addEventListener('DOMContentLoaded', function () {

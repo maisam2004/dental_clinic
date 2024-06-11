@@ -84,12 +84,7 @@
     border-bottom: 1px white ;
 
 }
-.top_nav_book span .btn{
-    color:black;
-    background-color: white;
 
-
-}
 .hstack .p-1{
     padding: 0.20rem !important;
 }
@@ -1097,25 +1092,32 @@ width: 96%;
 
   /* toast ----- =================*/
 
- 
+  .message_container {
+    position: fixed;
+    top: 1rem;
+    right: 0;
+    z-index: 1000; /* Set a high value */
+}
 
 .custom-success-toast {
     background: linear-gradient(to right, #9370DB, #2aa475);
-    z-index: 9999 !important;
+    
+
+    
 }
 .custom-warning-toast,.custom-info-toast {
     background: linear-gradient(to right, #9370DB, #2aa475);
     z-index: 9999 !important;
+
 }
+
+
   .toast_capper{
    
     height: 2px;
-    z-index: 9999;
-  }
-  .toast-body{
     
-    z-index: 9999 !important;
   }
+  
 
 /*   .arrow-up {
     width: 0; 
@@ -2243,6 +2245,11 @@ main h1 {
 }
 
 @media screen and (min-width: 1000px) {
+    .hstack a.btn:hover{ /* top nav booking  */
+        background-color: rgba(255, 255, 255, 0.482);
+        color:black !important;
+    }
+
     main{
         height: 38em;
         background-repeat: no-repeat;
@@ -2453,8 +2460,9 @@ main > .container-sm:first-of-type {
         border-bottom: 1px solid white ;
 
     }
-    .hstack a.btn:hover{
+    .hstack a.btn:hover{ /* top nav booking  */
         background-color: rgba(255, 255, 255, 0.482);
+        color:black !important;
     }
 
     .about h2 {
