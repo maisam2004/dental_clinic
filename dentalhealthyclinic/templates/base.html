@@ -298,7 +298,15 @@
                     <img src="{% static 'logo12.png' %}" class="card-img-top mb-0" alt="company logo">
                     <p class="card-text">“Dentistry practice committed to enhancing smiles through state-of-the-art procedures.”</p>
             
-                    <p class="card-text social"><i class="fa-brands fa-facebook"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram" ></i><i class="fa-brands fa-whatsapp"></i></p>
+                    <p class="card-text social">
+                        <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Findex.php%2F" alt="facebook link"  target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://x.com/?lang=en-ie" alt="twitter x link"  target="_blank"><i class="fa-brands fa-twitter"></i></a> 
+                        <a href="https://www.instagram.com/?hl=en" alt="instagram link" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://web.whatsapp.com/" alt="whatsapp link" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                   <p>
+                
+                
+                
                 </div>
             </div>
             <div class="card   links" style="width:18rem;">
@@ -342,12 +350,15 @@
         </div>
     
     </div>
-    <footer class=" d-none main_footer d-flex p-3">
-        
-    <img src="{% static 'quality.png' %}"  class="companies" alt="company quality">
-    <img src="{% static 'bos.svg' %}"  class="companies" alt="company bos">
-    <img src="{% static 'invisalign-logo-png.png' %}"  class="companies " alt="company invisilign">
-    <img src="{% static 'gdc-logo-white.png' %}"  class="companies" alt="company dental council">
+    <footer class="container-fluid bg-light text-center p-1">
+        <hr>
+        <div class="info-part d-flex justify-content-center  gap-4">
+            <div class="icon text-center "><i class="fa-solid fa-truck"></i> <p>fast delivery</p></div>
+            <div class="icon text-center"><i class="fa-solid fa-arrows-rotate"></i> <p>Free returns</p></div>
+    
+        </div>
+        <hr>
+    <p class="p-1">© HEALTHYDENTALCLINIC DENTAL STORE | healthydentalclinic.co.uk is a registered trademark. All rights reserved.</p>
     
     </footer>
     
@@ -415,8 +426,24 @@
                     });
                 }
             }
+            
+
+            
+                
+            
+
         });
-        
+        {% if is_homepage %}  
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const companies = document.querySelectorAll('.companies');
+            companies.forEach((company, index) => {
+                setTimeout(() => {
+                    company.classList.add('visible');
+                }, index * 360); // Delay each image's animation by 300ms
+            });
+        });
+        {% endif %}
 
 
        {% comment %}  document.addEventListener('DOMContentLoaded', function () {

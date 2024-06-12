@@ -125,6 +125,7 @@ body{
  background-image: linear-gradient(135deg, #6EDCD9, #7d70ab);
    font-family: "Manrope", sans-serif;
     overflow-x: hidden;
+    
 }
 
 
@@ -305,7 +306,7 @@ main h4{
 
 .homepage a.btn:hover {
     background-color: #c8ccd0; /* Example color - adjust as needed */
-    color:rgb(18, 88, 113);
+    color:rgb(235, 235, 235);
     font-weight: 600;
      transition: all 0.5s;
 }
@@ -392,6 +393,8 @@ main h4{
 
 
 .current_offers .card {
+
+    
     background: linear-gradient(119.03deg, #304A7F 34.89%, #731569 93.87%);
     color:white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -400,6 +403,7 @@ main h4{
 .current_offers .card .text-price{
     text-shadow: 1px 1px 3px  rgba(74, 69, 69, 0.896);
 }
+
     
 .card .join_now{
     font-weight: 700;
@@ -699,6 +703,15 @@ footer img{
     height: 4.6em;
 }
 
+
+.footer .first_card a{
+   text-decoration: none;
+   color:white;
+}
+.footer .first_card a:hover{
+    text-decoration: none;
+    color:rgb(134, 211, 210);
+ }
 
 /* contact page  ============*/
 .contact h1{
@@ -1446,26 +1459,39 @@ width: 96%;
     
   }
 
-  .partners {
-    padding: 0.6em;
+  .container-fluid:has(.partners){
+    background-color: #e9f2f83d;
+    backdrop-filter: blur(30px);
     
-    background-color: rgb(255 255 255 / 40%);
-    border-radius: 2em;
-    box-shadow: -1px -1px 5px #878282;
-
   }
 
+  
+
   .companies {
-    opacity: 1;
-    /* transform: translateX(100%);  Start offscreen to the right */
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    
+    
 }
 
+
+.companies.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+/*
 .companies.slide-in {
     opacity: 1;
-    transform: translateX(0); /* Slide into position */
+    transform: translateX(0);  
 }
-
+Slide into position */
   
 @media screen and (max-width: 650px) {
 
@@ -1548,7 +1574,11 @@ width: 96%;
         width: 70%; /* button width on mobile*/
       }
 
-
+      .container-fluid:has(.partners){
+        background-color: white;
+        padding: 1em;
+        margin-top: 3em;
+      }
     
    
     .about .container{
@@ -1772,6 +1802,7 @@ width: 96%;
     padding:2em;
 }
 
+
 .footer .container-md{
     
     /* display:inline !important; 
@@ -1992,6 +2023,7 @@ main h1 {
 .current_offers .card{
     width: 21rem !important;
     height: 22rem;
+    
 }
 .homepage .card .card-title{
    font-size:  1.6em;
