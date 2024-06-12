@@ -11,10 +11,13 @@ django-allauth==0.62.1
 django-bootstrap-datepicker-plus==5.0.5
 django-countries==7.6.1
 django-crispy-forms==2.1
+gunicorn==22.0.0
 idna==3.6
 oauthlib==3.2.2
+packaging==24.1
 phonenumbers==8.13.37
 pillow==10.3.0
+psycopg2-binary==2.9.9
 pydantic==2.7.1
 pydantic_core==2.18.2
 pypng==0.20220715.0

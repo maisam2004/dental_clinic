@@ -399,13 +399,6 @@
           });
     
 
-          //for show active dropdown link 
-       {% comment %}    $(document).ready(function() {
-            // Check if any dropdown items have the active class on page load
-            if ($('.dropdown-menu .dropdown-item.active').length > 0) {
-              $('.nav-link.dropdown-toggle').addClass('active');
-            }
-          }); {% endcomment %}
 
           // Detect when the user scrolls to the reviews section
           window.addEventListener('scroll', function() {
@@ -445,29 +438,7 @@
         });
         {% endif %}
 
-
-       {% comment %}  document.addEventListener('DOMContentLoaded', function () {
-            const companyImages = document.querySelectorAll('.companies'); // Select all company logos
-        
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('slide-in'); // Add the 'slide-in' class to trigger the animation
-                        observer.unobserve(entry.target); // Stop observing after the image is visible
-                    }
-                });
-            }, {
-                rootMargin: '0px',
-                threshold: 0.2  // Adjust threshold as needed
-            });
-        
-            companyImages.forEach(image => {
-                observer.observe(image);
-            });
-        })
-         {% endcomment %}
-
-            
+ 
 </script>
 {% endblock %}
    
