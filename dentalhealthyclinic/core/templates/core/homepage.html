@@ -11,10 +11,8 @@
     <div class="container-sm text_hero align-bottom text-center order-2">
         <h1 >Welcome to Your Dental Practice</h1>
         
-        <h4 class="text-center mt-4">Your healthy smile starts here. <span class="emoji"><picture>
-            <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f601/512.webp" type="image/webp">
-            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f601/512.gif" alt="😁" width="32" height="32">
-          </picture></span></h4>
+        <h4 class="text-center mt-4">Your healthy smile starts here. <img src="{% static 'smilyteath2.png'%}" alt="smiling teach image"> </h4>
+            
 
         
         <a href="{% url 'book_appointment' %}" class="btn text-center rounded-pill grounded-radiants companies">Book Appointment</a>
@@ -27,7 +25,7 @@
     </div>
    
 </main>
-<section class="container-fluid position-absolute" >
+<div class="container-fluid position-absolute" >
 
     <div class="partners text-center d-flex flex-wrap justify-content-around gap-4 align-items-center">
         <img src="{% static 'cqc_logo.png' %}"  class="companies rounded p-1" alt="company quality" style="width: 10em;height: 13%;">
@@ -36,7 +34,7 @@
         <img src="{% static 'gdc-logo-white.png' %}"  class="companies bg-dark rounded p-1" alt="company dental council" style="width: 11em;height: 12%;">
     </div>
     
-</section>
+</div>
 
 <section class="current_offers  inner-shadow container-fluid pb-4 pt-5 mt-5 mb-3">
 
