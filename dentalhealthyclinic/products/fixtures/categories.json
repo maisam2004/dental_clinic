@@ -1,51 +1,50 @@
 [
-    {
-        "pk": 1,
-        "model": "products.category",
-        "fields": {
-            "name": "dental_care",
-            "friendly_name": "Dental Care"
-        }
-    },
-    {
-        "pk": 2,
-        "model": "products.category",
-        "fields": {
-            "name": "oral_hygiene",
-            "friendly_name": "Oral Hygiene"
-        }
-    },
-    {
-        "pk": 3,
-        "model": "products.category",
-        "fields": {
-            "name": "health",
-            "friendly_name": "Health"
-        }
-    },
-    {
-        "pk": 4, 
-        "model": "products.category",
-        "fields": {
-            "name": "dental_accessories",
-            "friendly_name": "Dental Accessories"
-        }
-    },
-    {
-        "pk": 5, 
-        "model": "products.category",
-        "fields": {
-            "name": "professional_tools",
-            "friendly_name": "Professional Tools"
-        }
-    },
-    {
-        "pk": 6, 
-        "model": "products.category",
-        "fields": {
-            "name": "gift_sets",
-            "friendly_name": "Gift Sets"
-        }
+{
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+        "name": "dental_care",
+        "friendly_name": "Dental Care"
     }
+},
+{
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+        "name": "oral_hygiene",
+        "friendly_name": "Oral Hygiene"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+        "name": "health",
+        "friendly_name": "Health"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+        "name": "dental_accessories",
+        "friendly_name": "Dental Accessories"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 5,
+    "fields": {
+        "name": "professional_tools",
+        "friendly_name": "Professional Tools"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 6,
+    "fields": {
+        "name": "gift_sets",
+        "friendly_name": "Gift Sets"
+    }
+}
 ]
-
