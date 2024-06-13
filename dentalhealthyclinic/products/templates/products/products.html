@@ -8,7 +8,7 @@
     <div class="d-flex ">
         <div class="col-6 d-flex">
             <h6>Sort By:</h6>
-            <div class="btn-group ">
+            <div class="btn-group btndrop ">
                 <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     {% if sort_by == 'default' %}
                         Default
@@ -28,21 +28,21 @@
                         Sort By
                     {% endif %}
                 </button>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu  ">
                     <li><a class="dropdown-item {% if sort_by == 'default' %}active{% endif %}" href="?sort_by=default">Default</a></li>
                     <li><a class="dropdown-item {% if sort_by == 'name_asc' %}active{% endif %}" href="?sort_by=name_asc">Name (A-Z)</a></li>
                     <li><a class="dropdown-item {% if sort_by == 'name_desc' %}active{% endif %}" href="?sort_by=name_desc">Name (Z-A)</a></li>
                     <li><a class="dropdown-item {% if sort_by == 'price_asc' %}active{% endif %}" href="?sort_by=price_asc">Price (Low to High)</a></li>
                     <li><a class="dropdown-item {% if sort_by == 'price_desc' %}active{% endif %}" href="?sort_by=price_desc">Price (High to Low)</a></li>
                     <li><a class="dropdown-item {% if sort_by == 'rating' %}active{% endif %}" href="?sort_by=rating">Rating (High to Low rate)</a></li>
-                    <li><a class="dropdown-item {% if sort_by == 'category' %}active{% endif %}" href="?sort_by=category">Category </a></li>
+                   
 
 
                 </ul>
             </div>
         </div>
-        <div class="dropdown_cat col-6 d-flex d-md-none"> <h6 class="pe-1">Categories</h6> 
-            <div class="btn-group ">
+        <div class="dropdown_cat col-6 d-flex d-md-none ms-2"> <h6 class="pe-1">Categories</h6> 
+            <div class="btn-group btndrop">
               <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                   filters
               </button>

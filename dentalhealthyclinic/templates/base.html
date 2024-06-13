@@ -52,10 +52,10 @@
                 
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
-                       <li> <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
+                      {#   <li> <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>#}
                        <li><a class="dropdown-item {% if request.resolver_match.url_name == 'add_product' %}active{% endif %}" href="{% url 'add_product' %}" target="_blank">Product Management</a></li>
 
-                       <li> <a href="{% url 'admin:index' %}" target="_blank" class="dropdown-item">Admin</a></li>
+                       {# <li> <a href="{% url 'admin:index' %}" target="_blank" class="dropdown-item">Admin</a></li> #}
                        <li><a class="dropdown-item {% if request.resolver_match.url_name == 'admin:index' %}active{% endif %}" href="{% url 'admin:index' %}" target="_blank">Admin</a></li>
 
                     {% endif %}

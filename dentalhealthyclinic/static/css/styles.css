@@ -1498,6 +1498,12 @@ Slide into position */
   
 @media screen and (max-width: 650px) {
 
+    .btndrop {
+        position: relative;
+        display: block !important;
+        vertical-align: middle;
+    }
+
     .center form{  /* form in delete confirm page */
         width: 90%;
     }
