@@ -2398,9 +2398,8 @@ main > .container-sm:first-of-type {
     }
 
     
-    .products_details .image-container:hover{
-        transform: scale(1.2);
-        
+    .products_details .image-container:hover {
+        transform: scale(1.7) translateY(20%); /* effect on image details */
     }
 
     .review_page .review-intro .lead{
