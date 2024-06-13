@@ -3,6 +3,9 @@
     padding: 0;
 }
 
+
+
+
 .masked-image {
     width: 36em;
     height: 31em;
@@ -1987,6 +1990,16 @@ body.book_appointment , body.signup ,body.login , body.order_placement , body.lo
 
 
 @media screen and (min-width: 760px) and (max-width: 1000px){
+
+
+
+
+
+
+
+
+
+
     main{
         height: 29em;
         background-repeat: no-repeat;

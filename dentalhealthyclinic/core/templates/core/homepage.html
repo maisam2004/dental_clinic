@@ -144,17 +144,17 @@
 </section>
 
 
-<div class="container-fluid p-5 mt-1 family_images position-relative text-center">
+<div class="container-fluid p-5 mt-1 family_images position-relative text-center" id="imageSwapContainer">
     <div class="row d-flex">
         <div class="col-md-6 order-1">
             <div class="container">
-                <img src="{% static 'family_dentist.jpeg' %}"  class="family_img fade-in-image" alt="family with dentist">
+                <img src="{% static 'family_dentist.jpeg' %}"  class="family_img fade-in-image" alt="family with dentist" id="familyImg">
             </div>
         </div>
         <div class="col-md-6 order-2   position-absolute ">
             <div class="container d-flex justify-content-center ">
                 
-                <img src="{% static 'kids_brush.jpg' %}"  class="kid_img fade-in-image" alt="kid brushing">
+                <img src="{% static 'kids_brush.jpg' %}"  class="kid_img fade-in-image" alt="kid brushing" id="kidImg" >
             </div>
         </div>
         
