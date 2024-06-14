@@ -3,14 +3,17 @@
     padding: 0;
 }
 
+
+
+
 .masked-image {
     width: 36em;
     height: 31em;
-    background-image: url('/static/main_hero.jpg');
+    background-image: url('/static/main_hero.webp');
     background-size: cover;
-    mask-image: url('/static/landingpage_bg.png');
+    mask-image: url('/static/landingpage_bg.webp');
     mask-size: contain;
-    -webkit-mask-image: url('/static/landingpage_bg.png');
+    -webkit-mask-image: url('/static/landingpage_bg.webp');
     -webkit-mask-size: contain;
   }
   
@@ -79,17 +82,12 @@
     
 }
 
-
+/* nav parts */
 .top_nav_book .row .p1 span a:hover{
     border-bottom: 1px white ;
 
 }
-.top_nav_book span .btn{
-    color:black;
-    background-color: white;
 
-
-}
 .hstack .p-1{
     padding: 0.20rem !important;
 }
@@ -124,12 +122,13 @@ form button{
 
 
 body{
-    border: 1px solid red;
+   
 /*     background-color: rgba(229, 240, 242, 1);
  */  
  background-image: linear-gradient(135deg, #6EDCD9, #7d70ab);
    font-family: "Manrope", sans-serif;
     overflow-x: hidden;
+    
 }
 
 
@@ -167,6 +166,10 @@ span a{
     transform: scale(1.135);
 }
 
+.dental_store_nav{
+    color:#1d1c6e;
+    text-shadow: 1px 1px 1px rgba(0, 0, 255, 0.571);
+}
 
 
 
@@ -223,6 +226,13 @@ span a{
   }
 
 /* end nav style ------------------ */
+
+.selected_category{
+    
+    background-color:#cfc90a !important;
+    color:black !important;
+}
+
 .text_hero{
     line-height: 7em !important;
 }
@@ -299,7 +309,7 @@ main h4{
 
 .homepage a.btn:hover {
     background-color: #c8ccd0; /* Example color - adjust as needed */
-    color:rgb(18, 88, 113);
+    color:rgb(235, 235, 235);
     font-weight: 600;
      transition: all 0.5s;
 }
@@ -386,6 +396,8 @@ main h4{
 
 
 .current_offers .card {
+
+    
     background: linear-gradient(119.03deg, #304A7F 34.89%, #731569 93.87%);
     color:white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -394,6 +406,7 @@ main h4{
 .current_offers .card .text-price{
     text-shadow: 1px 1px 3px  rgba(74, 69, 69, 0.896);
 }
+
     
 .card .join_now{
     font-weight: 700;
@@ -535,6 +548,7 @@ border-radius:3em !important;
     border-bottom-left-radius: 0.5em;
     padding-bottom:0.4em ;
     padding-top: 0.3em;
+    background-color: #86eea3c4;
     
     
   }
@@ -692,6 +706,15 @@ footer img{
     height: 4.6em;
 }
 
+
+.footer .first_card a{
+   text-decoration: none;
+   color:white;
+}
+.footer .first_card a:hover{
+    text-decoration: none;
+    color:rgb(134, 211, 210);
+ }
 
 /* contact page  ============*/
 .contact h1{
@@ -868,7 +891,7 @@ width: 96%;
 .products .category-row .container{
     width:98%;
     
-    font-size: small;
+    font-size: 0.8em;
 }
 .products .category-list li{
     list-style-type: none;
@@ -1092,25 +1115,32 @@ width: 96%;
 
   /* toast ----- =================*/
 
- 
+  .message_container {
+    position: fixed;
+    top: 1rem;
+    right: 0;
+    z-index: 1000; /* Set a high value */
+}
 
 .custom-success-toast {
     background: linear-gradient(to right, #9370DB, #2aa475);
-    z-index: 9999 !important;
+    
+
+    
 }
 .custom-warning-toast,.custom-info-toast {
     background: linear-gradient(to right, #9370DB, #2aa475);
-    z-index: 9999 !important;
+    
+
 }
+
+
   .toast_capper{
    
     height: 2px;
-    z-index: 9999;
-  }
-  .toast-body{
     
-    z-index: 9999 !important;
   }
+  
 
 /*   .arrow-up {
     width: 0; 
@@ -1432,28 +1462,47 @@ width: 96%;
     
   }
 
-  .partners {
-    padding: 0.6em;
+  .container-fluid:has(.partners){
+    background-color: #e9f2f83d;
+    backdrop-filter: blur(30px);
     
-    background-color: rgb(255 255 255 / 40%);
-    border-radius: 2em;
-    box-shadow: -1px -1px 5px #878282;
-
   }
 
+  
+
   .companies {
-    opacity: 1;
-    /* transform: translateX(100%);  Start offscreen to the right */
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    
+    
 }
 
+
+.companies.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+/*
 .companies.slide-in {
     opacity: 1;
-    transform: translateX(0); /* Slide into position */
+    transform: translateX(0);  
 }
-
+Slide into position */
   
 @media screen and (max-width: 650px) {
+
+    .btndrop {
+        position: relative;
+        display: block !important;
+        vertical-align: middle;
+    }
 
     .center form{  /* form in delete confirm page */
         width: 90%;
@@ -1519,11 +1568,11 @@ width: 96%;
       .masked-image { /* main image at landing */
         width: 19em; 
         height:15em;
-        background-image: url('/static/main_hero.jpg'); 
+        background-image: url('/static/main_hero.webp'); 
         background-size: cover; 
-        mask-image: url('/static/landingpage_bg.png'); 
+        mask-image: url('/static/landingpage_bg.webp'); 
         mask-size: contain; 
-        -webkit-mask-image: url('/static/landingpage_bg.png'); /* For older browsers */
+        -webkit-mask-image: url('/static/landingpage_bg.webp'); /* For older browsers */
         -webkit-mask-size: contain;
         
 
@@ -1534,7 +1583,11 @@ width: 96%;
         width: 70%; /* button width on mobile*/
       }
 
-
+      .container-fluid:has(.partners){
+        background-color: white;
+        padding: 1em;
+        margin-top: 3em;
+      }
     
    
     .about .container{
@@ -1758,6 +1811,7 @@ width: 96%;
     padding:2em;
 }
 
+
 .footer .container-md{
     
     /* display:inline !important; 
@@ -1943,17 +1997,28 @@ body.book_appointment , body.signup ,body.login , body.order_placement , body.lo
 
 @media screen and (min-width: 760px) and (max-width: 1000px){
 
-main{
+
+
+
+
+
+
+
+
+
+    main{
         height: 29em;
         background-repeat: no-repeat;
-        background-image: url("/static/office_dentist.jpg");
-        width: 100%;
+        background-image: url("/static/office_dentist.webp");
+        
         background-size: cover;
         background-position: center;
     
 }
+
+
 main h1 {
-    color: #c0d1d5;
+    color: #62e1ff;
     font-weight: 900;
 }
 
@@ -1977,6 +2042,7 @@ main h1 {
 .current_offers .card{
     width: 21rem !important;
     height: 22rem;
+    
 }
 .homepage .card .card-title{
    font-size:  1.6em;
@@ -2009,6 +2075,11 @@ main h1 {
         width:65%;
      }
 
+
+     .review_page .review-intro .lead{
+        padding:2em;
+     }
+
     .hstack{
     
         width: 90%;
@@ -2020,11 +2091,11 @@ main h1 {
     .masked-image { /* main image at landing */
         width: 22em; 
         height:18em;
-        background-image: url('/static/main_hero.jpg'); 
+        background-image: url('/static/main_hero.webp'); 
         background-size: cover; 
-        mask-image: url('/static/landingpage_bg.png'); 
+        mask-image: url('/static/landingpage_bg.webp'); 
         mask-size: contain; 
-        -webkit-mask-image: url('/static/landingpage_bg.png'); /* For older browsers */
+        -webkit-mask-image: url('/static/landingpage_bg.webp'); /* For older browsers */
         -webkit-mask-size: contain;
         
 
@@ -2232,11 +2303,16 @@ main h1 {
 }
 
 @media screen and (min-width: 1000px) {
+    .hstack a.btn:hover{ /* top nav booking  */
+        background-color: rgba(255, 255, 255, 0.482);
+        color:black !important;
+    }
+
     main{
         height: 38em;
         background-repeat: no-repeat;
-        background-image: url("/static/office_dentist.jpg");
-        width: 100%;
+        background-image: url("/static/office_dentist.webp");
+        
         background-size: cover;
         background-position: center;
     
@@ -2328,10 +2404,13 @@ main > .container-sm:first-of-type {
     }
 
     
-    .products_details .image-container:hover{
-        transform: scale(1.2);
-        
+    .products_details .image-container:hover {
+        transform: scale(1.7) translateY(20%); /* effect on image details */
     }
+
+    .review_page .review-intro .lead{
+        padding:2em;
+     }
 
     .navbar-expand-md .navbar-nav {
         flex-direction: row;
@@ -2344,7 +2423,7 @@ main > .container-sm:first-of-type {
     }
 
     .why_image {
-        width: 286px;
+        width: 380;
     max-height: 340px;
 }
 
@@ -2414,11 +2493,11 @@ main > .container-sm:first-of-type {
     .masked-image {
         width: 28em/* Width of Image 1 */; 
         height:24em /* Height of Image 1 */;
-        background-image: url('/static/main_hero.jpg'); /* Your background image (Image 2) */
+        background-image: url('/static/main_hero.webp'); /*  background image (Image 2) */
         background-size: cover; /* Adjust to fit the container or use contain */
-        mask-image: url('/static/landingpage_bg.png'); /* Your mask image (Image 1) */
-        mask-size: contain; /* Adjust to fit the container or use contain */
-        -webkit-mask-image: url('/static/landingpage_bg.png'); /* For older browsers */
+        mask-image: url('/static/landingpage_bg.webp'); /*  mask image (Image 1) */
+        mask-size: contain; 
+        -webkit-mask-image: url('/static/landingpage_bg.webp'); /* For older browsers */
         -webkit-mask-size: contain;
         
         
@@ -2438,8 +2517,9 @@ main > .container-sm:first-of-type {
         border-bottom: 1px solid white ;
 
     }
-    .hstack a.btn:hover{
+    .hstack a.btn:hover{ /* top nav booking  */
         background-color: rgba(255, 255, 255, 0.482);
+        color:black !important;
     }
 
     .about h2 {

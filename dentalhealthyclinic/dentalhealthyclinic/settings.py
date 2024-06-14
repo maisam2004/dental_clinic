@@ -244,34 +244,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-#STATIC_URL = '/static/'
-#STATICFILES_DIRS = [BASE_DIR / 'static']#http://yourdomain.com/static/css/styles.css
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']#http://yourdomain.com/static/css/styles.css
 
 
 
-#MEDIA_URL = '/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-#MEDIAFILES_ROOT = os.path.join(BASE_DIR,'media')
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIAFILES_ROOT = os.path.join(BASE_DIR,'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-STATIC_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_ENDPOINT_URL}/static/'
-
-MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_ENDPOINT_URL}/media/'
-
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-AWS_S3_SIGNATURE_VERSION = 's3v4'  # important Spaces
-AWS_S3_REGION_NAME = 'ams3'  #  region
-AWS_QUERYSTRING_AUTH = False
-
-DISABLE_COLLECTSTATIC = 1
 
 
 
