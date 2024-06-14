@@ -246,7 +246,7 @@ USE_TZ = True
 
 #STATIC_URL = '/static/'
 #STATICFILES_DIRS = [BASE_DIR / 'static']#http://yourdomain.com/static/css/styles.css
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 
 
 #MEDIA_URL = '/media/'
@@ -261,9 +261,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-STATIC_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_ENDPOINT_URL}/{AWS_LOCATION}/static/'
-MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_ENDPOINT_URL}/{AWS_LOCATION}/media/'
-
+STATIC_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_ENDPOINT_URL}/static/'
+MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_ENDPOINT_URL}/media/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 AWS_S3_SIGNATURE_VERSION = 's3v4'  # important Spaces
 AWS_S3_REGION_NAME = 'ams3'  #  region
