@@ -44,15 +44,17 @@ AWS_S3_ENDPOINT_URL = config('AWS_S3_ENDPOINT_URL')  #  endpoint
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
-AWS_LOCATION = 'healthydental'
+AWS_LOCATION = 'healthydental'#ams3
 
 
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_S3_SIGNATURE_VERSION = 's3v4'  # important Spaces
-AWS_S3_REGION_NAME = 'ams3'  #  region
-AWS_QUERYSTRING_AUTH = False
+
+
+
+
+
+
+
 
 
 
@@ -92,6 +94,7 @@ INSTALLED_APPS = [
 
     "crispy_forms",
     "crispy_bootstrap5",
+    'storages',
 
     
 ]
@@ -241,19 +244,36 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
 #STATICFILES_DIRS = [BASE_DIR / 'static']#http://yourdomain.com/static/css/styles.css
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #MEDIAFILES_ROOT = os.path.join(BASE_DIR,'media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+STATIC_URL = f'https://{healthydental}.{AWS_S3_ENDPOINT_URL}/{AWS_LOCATION}/static/'
+MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_ENDPOINT_URL}/{AWS_LOCATION}/media/'
+
+
+AWS_S3_SIGNATURE_VERSION = 's3v4'  # important Spaces
+AWS_S3_REGION_NAME = 'ams3'  #  region
+AWS_QUERYSTRING_AUTH = False
+
+
+
+
+
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
