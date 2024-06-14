@@ -36,6 +36,28 @@ DEBUG = True
 ALLOWED_HOSTS = ['healtydentalclinic-8f35f633fd68.herokuapp.com','localhost','127.0.0.1']
 
 
+#digital ocean 
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_ENDPOINT_URL = config('AWS_S3_ENDPOINT_URL')  #  endpoint 
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'healthydental'
+
+
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_SIGNATURE_VERSION = 's3v4'  # important Spaces
+AWS_S3_REGION_NAME = 'ams3'  #  region
+AWS_QUERYSTRING_AUTH = False
+
+
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
