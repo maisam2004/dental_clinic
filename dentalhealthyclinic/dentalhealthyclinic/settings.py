@@ -261,8 +261,10 @@ USE_TZ = True
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-STATIC_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_ENDPOINT_URL}/static/'
-MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_ENDPOINT_URL}/media/'
+#STATIC_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_ENDPOINT_URL}/static/'
+STATIC_URL=f'https://{AWS_STORAGE_BUCKET_NAME}.ams3.digitaloceanspaces.com/static/'
+MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.ams3.digitaloceanspaces.com/media/'
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 AWS_S3_SIGNATURE_VERSION = 's3v4'  # important Spaces
