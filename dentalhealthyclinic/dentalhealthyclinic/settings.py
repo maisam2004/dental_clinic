@@ -271,7 +271,7 @@ AWS_S3_SIGNATURE_VERSION = 's3v4'  # important Spaces
 AWS_S3_REGION_NAME = 'ams3'  #  region
 AWS_QUERYSTRING_AUTH = False
 
-
+DISABLE_COLLECTSTATIC = 1
 
 
 
