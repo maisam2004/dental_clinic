@@ -98,7 +98,8 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.resolver_match.url_name == 'fees' %}active{% endif %}" href="{% url 'fees' %}" target="_blank">Fees</a>
+                        <a class="nav-link {% if request.resolver_match.url_name == 'reviews' %}active{% endif %}" href="{% url 'reviews' %}" target="_blank">Reviews</a>
+                        
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %} dental_store_nav " href="{% url 'products' %}" target="_blank">Dental Store</a>
