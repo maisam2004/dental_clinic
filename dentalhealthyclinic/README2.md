@@ -200,9 +200,20 @@ Each service page provides detailed information, including:
 <details>
   <summary>Click here to view different services pages:</summary>
 
-  ![resto](static/resto_service.jpeg)
-  ![general](static/general_service.jpg)
-  ![cosmetic](static/cosmetic_service.jpg)
+  ![resto]
+
+  <img src="static/resto_service.jpeg" alt="General Service" width="300" /> 
+  
+  ![general]
+
+  <img src="static/general_service.jpg" alt="General Service" width="300" /> 
+
+   ![cosmetic]
+
+  <img src="static/cosmetic_service.jpg" alt="General Service" width="300" /> 
+
+  
+ 
   
 
 </details>
@@ -213,9 +224,13 @@ Each service page provides detailed information, including:
 * **Appointment History:** View a list of upcoming and past appointments, with the option to reschedule or cancel.
 * **Order History (if applicable):**  For users who have purchased items from the dental store, view their order history and track shipments.
 
-![profile](static/profile_page.jpeg)
-![](static/mobile_profile.jpeg)
+![profile]
 
+<img src="static/profile_page.jpeg" alt="General Service" width="380" />
+
+![profile mobile]()
+
+<img src="static/mobile_profile.jpeg" alt="General Service" width="300" /> 
 ### Fees Page
 
 A comprehensive page listing all fees for the services offered by the clinic:
