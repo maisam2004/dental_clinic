@@ -139,7 +139,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     #'allauth.account.middleware.AuthenticationMiddleware',
     'allauth.usersessions.middleware.UserSessionsMiddleware',
-
+    'django.middleware.gzip.GZipMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "allauth.account.middleware.AccountMiddleware",
