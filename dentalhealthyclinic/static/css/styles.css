@@ -1033,11 +1033,13 @@
   }
   
   .custom-success-toast {
-    background: linear-gradient(to right, #9370db, #2aa475);
+    backdrop-filter: blur(30px);
+    background: linear-gradient(to right, #9470db62, #2aa4754a);
   }
   .custom-warning-toast,
   .custom-info-toast {
-    background: linear-gradient(to right, #9370db, #2aa475);
+    backdrop-filter: blur(20px);
+    background: linear-gradient(to right, #9470db9c, #2aa475ab);
   }
   
   .toast_capper {
