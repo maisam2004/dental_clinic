@@ -1,6 +1,9 @@
 # Healthy Dental Clinic
 
-![Home page](static/logo12.png)
+<a name="top" id="top"></a>
+
+
+![Home page logo](static/logo12.png)
 
 ## Introduction
 
@@ -83,19 +86,33 @@ Before writing any code for the site, I created wireframes to visualize the desi
 <details>
 <summary>Click here to view Wireframes:</summary>
 
-![](static/homepage_wirefram.jpg)
- ![](static/store_wireframe.jpg)
-  ![](static/profile_wireframe.jpg)
-  ![](static/product-detail_wireframe.jpg)
-  ![](static/book_appointment_wireframe.jpg)
+![homepage wireframe]
+
+<img src="static/homepage_wirefram.jpg" alt="homepage_wirefram" width="400" />
+
+ ![store wireframe]
+
+<img src="static/store_wireframe.jpg" alt="store_wireframe" width="400" />
+
+  ![profile page wireframe]
+
+<img src="static/profile_wireframe.jpg" alt="profile_wireframe" width="400" />
+
+  ![product-detail_wireframe]
+
+<img src="static/product-datail_wireframe.jpg" alt="product detail wireframe" width="400" />
+
+  ![book_appointment]
+
+<img src="static/book_appointment_wireframe.jpg" alt="book appointment wireframe" width="400" />
 
 </details>
 
 ## Navigation
 
 I created a flowchart to visualize the website structure.
-            
-           <pre> Homepage
+
+    `<pre>` Homepage
                 |
                 v
             [About Us] --> [Team] --> [Individual Dentist Profiles]
@@ -113,61 +130,64 @@ I created a flowchart to visualize the website structure.
             [Patient Resources] --> [Forms] --> [New Patient Forms]
                               |
                               v
-                              [Financial/Insurance]
+                              [book appointement]
                 |
                 v
-            [Contact Us] --> [Map]
+            [Contact Us] --> [form contact]
                 |
-                v
+                |
             [Appointment Scheduling] --> [Calendar] --> [Confirmation]
-            </pre>
-
-<details>
-<summary>Click here to view the navigation:</summary>
-
-  ![](static/header_navbar_top.jpg)
-  
-
-</details>
+            `</pre>`
 
 ## Project Type
 
 Healthy Dental Clinic is a web application designed to support the online presence of a dental practice. The functionality on this site for a patient is the ability to book appointments, learn about services, and purchase dental products conveniently. For the clinic staff, the goal is to manage appointments, patient information, and potentially the online store inventory.
-
-## Features
 
 ### Homepage
 
 The homepage welcomes patients with a logo, navigation menu, and a hero section highlighting the clinic's mission and services. It features:
 
 * **Header and Navigation:**
-  ![header](static/header_navbar_top.jpg)
+  ![header]
+
+  <img src="static/header_navbar_top.jpg" alt="homepage navbar" width="680" />
 * **Hero Section:**
-  ![hompage_hero](static/home2.jpg)
+
+  ![hompage_hero]
+
+  <img src="static/landing_page1.jpg" alt="homepage landing" width="680" />
 * **Call to Action:** Clear buttons or links to encourage appointment booking or exploring services.
 
 ### Appointment Booking
 
 The appointment booking page allows patients to easily schedule appointments:
 
-![appointment_booking](static/booke_appointment.jpeg)
+![appointment_booking]
+
+<img src="static/book_appointment.jpeg" alt="book appointment" width="680" />
 
 * **User Authentication:**
 * **Registration:**
-  ![signup](static/signup_page.jpeg)
+  ![signup]
+
+  <img src="static/signup_page.jpeg" alt="signup" width="680" />
 
   - New users can sign up for an account.
   - Existing users can log in.
   - Authentication is handled securely using Django Allauth.
 * **Login/Registration:**
-  ![login](static/signin_page.jpeg)
+  ![login]
 
-  - New users can register for an account to manage appointments and view their order history.
-  - Existing users can log in securely using their email and password.
-  - The authentication process is handled by Django Allauth, providing a robust and secure framework.
+<img src="static/signin_page.jpeg" alt="login" width="680" />
+
+- New users can register for an account to manage appointments and view their order history.
+- Existing users can log in securely using their email and password.
+- The authentication process is handled by Django Allauth, providing a robust and secure framework.
+
 * **Logout:**
-  ![logout](static/logout_page.jpeg)
+  ![logout]
 
+<img src="static/logout_page.jpeg" alt="logout" width="680" />
   - Authenticated users can easily log out to protect their account information.
 
 ### Booking Appointments
@@ -182,8 +202,10 @@ The appointment booking page allows patients to easily schedule appointments:
 * **Success Page:**
 
   - Confirms the booked appointment.
-  - Optionally includes a QR code or other reference for the appointment.
-    ![logout](static/booked_image.jpeg)
+
+    ![logout]
+
+    <img src="static/booked_image.jpeg" alt="logout" width="480" />
 
 ## Dentistry Services
 
@@ -202,19 +224,15 @@ Each service page provides detailed information, including:
 
   ![resto]
 
-  <img src="static/resto_service.jpeg" alt="General Service" width="300" /> 
-  
+<img src="static/resto_service.jpeg" alt="General Service" width="300" />
+
   ![general]
 
-  <img src="static/general_service.jpg" alt="General Service" width="300" /> 
+<img src="static/general_service.jpg" alt="General Service" width="300" />
 
    ![cosmetic]
 
-  <img src="static/cosmetic_service.jpg" alt="General Service" width="300" /> 
-
-  
- 
-  
+<img src="static/cosmetic_service.jpg" alt="General Service" width="300" />
 
 </details>
 
@@ -226,11 +244,8 @@ Each service page provides detailed information, including:
 
 ![profile]
 
-<img src="static/profile_page.jpeg" alt="General Service" width="380" />
+<img src="static/profile_page.jpeg" alt="profile_page" width="380" />
 
-![profile mobile]()
-
-<img src="static/mobile_profile.jpeg" alt="General Service" width="300" /> 
 ### Fees Page
 
 A comprehensive page listing all fees for the services offered by the clinic:
@@ -238,8 +253,9 @@ A comprehensive page listing all fees for the services offered by the clinic:
 * **Categorized Fees:** Fees are organized by service category (general, cosmetic, restorative) for easy navigation.
 * **Clear Pricing:** Transparent display of all associated costs.
 
-![profile](static/fees_page.jpeg)
-![](static/mobile_fees.jpeg)
+![profile]
+
+<img src="static/fees_page.jpeg" alt="fees_page" width="380" />
 
 ### Admin Features (for Staff/Dentists)
 
@@ -252,8 +268,13 @@ A comprehensive page listing all fees for the services offered by the clinic:
 * **Manage Products :**
   - Add, edit, and delete products in the dental store .
 
-![products manager](static/add_product.jpeg)
-![](static/edit_product.jpeg)
+![products manager]
+
+<img src="static/add_product.jpeg" alt="add product" width="380" />
+
+![edit product]
+
+<img src="static/edit_product.jpeg" alt="edit product" width="380" />
 
 ## Footer
 
@@ -276,7 +297,9 @@ The footer appears on all pages of the site and provides essential information a
   * Email address for inquiries.
   * Full physical address of the clinic.
 
-![footer](static/footer_part.jpeg)
+![footer]
+
+<img src="static/footer_part.jpg" alt="footer product" width="480" />
 
 ## Reviews
 
@@ -286,32 +309,42 @@ The Reviews app allows users to share their experiences and feedback about the d
 
 Users can easily add a review by filling out a form that includes their feedback and an optional image to accompany their review. This allows users to visually share their experience.
 
-![Add Review](static/add_review.jpeg)
+![Add Review]
+
+<img src="static/add_review.jpeg" alt="Add Review" width="400" />
 
 ### Editing a Review
 
 If users wish to update their feedback or change the accompanying image, they can edit their existing reviews. This ensures that the information remains relevant and accurate.
 
-![Edit Review](static/edit_review.jpeg)
+![Edit Review]
+
+<img src="static/edit_review.jpeg" alt="Edit Review" width="400" />
 
 ### Deleting a Review
 
 Users have the option to delete their reviews if they no longer wish to share their feedback. This gives users control over their shared content.
 
-![Delete Review](static/images/delete_review.jpeg)
+![Delete Review]
+
+<img src="static/delete_review.jpeg" alt="Delete Review" width="400" />
 
 ### Viewing Reviews
 
 All submitted reviews are displayed in a dedicated section, allowing users to read about others' experiences with the dental services. Reviews can be sorted by date or rating to help users find the most relevant feedback.
 
-![View Reviews](static/reviews.jpg)
+![View Reviews]
+
+<img src="static/reviews.jpeg" alt="Reviews" width="480" />
 
 This feature helps create a transparent and interactive community around the dental practice, fostering trust and encouraging new patients to book appointments based on positive reviews from existing patients.
 
 # 404 page
 
 A 404 page is also available to handle navigation errors with a home link button to take them back to the home page
-![error handling](static/images/404.jpg)
+![error handling]
+
+<img src="static/404.jpg" alt="Reviews" width="480" />
 
 ### Contact and About Pages
 
@@ -357,9 +390,12 @@ A 404 page is also available to handle navigation errors with a home link button
 I hope this explanation is helpful! Let me know if you have any other questions or would like to add more details to your README.md.
 
 ![contact page](static/contactus.jpeg)
-![about page](static/about_us.jpeg)
-![](static/mobile_contact_us.jpeg)
-![](static/mobile_about_us.jpeg)
+
+<img src="static/contactus.jpeg" alt="Contact page" width="480" />
+
+![about page]
+
+<img src="static/about_us.jpeg" alt="About page" width="480" />
 
 ### Dental store(All products)
 
@@ -373,23 +409,26 @@ The Dental Store page provides a comprehensive view of all available dental prod
 
 - **Product Listing:** Displays all dental products in an organized manner, potentially with categories, filtering, or sorting options.
 
-![all products](static/allproducts.jpeg)
-![](static/mobile_products.jpeg)
+![all products]
+
+<img src="static/allproducts.jpeg" alt="All products page" width="480" />
 
 - **Search:** Allows users to search for products by name, description, or other relevant attributes.
 - **Product Details:** Each product has its own page with detailed information, including images, descriptions, and pricing.
 - **Add to Cart:** Users can easily add desired products to their shopping cart from the product listing or detail pages.
 
-![product details](static/product_details.jpeg)
+![product details]
+
+<img src="static/product_details.jpeg" alt="products details" width="480" />
 
 - **Admin Product Management (CRUD):**
   - As an admin, you can add new products to the store using the `add_product` template.
   - You can edit existing product details using the `edit_product` template.
   - You can delete products from the store using the `product_confirm_delete` template to ensure safe removal.
 
-![product details](static/add_product.jpeg)
+<img src="static/add_product.jpeg" alt="add product" width="380" />
 
-![product details](static/edit_product.jpeg)
+<img src="static/edit_product.jpeg" alt="edit product" width="380" />
 
 **** Code Structure (products app)
 
@@ -444,8 +483,9 @@ The basket functionality is primarily implemented in the `basket` app, which con
 
   return render(request, 'basket/basket.html', context)
 
-![basket](static/basket.jpeg)
-![](static/mobile_basket.jpeg)
+![basket]
+
+<img src="static/basket.jpeg" alt="Basket" width="460" />
 
 #### Basket icon
 
@@ -457,18 +497,24 @@ basket icon shown i all pages with items counts amount.
 
 On the left side of the checkout, users provide their information, and on the right side is a summary of their order including the total and the delivery details.
 
-![checkout](static/checkout.jpeg)
+![checkout]
+
+<img src="static/checkout.jpeg" alt="checkout" width="400" />
 
 Users have an option to save their information to a profile. Users will need to input their payment details. They still have an option to adjust the basket at this point by clicking the adjust basket button, or they can complete the order.
 
 ### Checkout Success
 
 After completing an order, users receive an order confirmation with their details including an order number.
-![order confirm](static/order_confirm.jpeg)
+![order confirm]
+
+<img src="static/order_confirm.jpeg" alt="order_confirm" width="400" />
 
 ### Order Confirmation Email
 
 ![confirmation email](static/email_order.jpg)
+
+<img src="static/email_order.jpg" alt="email_order" width="400" />
 
 ## Technologies
 
@@ -606,31 +652,32 @@ Throughout developing this site, I have been using Chrome, and chrome dev tools 
 
 Chrome emulated devices, and hardware devices iphone 13 pro, pixel 7 , ipad mini and ipad air were used to test compatibility
 
-## Wave testing
-
-I also tested this site on [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) is a set of evaluation tools which helps authors to make their web content more accessible to individuals with disabilities. WAVE can identify many accessibility and Web Content Accessibility Guideline (WCAG) errors, but also facilitates human evaluation of web content as per definition on their site.
-
-<details>
-  <summary>Home</summary>
-
-  ![](static/images/WebHome.jpg)
-
-  Absolutely! Here's the explanation of the JavaScript code, written in the README.md markdown format:
-
 ## Html Validator
 
 All pages tested and sorted by checking pages on
 [html validator ](https://validator.w3.org/nu/#textarea) tried my best
 to remove errors .finaly i did and got this nicely message.
 
-![validate image](static/html_validator.jpeg)
+![validate image]
+
+<img src="static/html_validator.jpeg" alt="html validator" width="580" />
+
+### Lighthouse
+- I conducted Lighthouse testing in Incognito mode to obtain optimal results.
+
+![lighthouse]
+
+<img src="static/light_house.jpg" alt="html validator" width="580" />
+
+
 
 ## JavaScript Enhancements
 
 The following JavaScript code is used to add interactivity and visual effects to various elements of the website, primarily the homepage:
 
-```javascript
+ javascript
 {% block 'extrajs' %}
+
 <script>
 
     // Back-to-Top Button
@@ -675,8 +722,8 @@ The following JavaScript code is used to add interactivity and visual effects to
     // Slide-in Company Logos (commented out)
     // This section was intended to add a slide-in animation to company logos when they become visible, but it's commented out.
 </script>
+
 {% endblock %}
-```
 
 **Explanation of Key Features:**
 
@@ -705,9 +752,10 @@ I used JSlint to validate javascript found in some apps
 * profiles - no warnings
 
 - I used [JSHint](https://jshint.com/) to validate my JavaScript code.
+
 ![js-validator](static/js-validator.jpg)
 
-### Python
+## Python
 
 [ CI Python linter ](https://pep8ci.herokuapp.com/) was used to test python code
 
@@ -869,9 +917,9 @@ Before you click "Save", add /* to the end of the Resource key in the Bucket Pol
   - Suggested Name: policy-fungi-fantasy (policy combined with the project name)
   - Provide a description: "Access to S3 Bucket for fungi-fantasy static files."
   - Click Create Policy.
-- Under User Groups, select your "group-fungi-fantasy".
+- Under User Groups, select your "healtydentalclinic".
 - Click Attach Policy.
-- Search for the policy you've just created ("policy-fungi-fantasy"), select it, then Attach Policy.
+- Search for the policy you've just created ("healtydentalclinic"), select it, then Attach Policy.
 - Under User Groups, click Add User.
 - Suggested Name: user-fungi-fantasy (user combined with the project name)
   - For "Select AWS Access Type," choose Programmatic Access.
@@ -905,7 +953,7 @@ To integrate your project with Stripe, follow these steps:
     As a backup in case users close the purchase-order page during payment, Stripe Webhooks can be included.
 - In your Stripe dashboard, go to Developers, then select Webhooks.
 - Click Add Endpoint.
-- Use the endpoint: https://fungi-fantasy-4819ad1964c1.herokuapp.com/checkout/wh/
+- Use the endpoint: https://healtydentalclinic-8f35f633fd68.herokuapp.com/checkout/wh/
 - Select receive all events.
 - Click Add Endpoint to complete the process.
 - You'll receive a new key:
@@ -1009,12 +1057,12 @@ A local clone of this repository can be made on GitHub. Please follow the below 
 You can create a copy of the original repository on GitHub by following these steps:
 
 - Log in to GitHub.
-- Visit the [Fungi Fantasy Repository](https://github.com/Bruna-Andelieri/FungiFantasy).
+- Visit the [dentalhealthyclinic Repository](https://github.com/maisam2004/dental_clinic/tree/main/dentalhealthyclinic).
 - Click the 'Fork' button at the top right of the repository page to make a copy in your own GitHub account.
 
 You will now have a forked version of the repository in your GitHub account.
 
-[Back to the top](#fungi-fantasy)
+[Back to the top](#top)
 
 ## Tecnologies Used
 
@@ -1050,3 +1098,10 @@ You will now have a forked version of the repository in your GitHub account.
 - [**Code Institute**](https://github.com/Code-Institute-Org>) Boutique Ado  walkthroughs
 - [**XML-Sitemaps.com**](https://www.xml-sitemaps.com/)  - utilized for generating XML sitemaps
 - [**Coolors**](https://coolors.co/)) for color palette
+
+
+### Acknowledgement and support
+
+* This whole chapter took me months to complete  due to circumstances beyond control. Despite all this I would love to extend my gratitude to Code institute and their amazing team.  
+* The tutor support for this project in particular
+* My Mentor Jubril sharp,straight and honest feedback
