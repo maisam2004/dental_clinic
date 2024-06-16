@@ -15,7 +15,7 @@ Link to the deployed site can be found [Here](https://healthydentalclinic.heroku
 
 ## Showcase
 
-![Home page](static/images/homepage.jpg)
+![Home page](static/images/homepage.jpeg)
 
 ### Strategy
 
@@ -126,8 +126,8 @@ I went on to create a flowchart to help me visualize the website structure.
 <details>
   <summary>Click here to view the navigation:</summary>
 
-  ![](static/header_nav_bar.jpg)
-  ![](static/mobile_nav_bart.jpg)
+  ![](static/header_navbar_top.jpg)
+  
 
 </details>
 
@@ -706,7 +706,7 @@ Anonymous user not iterable error whereby users not logged in could receive erro
 
 # Deployment
 
-I developed this site on Gitpod, using git for version control. Then deployed to Heroku using the following steps
+I developed this site local vs code, using git for version control. Then deployed to Heroku using the following steps
 
 * Log in to [Heroku](https://id.heroku.com/login) or create an account
 * Click New and Create New App

@@ -94,12 +94,39 @@ Before writing any code for the site, I created wireframes to visualize the desi
 ## Navigation
 
 I created a flowchart to visualize the website structure.
+            
+           <pre> Homepage
+                |
+                v
+            [About Us] --> [Team] --> [Individual Dentist Profiles]
+                |
+                v
+            [Services] --> [General Dentistry] --> [Specific Procedures]
+                      |
+                      v
+                      [Cosmetic Dentistry] --> [Specific Procedures]
+                      |
+                      v
+                      [Restorative Dentistry] --> [Specific Procedures]
+                |
+                v
+            [Patient Resources] --> [Forms] --> [New Patient Forms]
+                              |
+                              v
+                              [Financial/Insurance]
+                |
+                v
+            [Contact Us] --> [Map]
+                |
+                v
+            [Appointment Scheduling] --> [Calendar] --> [Confirmation]
+            </pre>
 
 <details>
 <summary>Click here to view the navigation:</summary>
 
-  ![](static/header_nav_bar.jpg)
-  ![](static/mobile_nav_bart.jpg)
+  ![](static/header_navbar_top.jpg)
+  
 
 </details>
 
@@ -114,7 +141,7 @@ Healthy Dental Clinic is a web application designed to support the online presen
 The homepage welcomes patients with a logo, navigation menu, and a hero section highlighting the clinic's mission and services. It features:
 
 * **Header and Navigation:**
-  ![header](static/header_nav_bar.jpg)
+  ![header](static/header_navbar_top.jpg)
 * **Hero Section:**
   ![hompage_hero](static/home2.jpg)
 * **Call to Action:** Clear buttons or links to encourage appointment booking or exploring services.
@@ -174,11 +201,9 @@ Each service page provides detailed information, including:
   <summary>Click here to view different services pages:</summary>
 
   ![resto](static/resto_service.jpeg)
-  ![general](static/general_service.jpeg)
-  ![cosmetic](static/cosmetic_service.jpeg)
-  ![](static/mobile_rest_service.jpeg)
-  ![](static/mobile_cosmetic_service.jpeg)
-  ![](static/mobile_general_service.jpg)
+  ![general](static/general_service.jpg)
+  ![cosmetic](static/cosmetic_service.jpg)
+  
 
 </details>
 
@@ -215,7 +240,6 @@ A comprehensive page listing all fees for the services offered by the clinic:
 ![products manager](static/add_product.jpeg)
 ![](static/edit_product.jpeg)
 
-
 ## Footer
 
 The footer appears on all pages of the site and provides essential information and contact details:
@@ -228,7 +252,6 @@ The footer appears on all pages of the site and provides essential information a
 * **Company Links:**
 
   * Quick links to key pages on the website, such as About Us, Fees, Our Store (if applicable), and Reviews.
-   
 * **Opening Times:**
 
   * Clearly displays the clinic's opening hours for each day of the week, including closed days.
@@ -238,9 +261,7 @@ The footer appears on all pages of the site and provides essential information a
   * Email address for inquiries.
   * Full physical address of the clinic.
 
-
 ![footer](static/footer_part.jpeg)
-
 
 ## Reviews
 
@@ -272,13 +293,10 @@ All submitted reviews are displayed in a dedicated section, allowing users to re
 
 This feature helps create a transparent and interactive community around the dental practice, fostering trust and encouraging new patients to book appointments based on positive reviews from existing patients.
 
-
 # 404 page
 
 A 404 page is also available to handle navigation errors with a home link button to take them back to the home page
 ![error handling](static/images/404.jpg)
-
-
 
 ### Contact and About Pages
 
@@ -290,51 +308,47 @@ A 404 page is also available to handle navigation errors with a home link button
 ### Functionality
 
 - **Contact Form:**
-    - Presents a user-friendly form for entering their name, email, subject, and message.
-    - Validates the form input to ensure data integrity.
-    - Sends the message to the practice and stores it in the database.
-    - Displays success or error messages based on the outcome of form submission.
+  - Presents a user-friendly form for entering their name, email, subject, and message.
+  - Validates the form input to ensure data integrity.
+  - Sends the message to the practice and stores it in the database.
+  - Displays success or error messages based on the outcome of form submission.
 - **About Us Display:**
-    - Retrieves the list of dentists from the database.
-    - Renders the `about.html` template, showcasing information about the practice and the dentists.
+  - Retrieves the list of dentists from the database.
+  - Renders the `about.html` template, showcasing information about the practice and the dentists.
 
 ### Code Structure (contact app)
 
 - **`views.py`:**
-    - `contact(request)`: Function-based view that handles the contact form rendering, submission, and validation.
-    - `AboutTemplateView`: Class-based view that renders the "About Us" page with dentist data.
+  - `contact(request)`: Function-based view that handles the contact form rendering, submission, and validation.
+  - `AboutTemplateView`: Class-based view that renders the "About Us" page with dentist data.
 - **`templates/contact/`:**
-    - `contact.html`: Template for the contact form.
-    - `about.html`: Template for displaying information about the practice and dentists.
+  - `contact.html`: Template for the contact form.
+  - `about.html`: Template for displaying information about the practice and dentists.
 - **`forms.py`:**
-    - `ContactForm`: Defines the structure and validation rules for the contact form.
+  - `ContactForm`: Defines the structure and validation rules for the contact form.
 - **`models.py`:**
-    - `Contact`: Model representing a contact message (name, email, subject, message).
+  - `Contact`: Model representing a contact message (name, email, subject, message).
 - **`urls.py`:**
-    - Defines URL patterns for the contact and about views.
+  - Defines URL patterns for the contact and about views.
 
 ### Example Usage
 
 1. **Contact:**
-    - Users visit the contact page and fill out the form.
-    - Upon submission, they receive a success message if the message is sent successfully, or an error message if there's an issue.
+   - Users visit the contact page and fill out the form.
+   - Upon submission, they receive a success message if the message is sent successfully, or an error message if there's an issue.
 2. **About Us:**
-    - Users visit the About Us page to learn about the practice and the dentists on staff.
+   - Users visit the About Us page to learn about the practice and the dentists on staff.
 
 I hope this explanation is helpful! Let me know if you have any other questions or would like to add more details to your README.md.
-
-
 
 ![contact page](static/contactus.jpeg)
 ![about page](static/about_us.jpeg)
 ![](static/mobile_contact_us.jpeg)
 ![](static/mobile_about_us.jpeg)
 
-
 ### Dental store(All products)
 
 Handled by products app ,all functions to view products ,manage products (CRUD ) related matter done in this app .
-
 
 ### Purpose
 
@@ -347,59 +361,51 @@ The Dental Store page provides a comprehensive view of all available dental prod
 ![all products](static/allproducts.jpeg)
 ![](static/mobile_products.jpeg)
 
-
 - **Search:** Allows users to search for products by name, description, or other relevant attributes.
 - **Product Details:** Each product has its own page with detailed information, including images, descriptions, and pricing.
 - **Add to Cart:** Users can easily add desired products to their shopping cart from the product listing or detail pages.
 
 ![product details](static/product_details.jpeg)
 
-
-
 - **Admin Product Management (CRUD):**
-    - As an admin, you can add new products to the store using the `add_product` template.
-    - You can edit existing product details using the `edit_product` template.
-    - You can delete products from the store using the `product_confirm_delete` template to ensure safe removal.
-
+  - As an admin, you can add new products to the store using the `add_product` template.
+  - You can edit existing product details using the `edit_product` template.
+  - You can delete products from the store using the `product_confirm_delete` template to ensure safe removal.
 
 ![product details](static/add_product.jpeg)
 
 ![product details](static/edit_product.jpeg)
 
-
-
 **** Code Structure (products app)
 
 - **`views.py`:**
-    - Contains view functions/classes to render the product listing, search results, product detail pages, and handle add-to-cart actions.
-    - Includes views for admin product management (create, read, update, delete).
+  - Contains view functions/classes to render the product listing, search results, product detail pages, and handle add-to-cart actions.
+  - Includes views for admin product management (create, read, update, delete).
 - **`templates/products/`:**
-    - `product_list.html`: Template for displaying the list of all products.
-    - `product_detail.html`: Template for the individual product details.
-    - `search_results.html`: Template for displaying search results.
-    - (For Admin) `add_product.html`, `edit_product.html`, `product_confirm_delete.html`: Templates for managing products as an admin.
+  - `product_list.html`: Template for displaying the list of all products.
+  - `product_detail.html`: Template for the individual product details.
+  - `search_results.html`: Template for displaying search results.
+  - (For Admin) `add_product.html`, `edit_product.html`, `product_confirm_delete.html`: Templates for managing products as an admin.
 - **`models.py`:**
-    - Defines the `Product` model to represent product data (name, description, price, images, etc.).
+  - Defines the `Product` model to represent product data (name, description, price, images, etc.).
 - **`urls.py`:**
-    - Defines URL patterns for product views and admin actions.
+  - Defines URL patterns for product views and admin actions.
 
 ### Example Usage
 
 1. **User:**
+
    - **Browsing:** Navigate to the Dental Store page to see all products.
    - **Searching:** Use the search bar to find specific items.
    - **Viewing Details:** Click on a product to view more information.
    - **Adding to Cart:** Click the "Add to Cart" button on any product to add it to the basket.
-
 2. **Admin:**
+
    - **Adding Products:** Use the admin interface to access the `add_product` form and fill in the details of new products.
    - **Editing Products:** Click the "Edit" button next to a product on the admin product list to access the `edit_product` form.
    - **Deleting Products:** Click the "Delete" button next to a product and confirm deletion on the `product_confirm_delete` page.
- 
-
 
 ### Basket
-
 
 The basket functionality allows users to add products to a temporary shopping cart before finalizing their purchase. It provides features to view the contents of the basket, update product quantities, and remove items.
 
@@ -412,29 +418,25 @@ The basket functionality is primarily implemented in the `basket` app, which con
 - **`urls.py`:** (Optional) This file defines URL patterns for the basket views.
 - **`models.py`:** (Optional) You might have a model to represent basket items (if you're not storing the basket data in the session).
 
-    """
-    Renders the shopping basket contents.
+  """
+  Renders the shopping basket contents.
 
-    This view retrieves the basket data from the session, fetches the corresponding product 
-    details, and prepares the context to be displayed in the basket template.
-    """
-    # ... (code to retrieve bag items and prepare context) ...
+  This view retrieves the basket data from the session, fetches the corresponding product
+  details, and prepares the context to be displayed in the basket template.
+  """
 
-    return render(request, 'basket/basket.html', context)
+  # ... (code to retrieve bag items and prepare context) ...
 
-
+  return render(request, 'basket/basket.html', context)
 
 ![basket](static/basket.jpeg)
 ![](static/mobile_basket.jpeg)
-
-
 
 #### Basket icon
 
 basket icon shown i all pages with items counts amount.
 
 ![basket header](static/basket_header_image.jpg)
-
 
 ### Checkout
 
@@ -444,8 +446,6 @@ On the left side of the checkout, users provide their information, and on the ri
 
 Users have an option to save their information to a profile. Users will need to input their payment details. They still have an option to adjust the basket at this point by clicking the adjust basket button, or they can complete the order.
 
-
-
 ### Checkout Success
 
 After completing an order, users receive an order confirmation with their details including an order number.
@@ -454,9 +454,6 @@ After completing an order, users receive an order confirmation with their detail
 ### Order Confirmation Email
 
 ![confirmation email](static/email_order.jpg)
-
-
-
 
 ## Technologies
 
@@ -489,25 +486,25 @@ After completing an order, users receive an order confirmation with their detail
 
 ## Manual Testing
 
-| Feature                    | Test                                                 | Expected Result                                                         | Actual Result |
-| -------------------------- | ---------------------------------------------------- | ----------------------------------------------------------------------- | :-----------: |
-| Logo                       | Clicking logo on homepage                            | Redirects user back to homepage                                         |     Pass      |
-| Search                     | Using the search box                                 | Entering a search term returns relevant results                         |     Pass      |
-| Search (No Results)        | Entering a search term with no matching products     | Displays a "No results found" message and potentially related products  |     Pass      |
-| Navigation Links           | Clicking navigation links                            | Directs user to corresponding pages                                     |     Pass      |
-| Dental store (All Products)| Clicking "All Products" link                         | Directs user to page displaying all products                            |     Pass      |
-| Back to Top                | Clicking back-to-top arrow on product pages (if used)| Scrolls user back to the top of the page                                |     Pass      |
-| Sort By                    | Using the "Sort By" filter                           | Successfully sorts products by price, name, or category (if applicable) |     Pass      |
-| Shop Now Button            | Clicking "Shop Now" button (if used)                 | Directs user to the "All Products" page                                 |     Pass      |
-| About Us                   | Clicking "About Us" link                             | Directs user to "About Us" page                                         |     Pass      |
-| Privacy Policy             | Clicking "Privacy Policy" link                       | Directs user to privacy policy page                                     |     Pass      |
-| Facebook Icon              | Clicking Facebook icon                               | Opens your Facebook page in a new tab/window                            |     Pass      |
-| Contact                    | Clicking "Contact" link                              | Directs user to contact page                                            |     Pass      |
-| Contact Form               | Submitting contact form                              | Successfully sends form data and displays confirmation to user          |     Pass      |
-| My Account (Admin)         | Accessing "My Account" as admin                      | Displays admin-specific dropdown menu with extra options                |     Pass      |
-| Contact                    | Selecting Contact                                    | Directs user to contact page                                            |     Pass      |
-| Contact Form Submission    | Submitting contact form                              | Successfully sends submitted form and can be seen in admin              |     Pass      |
-| My Account                 | Selecting my account as admin                        | Displays dropdown menu unique to admin apart from profile and logout    |     Pass      |
+| Feature                     | Test                                                  | Expected Result                                                         | Actual Result |
+| --------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------- | :-----------: |
+| Logo                        | Clicking logo on homepage                             | Redirects user back to homepage                                         |     Pass     |
+| Search                      | Using the search box                                  | Entering a search term returns relevant results                         |     Pass     |
+| Search (No Results)         | Entering a search term with no matching products      | Displays a "No results found" message and potentially related products  |     Pass     |
+| Navigation Links            | Clicking navigation links                             | Directs user to corresponding pages                                     |     Pass     |
+| Dental store (All Products) | Clicking "All Products" link                          | Directs user to page displaying all products                            |     Pass     |
+| Back to Top                 | Clicking back-to-top arrow on product pages (if used) | Scrolls user back to the top of the page                                |     Pass     |
+| Sort By                     | Using the "Sort By" filter                            | Successfully sorts products by price, name, or category (if applicable) |     Pass     |
+| Shop Now Button             | Clicking "Shop Now" button (if used)                  | Directs user to the "All Products" page                                 |     Pass     |
+| About Us                    | Clicking "About Us" link                              | Directs user to "About Us" page                                         |     Pass     |
+| Privacy Policy              | Clicking "Privacy Policy" link                        | Directs user to privacy policy page                                     |     Pass     |
+| Facebook Icon               | Clicking Facebook icon                                | Opens your Facebook page in a new tab/window                            |     Pass     |
+| Contact                     | Clicking "Contact" link                               | Directs user to contact page                                            |     Pass     |
+| Contact Form                | Submitting contact form                               | Successfully sends form data and displays confirmation to user          |     Pass     |
+| My Account (Admin)          | Accessing "My Account" as admin                       | Displays admin-specific dropdown menu with extra options                |     Pass     |
+| Contact                     | Selecting Contact                                     | Directs user to contact page                                            |     Pass     |
+| Contact Form Submission     | Submitting contact form                               | Successfully sends submitted form and can be seen in admin              |     Pass     |
+| My Account                  | Selecting my account as admin                         | Displays dropdown menu unique to admin apart from profile and logout    |     Pass     |
 
 ## User Story Testing (Admin)
 
@@ -603,18 +600,15 @@ I also tested this site on [WAVE Web Accessibility Evaluation Tool](https://wave
 
   ![](static/images/WebHome.jpg)
 
-
   Absolutely! Here's the explanation of the JavaScript code, written in the README.md markdown format:
 
-## Html Validator 
-All pages tested and sorted by checking pages on 
-[html validator ](https://validator.w3.org/nu/#textarea) tried my best 
+## Html Validator
+
+All pages tested and sorted by checking pages on
+[html validator ](https://validator.w3.org/nu/#textarea) tried my best
 to remove errors .finaly i did and got this nicely message.
 
-![validate image](static/html_vlidated.jpeg)
-
-
-
+![validate image](static/html_validator.jpeg)
 
 ## JavaScript Enhancements
 
@@ -628,7 +622,7 @@ The following JavaScript code is used to add interactivity and visual effects to
     $('.btt-link').click(function(e){
         window.scrollTo(0,0);  // Smooth scroll to the top of the page
     });
-    
+  
     // Toast Messages (using Bootstrap)
     $(document).ready(function() {
         {% if messages %}
@@ -662,7 +656,7 @@ The following JavaScript code is used to add interactivity and visual effects to
 
         // ... (calculates if reviews section is visible and adjusts opacity of review cards) ...
     });
-    
+  
     // Slide-in Company Logos (commented out)
     // This section was intended to add a slide-in animation to company logos when they become visible, but it's commented out.
 </script>
@@ -683,9 +677,9 @@ The following JavaScript code is used to add interactivity and visual effects to
 - **jQuery Dependency:** This code relies on jQuery (`$`) for DOM manipulation and event handling.
 - **Commented-Out Sections:** The two commented-out sections provide hints about additional features you might have been working on, but they are not currently implemented.
 
-Please let me know if you have any other questions. 
+Please let me know if you have any other questions.
 
-and other js has been tested and 
+and other js has been tested and
 I used JSlint to validate javascript found in some apps
 
 * basket app - semi colon warning
@@ -695,11 +689,349 @@ I used JSlint to validate javascript found in some apps
 * products - semi colon warnings
 * profiles - no warnings
 
+- I used [JSHint](https://jshint.com/) to validate my JavaScript code.
+![js-validator](static/js-validator.jpg)
+
 ### Python
 
 [ CI Python linter ](https://pep8ci.herokuapp.com/) was used to test python code
 
-
 # Deployment
 
-I developed this site on Gitpod, using git for version control. Then deployed to Heroku using the following steps
+https://docs.render.com/deploy-django
+
+### Render PostgresSQL Database
+
+This project uses [Render docouments](https://docs.render.com/deploy-django) for the PostgreSQL Database.
+
+To create your Postgres Database, simply sign up with your GitHub account and follow these steps:
+
+#### Setting up Render PostgreSQL for Heroku Django App
+
+This guide will walk you through creating a PostgreSQL database on Render and connecting it to your existing Heroku Django application.
+
+    ## Steps:
+
+    ### 1. Create a PostgreSQL Database on Render:
+
+    1.  Go to your[Render Dashboard](https://dashboard.render.com/).
+          2.  Click "New" and choose "PostgreSQL."
+          3.  Give your database a suitable name (e.g., `my-django-app-db`).
+          4.  Select a region closest to your users for optimal performance.
+          5.  Choose an appropriate instance type based on your project's size and traffic (you can start with a smaller one and scale up later if needed).
+          6.  Click "Create Database."
+
+    ### 2. Obtain Connection Details:
+
+    1.  Once your database is created, navigate to its page on Render.
+          2.  You'll find the**Internal** and **External Database URLs** in the "Connect" section. You'll need the **External Database URL** for Heroku.
+
+    ### 3. Set Environment Variables on Heroku:
+
+    1.  Use the Heroku CLI or the Config Vars section in your Heroku dashboard to set the`DATABASE_URL` environment variable.
+          2.  The value for `DATABASE_URL` will be the **External Database URL** you copied from Render.
+          3.  If your Render database requires SSL (it likely does), add another environment variable:
+
+    heroku config:set PGSSLMODE=require
+
+    4.added this to my settings fill>>
+          '''
+            if config('DATABASE_URL', default=None):
+            DATABASES = {
+             'default': dj_database_url.parse(config('DATABASE_URL'), conn_max_age=600, ssl_require=True)
+              }
+          else:
+          DATABASES = {
+            'default': {
+               'ENGINE': 'django.db.backends.sqlite3',
+               'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+             }
+          }
+
+    '''
+
+    **Explanation:**
+
+    ***Render PostgreSQL:**  Render is a simple and easy-to-use platform for creating and managing PostgreSQL databases.
+          *   **External Database URL:** This URL provides the connection details your Django app needs to access the database on Render.
+          *   **Environment Variables:** Heroku uses environment variables to configure your application.
+          *   **`PGSSLMODE`:** This environment variable enforces a secure SSL connection to your database.
+
+### Amazon AWS
+
+This project utilizes  [AWS](https://aws.amazon.com) for storing media and static files online, as Heroku does not retain this data type.
+
+After creating an AWS account and logging in, navigate to the AWS Management Console page and follow these steps to connect your project.
+
+#### S3 Bucket
+
+- Find and select S3.
+- Create a new bucket, providing a name typically matching your Heroku app name, and select the region closest to you.
+- Disable "Block all public access" and acknowledge that the bucket will be public, as it's required for Heroku operation.
+- Ensure ACLs are enabled and select "Bucket owner preferred" under Object Ownership.
+- Navigate to the Properties tab, enable static website hosting, and input "index.html" and "error.html" in their respective fields. Save your changes.
+- Move to the Permissions tab and paste the following CORS configuration:
+
+```
+[
+ {
+  "AllowedHeaders": [
+   "Authorization"
+  ],
+  "AllowedMethods": [
+   "GET"
+  ],
+  "AllowedOrigins": [
+   "*"
+  ],
+  "ExposeHeaders": []
+ }
+]
+```
+
+- Copy your **ARN** string.
+- From the **Bucket Policy** tab, select the **Policy Generator** link, and use the following steps:
+- Policy Type: **S3 Bucket Policy**
+
+  - Effect: **Allow**
+  - Principal: `*`
+  - Actions: **GetObject**
+  - Amazon Resource Name (ARN): **paste-your-ARN-here**
+  - Click **Add Statement**
+  - Click **Generate Policy**
+  - Copy the entire Policy, and paste it into the **Bucket Policy Editor**
+
+```
+{
+ "Id": "Policy1234567890",
+ "Version": "2012-10-17",
+ "Statement": [
+  {
+   "Sid": "Stmt1234567890",
+   "Action": [
+    "s3:GetObject"
+   ],
+   "Effect": "Allow",
+   "Resource": "arn:aws:s3:::your-bucket-name/*"
+   "Principal": "*",
+  }
+ ]
+}
+```
+
+Before you click "Save", add /* to the end of the Resource key in the Bucket Policy Editor (as shown above).
+
+- Click Save.
+
+#### IAM
+
+- Navigate to IAM by searching for it on the AWS Services Menu. Once on the IAM page, proceed with the following steps:
+- Under User Groups, click on Create New Group.
+- Suggested Name: group-fungi-fantasy (the group name combined with the project name)
+- Tags are optional but must be clicked to access the review policy page.
+- Select the newly created group from User Groups and move to the Permissions tab.
+- Click on the Add Permissions dropdown and select Attach Policies.
+- Choose the desired policy and click Add Permissions at the bottom to finish.
+- Under the JSON tab, select the Import Managed Policy link.
+
+```
+{
+ "Version": "2012-10-17",
+ "Statement": [
+  {
+   "Effect": "Allow",
+   "Action": "s3:*",
+   "Resource": [
+    "arn:aws:s3:::your-bucket-name",
+    "arn:aws:s3:::your-bucket-name/*"
+   ]
+  }
+ ]
+}
+```
+
+- Click on Review Policy.
+  - Suggested Name: policy-fungi-fantasy (policy combined with the project name)
+  - Provide a description: "Access to S3 Bucket for fungi-fantasy static files."
+  - Click Create Policy.
+- Under User Groups, select your "group-fungi-fantasy".
+- Click Attach Policy.
+- Search for the policy you've just created ("policy-fungi-fantasy"), select it, then Attach Policy.
+- Under User Groups, click Add User.
+- Suggested Name: user-fungi-fantasy (user combined with the project name)
+  - For "Select AWS Access Type," choose Programmatic Access.
+  - Select the group to add your new user to: group-fungi-fantasy.
+  - Tags are optional, but click it to access the review user page.
+  - Click Create User once done.
+- You should see a button to Download .csv, so click it to save a copy on your system.
+  ***IMPORTANT: Once you pass this page, you cannot come back to download it again, so do it immediately!***
+- This contains the user's Access key ID and Secret access key.
+  - AWS_ACCESS_KEY_ID = Access key ID
+  - AWS_SECRET_ACCESS_KEY = Secret access key.
+
+#### Set up AWS
+
+- If DISABLE_COLLECTSTATIC is still present in Heroku Config Vars, it can now be removed to allow AWS to handle static files.
+- In the S3 dashboard, create a new folder named: media.
+- Choose existing media images for your project to prepare them for upload into the new folder.
+- Under Manage Public Permissions, select Grant public read access to this object(s)
+- No further settings are required, so click Upload.
+
+### Stripe API
+
+This project utilizes [Stripe](https://stripe.com) to handle the ecommerce payments.
+To integrate your project with Stripe, follow these steps:
+
+- Navigate to your Stripe dashboard and expand "Get your test API keys".
+  Here you'll find two keys:
+
+  - STRIPE_PUBLIC_KEY = Publishable Key (starts with pk)
+  - STRIPE_SECRET_KEY = Secret Key (starts with sk)
+    As a backup in case users close the purchase-order page during payment, Stripe Webhooks can be included.
+- In your Stripe dashboard, go to Developers, then select Webhooks.
+- Click Add Endpoint.
+- Use the endpoint: https://fungi-fantasy-4819ad1964c1.herokuapp.com/checkout/wh/
+- Select receive all events.
+- Click Add Endpoint to complete the process.
+- You'll receive a new key:
+  -STRIPE_WH_SECRET = Signing Secret (Webhook) Key (starts with wh)
+
+### Gmail API
+
+This project utilizes [Gmail](https://mail.google.com) to handle sending emails to users for account verification and purchase order confirmations.
+To integrate your project with Gmail, follow these steps:
+
+- Click on the Account Settings (cog icon) in the top-right corner of Gmail.
+  Go to the Accounts and Import tab.
+- Under "Change account settings", select Other Google Account settings.
+- On the new page, choose Security from the left sidebar.
+- Turn on 2-Step Verification. (verify your password and account)
+- After verification, turn on 2FA.
+- Return to the Security page and find App passwords.
+- Confirm your password and account again if prompted.
+- Select Mail for the app type.
+- Choose Other (Custom name) for the device type.
+- Use any custom name, like "Django" or "fungifantasy"
+- You'll receive a 16-character password (API key).
+- Save this securely, as it can't be accessed later!
+  - EMAIL_HOST_PASS = user's 16-character API key
+  - EMAIL_HOST_USER = user's personal Gmail email address
+
+### Heroku
+
+This project utilizes [Heroku](https://www.heroku.com), a platform as a service (PaaS) that empowers developers to build, run, and manage applications entirely in the cloud.
+Follow these deployment steps after setting up your account:
+
+- Navigate to your Heroku Dashboard and click New in the top-right corner, then select Create new app.
+- Choose a unique app name, select a region (EU or USA), and click Create App.
+- In the app's Settings, click Reveal Config Vars, and set the following environment variables:
+
+| Key                             | Value                                                                  |
+| ------------------------------- | ---------------------------------------------------------------------- |
+| **AWS_ACCESS_KEY_ID**     | user's own value                                                       |
+| **AWS_SECRET_ACCESS_KEY** | user's own value                                                       |
+| **DATABASE_URL**          | user's own value                                                       |
+| **DISABLE_COLLECTSTATIC** | 1 (_this is temporary, and can be removed for the final deployment_) |
+| **EMAIL_HOST_PASS**       | user's own value                                                       |
+| **EMAIL_HOST_USER**       | user's own value                                                       |
+| **SECRET_KEY**            | user's own value                                                       |
+| **STRIPE_PUBLIC_KEY**     | user's own value                                                       |
+| **STRIPE_SECRET_KEY**     | user's own value                                                       |
+| **STRIPE_WH_SECRET**      | user's own value                                                       |
+| **USE_AWS**               | True                                                                   |
+
+Heroku needs two additional files in order to deploy properly.
+
+- requirements.txt
+- Procfile
+
+You can install this project's **requirements** (where applicable) using:
+
+- pip3 install -r requirements.txt
+
+If you have your own packages that have been installed, then the requirements file needs updated using:
+
+- pip3 freeze --local > requirements.txt
+
+The **Procfile** can be created with the following command:
+
+- echo web: gunicorn app_name.wsgi > Procfile
+- _replace **app_name** with the name of your primary Django app name; the folder where settings.py is located_
+
+For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
+
+Either:
+
+- Select **Automatic Deployment** from the Heroku app.
+
+Or:
+
+- In the Terminal/CLI, connect to Heroku using this command: heroku login -i
+- Set the remote for Heroku: heroku git:remote -a app_name (replace _app_name_ with your app name)
+- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
+  - git push heroku main
+
+Your project is now successfully connected and deployed on Heroku!
+
+### Cloning Project
+
+A local clone of this repository can be made on GitHub. Please follow the below steps:
+
+- Navigate to GitHub and log in.
+- The [Fungi Fantasy Repository](https://github.com/Bruna-Andelieri/FungiFantasy) can be found at this location.
+- Above the repository file section, locate the 'Code' button.
+- Click on this button and choose your clone method from HTTPS, SSH, or GitHub CLI, copy the URL to your clipboard by clicking the 'Copy' button.
+- Open your Git Bash Terminal.
+- Change the current working directory to the location you want the cloned directory to be made.
+- Type git clone and paste in the copied URL from the step above.
+- Press 'Enter' for the local clone to be created.
+- Use the **pip3 install -r requirements.txt** command to install the dependencies and libraries needed for Fungi Fantasy.
+- Set up your env.py file and gather the PostgreSQL URL from ElephantSQL, if applicable, and add your SECRET_KEY and STRIPE/AWS keys if using these services.
+- Ensure that your env.py file is placed in your .gitignore file and follow the remaining steps in the Django Project Setup section before pushing your code to GitHub.
+
+### Forking Project
+
+You can create a copy of the original repository on GitHub by following these steps:
+
+- Log in to GitHub.
+- Visit the [Fungi Fantasy Repository](https://github.com/Bruna-Andelieri/FungiFantasy).
+- Click the 'Fork' button at the top right of the repository page to make a copy in your own GitHub account.
+
+You will now have a forked version of the repository in your GitHub account.
+
+[Back to the top](#fungi-fantasy)
+
+## Tecnologies Used
+
+#### Languages
+
+- HTML
+- CSS
+- JavaScript
+- Python
+
+#### Frameworks and Libraries
+
+- Django
+- Bootstrap
+- jQuery
+- Stripe
+
+#### Development and Deploy
+
+- Heroku
+- Git
+- GitHub
+- VsCode
+
+## Credits
+
+- [**Google Fonts**](https://fonts.google.com/)  - utilized for selecting the perfect typography
+- [**AWS**](https://aws.amazon.com/) - employed as a storage solution for static and media files
+- [**FavIcon.io**](https://favicon.io/favicon-converter/)  - utilized for compressing favicons
+- [**FreePik**](https://www.freepik.com/)  - serves as a database for images
+- [**Google Fonts**](https://fonts.google.com/)  - employed for selecting the best typography
+- [**W3Schools**](https://www.w3schools.com/) - provides useful information and cheat sheets
+- [**Code Institute**](https://github.com/Code-Institute-Org>) Boutique Ado  walkthroughs
+- [**XML-Sitemaps.com**](https://www.xml-sitemaps.com/)  - utilized for generating XML sitemaps
+- [**Coolors**](https://coolors.co/)) for color palette
