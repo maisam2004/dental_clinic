@@ -58,8 +58,13 @@
           
           
 <hr>
-<a href="{% url 'add_review' %}" class="btn btn-primary">Add Review page</a>
 
+{% if not user.is_authenticated %}
+      <a class="btn btn-primary mb-5" href="{% url 'account_login' %}?next={{ request.path }}">Login to add a review</a>
+{% else %}
+<a href="{% url 'add_review' %}" class="btn btn-primary mb-5">Add Review</a>
+
+    {% endif %}
          
           
 

@@ -66,6 +66,7 @@
                 {% else %}
                 <li><a class="dropdown-item {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}" target="_blank">Register</a></li>
                 <li>  <a href="{% url 'account_login' %}" class="dropdown-item" target="_blank" title='login'><span class="d-none "  >Login</span> <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                
                 {% endif %}
                 </ul>
                 </div>
