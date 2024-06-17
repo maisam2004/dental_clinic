@@ -773,6 +773,7 @@ Products description inspiration from
 
 ### Acknowledgement and support
 
-* This whole chapter took me months to complete  due to circumstances beyond control. Despite all this I would love to extend my gratitude to Code institute and their amazing team.  The tutor support for this project in particular, Ed, Ger you guys did a superb job.
+* This whole chapter took me months to complete  due to circumstances. Despite all this I  would love to extend my gratitude to Code institute and their amazing team.
+The tutor support for this project in particular, Ed, Ger you guys did a superb job.
 * My Mentor Jubril sharp,straight and honest feedback
 

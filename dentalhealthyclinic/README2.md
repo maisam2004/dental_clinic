@@ -16,7 +16,7 @@ While fully functional, this site primarily serves as an educational project to 
 
 ## Showcase
 
-[Image of your dental practice home page]
+<img src="static/different_screen.jpg" alt="homepage_wirefram" width="740" />
 
 ### Strategy
 
@@ -890,7 +890,7 @@ Before you click "Save", add /* to the end of the Resource key in the Bucket Pol
 
 - Navigate to IAM by searching for it on the AWS Services Menu. Once on the IAM page, proceed with the following steps:
 - Under User Groups, click on Create New Group.
-- Suggested Name: group-fungi-fantasy (the group name combined with the project name)
+- Suggested Name: healthydental (the group name combined with the project name)
 - Tags are optional but must be clicked to access the review policy page.
 - Select the newly created group from User Groups and move to the Permissions tab.
 - Click on the Add Permissions dropdown and select Attach Policies.
@@ -914,16 +914,16 @@ Before you click "Save", add /* to the end of the Resource key in the Bucket Pol
 ```
 
 - Click on Review Policy.
-  - Suggested Name: policy-fungi-fantasy (policy combined with the project name)
-  - Provide a description: "Access to S3 Bucket for fungi-fantasy static files."
+  - Suggested Name: healtydenatl
+  - Provide a description: "Access to S3 Bucket for healthydental static files."
   - Click Create Policy.
 - Under User Groups, select your "healtydentalclinic".
 - Click Attach Policy.
 - Search for the policy you've just created ("healtydentalclinic"), select it, then Attach Policy.
 - Under User Groups, click Add User.
-- Suggested Name: user-fungi-fantasy (user combined with the project name)
+- Suggested Name: healthydental (user combined with the project name)
   - For "Select AWS Access Type," choose Programmatic Access.
-  - Select the group to add your new user to: group-fungi-fantasy.
+  - Select the group to add your new user to: healthydental.
   - Tags are optional, but click it to access the review user page.
   - Click Create User once done.
 - You should see a button to Download .csv, so click it to save a copy on your system.
@@ -974,7 +974,7 @@ To integrate your project with Gmail, follow these steps:
 - Confirm your password and account again if prompted.
 - Select Mail for the app type.
 - Choose Other (Custom name) for the device type.
-- Use any custom name, like "Django" or "fungifantasy"
+- Use any custom name, like "Django" 
 - You'll receive a 16-character password (API key).
 - Save this securely, as it can't be accessed later!
   - EMAIL_HOST_PASS = user's 16-character API key
@@ -1041,14 +1041,14 @@ Your project is now successfully connected and deployed on Heroku!
 A local clone of this repository can be made on GitHub. Please follow the below steps:
 
 - Navigate to GitHub and log in.
-- The [Fungi Fantasy Repository](https://github.com/Bruna-Andelieri/FungiFantasy) can be found at this location.
+- The [Dental clinic Repository](https://github.com/maisam2004/dental_clinic) can be found at this location.
 - Above the repository file section, locate the 'Code' button.
 - Click on this button and choose your clone method from HTTPS, SSH, or GitHub CLI, copy the URL to your clipboard by clicking the 'Copy' button.
 - Open your Git Bash Terminal.
 - Change the current working directory to the location you want the cloned directory to be made.
 - Type git clone and paste in the copied URL from the step above.
 - Press 'Enter' for the local clone to be created.
-- Use the **pip3 install -r requirements.txt** command to install the dependencies and libraries needed for Fungi Fantasy.
+- Use the **pip3 install -r requirements.txt** command to install the dependencies and libraries needed for dental practice.
 - Set up your env.py file and gather the PostgreSQL URL from ElephantSQL, if applicable, and add your SECRET_KEY and STRIPE/AWS keys if using these services.
 - Ensure that your env.py file is placed in your .gitignore file and follow the remaining steps in the Django Project Setup section before pushing your code to GitHub.
 
