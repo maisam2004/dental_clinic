@@ -59,6 +59,7 @@
   * [Compatibility Testing](#compatibility-testing)
   * [HTML Validator](#html-validator)
   * [Lighthouse](#lighthouse)
+
 - [JavaScript Enhancements](#javascript-enhancements)
 - [Python](#python)
 - [Deployment](#deployment)
@@ -84,6 +85,7 @@
 - [Forking Project](#forking-project)
 - [Credits](#credits)
 - [Acknowledgement and Support](#acknowledgement-and-support)
+
 ## Introduction
 
 Healthy Dental Clinic is a web application designed for a dental practice. It allows patients to book appointments, learn about services, and access a dental store and reviews. The project is built using:
@@ -93,11 +95,15 @@ Healthy Dental Clinic is a web application designed for a dental practice. It al
 
 While fully functional, this site primarily serves as an educational project to demonstrate web development skills.
 
+Link to the deployed site can be found [Here](https://healtydentalclinic-8f35f633fd68.herokuapp.com/)
+
 ## Showcase
 
 <img src="static/different_screen.jpg" alt="homepage_wirefram" width="940" />
 
 ### Strategy
+
+ Healthy Dental Clinic aims to offer an easy-to-navigate online platform for patients to access dental services. Given the increasing demand for online healthcare services, this platform provides flexible and convenient options for booking appointments, accessing dental care information, and managing patient profiles.
 
 * **Target Audience:** Individuals and families seeking dental care services.
 * **Goals:** Provide a user-friendly platform for patients to:
@@ -108,6 +114,24 @@ While fully functional, this site primarily serves as an educational project to 
 ## UX (User Experience)
 
 ### User Stories
+
+### As a Site User
+
+* As a site user, I can create or edit my account so that I can update my details accordingly.
+* As a site user, I can log in to my account so that I can view my appointment history.
+* As a site user, I can search for dental services so that I can find specific treatments.
+* As a site user, I can sort dental services based on criteria such as price and category so that I can find the services I need.
+* As a site user, I can browse through dental services so that I can decide what I may be interested in.
+* As a site user, I can look at service details so that I can decide if I want to book an appointment.
+* As a site user, I can easily book appointments online so that I can plan my visits conveniently.
+* As a site user, I can view the contents of my booking basket so that I can make any adjustments before confirming.
+* As a site user, I can update my booking by adding more or removing services so that I can decide on the number of services I intend to avail.
+* As a site user, I can view my order summary so that I can verify it before confirming.
+* As a site user, I can check out securely so that I can maintain the level of trust in the site.
+* As a site user, I can view reviews posts so that I can  read.
+* As a site user, I can comment on the reviews page so that I can express my opinion about appointment or shopping.
+* As a site user, I can use the contact form so that I can contact the clinic.
+* As a site user, I can sign up for the newsletter so that I can keep updated on the latest news and dental tips.
 
 #### As a Patient (Site User)
 
@@ -151,10 +175,9 @@ While fully functional, this site primarily serves as an educational project to 
 
 ## Design
 
-Before writing any code for the site, I created wireframes to visualize the design and communicate my goals to mentors.
+Before I wrote any code for this site, I had to pin point a simple design of what I wanted my site to look like by using wireframes, not only for myself but as well of communicating what I wanted to achieve to my mentor.
 
 <details>
-<summary>Click here to view Wireframes:</summary>
 
 ![homepage wireframe]
 
@@ -208,6 +231,8 @@ I created a flowchart to visualize the website structure.
                 |
             [Appointment Scheduling] --> [Calendar] --> [Confirmation]
             `</pre>`
+
+![](static/header_navbar_top.jpg)
 
 ## Project Type
 
@@ -294,15 +319,15 @@ Each service page provides detailed information, including:
 
   ![resto]
 
-<img src="static/resto_service.jpeg" alt="General Service" width="300" />
+<img src="static/resto_service.jpeg" alt="General Service" width="400" />
 
   ![general]
 
-<img src="static/general_service.jpg" alt="General Service" width="300" />
+<img src="static/general_service.jpg" alt="General Service" width="400" />
 
    ![cosmetic]
 
-<img src="static/cosmetic_service.jpg" alt="General Service" width="300" />
+<img src="static/cosmetic_service.jpg" alt="General Service" width="400" />
 
 </details>
 
@@ -459,7 +484,7 @@ A 404 page is also available to handle navigation errors with a home link button
 
 I hope this explanation is helpful! Let me know if you have any other questions or would like to add more details to your README.md.
 
-![contact page](static/contactus.jpeg)
+![contact page]
 
 <img src="static/contactus.jpeg" alt="Contact page" width="480" />
 
@@ -602,16 +627,15 @@ After completing an order, users receive an order confirmation with their detail
 * [Gitpod](https://www.gitpod.io/) - Gitpod was used as an IDE
 * [Github](https://github.com/) - I used Github to store all the data of my project after pushing it
 * [Heroku](https://www.heroku.com/) - is a cloud platform service  I used to deploy and host the project
-* [ElephantSQL](https://www.elephantsql.com/) - used as a database for the project
+* [Render PostgreSQL](https://dashboard.render.com/) - used as a database for the project
 * [Font Awesome](https://fontawesome.com/) - Was used to add icons for my social media links.
 * [PEP8ci](https://pep8ci.herokuapp.com/) - I used it to validate python code
-* [Balsamiq](https://balsamiq.com/) - was used to draw wireframes
+* [Figma](https://figma.com/) - was used to draw wireframes
 * [dbdiagram](https://dbdiagram.io/home) - was used to draw the database schema
 * [Stripe](https://stripe.com/en-ie) - was used for checkout functionality and facilitate online payments
 * [AWS](https://aws.amazon.com/s3/) - for  object storage through a web service interface.
 * [Unsplash](https://unsplash.com/) - images used for the project
 * [Pexels](https://www.pexels.com/) - images used for the project
-* [Adobestock](https://stock.adobe.com/ie/) - images used for the project
 
 # Testing
 
@@ -744,9 +768,8 @@ to remove errors .finaly i did and got this nicely message.
 
 The following JavaScript code is used to add interactivity and visual effects to various elements of the website, primarily the homepage:
 
- javascript
+```javascript
 {% block 'extrajs' %}
-
 <script>
 
     // Back-to-Top Button
@@ -791,9 +814,8 @@ The following JavaScript code is used to add interactivity and visual effects to
     // Slide-in Company Logos (commented out)
     // This section was intended to add a slide-in animation to company logos when they become visible, but it's commented out.
 </script>
-
 {% endblock %}
-
+```
 **Explanation of Key Features:**
 
 - **Back-to-Top Button:** When the `.btt-link` element is clicked, the page smoothly scrolls to the top.
@@ -829,6 +851,13 @@ I used JSlint to validate javascript found in some apps
 [ CI Python linter ](https://pep8ci.herokuapp.com/) was used to test python code
 
 # Deployment
+
+I developed this site local vs code, using git for version control. Then deployed to Heroku using the following steps
+
+* Log in to [Heroku](https://id.heroku.com/login) or create an account
+* Click New and Create New App
+* I selected Europe as region.
+* Click Create App button
 
 https://docs.render.com/deploy-django
 

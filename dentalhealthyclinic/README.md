@@ -95,14 +95,8 @@ Link to the deployed site can be found [Here](https://healthydentalclinic.heroku
 
 ## Architecture
 
-## Database
+![](static/images/schema.png)
 
-<details>
-  <summary>Click here to view Database Schema:</summary>
-
-  ![](static/images/schema.png)
-
-</details>
 
 ## Design
 
@@ -127,7 +121,6 @@ I went on to create a flowchart to help me visualize the website structure.
   <summary>Click here to view the navigation:</summary>
 
   ![](static/header_navbar_top.jpg)
-  
 
 </details>
 
@@ -551,7 +544,6 @@ Throughout developing this site, I have been using Chrome, and chrome dev tools 
 
 Chrome emulated devices, and hardware devices iphone 13 pro, pixel 7 , ipad mini and ipad air were used to test compatibility
 
-
 ## JavaScript Enhancements
 
 The following JavaScript code is used to add interactivity and visual effects to various elements of the website, primarily the homepage:
@@ -564,7 +556,7 @@ The following JavaScript code is used to add interactivity and visual effects to
     $('.btt-link').click(function(e){
         window.scrollTo(0,0);  // Smooth scroll to the top of the page
     });
-    
+  
     // Toast Messages (using Bootstrap)
     $(document).ready(function() {
         {% if messages %}
@@ -598,7 +590,7 @@ The following JavaScript code is used to add interactivity and visual effects to
 
         // ... (calculates if reviews section is visible and adjusts opacity of review cards) ...
     });
-    
+  
     // Slide-in Company Logos (commented out)
     // This section was intended to add a slide-in animation to company logos when they become visible, but it's commented out.
 </script>
@@ -612,7 +604,6 @@ The following JavaScript code is used to add interactivity and visual effects to
 
 ![toast image](static/toasts.jpg)
 
-
 - **Image Fade-in:** Images with the `.fade-in-image` class gradually fade into view as they enter the viewport.
 - **Active Dropdown Link (Commented Out):** This code would have highlighted the currently active dropdown link in the navigation menu, but it's currently disabled.
 - **Reviews Fade-in:** Reviews within the `.reviews` section fade in as the user scrolls down to them.
@@ -623,10 +614,11 @@ The following JavaScript code is used to add interactivity and visual effects to
 - **jQuery Dependency:** This code relies on jQuery (`$`) for DOM manipulation and event handling.
 - **Commented-Out Sections:** The two commented-out sections provide hints about additional features you might have been working on, but they are not currently implemented.
 
-Please let me know if you have any other questions. 
+Please let me know if you have any other questions.
 
-and other js has been tested and 
+and other js has been tested and
 I used JSlint to validate javascript found in some apps
+
 ### Javascript validation
 
 I used JSlint to validate javascript found in some apps
@@ -640,7 +632,7 @@ I used JSlint to validate javascript found in some apps
 * appointements - no warning
 * contact - label was wrong
 
-### Html validation 
+### Html validation
 
 I used Htmlvalidato [ html validation ](https://validator.w3.org/#validate_by_input)  to find about any wrong tags and errors
 first i had about 20 errors , so by find out about it in source code(genrated page by django)
@@ -648,14 +640,13 @@ then i overcome those and at the end i got this for all pages
 
 ![html validate](static/html_validator.jpeg)
 
-### Css validation 
+### Css validation
+
 I used Css validator [ css validation ](https://jigsaw.w3.org/css-validator/#validate_by_input) site to find about any wrong tags and errors
 first i had about 5 errors , so by find out about it in source code(genrated page by django)
 then i modified errors .that is the result
 
 ![css validate](static/css_validate.jpeg)
-
-
 
 ### Python
 
@@ -673,25 +664,15 @@ Toasts not showing/displaying - Having all the code set up properly and checking
 
 In testing my search box and product management - error handling was not working each time I was testing the search box and product management whereby the error toast was rendering but not display , also the header would just disappear. The fix was simple though it took me hours, I searched via Code Institute slack and found out someone made my mistake as well of missing out a closing div tag in toast error.
 
-
-
-
-
 ### Bug 3
 
 I had errors in validating html and to resolve them I had to put ul tags in mobile header which led to the bug below. To fix this I added padding to icons(search, my account, bag)
-
-
 
 ### Bug 4
 
 Double orders in admin panel
 
-
-
 Solution: In checkout views.py in the checkout function, 2 following lines of code fixed it
-
-
 
 ### Bug 5
 
@@ -774,6 +755,5 @@ Products description inspiration from
 ### Acknowledgement and support
 
 * This whole chapter took me months to complete  due to circumstances. Despite all this I  would love to extend my gratitude to Code institute and their amazing team.
-The tutor support for this project in particular, Ed, Ger you guys did a superb job.
+  The tutor support for this project in particular, Ed, Ger you guys did a superb job.
 * My Mentor Jubril sharp,straight and honest feedback
-
