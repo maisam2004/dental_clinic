@@ -2,9 +2,88 @@
 
 <a name="top" id="top"></a>
 
-
 ![Home page logo](static/logo12.png)
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Showcase](#showcase)
+  - [Strategy](#strategy)
+- [UX (User Experience)](#ux-user-experience)
+  - [User Stories](#user-stories)
+    - [As a Patient (Site User)](#as-a-patient-site-user)
+    - [As Admin User](#as-admin-user)
+- [Additional Features](#additional-features)
+- [Architecture](#architecture)
+- [Design](#design)
+- [Navigation](#navigation)
+- [Project Type](#project-type)
+  - [Homepage](#homepage)
+  - [Appointment Booking](#appointment-booking)
+    - [User Authentication](#user-authentication)
+    - [Registration](#registration)
+    - [Login/Registration](#loginregistration)
+    - [Logout](#logout)
+  - [Booking Appointments](#booking-appointments)
+    - [By User Authentication](#by-user-authentication)
+    - [Booking Form](#booking-form)
+    - [Success Page](#success-page)
+  - [Dentistry Services](#dentistry-services)
+    - [Service Detail](#service-detail)
+    - [User Profile (for Logged-in Users)](#user-profile-for-logged-in-users)
+    - [Fees Page](#fees-page)
+    - [Admin Features (for Staff/Dentists)](#admin-features-for-staffdentists)
+- [Footer](#footer)
+- [Reviews](#reviews)
+  - [Adding a Review](#adding-a-review)
+  - [Editing a Review](#editing-a-review)
+  - [Deleting a Review](#deleting-a-review)
+  - [Viewing Reviews](#viewing-reviews)
+- [404 Page](#404-page)
+- [Contact and About Pages](#contact-and-about-pages)
+
+* [Dental Store (All Products)](#dental-store-all-products)
+* [Basket](#basket)
+  * [Basket Icon](#basket-icon)
+* [Checkout](#checkout)
+  * [Checkout Success](#checkout-success)
+  * [Order Confirmation Email](#order-confirmation-email)
+* [Technologies](#technologies)
+  * [Languages](#languages)
+  * [Frameworks, Programs, and Libraries Used](#frameworks-programs-and-libraries-used)
+* [Testing](#testing)
+  * [Manual Testing](#manual-testing)
+  * [User Story Testing (Admin)](#user-story-testing-admin)
+  * [User Story Testing](#user-story-testing)
+  * [Functionality Testing](#functionality-testing)
+  * [Compatibility Testing](#compatibility-testing)
+  * [HTML Validator](#html-validator)
+  * [Lighthouse](#lighthouse)
+- [JavaScript Enhancements](#javascript-enhancements)
+- [Python](#python)
+- [Deployment](#deployment)
+  - [Render PostgresSQL Database](#render-postgresql-database)
+    - [Setting up Render PostgreSQL for Heroku Django App](#setting-up-render-postgresql-for-heroku-django-app)
+    - [Steps:](#steps)
+      - [1. Create a PostgreSQL Database on Render:](#1-create-a-postgresql-database-on-render)
+      - [2. Obtain Connection Details:](#2-obtain-connection-details)
+      - [3. Set Environment Variables on Heroku:](#3-set-environment-variables-on-heroku)
+    - [Explanation:](#explanation)
+  - [Amazon AWS](#amazon-aws)
+    - [S3 Bucket](#s3-bucket)
+    - [IAM](#iam)
+    - [Set up AWS](#set-up-aws)
+  - [Stripe API](#stripe-api)
+  - [Gmail API](#gmail-api)
+- [Heroku](#heroku)
+  - [Render PostgreSQL Database](#render-postgresql-database)
+  - [Amazon AWS](#amazon-aws)
+  - [Stripe API](#stripe-api)
+  - [Gmail API](#gmail-api)
+- [Cloning Project](#cloning-project)
+- [Forking Project](#forking-project)
+- [Credits](#credits)
+- [Acknowledgement and Support](#acknowledgement-and-support)
 ## Introduction
 
 Healthy Dental Clinic is a web application designed for a dental practice. It allows patients to book appointments, learn about services, and access a dental store and reviews. The project is built using:
@@ -16,7 +95,7 @@ While fully functional, this site primarily serves as an educational project to 
 
 ## Showcase
 
-<img src="static/different_screen.jpg" alt="homepage_wirefram" width="740" />
+<img src="static/different_screen.jpg" alt="homepage_wirefram" width="840" />
 
 ### Strategy
 
@@ -69,15 +148,6 @@ While fully functional, this site primarily serves as an educational project to 
 * **Engagement:** Engage patients with educational content and a user-friendly interface.
 
 ## Architecture
-
-### Database
-
-<details>
-<summary>Click here to view Database Schema:</summary>
-
-[Image of your dental clinic database schema]
-
-</details>
 
 ## Design
 
@@ -663,13 +733,12 @@ to remove errors .finaly i did and got this nicely message.
 <img src="static/html_validator.jpeg" alt="html validator" width="580" />
 
 ### Lighthouse
+
 - I conducted Lighthouse testing in Incognito mode to obtain optimal results.
 
 ![lighthouse]
 
 <img src="static/light_house.jpg" alt="html validator" width="580" />
-
-
 
 ## JavaScript Enhancements
 
@@ -974,7 +1043,7 @@ To integrate your project with Gmail, follow these steps:
 - Confirm your password and account again if prompted.
 - Select Mail for the app type.
 - Choose Other (Custom name) for the device type.
-- Use any custom name, like "Django" 
+- Use any custom name, like "Django"
 - You'll receive a 16-character password (API key).
 - Save this securely, as it can't be accessed later!
   - EMAIL_HOST_PASS = user's 16-character API key
@@ -1099,9 +1168,8 @@ You will now have a forked version of the repository in your GitHub account.
 - [**XML-Sitemaps.com**](https://www.xml-sitemaps.com/)  - utilized for generating XML sitemaps
 - [**Coolors**](https://coolors.co/)) for color palette
 
-
 ### Acknowledgement and support
 
-* This whole chapter took me months to complete  due to circumstances beyond control. Despite all this I would love to extend my gratitude to Code institute and their amazing team.  
+* This whole chapter took me months to complete  due to circumstances beyond control. Despite all this I would love to extend my gratitude to Code institute and their amazing team.
 * The tutor support for this project in particular
 * My Mentor Jubril sharp,straight and honest feedback
