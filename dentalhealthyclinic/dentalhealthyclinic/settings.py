@@ -14,11 +14,6 @@ from decimal import Decimal
 from pathlib import Path
 from decouple import config
 import dj_database_url
-import django_heroku
-
-
-
-
 
 
 
@@ -39,15 +34,6 @@ ALLOWED_HOSTS = ['healtydentalclinic-8f35f633fd68.herokuapp.com','localhost','12
 #digital ocean 
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
-
-
-
-
-
-
-
-
-
 
 
 
