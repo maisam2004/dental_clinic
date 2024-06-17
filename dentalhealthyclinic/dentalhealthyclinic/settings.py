@@ -17,6 +17,10 @@ import dj_database_url
 
 
 
+
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,12 +32,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY=config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 ALLOWED_HOSTS = ['healtydentalclinic-8f35f633fd68.herokuapp.com','localhost','127.0.0.1']
 
 
 #digital ocean 
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+
+
+
+
+
+
+
+
+
 
 
 
@@ -125,12 +139,13 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     #'allauth.account.middleware.AuthenticationMiddleware',
+    
     'allauth.usersessions.middleware.UserSessionsMiddleware',
     'django.middleware.gzip.GZipMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "allauth.account.middleware.AccountMiddleware",
-    
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 
     
 ]
