@@ -3,16 +3,7 @@
     padding: 0;
   }
   
-  .masked-image {
-    width: 36em;
-    height: 31em;
-    background-image: url("/static/main_hero.webp");
-    background-size: cover;
-    mask-image: url("/static/landingpage_bg.webp");
-    mask-size: contain;
-    -webkit-mask-image: url("/static/landingpage_bg.webp");
-    -webkit-mask-size: contain;
-  }
+
   
   .signup,
   .basket,
@@ -1440,17 +1431,7 @@
       margin-bottom: 1em;
     }
   
-    .masked-image {
-      /* main image at landing */
-      width: 19em;
-      height: 15em;
-      background-image: url("/static/main_hero.webp");
-      background-size: cover;
-      mask-image: url("/static/landingpage_bg.webp");
-      mask-size: contain;
-      -webkit-mask-image: url("/static/landingpage_bg.webp"); /* For older browsers */
-      -webkit-mask-size: contain;
-    }
+    
   
     .grounded-radiants {
       width: 70%; /* button width on mobile*/
@@ -1903,19 +1884,8 @@
       margin-left: 4em;
     }
   
-    .masked-image {
-      /* main image at landing */
-      width: 22em;
-      height: 18em;
-      background-image: url("/static/main_hero.webp");
-      background-size: cover;
-      mask-image: url("/static/landingpage_bg.webp");
-      mask-size: contain;
-      -webkit-mask-image: url("/static/landingpage_bg.webp"); /* For older browsers */
-      -webkit-mask-size: contain;
-    }
-    .container-sm:has(.masked-image) {
-    }
+   
+    
   
     .profile .profile_update_form input {
       width: 42%;
@@ -2096,7 +2066,7 @@
     main {
       height: 38em;
       background-repeat: no-repeat;
-      background-image: url("/static/office_dentist.webp");
+      background-image: url("/static/office_dentist.webp"); 
   
       background-size: cover;
       background-position: center;
@@ -2259,16 +2229,7 @@
       padding-left: 0 !important;
     }
   
-    .masked-image {
-      width: 28em /* Width of Image 1 */;
-      height: 24em /* Height of Image 1 */;
-      background-image: url("/static/main_hero.webp"); /*  background image (Image 2) */
-      background-size: cover; /* Adjust to fit the container or use contain */
-      mask-image: url("/static/landingpage_bg.webp"); /*  mask image (Image 1) */
-      mask-size: contain;
-      -webkit-mask-image: url("/static/landingpage_bg.webp"); /* For older browsers */
-      -webkit-mask-size: contain;
-    }
+    
   }
   
   @media screen and (min-width: 1400px) {
@@ -2328,12 +2289,8 @@
       padding: 10px 20px;
       font-size: x-large;
     }
-    /*    .products_details a.btn , .basket a.btn {
-          background-color:black;
-          color: white;
-          padding: 0.4em;
-          font-size: unset;
-  
-      } */
+   .hero_image{
+    width:70% !important;
+   }
   }
   

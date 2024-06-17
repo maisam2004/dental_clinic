@@ -204,3 +204,14 @@ class Appointment(models.Model):
     <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f601/512.webp" type="image/webp">
     <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f601/512.gif" alt="😁" width="32" height="32">
   </picture></span>
+
+  .masked-image {
+    width: 28em /* Width of Image 1 */;
+    height: 24em /* Height of Image 1 */;
+    background-image: url("/static/main_hero.webp");  /* background image (Image 2) */
+    background-size: cover; /* Adjust to fit the container or use contain */
+    mask-image: url("/static/landingpage_bg.webp");  /* mask image (Image 1) */
+    mask-size: contain;
+    -webkit-mask-image: url("/static/landingpage_bg.webp"); /* For older browsers */
+    -webkit-mask-size: contain;
+  }
