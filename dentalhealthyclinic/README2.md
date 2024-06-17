@@ -95,7 +95,7 @@ While fully functional, this site primarily serves as an educational project to 
 
 ## Showcase
 
-<img src="static/different_screen.jpg" alt="homepage_wirefram" width="840" />
+<img src="static/different_screen.jpg" alt="homepage_wirefram" width="940" />
 
 ### Strategy
 
