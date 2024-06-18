@@ -212,6 +212,10 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
+
+    print( request.session.get('bag', {}))
+    if save_info:
+        print(save_info)
     """
     
     Handles the post-checkout success page and related actions.
