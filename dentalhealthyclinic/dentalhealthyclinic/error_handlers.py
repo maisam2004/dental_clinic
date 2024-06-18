@@ -25,3 +25,16 @@ class Error404View(TemplateView):
         response = super().get(request, *args, **kwargs)
         response.status_code = 404
         return response
+
+
+class ForbiddenView(TemplateView):
+    """
+    Renders a custom 403 Forbidden error page.
+    """
+
+    template_name = "403.html"
+    def get(self, request, *args, **kwargs):
+        response = super().get(request, *args, **kwargs)
+        response.status_code = 403
+        return response
+    

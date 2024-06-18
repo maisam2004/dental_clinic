@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>All Appointments</h1>
+<div class="table-responsive">
+<table class="table table-striped fs-6">
+    <thead>
+        <tr>
+            <th class="d-none d-md-table-cell">Reference</th>
+            <th>Full Name</th>
+            <th class="d-none d-md-table-cell">Email</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Service</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for appointment in appointments %}
+        <tr>
+            <td class="d-none d-md-block mt-auto">{{ appointment.reference_number }}</td>
+            <td>{{ appointment.full_name }}</td>
+            <td class="d-none d-md-table-cell">{{ appointment.email }}</td>
+            <td>{{ appointment.date }}</td>
+            <td>{{ appointment.time|date:"H:i" }}</td>
+            <td>{{ appointment.service }}</td>
+            <td>{{ appointment.status }}</td>
+            <td>
+                {% if appointment.status != 'Cancelled' %}
+                <a href="{% url 'admin_cancel_appointment' appointment.id %}" class="btn btn-danger">Cancel</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

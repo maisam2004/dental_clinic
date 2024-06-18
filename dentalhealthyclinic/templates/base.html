@@ -59,7 +59,7 @@
 
                        {# <li> <a href="{% url 'admin:index' %}" target="_blank" class="dropdown-item">Admin</a></li> #}
                        <li><a class="dropdown-item {% if request.resolver_match.url_name == 'admin:index' %}active{% endif %}" href="{% url 'admin:index' %}" target="_blank">Admin</a></li>
-
+                       <li><a class="nav-link" href="{% url 'admin_list_appointments' %}">View All Appointments</a></li>
                     {% endif %}
                     <li><a class="nav-link {% if request.resolver_match.url_name == 'profile' %}active{% endif %}" href="{% url 'profile' %}" target="_blank">My Profile</a></li>
                     <li> <a href="{% url 'account_logout' %}" class="dropdown-item" target="_blank">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
@@ -130,6 +130,7 @@
                                     <li><a class="dropdown-item {% if request.resolver_match.url_name == 'add_product' %}active{% endif %}" href="{% url 'add_product' %}" target="_blank">Product Management</a></li>
                                     
                                     <li><a class="dropdown-item {% if request.resolver_match.url_name == 'admin:index' %}active{% endif %}" href="{% url 'admin:index' %}" target="_blank">Admin</a></li>
+                                    <li><a class="nav-link" href="{% url 'admin_list_appointments' %}">View All Appointments</a></li>
                                 {% endif %}
                                 <li><a class="nav-link {% if request.resolver_match.url_name == 'profile' %}active{% endif %}" href="{% url 'profile' %}" target="_blank">My Profile</a></li>
                                 <li><a href="{% url 'account_logout' %}" class="dropdown-item" target="_blank">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from .models import Service,Appointment,Dentist
 from .utils import generate_appointment_qr_code
 from .forms import AppointmentForm
@@ -9,11 +9,60 @@ from django.template.loader import render_to_string
 from django.conf import settings
 from django.contrib import messages 
 from django.db import transaction  
+from django.core.exceptions import PermissionDenied
 
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required,user_passes_test
+
+#check for as admin -------------
+# Check if the user is an admin
+def is_admin(user):
+    if not user.is_authenticated or not user.is_superuser:
+        raise PermissionDenied("You do not have permission to perform this action.")
+    else:
+        return True
 
 
 
+@login_required(login_url='/accounts/login/')
+@user_passes_test(is_admin)
+def list_appointments(request):
+    appointments = Appointment.objects.all().order_by('date', 'time')
+    return render(request, 'appointments/admin_list.html', {'appointments': appointments})
+
+login_required(login_url='/accounts/login/')
+@user_passes_test(is_admin)
+def cancel_appointment(request, appointment_id):
+   
+    appointment = get_object_or_404(Appointment, id=appointment_id)
+    appointment.status = 'Cancelled'
+    appointment.save()
+    try:
+        customer_email = appointment.email
+        subject = render_to_string(
+            'appointments/confirmation_emails/confirmation_email_cancellation_subject.txt',
+            {'appointment': appointment}
+        )
+        body = render_to_string(
+            'appointments/confirmation_emails/confirmation_email_cancellation_body.txt',
+            {'appointment': appointment, 'contact_email': settings.DEFAULT_FROM_EMAIL}
+        )
+
+        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [customer_email])
+        messages.success(request, f'Appointment has been cancelled and a cancellation email has been sent to {appointment.email}.')
+    except Exception as e:
+        messages.error(request, f'There was an error sending the cancellation email: {e}')
+
+    return redirect('admin_list_appointments')
+
+
+
+
+
+
+
+
+
+#=====================================
 
 @login_required(login_url='/accounts/login/')
 def success(request, appointment_id):
