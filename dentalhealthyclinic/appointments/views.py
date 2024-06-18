@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Service,Appointment,Dentist
-
+from .utils import generate_appointment_qr_code
 from .forms import AppointmentForm
 from fee.models import Fee  
 import random
@@ -21,9 +21,10 @@ def success(request, appointment_id):
     Handle successful appointments
     """
     appointment = Appointment.objects.get(id=appointment_id)
+    qr_code_data = generate_appointment_qr_code(appointment)
     # Send Confirmation Email
     try:
-        customer_email = appointment.email
+        customer_email = appointment.emailee
         subject = render_to_string(
             'appointments/confirmation_emails/confirmation_email_subject.txt',  # Adjust template path
             {'appointment': appointment}
@@ -41,7 +42,7 @@ def success(request, appointment_id):
 
 
 
-    return render(request, 'appointments/success.html', {'appointment': appointment})
+    return render(request, 'appointments/success.html', {'appointment': appointment,'qr_code_data': qr_code_data})
 
 
 

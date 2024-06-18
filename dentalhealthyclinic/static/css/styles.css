@@ -1546,10 +1546,11 @@
     main .p4 {
       padding: 0.5rem !important;
     }
-  
+ 
     .container {
       flex-direction: column;
     }
+    
   
     .cosmetic .container,
     .general .container,
@@ -1794,7 +1795,11 @@
       box-shadow: none;
       width: 100%;
     }
-  
+
+    .booked_app .container{
+      width: 99% !important;
+    }
+    
     .logout .allauth-form-inner-content {
       background-color: rgba(255, 255, 255, 0);
       margin-top: 0em !important;

@@ -1,6 +1,7 @@
 
 {% extends "base.html" %}
 {% block cortitle  %}booked{% endblock %}
+{% block page%}booked_app{% endblock %}
 {% block content %}
 
 <h1>Appointment Booked!</h1>
@@ -9,7 +10,7 @@
 
 
 
-<div class="container mt-5">
+<div class="container mt-5 booked_app_card w-100" > 
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -17,6 +18,7 @@
                     <h2 class="card-title">Appointment Booked Successfully!</h2>
                 </div>
                 <div class="card-body">
+                    <img src="data:image/png;base64,{{ qr_code_data|safe }}" alt="Appointment QR Code" class="w-50" />
                     <h5 class="card-subtitle mb-3 text-muted">
                         <strong>Booking Reference Number:</strong> {{ appointment.reference_number|stringformat:"s"|slice:":6" }}
                     </h5>
@@ -59,6 +61,7 @@
                             {% endif %}
                         </tbody>
                     </table>
+                    
                 </div>
                 <div class="card-footer">
                     <a href="#" class="btn btn-primary mt-3" onclick="window.print()">Print Appointment Details</a>

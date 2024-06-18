@@ -33,9 +33,11 @@ python-decouple==3.8
 python3-openid==3.2.0
 pytz==2024.1
 qrcode==7.4.2
+qrcode-artistic==3.0.2
 requests==2.31.0
 requests-oauthlib==2.0.0
 s3transfer==0.10.1
+segno==1.6.1
 six==1.16.0
 sqlparse==0.4.4
 stripe==9.6.0
