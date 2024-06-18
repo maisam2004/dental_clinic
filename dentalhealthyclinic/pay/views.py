@@ -61,14 +61,13 @@ def cache_checkout_data(request):
 
 
 # Create your views here.
-
 def checkout(request):
     """
     Handles the checkout process for user orders.
 
-    This view function:
+    This view function performs the following tasks:
     1. Retrieves Stripe keys for payment processing.
-    2. Processes the order form data if submitted via POST.
+    2. Processes the order form data if submitted via POST:
         - Validates the form.
         - Creates a Stripe PaymentIntent.
         - Saves the order and associated order line items.
@@ -89,15 +88,12 @@ def checkout(request):
             - The rendered checkout template (with the order form and relevant data).
             - A redirect to the checkout success page (upon successful order placement).
             - A redirect back to the shopping bag (if the bag is empty).
-"""
-
-    
+            """
     stripe_public_key = settings.STRIPE_PUBLISHER_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
-
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -115,26 +111,23 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
-            order = order_form.save()
+
+            # Get the bag contents to calculate totals
+            bag_data = bag_contents(request)
+            order.order_total = bag_data['total']
+            order.delivery_cost = bag_data['delivery']
+            order.grand_total = bag_data['grand_total']
+
+            order.save()
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            product=product,
-                            quantity=item_data,
-                        )
-                        order_line_item.save()
-                    else:
-                        for size, quantity in item_data['items_by_size'].items():
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                product=product,
-                                quantity=quantity,
-                                product_size=size,
-                            )
-                            order_line_item.save()
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=product,
+                        quantity=item_data,
+                    )
+                    order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "
@@ -162,7 +155,7 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-        
+
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -170,11 +163,9 @@ def checkout(request):
         
                 full_name = profile.user.get_full_name()
                 if not full_name and latest_order_with_name:
-
                     full_name = latest_order_with_name.full_name
                 order_form = OrderForm(initial={
                     'full_name': full_name,
-                    #'full_name': appintmentname.full_name,
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
                     'country': profile.default_country,
@@ -189,12 +180,10 @@ def checkout(request):
         else:
             order_form = OrderForm()
 
-
-
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
-        
+
     next_url = reverse('checkout')  # URL of the checkout page
     login_url = f"{reverse('account_login')}?{urlencode({'next': next_url})}"
     register_url = f"{reverse('account_signup')}?{urlencode({'next': next_url})}"
@@ -209,7 +198,6 @@ def checkout(request):
     }
 
     return render(request, template, context)
-
 
 def checkout_success(request, order_number):
 
