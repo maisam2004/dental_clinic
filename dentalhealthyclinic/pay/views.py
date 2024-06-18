@@ -214,8 +214,7 @@ def checkout(request):
 def checkout_success(request, order_number):
 
     print( request.session.get('bag', {}))
-    if save_info:
-        print(save_info)
+    
     """
     
     Handles the post-checkout success page and related actions.
@@ -239,6 +238,8 @@ def checkout_success(request, order_number):
     
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+    print(f'Order Total: {order.order_total}, Delivery: {order.delivery_cost}, Grand Total: {order.grand_total}')
+
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
@@ -272,8 +273,8 @@ def checkout_success(request, order_number):
         product.save()
 
 
-    if 'bag' in request.session:
-        del request.session['bag']
+    #if 'bag' in request.session:
+        #del request.session['bag']
     wh_handler = StripeWH_Handler(request)
     wh_handler.send_confirmation_email(order)  
 
@@ -303,6 +304,8 @@ def checkout_success(request, order_number):
         'order': order,
         
     }
+    if 'bag' in request.session:
+        del request.session['bag']
 
     return render(request, template, context)
 
