@@ -24,7 +24,7 @@ def success(request, appointment_id):
     qr_code_data = generate_appointment_qr_code(appointment)
     # Send Confirmation Email
     try:
-        customer_email = appointment.emailee
+        customer_email = appointment.email
         subject = render_to_string(
             'appointments/confirmation_emails/confirmation_email_subject.txt',  # Adjust template path
             {'appointment': appointment}
