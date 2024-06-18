@@ -48,7 +48,7 @@
             
             <div class="p1  ms-auto d-md-none ">
                 <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid text-light fa-user fs-6 border p-2 rounded-circle"></i>
+                    <i class="fa-solid fa-user fs-6 border p-2 rounded-circle {% if request.user.is_authenticated %}text-danger{% else %}text-light{% endif %}"></i>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
@@ -120,7 +120,8 @@
                     </li>
                     <li class="nav-item d-none d-md-inline-block dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="user account">
-                            <i class="fa-solid fa-user fs-6 border p-2 rounded-circle"></i>
+                            <i class="fa-solid fa-user fs-6 border p-2 rounded-circle {% if request.user.is_authenticated %}text-danger{% else %}text-light{% endif %}"></i>
+
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
                             {% if request.user.is_authenticated %}
@@ -358,7 +359,7 @@
             <div class="icon text-center mt-1 "><i class="fa-solid fa-truck"></i> <p>fast delivery</p></div>
             <div class="icon text-center mt-1"><i class="fa-solid fa-arrows-rotate"></i> <p>Free returns</p></div>
             
-            
+
         </div>
         <hr>
     <p class="p-1">© HEALTHYDENTALCLINIC DENTAL STORE | healthydentalclinic.co.uk is a registered trademark. All rights reserved.</p>
