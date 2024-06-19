@@ -4,6 +4,9 @@ from .utils import generate_appointment_qr_code
 from .forms import AppointmentForm
 from fee.models import Fee  
 import random
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
+from django.views.generic import  CreateView, UpdateView
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
@@ -21,7 +24,12 @@ def is_admin(user):
     else:
         return True
 
+class AdminRequiredMixin(UserPassesTestMixin):
+    def test_func(self):
+        return self.request.user.is_authenticated and self.request.user.is_superuser
 
+    def handle_no_permission(self):
+        raise PermissionDenied("You do not have permission to perform this action.")
 
 @login_required(login_url='/accounts/login/')
 @user_passes_test(is_admin)
@@ -56,8 +64,64 @@ def cancel_appointment(request, appointment_id):
 
 
 
+# Create Appointment
+class AppointmentCreateView(LoginRequiredMixin, AdminRequiredMixin, CreateView):
+    model = Appointment
+    form_class = AppointmentForm
+    template_name = 'appointments/appointment_form.html'
+    success_url = reverse_lazy('admin_list_appointments')
+    def form_valid(self, form):
+        response = super().form_valid(form)  # Save the appointment
+        messages.success(self.request, 'Appointment created successfully!')
 
+        # Send notification email to the user (if email exists)
+        if self.object.email:  # self.object is the saved Appointment instance
+            try:
+                customer_email = self.object.email
+                subject = render_to_string(
+                    'appointments/confirmation_emails/admin_create_appointment_subject.txt', 
+                    {'appointment': self.object}
+                )
+                body = render_to_string(
+                    'appointments/confirmation_emails/admin_create_appointment_body.txt',
+                    {'appointment': self.object, 'contact_email': settings.DEFAULT_FROM_EMAIL}
+                )
+                send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [customer_email])
+            except Exception as e:
+                # Handle email sending errors (e.g., log them)
+                pass 
+        
+        return response
 
+# Update Appointment
+class AppointmentUpdateView(LoginRequiredMixin, AdminRequiredMixin, UpdateView):
+    model = Appointment
+    form_class = AppointmentForm
+    template_name = 'appointments/appointment_form.html'
+    success_url = reverse_lazy('admin_list_appointments')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)  # Save the appointment
+        messages.success(self.request, 'Appointment updated successfully!')
+
+        # Send notification email 
+        if self.object.email:  # self.object is the saved Appointment instance
+            try:
+                customer_email = self.object.email
+                subject = render_to_string(
+                    'appointments/confirmation_emails/admin_update_appointment_subject.txt', 
+                    {'appointment': self.object}
+                )
+                body = render_to_string(
+                    'appointments/confirmation_emails/admin_update_appointment_body.txt',
+                    {'appointment': self.object, 'contact_email': settings.DEFAULT_FROM_EMAIL}
+                )
+                send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [customer_email])
+            except Exception as e:
+                # Handle errors 
+                pass 
+        
+        return response
 
 
 

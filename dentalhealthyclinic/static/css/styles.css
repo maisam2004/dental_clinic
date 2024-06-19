@@ -939,6 +939,7 @@
     margin: 0 auto; /* Center the carousel horizontally */
   }
   
+  
   /* Image positioning */
   .carousel-inner .carousel-item img {
     width: 60%; /* Image takes 60% width */
@@ -1551,6 +1552,11 @@
       flex-direction: column;
     }
     
+
+    .admin_booking .container{
+      width: 100% !important;
+
+    }
   
     .cosmetic .container,
     .general .container,
@@ -2089,6 +2095,11 @@
       width: 58%; /* landing page button width  */
     }
   
+
+    .admin_booking .container{
+      width: 50% !important;
+    }
+
     /* ADD REVEIW --*/
     .add_review .add_review_whole {
       background-color: white;

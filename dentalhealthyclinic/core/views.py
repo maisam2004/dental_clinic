@@ -35,3 +35,5 @@ class NotFoundView(TemplateView):
         response = super().get(request, *args, **kwargs)
         response.status_code = 404
         return response
+
+
