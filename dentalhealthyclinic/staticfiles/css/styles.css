@@ -4,6 +4,14 @@
   }
   
 
+  .small_box{
+    width:12em;
+    height: 7em;
+    background-color: #0bad0257;
+    position: absolute;
+    top:10em;
+  }
+
   
   .signup,
   .basket,
@@ -938,9 +946,7 @@
     width: 80%; /* Adjust container*/
     margin: 0 auto; /* Center the carousel horizontally */
   }
-  .admin_booking .container{
-    width: 50% !important;
-  }
+  
   
   /* Image positioning */
   .carousel-inner .carousel-item img {
@@ -2097,6 +2103,11 @@
       width: 58%; /* landing page button width  */
     }
   
+
+    .admin_booking .container{
+      width: 50% !important;
+    }
+
     /* ADD REVEIW --*/
     .add_review .add_review_whole {
       background-color: white;
