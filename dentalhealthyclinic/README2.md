@@ -158,11 +158,16 @@ Link to the deployed site can be found [Here](https://healtydentalclinic-8f35f63
   * Access patient information and notes.
 * **Manage Products (Optional):**
 
-  * Add, update, and delete products in the online store.
+  * Add, update, and Cancel products in the online store.
+  * Informe user by email about any update
+
+  ![homepage wireframe]
+
+<img src="static/crud_admin.jpg" alt="homepage_wirefram" width="900" />
 
 ## Additional Features
 
-* **User Accounts:** Manage appointments and order history.
+* **User Accounts:** View appointments and order history.
 * **Email Notifications:**  Confirmations for appointments and orders.
 
 ### Strategy
@@ -436,10 +441,10 @@ This feature helps create a transparent and interactive community around the den
 
 # 404 page
 
-A 404 page is also available to handle navigation errors with a home link button to take them back to the home page
+A 404 page  and 403 is also available to handle navigation errors with a home link button to take them back to the home page
 ![error handling]
 
-<img src="static/404.jpg" alt="Reviews" width="480" />
+<img src="static/404page.jpg" alt="Reviews" width="800" />
 
 ### Contact and About Pages
 
@@ -816,6 +821,7 @@ The following JavaScript code is used to add interactivity and visual effects to
 </script>
 {% endblock %}
 ```
+
 **Explanation of Key Features:**
 
 - **Back-to-Top Button:** When the `.btt-link` element is clicked, the page smoothly scrolls to the top.
