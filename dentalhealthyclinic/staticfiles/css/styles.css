@@ -4,15 +4,6 @@
   }
   
 
-  .small_box{
-    width:12em;
-    height: 7em;
-    background-color: #0bad0257;
-    position: absolute;
-    top:10em;
-  }
-
-  
   .signup,
   .basket,
   .login,
@@ -107,12 +98,11 @@
     border-radius: 2em !important;
     border: 1px solid rgba(128, 128, 128, 0.674) !important;
   }
-  /* Rectangle 111 */
+  
   /* Setting up a box to add the inner shadow to */
   
   body {
-    /*     background-color: rgba(229, 240, 242, 1);
-   */
+    
     background-image: linear-gradient(135deg, #6edcd9, #7e7e81);
   
     font-family: "Manrope", sans-serif;
@@ -141,13 +131,13 @@
     font-size: smaller;
   }
   .navbar-nav .nav-link:hover {
-    /* font-size: large !important; */
+    
     font-weight: 600;
     color: red !important;
   }
   
   .navbar-nav .desktop_logo:hover {
-    /* font-size: large !important; */
+    
     font-weight: 900;
     transform: scale(1.135);
   }
@@ -159,7 +149,7 @@
   
   .desktop_logo {
     width: 12.5em;
-    /* padding-bottom: 2rem; */
+   
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -250,11 +240,11 @@
     position: relative;
     border: 4px solid transparent;
     border-radius: 16px;
-    /*  background: linear-gradient(orange, violet); */
+    
     background: rgb(18, 88, 113);
     background-clip: padding-box;
     padding: 10px;
-    /* just to show box-shadow still works fine */
+    
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.467);
   }
   
@@ -301,7 +291,7 @@
   /* current offers  */
   
   .current_offers {
-    /* background-color: #a4b6d0; */
+    
   
     margin: 4rem auto;
   
@@ -319,9 +309,7 @@
     align-items: center;
   }
   
-  .card-container .card {
-    /* animation: slideIn 1s ease-in-out; */
-  }
+ 
   
   @keyframes slideFromLeft {
     0% {
@@ -363,11 +351,7 @@
   }
   
   /* Drop shadow combined with a inset inner shadow, P.S. this can be used to make beautiful 3D buttons */
-  /* .inner-shadow {
-      
-      box-shadow: inset rgba(106, 121, 142, 0.5) 0px 0px 40px 0px, rgba(87, 84, 84, 0.3) 0px 30px 100px -24px;
-    }
-   */
+  
   
   .current_offers .card {
     background: linear-gradient(119.03deg, #304a7f 34.89%, #731569 93.87%);
@@ -385,20 +369,7 @@
     color: white;
   }
   
-  /* 
-  box-sizing: border-box;
-  
-  position: absolute;
-  width: 622px;
-  height: 604px;
-  
-  background: linear-gradient(119.03deg, #304A7F 34.89%, #731569 93.87%);
-  border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 55px;
-  
-  
-  */
+
   
   /* services ..............*/
   .denteistry_services h2 {
@@ -415,20 +386,7 @@
     width: 188px;
     height: 160px;
   }
-  /* .products .image-container{
-      display: flex;
-      justify-content: center;
-      background-color: #9da0a0b0;
-      padding: 0.5em;
-      
-      
-  }
-  .products .details_container{
-      padding-left: 1em;
-      width: 80%;
-      margin: 0 auto;
-  
-  } */
+
   
   .denteistry_services .card {
     padding: 0.2em;
@@ -517,8 +475,7 @@
     display: block;
     height: 42px;
     width: 42px;
-    /* border-radius: 50%;
-      border: 2px solid #1ef63e; */
+    
     position: absolute; /* //  yeah, you have to manually position it based on the text size, line height, etc. (in the parent li style). it's not the smarest solution */
     top: -12px;
     left: -46px;
@@ -562,11 +519,10 @@
     margin-left: 2px;
   }
   
-  /* Contact Info call us:020365558489 email:info@hdc.co.uk address:96 Robert St, London NW1 3QP */
+ 
   
   .footer {
-    /*     background-image: url('../footer_bg_image.png');
-   */
+   
   
     background-color: rgb(25 80 77);
     max-width: 100%;
@@ -585,8 +541,7 @@
     left: 35%;
     top: 10%;
   }
-  .footer .container-md {
-  }
+  
   .footer .card {
     font-weight: 500;
   
@@ -605,12 +560,8 @@
     padding-top: 0;
     padding: 0.2em;
   }
-  .footer ul {
-    /*  border-top: 1px solid white !important; */
-  }
-  .footer .card-header {
-    /* border-bottom: 1px solid white !important; */
-  }
+  
+ 
   .footer .address {
     border-bottom: 1px solid white !important;
   }
@@ -843,11 +794,7 @@
   .products .products_cards {
     background-color: #dbe2e2af;
   }
-  /* .products .row .col-xl-3 {
-      background-color: #f8f9fa;
-      padding: 20px;
-      border: 1px solid #dee2e6;
-  } */
+ 
   .products .products_cards li {
     background-color: #eeeeeeb0;
     border-top: 1px solid rgb(215, 215, 215);
@@ -958,9 +905,7 @@
   
   /* Caption styling */
   .carousel-caption {
-    /* width: 60%;
-      height: 30%;           /* Caption takes 30% width */
-    /*  right: 70%;          Place caption on the right, with 10% space from the edge */
+   
     bottom: 20px; /* Adjust bottom position if needed */
     background-color: rgba(
       255,
@@ -1046,49 +991,6 @@
     height: 2px;
   }
   
-  /*   .arrow-up {
-      width: 0; 
-      height: 0; 
-      border-left: 4px solid transparent;
-      border-right: 4px solid transparent; 
-      border-bottom: 10px solid black;
-      position: absolute;
-      top: -10px;
-      right: 36px;
-  }
-   */
-  /* Convenience classes - colors copied from Bootstrap */
-  /* .arrow-primary {
-      border-bottom-color: #007bff !important;
-  }
-  
-  .arrow-secondary {
-      border-bottom-color: #6c757d !important;
-  }
-  
-  .arrow-success {
-      border-bottom-color: #28a745 !important;
-  }
-  
-  .arrow-danger {
-      border-bottom-color: #dc3545 !important;
-  }
-  
-  .arrow-warning {
-      border-bottom-color: #ffc107 !important;
-  }
-  
-  .arrow-info {
-      border-bottom-color: #17a2b8 !important;
-  }
-  
-  .arrow-light {
-      border-bottom-color: #f8f9fa !important;
-  }
-  
-  .arrow-dark {
-      border-bottom-color: #343a40 !important;
-  } */
   
   .bag-notification-wrapper {
     height: 100px;
@@ -1273,14 +1175,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* .about h2 {
-      position: absolute;
-      top:16em;
-      font-weight: bold;
-      color: #f1f1f2;
-      text-shadow: 1px 1px 1px gray;
-      
-  } */
+ 
   .about .container {
     text-align: left !important;
   }
@@ -1368,12 +1263,7 @@
     transform: translateY(0);
   }
   
-  /*
-  .companies.slide-in {
-      opacity: 1;
-      transform: translateX(0);  
-  }
-  Slide into position */
+
   
   @media screen and (max-width: 650px) {
     .btndrop {
@@ -2216,9 +2106,9 @@
     }
   
     .dropdown-menu[data-bs-popper] {
-      /* top: 100%; */
+      
       left: 0;
-      /* margin-top: -5em; */
+      
     }
   
     .basket .update-form {
@@ -2234,7 +2124,7 @@
   
     .products_details .image-left-larg {
       display: flex;
-      /* background-color: rgb(227 227 227); */
+      
       border-right: 1px solid rgb(0 0 0 / 22%);
       justify-content: center;
     }
@@ -2252,6 +2142,12 @@
       padding-right: 0 !important;
       padding-left: 0 !important;
     }
+
+    .links .list-group-item a:hover {
+      color: red; 
+      font-weight: 600; 
+      text-decoration: none; /* Optional: remove underline on hover */
+  }
   
     
   }

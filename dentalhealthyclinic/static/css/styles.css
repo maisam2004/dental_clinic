@@ -541,8 +541,7 @@
     left: 35%;
     top: 10%;
   }
-  .footer .container-md {
-  }
+  
   .footer .card {
     font-weight: 500;
   
@@ -2143,6 +2142,12 @@
       padding-right: 0 !important;
       padding-left: 0 !important;
     }
+
+    .links .list-group-item a:hover {
+      color: red; 
+      font-weight: 600; 
+      text-decoration: none; /* Optional: remove underline on hover */
+  }
   
     
   }

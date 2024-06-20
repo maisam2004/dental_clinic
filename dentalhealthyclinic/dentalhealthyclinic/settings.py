@@ -31,7 +31,7 @@ SECRET_KEY=config("SECRET_KEY")
 
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-#DEBUG = os.environ.get("DEBUG_KEY")
+
 
 ALLOWED_HOSTS = ['healtydentalclinic-8f35f633fd68.herokuapp.com','localhost','127.0.0.1']
 
