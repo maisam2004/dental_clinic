@@ -2,6 +2,27 @@
     margin: 0;
     padding: 0;
   }
+
+
+  html {
+    --scrollbarBG: #3b9e17;
+    --thumbBG: #85c4e3;
+  }
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  }
+  body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 8px;
+    border: 2px solid var(--scrollbarBG);
+  }
   
 
   .signup,
