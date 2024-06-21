@@ -301,7 +301,7 @@
   
   .homepage a.btn:hover {
     background-color: #c8ccd0; /* Example color - adjust as needed */
-    color: rgb(235, 235, 235);
+    color: rgb(76, 65, 65);
     font-weight: 600;
     transition: all 0.5s;
   }
